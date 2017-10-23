@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+@font-face {
+font-family: 'Oswald';
+src:
+    url('fonts/Oswald-Regular.ttf') format("truetype")
+}
+
+@font-face {
+font-family: 'Lato';
+src:
+    url('fonts/Lato-Regular.ttf') format("truetype")
+}
+
+@font-face {
+  font-family: "alertas";
+  src:url("fonts/alertas.eot");
+  src:url("fonts/alertas.eot?#iefix") format("embedded-opentype"),
+    url("fonts/alertas.woff") format("woff"),
+    url("fonts/alertas.ttf") format("truetype"),
+    url("fonts/alertas.svg#alertas") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "alertas" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "alertas" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-alert-acumulado-de-chuva:before {
+  content: "\61";
+}
+.icon-alert-baixa-umidade:before {
+  content: "\62";
+}
+.icon-alert-chuvas-intensas:before {
+  content: "\63";
+}
+.icon-alert-declinio-de-temperatura:before {
+  content: "\64";
+}
+.icon-alert-estiagem:before {
+  content: "\65";
+}
+.icon-alert-friagem:before {
+  content: "\66";
+}
+.icon-alert-geada:before {
+  content: "\67";
+}
+.icon-alert-granizo:before {
+  content: "\68";
+}
+.icon-alert-incendios:before {
+  content: "\69";
+}
+.icon-alert-neve:before {
+  content: "\6a";
+}
+.icon-alert-onda-de-calor:before {
+  content: "\6b";
+}
+.icon-alert-onda-de-frio:before {
+  content: "\6c";
+}
+.icon-alert-ressaca:before {
+  content: "\6d";
+}
+.icon-alert-seca:before {
+  content: "\6e";
+}
+.icon-alert-tempestade-de-raio:before {
+  content: "\6f";
+}
+.icon-alert-tornado:before {
+  content: "\70";
+}
+.icon-alert-vendaval:before {
+  content: "\71";
+}
+.icon-alert-ventos-costeiros:before {
+  content: "\72";
+}
+.icon-alert-ventos-costeiros-copy:before {
+  content: "\73";
+}
+.icon-back:before {
+  content: "\74";
+}
+.icon-close:before {
+  content: "\75";
+}
+.icon-foward:before {
+  content: "\76";
+}
+.icon-fullscreen:before {
+  content: "\77";
+}
+.icon-previsao-chuva:before {
+  content: "\78";
+}
+.icon-previsao-chuvas-isoladas:before {
+  content: "\79";
+}
+.icon-previsao-chuviscos:before {
+  content: "\7a";
+}
+.icon-previsao-tempestade:before {
+  content: "\41";
+}
+.icon-previsao-sol:before {
+  content: "\42";
+}
+.icon-previsao-predominio-sol:before {
+  content: "\43";
+}
+.icon-previsao-possibilidades-de-pancadas-de-chuva:before {
+  content: "\44";
+}
+.icon-previsao-parcialmente-nublado:before {
+  content: "\45";
+}
+.icon-previsao-pancadas-de-chuva:before {
+  content: "\46";
+}
+.icon-previsao-nublado-com-pancadas-de-chuva:before {
+  content: "\47";
+}
+.icon-previsao-nublado:before {
+  content: "\48";
+}
+.icon-previsao-nevoeiro:before {
+  content: "\49";
+}
+.icon-previsao-geada:before {
+  content: "\4a";
+}
+.icon-previsao-encoberto-com-chuva-isolada:before {
+  content: "\4b";
+}
+.icon-previsao-encoberto:before {
+  content: "\4c";
+}
+.icon-previsao-chuvoso:before {
+  content: "\4d";
+}
+.icon-previsao-tempo-instavel:before {
+  content: "\4e";
+}
+.icon-triangle-down:before {
+  content: "\4f";
+}
+.icon-triangle-up:before {
+  content: "\50";
+}
+.icon-x:before {
+  content: "\51";
+}
+.icon-trashcan:before {
+  content: "\52";
+}
+.icon-heart:before {
+  content: "\53";
+}
+.icon-magnifying-glass:before {
+  content: "\54";
+}
+.icon-social-facebook:before {
+  content: "\55";
+}
+.icon-social-twitter:before {
+  content: "\56";
+}
+.icon-social-google-plus:before {
+  content: "\57";
+}
+.icon-share:before {
+  content: "\58";
+}
+.icon-link:before {
+  content: "\59";
+}
+.icon-caret-up-down:before {
+  content: "\5a";
+}
+.icon-print:before {
+  content: "\30";
+}
+.icon-social-android:before {
+  content: "\31";
+}
+.icon-social-apple:before {
+  content: "\32";
+}

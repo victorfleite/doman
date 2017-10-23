@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Doman</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body ng-app="domanApp" ng-controller="mainController" ng-class="loader" ng-init="initialize();">
+
+    <ng-view></ng-view>
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+
+    <script src="js/angular/angular.min.js"></script>
+    <script src="js/angular-route/angular-route.min.js" type="text/javascript"></script>
+    <script src="js/angular-sanitize/angular-sanitize.min.js" type="text/javascript"></script>
+    <script src="js/angular-translate/angular-translate.min.js" type="text/javascript"></script>
+    <script src="js/angular-modal-service/dst/angular-modal-service.min.js" type="text/javascript"></script>
+
+    <script src="dist/dist.js"></script>
+
+</body>
+
+</html>
