@@ -1,6 +1,6 @@
 {
   "name": "angular-sanitize",
-  "version": "1.4.8",
+  "version": "1.6.6",
   "description": "AngularJS module for sanitizing HTML",
   "main": "index.js",
   "scripts": {
@@ -17,51 +17,17 @@
     "html",
     "client-side"
   ],
-  "author": {
-    "name": "Angular Core Team",
-    "email": "angular-core+npm@google.com"
-  },
+  "author": "Angular Core Team <angular-core+npm@google.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/angular/angular.js/issues"
   },
   "homepage": "http://angularjs.org",
-  "gitHead": "0c5944519fbac1d6a633f6a647efbc4cf6a1c5c9",
-  "_id": "angular-sanitize@1.4.8",
-  "_shasum": "43a6d79b65ec8c9d5f6651b945493e585f83d713",
-  "_from": "angular-sanitize@",
-  "_npmVersion": "2.0.2",
-  "_nodeVersion": "0.10.26",
-  "_npmUser": {
-    "name": "angularcore",
-    "email": "angular-core+npm@google.com"
-  },
-  "maintainers": [
-    {
-      "name": "akalinovski",
-      "email": "a.kalinovski@gmail.com"
-    },
-    {
-      "name": "ws-malysheva",
-      "email": "ws.malysheva@gmail.com"
-    },
-    {
-      "name": "pitbeast",
-      "email": "PitBeast777@gmail.com"
-    },
-    {
-      "name": "angularcore",
-      "email": "angular-core+npm@google.com"
-    },
-    {
-      "name": "petebd",
-      "email": "pete@bacondarwin.com"
+  "jspm": {
+    "shim": {
+      "angular-sanitize": {
+        "deps": ["angular"]
+      }
     }
-  ],
-  "dist": {
-    "shasum": "43a6d79b65ec8c9d5f6651b945493e585f83d713",
-    "tarball": "http://registry.npmjs.org/angular-sanitize/-/angular-sanitize-1.4.8.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/angular-sanitize/-/angular-sanitize-1.4.8.tgz"
+  }
 }

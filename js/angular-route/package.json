@@ -1,6 +1,6 @@
 {
   "name": "angular-route",
-  "version": "1.4.8",
+  "version": "1.6.6",
   "description": "AngularJS router module",
   "main": "index.js",
   "scripts": {
@@ -17,43 +17,17 @@
     "router",
     "client-side"
   ],
-  "author": {
-    "name": "Angular Core Team",
-    "email": "angular-core+npm@google.com"
-  },
+  "author": "Angular Core Team <angular-core+npm@google.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/angular/angular.js/issues"
   },
   "homepage": "http://angularjs.org",
-  "gitHead": "623c956a4151bd8e864ba7d166eb8744413dde7d",
-  "_id": "angular-route@1.4.8",
-  "_shasum": "dffb646fa7ea10f29870875d60bd3729fe217cb7",
-  "_from": "angular-route@",
-  "_npmVersion": "2.0.2",
-  "_nodeVersion": "0.10.26",
-  "_npmUser": {
-    "name": "angularcore",
-    "email": "angular-core+npm@google.com"
-  },
-  "maintainers": [
-    {
-      "name": "mljsimone",
-      "email": "mljsimone@gmail.com"
-    },
-    {
-      "name": "angularcore",
-      "email": "angular-core+npm@google.com"
-    },
-    {
-      "name": "petebd",
-      "email": "pete@bacondarwin.com"
+  "jspm": {
+    "shim": {
+      "angular-route": {
+        "deps": ["angular"]
+      }
     }
-  ],
-  "dist": {
-    "shasum": "dffb646fa7ea10f29870875d60bd3729fe217cb7",
-    "tarball": "http://registry.npmjs.org/angular-route/-/angular-route-1.4.8.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/angular-route/-/angular-route-1.4.8.tgz"
+  }
 }
