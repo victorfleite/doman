@@ -2985,7 +2985,7 @@ fieldset[disabled] .i-checks input + i:before {
 
 .bg-dark {
   color: #a6a8b1;
-  background-color: #3a3f51;
+  background-color: #072948;
 }
 
 .bg-dark.lt,
@@ -3736,7 +3736,7 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-white-only {
-  background-color: #fff;
+  background-color: #FFE204;
 }
 
 .bg-white-opacity {
