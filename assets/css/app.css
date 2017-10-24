@@ -699,6 +699,7 @@ body {
 
 .app-aside {
   float: left;
+  min-height: 1000px;
 }
 
 .app-aside:before {
@@ -905,10 +906,14 @@ body {
 }
 
 @media (min-width: 768px) {
-  .app-aside,
+
+  .app-aside {
+    width: 200px;
+    bottom: 0px;
+  } 
   .navbar-header {
     width: 200px;
-  }
+  } 
   .navbar-collapse,
   .app-content,
   .app-footer {
