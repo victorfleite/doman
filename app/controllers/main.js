@@ -2,6 +2,7 @@
 
 app.controller('mainController', ['$rootScope', '$scope', '$log', 'CONSTANTES', function ($rootScope, $scope, $log, CONSTANTES) {
 
-        $log.log('doman');
         
+
+       
 }]);

@@ -3,22 +3,24 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Html version | Angulr</title>
+    <title>Doman</title>
+    <base href="/">
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="assets/css/animate.css/animate.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/simple-line-icons/css/simple-line-icons.css" type="text/css" />
-    <link rel="stylesheet" href="assets/js/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/font.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
 
-<body ng-app="domanApp" ng-controller="mainController" ng-init="initialize();">
-    <div class="app app-header-fixed ">
+<body ng-app="app">
+    <div class="app app-header-fixed" >
 
         <!-- header -->
-        <header id="header" class="app-header navbar" role="menu">
+        <header id="header" class="app-header navbar" role="menu" ng-if="menuHeaderOpen">
             <!-- navbar header -->
             <div class="navbar-header bg-dark">
                 <button class="pull-right visible-xs dk" ui-toggle-class="show" target=".navbar-collapse">
@@ -631,34 +633,48 @@
         <!-- content -->
         <div id="content" class="app-content" role="main">
             <div class="app-content-body ">
-
-                <ng-view></ng-view>
+                <navbar></navbar>
+                <ui-view></ui-view>
 
             </div>
         </div>
         <!-- /content -->
 
         <!-- footer -->
-        <footer id="footer" class="app-footer" role="footer">
+        <footer id="footer" class="app-footer" role="footer" ng-if="menuFooterOpen">
             <div class="wrapper b-t bg-light">
                 <span class="pull-right">2.2.0 <a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>                &copy; 2016 Copyright.
             </div>
         </footer>
         <!-- / footer -->
     </div>
-    <script src="assets/js/jquery/dist/jquery.min.js"></script>
-    <script src="assets/js/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/admin/ui-load.js"></script>
-    <script src="assets/js/admin/ui-jp.config.js"></script>
-    <script src="assets/js/admin/ui-jp.js"></script>
-    <script src="assets/js/admin/ui-nav.js"></script>
-    <script src="assets/js/admin/ui-toggle.js"></script>
-    <script src="assets/js/admin/ui-client.js"></script>
-    <script src="assets/js/angular/angular.min.js"></script>
-    <script src="assets/js/angular-route/angular-route.min.js" type="text/javascript"></script>
-    <script src="assets/js/angular-sanitize/angular-sanitize.min.js" type="text/javascript"></script>
+    <!-- VENDORS LIBS -->
+    <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <script src="dist/dist.js"></script>
+    <!-- ADMIN LIBS -->
+    <script src="assets/js/admin/ui-load.js" type="text/javascript"></script>
+    <script src="assets/js/admin/ui-jp.config.js" type="text/javascript"></script>
+    <script src="assets/js/admin/ui-jp.js" type="text/javascript"></script>
+    <script src="assets/js/admin/ui-nav.js" type="text/javascript"></script>
+    <script src="assets/js/admin/ui-toggle.js" type="text/javascript"></script>
+    <script src="assets/js/admin/ui-client.js" type="text/javascript"></script>
+
+    <!-- ANGULAR LIBS -->    
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="node_modules/auth0-js/build/auth0.js"></script>
+    <script type="text/javascript" src="node_modules/angular-auth0/dist/angular-auth0.js"></script>
+    <script type="text/javascript" src="app/config-auth0.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/app.run.js"></script>
+    <script type="text/javascript" src="app/navbar/navbar.directive.js"></script>
+    <script type="text/javascript" src="app/home/home.controller.js"></script>
+    <script type="text/javascript" src="app/callback/callback.controller.js"></script>
+    <script type="text/javascript" src="app/auth/auth.service.js"></script>
+    
+    <!-- APP LIB -->
+    <!--script src="dist/dist.js"></script-->
 
 </body>
 

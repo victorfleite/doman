@@ -35,9 +35,11 @@ gulp.task('unify-files', 'Unificar arquivos (destino:/dist/dist.js)',['clean-dis
 
 	return gulp.src([
 
-			// UTIL MODULE
+			// CONFIG
+			'./app/config-auth0.js',
 			// APP
 			'./app/app.js',
+			'./app/controllers/login-controller.js', 
 			'./app/controllers/main.js',
 			'./app/directives/tootip.js',			
 					 
@@ -51,10 +53,10 @@ gulp.task('unify-files', 'Unificar arquivos (destino:/dist/dist.js)',['clean-dis
 	    .pipe(concat.footer('\n})(window, document);\n'))
 		.pipe(stripDebug())	
 		.pipe(ngAnnotate())
-		.pipe(uglify())
+		//.pipe(uglify())
 		.pipe(rename('dist.js'))
 		.pipe(gulp.dest('./dist'))
-		.pipe(exec.reporter(reportOptions)); 
+		.pipe(exec.reporter(reportOptions));   
 
 
 

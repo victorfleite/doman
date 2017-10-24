@@ -1,25 +1,56 @@
-'use strict';
+(function () {
 
-/**
- * @ngdoc overview
- * @name domanApp
- * @description
- * # domanApp
- *
- * Main module of the application.
- */
-var app = angular.module('domanApp', [
-    'ngRoute',
-])
-    /* define 'config2' constant - which is available in Ng's config phase */
-    .constant('CONSTANTES', {
-        VIEW_FOLDER: 'app',
-    })
-    .config(['$logProvider', 'CONSTANTES', '$routeProvider', function ($logProvider, CONSTANTES, $routeProvider) {
+  'use strict';
 
+  angular
+    .module('app', ['auth0.auth0', 'ui.router'])
+    .config(config);
 
-    }])// Inicializa Variaveis de Sistema
-    .run(['$log', '$rootScope', 'CONSTANTES', function ($log, $rootScope, CONSTANTES) { // instance-injector
+  config.$inject = [
+    '$stateProvider',
+    '$locationProvider',
+    '$urlRouterProvider',
+    'angularAuth0Provider'
+  ];
 
+  function config(
+    $stateProvider,
+    $locationProvider,
+    $urlRouterProvider,
+    angularAuth0Provider
+  ) {
 
-    }]);
+    $stateProvider
+      .state('home', {
+        url: '/',
+        controller: 'HomeController',
+        templateUrl: 'app/home/home.html',
+        controllerAs: 'vm'
+      })
+      .state('callback', {
+        url: '/callback',
+        controller: 'CallbackController',
+        templateUrl: 'app/callback/callback.html',
+        controllerAs: 'vm'
+      });;
+
+    // Initialization for the angular-auth0 library
+    angularAuth0Provider.init({
+      clientID: AUTH0_CLIENT_ID,
+      domain: AUTH0_DOMAIN,
+      responseType: 'token id_token',
+      audience: 'https://' + AUTH0_DOMAIN + '/userinfo',
+      redirectUri: AUTH0_CALLBACK_URL,
+      scope: 'openid'
+    });
+
+    $urlRouterProvider.otherwise('/');
+
+    $locationProvider.hashPrefix('');
+
+    /// Comment out the line below to run the app
+    // without HTML5 mode (will use hashes in routes)
+    $locationProvider.html5Mode(true);
+  }
+
+})();
