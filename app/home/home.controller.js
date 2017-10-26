@@ -9,12 +9,12 @@
   homeController.$inject = ['$rootScope', 'authService'];
 
   function homeController($rootScope, authService) {
-
+    var vm = this;
     $rootScope.menuHeaderOpen = true;
     $rootScope.menuFooterOpen = true;
-
-    var vm = this;
     vm.auth = authService;
+
+    
 
   }
 

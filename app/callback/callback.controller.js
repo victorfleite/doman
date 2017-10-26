@@ -6,6 +6,6 @@
     .module('app')
     .controller('CallbackController', callbackController);
 
-  function callbackController() {}
+  function callbackController() { }
 
 })();
