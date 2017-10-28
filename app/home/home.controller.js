@@ -6,15 +6,12 @@
     .module('app')
     .controller('HomeController', homeController);
 
-  homeController.$inject = ['$rootScope', 'authService'];
+  homeController.$inject = ['authService'];
 
-  function homeController($rootScope, authService) {
+  function homeController(authService) {
+
     var vm = this;
-    $rootScope.menuHeaderOpen = true;
-    $rootScope.menuFooterOpen = true;
     vm.auth = authService;
-
-    
 
   }
 

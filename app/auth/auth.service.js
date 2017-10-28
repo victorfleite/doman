@@ -11,18 +11,19 @@
   function authService($state, angularAuth0, $timeout) {
 
     var userProfile;
+    var tokenRenewalTimeout;
 
     function login() {
       angularAuth0.authorize();
     }
-
+    
     function handleAuthentication() {
-      angularAuth0.parseHash(function (err, authResult) {
-        if (authResult && authResult.accessToken && authResult.idToken) {
+      angularAuth0.parseHash(function(err, authResult) {
+        if (authResult && authResult.idToken) {
           setSession(authResult);
           $state.go('home');
         } else if (err) {
-          $timeout(function () {
+          $timeout(function() {
             $state.go('home');
           });
           console.log(err);
@@ -31,36 +32,12 @@
       });
     }
 
-    function setSession(authResult) {
-      // Set the time that the access token will expire at
-      let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-      localStorage.setItem('access_token', authResult.accessToken);
-      localStorage.setItem('id_token', authResult.idToken);
-      localStorage.setItem('expires_at', expiresAt);
-    }
-
-    function logout() {
-      // Remove tokens and expiry time from localStorage
-      localStorage.removeItem('access_token');
-      localStorage.removeItem('id_token');
-      localStorage.removeItem('expires_at');
-      $state.go('home');
-    }
-
-    function isAuthenticated() {
-      // Check whether the current time is past the 
-      // access token's expiry time
-      let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
-      return new Date().getTime() < expiresAt;
-    }
-
-
     function getProfile(cb) {
       var accessToken = localStorage.getItem('access_token');
       if (!accessToken) {
         throw new Error('Access token must exist to fetch profile');
       }
-      angularAuth0.client.userInfo(accessToken, function (err, profile) {
+      angularAuth0.client.userInfo(accessToken, function(err, profile) {
         if (profile) {
           setUserProfile(profile);
         }
@@ -76,13 +53,71 @@
       return userProfile;
     }
 
+    function setSession(authResult) {
+      // Set the time that the access token will expire at
+      let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+      localStorage.setItem('access_token', authResult.accessToken);
+      localStorage.setItem('id_token', authResult.idToken);
+      localStorage.setItem('expires_at', expiresAt);
+      scheduleRenewal();
+    }
+    
+    function logout() {
+      // Remove tokens and expiry time from localStorage
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('id_token');
+      localStorage.removeItem('expires_at');
+      clearTimeout(tokenRenewalTimeout);
+      $state.go('home');
+    }
+    
+    function isAuthenticated() {
+      // Check whether the current time is past the 
+      // access token's expiry time
+      let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+      return new Date().getTime() < expiresAt;
+    }
+
+    function renewToken() {
+      angularAuth0.renewAuth(
+        {
+          audience: AUTH0_AUDIENCE,
+          redirectUri: AUTH0_SILENT_AUTH_REDIRECT,
+          usePostMessage: true
+        },
+        function(err, result) {
+          if (err) {
+            alert(
+              'Could not get a new token using silent authentication. ' +
+                err.description
+            );
+          } else {
+            setSession(result);
+            alert('Successfully renewed auth!');
+          }
+        }
+      );
+    }
+
+    function scheduleRenewal() {
+      var expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+      var delay = expiresAt - Date.now();
+      if (delay > 0) {
+        tokenRenewalTimeout = setTimeout(function() {
+          renewToken();
+        }, delay);
+      }
+    }
+
     return {
       login: login,
+      getProfile: getProfile,
+      getCachedProfile: getCachedProfile,
       handleAuthentication: handleAuthentication,
       logout: logout,
       isAuthenticated: isAuthenticated,
-      getProfile: getProfile,
-      getCachedProfile: getCachedProfile,
+      renewToken: renewToken,
+      scheduleRenewal: scheduleRenewal
     }
   }
 })();

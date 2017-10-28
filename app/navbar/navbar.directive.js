@@ -19,9 +19,6 @@
   function navbarController(authService) {
     var vm = this;
     vm.auth = authService;
-
-
-    
   }
   
 })();

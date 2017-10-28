@@ -1,74 +1,73 @@
-<!DOCTYPE html>
-<html lang="en" class="">
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <title>Doman</title>
-    <base href="/">
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="assets/css/animate.css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/simple-line-icons/css/simple-line-icons.css" type="text/css" />
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/font.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <title>Doman</title>
+  <base href="/">
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="assets/css/animate.css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
 
 <body ng-app="app">
-    <div class="app app-header-fixed">
+  <div class="app app-header-fixed">
 
-        <navbar></navbar>
+    <navbar></navbar>
 
-        <!-- content -->
-        <div id="content" class="app-content" role="main">
-            <div class="app-content-body ">
+    <!-- content -->
+    <div id="content" class="app-content" role="main">
+      <div class="app-content-body ">
 
-                <ui-view></ui-view>
+        <ui-view></ui-view>
 
-            </div>
-        </div>
-        <!-- /content -->
-
-        <!-- footer -->
-        <footer id="footer" class="app-footer" role="footer" ng-if="menuFooterOpen">
-            <div class="wrapper b-t bg-light">
-                <span class="pull-right">0.1.0 <i class="fa fa-long-arrow-up"></i></span>
-                <a href="https://www.cvf-brasil.com/brasil.html" target="_blank" class="m-l-sm text-muted"></a> Valle de
-                    Filadelfia &copy; 2017 copyright.
-                </a>
-            </div>
-        </footer>
-        <!-- / footer -->
+      </div>
     </div>
-    <!-- VENDORS LIBS -->
-    <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- /content -->
 
-    <!-- ADMIN LIBS -->
-    <script src="assets/js/admin/ui-load.js" type="text/javascript"></script>
-    <script src="assets/js/admin/ui-jp.config.js" type="text/javascript"></script>
-    <script src="assets/js/admin/ui-jp.js" type="text/javascript"></script>
-    <script src="assets/js/admin/ui-nav.js" type="text/javascript"></script>
-    <script src="assets/js/admin/ui-toggle.js" type="text/javascript"></script>
-    <script src="assets/js/admin/ui-client.js" type="text/javascript"></script>
+    <!-- footer -->
+    <!--footer id="footer" class="app-footer" role="footer" ng-if="menuFooterOpen">
+      <div class="wrapper b-t bg-light">
+        <span class="pull-right">0.1.0 <i class="fa fa-long-arrow-up"></i></span>
+        <a href="https://www.cvf-brasil.com/brasil.html" target="_blank" class="m-l-sm text-muted"></a> Valle de Filadelfia
+        &copy; 2017 copyright.
+        </a>
+      </div>
+    </footer-->
+    <!-- / footer -->
+  </div>
+  <!-- VENDORS LIBS -->
+  <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <!-- ANGULAR LIBS -->
-    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
-    <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
-    <script type="text/javascript" src="node_modules/auth0-js/build/auth0.js"></script>
-    <script type="text/javascript" src="node_modules/angular-auth0/dist/angular-auth0.js"></script>
+  <!-- ADMIN LIBS -->
+  <script src="assets/js/admin/ui-load.js" type="text/javascript"></script>
+  <script src="assets/js/admin/ui-jp.config.js" type="text/javascript"></script>
+  <script src="assets/js/admin/ui-jp.js" type="text/javascript"></script>
+  <script src="assets/js/admin/ui-nav.js" type="text/javascript"></script>
+  <script src="assets/js/admin/ui-toggle.js" type="text/javascript"></script>
+  <script src="assets/js/admin/ui-client.js" type="text/javascript"></script>
 
-    <!-- APP LIB -->
-    <script type="text/javascript" src="app/config-auth0.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
-    <script type="text/javascript" src="app/app.run.js"></script>
-    <script type="text/javascript" src="app/navbar/navbar.directive.js"></script>
-    <script type="text/javascript" src="app/home/home.controller.js"></script>
-    <script type="text/javascript" src="app/static-page/static-page.controller.js"></script>
-    <script type="text/javascript" src="app/callback/callback.controller.js"></script>
-    <script type="text/javascript" src="app/auth/auth.service.js"></script>
+  <!-- ANGULAR LIBS -->
+  <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+  <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="node_modules/auth0-js/build/auth0.js"></script>
+  <script type="text/javascript" src="node_modules/angular-auth0/dist/angular-auth0.js"></script>
+
+  <!-- APP LIB -->
+  <script type="text/javascript" src="auth0-variables.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/app.run.js"></script>
+  <script type="text/javascript" src="app/navbar/navbar.directive.js"></script>
+  <script type="text/javascript" src="app/profile/profile.controller.js"></script>
+  <script type="text/javascript" src="app/home/home.controller.js"></script>
+  <script type="text/javascript" src="app/static-page/static-page.controller.js"></script>
+  <script type="text/javascript" src="app/callback/callback.controller.js"></script>
+  <script type="text/javascript" src="app/auth/auth.service.js"></script>
 
 
 </body>
