@@ -39,6 +39,12 @@
         templateUrl: 'app/callback/callback.html',
         controllerAs: 'vm'
       })
+      .state('atividade', {
+        url: '/atividade',
+        controller: 'AtividadeController',
+        templateUrl: 'app/atividade/atividade.html',
+        controllerAs: 'vm'
+      })
       .state('doman-sobre', {
         url: '/doman-sobre',
         controller: 'StaticPageController',

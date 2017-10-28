@@ -1,6 +1,15 @@
-<h4 ng-if="vm.auth.isAuthenticated()">
-    You are logged in! You can now view your <a ui-sref="profile">profile area</a>.
-</h4>
-<h4 ng-if="!vm.auth.isAuthenticated()">
-  You are not logged in! Please <a ng-click="vm.auth.login()">Log In</a> to continue.
-</h4>
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Home</h1>
+</div>
+<div class="wrapper-md">
+  <div class="row">
+    <div class="col-sm-12">
+      <h4 ng-if="vm.auth.isAuthenticated()">
+        Você está logado!
+      </h4>
+      <h4 ng-if="!vm.auth.isAuthenticated()">
+        Você não está logado!
+      </h4>
+    </div>
+  </div>
+</div>
