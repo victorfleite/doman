@@ -45,6 +45,12 @@
         templateUrl: 'app/atividade/atividade.html',
         controllerAs: 'vm'
       })
+      .state('atividade-item', {
+        url: '/atividade-item',
+        controller: 'AtividadeItemController',
+        templateUrl: 'app/atividade/atividade.item.html',
+        controllerAs: 'vm'
+      })
       .state('doman-sobre', {
         url: '/doman-sobre',
         controller: 'StaticPageController',

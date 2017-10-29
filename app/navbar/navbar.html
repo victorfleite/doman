@@ -1,57 +1,57 @@
 <!-- header -->
 <header id="header" class="app-header navbar" role="menu">
-  <!-- navbar header -->
-  <div class="navbar-header bg-dark">
+    <!-- navbar header -->
+    <div class="navbar-header bg-dark">
 
-    <button class="pull-right visible-xs dk" ui-toggle-class="show" target=".navbar-collapse" ng-if="vm.auth.isAuthenticated()">
+        <button class="pull-right visible-xs dk" ui-toggle-class="show" target=".navbar-collapse" ng-if="vm.auth.isAuthenticated()">
             <i class="glyphicon glyphicon-cog"></i>
         </button>
-    <button class="pull-right visible-xs dk" ng-click="vm.auth.login()" ng-if="!vm.auth.isAuthenticated()">
+        <button class="pull-right visible-xs dk" ng-click="vm.auth.login()" ng-if="!vm.auth.isAuthenticated()">
                 <i class="glyphicon glyphicon-lock"></i>
         </button>
-    <button class="pull-right visible-xs" ui-toggle-class="off-screen" target=".app-aside" ui-scroll="app">
+        <button class="pull-right visible-xs" ui-toggle-class="off-screen" target=".app-aside" ui-scroll="app">
             <i class="glyphicon glyphicon-align-justify"></i>
         </button>
-    <!-- brand -->
-    <a href="/" class="navbar-brand text-lt">        
+        <!-- brand -->
+        <a href="/" class="navbar-brand text-lt">        
             <span class="hidden-folded m-l-xs">Doman</span>
         </a>
-    <!-- / brand -->
-  </div>
-  <!-- / navbar header -->
+        <!-- / brand -->
+    </div>
+    <!-- / navbar header -->
 
 
 
-  <!-- navbar collapse -->
-  <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
-    <!-- buttons -->
-    <div class="nav navbar-nav hidden-xs">
-      <!--a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
+    <!-- navbar collapse -->
+    <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
+        <!-- buttons -->
+        <div class="nav navbar-nav hidden-xs">
+            <!--a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app">
                 <i class="fa fa-dedent fa-fw text"></i>
                 <i class="fa fa-indent fa-fw text-active"></i>
             </a-->
-      <!--a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
+            <!--a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
                 <i class="icon-user fa-fw"></i>
             </a-->
-    </div>
-    <!-- / buttons -->
+        </div>
+        <!-- / buttons -->
 
-    <!-- link and dropdown -->
-    <ul class="nav navbar-nav navbar-right" ng-if="!vm.auth.isAuthenticated()">
-      <li class="dropdown pos-stc">
-        <a href="#" ng-click="vm.auth.login()" class="dropdown-toggle">
+        <!-- link and dropdown -->
+        <ul class="nav navbar-nav navbar-right" ng-if="!vm.auth.isAuthenticated()">
+            <li class="dropdown pos-stc">
+                <a href="#" ng-click="vm.auth.login()" class="dropdown-toggle">
             <span><i class="fa fa-lock m-r-xs"></i> Login</span>
         </a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav hidden-sm">
-      <li class="dropdown pos-stc">
-        <a href="/atividade" class="dropdown-toggle">
+            </li>
+        </ul>
+        <ul class="nav navbar-nav hidden-sm" ng-if="vm.auth.isAuthenticated()">
+            <li class="dropdown pos-stc">
+                <a href="/atividade" class="dropdown-toggle">
             <span><i class="fa fa-play m-r-xs"></i>Atividades</span>
         </a>
-      </li>
-    </ul>
-    <!--ul class="nav navbar-nav hidden-sm">
+            </li>
+        </ul>
+        <!--ul class="nav navbar-nav hidden-sm">
             <li class="dropdown pos-stc">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                     <span>Mega</span> 
@@ -168,11 +168,11 @@
                 </ul>
             </li>
         </ul-->
-    <!-- / link and dropdown -->
+        <!-- / link and dropdown -->
 
-    <!-- nabar right -->
-    <ul class="nav navbar-nav navbar-right">
-      <!--li class="dropdown">
+        <!-- nabar right -->
+        <ul class="nav navbar-nav navbar-right">
+            <!--li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                     <i class="icon-bell fa-fw"></i>
                     <span class="visible-xs-inline">Notifications</span>
@@ -208,18 +208,18 @@
                         </div>
                     </div>
                 </div>
-            </li--> 
-      <li class="dropdown" ng-if="vm.auth.isAuthenticated()">
-        <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
+            </li-->
+            <li class="dropdown" ng-if="vm.auth.isAuthenticated()">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
                     <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                         <img src="assets/img/a0.jpg" alt="...">
                         <i class="on md b-white bottom"></i>
                     </span>
                     <span class="hidden-sm hidden-md">{{vm.profile.nickname}}</span> <b class="caret"></b>
                 </a>
-        <!-- dropdown -->
-        <ul class="dropdown-menu animated fadeInRight w">
-          <!--li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
+                <!-- dropdown -->
+                <ul class="dropdown-menu animated fadeInRight w">
+                    <!--li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
                         <div>
                             <p>300mb of 500mb used</p>
                         </div>
@@ -244,34 +244,37 @@
                     </li>
                     <li class="divider"></li-->
 
-          <li ng-if="vm.auth.isAuthenticated()">
-            <a ui-sref="profile">Profile</a>
-          </li>
-          <li class="divider"></li>
-          <li ng-if="vm.auth.isAuthenticated()">
-            <a ui-sref="access.signin" ng-click="vm.auth.logout()">
+                    <li ng-if="vm.auth.isAuthenticated()">
+                        <a ui-sref="profile">Profile</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li ng-if="vm.auth.isAuthenticated()">
+                        <a ui-sref="access.signin" ng-click="vm.auth.logout()">
                   Logout
               </a>
-          </li>
-          <li ng-if="!vm.auth.isAuthenticated()">
-            <a ui-sref="access.signin" ng-click="vm.auth.login()">
+                    </li>
+                    <li ng-if="!vm.auth.isAuthenticated()">
+                        <a ui-sref="access.signin" ng-click="vm.auth.login()">
                 Log In
             </a>
-          </li>
+                    </li>
+                </ul>
+                <!-- / dropdown -->
+            </li>
         </ul>
-        <!-- / dropdown -->
-      </li>
-    </ul>
-    <!-- / navbar right -->
-  </div>
-  <!-- / navbar collapse -->
+        <!-- / navbar right -->
+    </div>
+    <!-- / navbar collapse -->
 
-  <!-- aside -->
-  <aside id="aside" class="app-aside hidden-xs bg-dark">
+</header>
+<!-- / header -->
+
+<!-- aside -->
+<aside id="aside" class="app-aside hidden-xs bg-dark">
     <div class="aside-wrap">
-      <div class="navi-wrap">
-        <!-- user -->
-        <!--div class="clearfix hidden-xs text-center hide" id="aside-user">
+        <div class="navi-wrap">
+            <!-- user -->
+            <!--div class="clearfix hidden-xs text-center hide" id="aside-user">
                     <div class="dropdown wrapper">
                         <a href="app.page.profile">
                             <span class="thumb-lg w-auto-folded avatar m-t-sm">
@@ -317,16 +320,16 @@
                     </div>
                     <div class="line dk hidden-folded"></div>
                 </div-->
-        <!-- / user -->
+            <!-- / user -->
 
-        <!-- nav -->
-        <nav ui-nav class="navi clearfix">
-          <ul class="nav">
-            <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-              <span>Metodologia</span>
-            </li>
-            <li>
-              <a href="#" class="auto">      
+            <!-- nav -->
+            <nav ui-nav class="navi clearfix">
+                <ul class="nav">
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        <span>Metodologia</span>
+                    </li>
+                    <li>
+                        <a href="#" class="auto">      
                                 <span class="pull-right text-muted">
                                     <i class="fa fa-fw fa-angle-right text"></i>
                                     <i class="fa fa-fw fa-angle-down text-active"></i>
@@ -334,35 +337,35 @@
                                 <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
                                 <span class="font-bold">Glenn Doman</span>
                             </a>
-              <ul class="nav nav-sub dk">
-                <li class="nav-sub-header">
-                  <a href="#">
+                        <ul class="nav nav-sub dk">
+                            <li class="nav-sub-header">
+                                <a href="#">
                                         <span>Glenn Doman</span>
                                     </a>
-                </li>
-                <li>
-                  <a href="/doman-sobre">
+                            </li>
+                            <li>
+                                <a href="/doman-sobre">
                                         <span>Sobre</span>
                                     </a>
-                </li>
-                <li>
-                  <a href="/doman-filosofia">
-                    <!--b class="label bg-info pull-right">N</b-->
-                    <span>Filosofia</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!--li>
+                            </li>
+                            <li>
+                                <a href="/doman-filosofia">
+                                    <!--b class="label bg-info pull-right">N</b-->
+                                    <span>Filosofia</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--li>
                             <a href="mail.html">
                                 <b class="badge bg-info pull-right">9</b>
                                 <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
                                 <span class="font-bold">Email</span>
                             </a>
                         </li-->
-            <!--li class="line dk"></li-->
+                    <!--li class="line dk"></li-->
 
-            <!--li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                    <!--li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                             <span>Components</span>
                         </li>
                         <li>
@@ -604,12 +607,12 @@
                                 <span>Documents</span>
                             </a>
                         </li-->
-          </ul>
-        </nav>
-        <!-- nav -->
+                </ul>
+            </nav>
+            <!-- nav -->
 
-        <!-- aside footer -->
-        <!--div class="wrapper m-t">
+            <!-- aside footer -->
+            <!--div class="wrapper m-t">
                     <div class="text-center-folded">
                         <span class="pull-right pull-none-folded">60%</span>
                         <span class="hidden-folded">Milestone</span>
@@ -627,12 +630,8 @@
                         </div>
                     </div>
                 </div-->
-        <!-- / aside footer -->
-      </div>
+            <!-- / aside footer -->
+        </div>
     </div>
-  </aside>
-  <!-- / aside -->
-
-
-</header>
-<!-- / header -->
+</aside>
+<!-- / aside -->
