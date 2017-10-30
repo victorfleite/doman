@@ -40,14 +40,21 @@
         <ul class="nav navbar-nav navbar-right" ng-if="!vm.auth.isAuthenticated()">
             <li class="dropdown pos-stc">
                 <a href="#" ng-click="vm.auth.login()" class="dropdown-toggle">
-            <span><i class="fa fa-lock m-r-xs"></i> Login</span>
-        </a>
+                    <span><i class="fa fa-sign-in m-r-xs"></i> Login</span>
+                </a>
             </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-if="vm.auth.isAuthenticated()">
+                <li class="dropdown pos-stc">
+                    <a href="#" ng-click="vm.auth.logout()" class="dropdown-toggle">
+                        <span><i class="fa fa-sign-out m-r-xs"></i> Sair</span>
+                    </a>
+                </li>
         </ul>
         <ul class="nav navbar-nav hidden-sm" ng-if="vm.auth.isAuthenticated()">
             <li class="dropdown pos-stc">
                 <a href="/atividade" class="dropdown-toggle">
-            <span><i class="fa fa-play m-r-xs"></i>Atividades</span>
+            <span><i class="fa fa-smile-o m-r-xs"></i>Atividades</span>
         </a>
             </li>
         </ul>
@@ -171,8 +178,8 @@
         <!-- / link and dropdown -->
 
         <!-- nabar right -->
-        <ul class="nav navbar-nav navbar-right">
-            <!--li class="dropdown">
+        <!--ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                     <i class="icon-bell fa-fw"></i>
                     <span class="visible-xs-inline">Notifications</span>
@@ -208,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-            </li-->
+            </li>
             <li class="dropdown" ng-if="vm.auth.isAuthenticated()">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
                     <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
@@ -217,9 +224,8 @@
                     </span>
                     <span class="hidden-sm hidden-md">{{vm.profile.nickname}}</span> <b class="caret"></b>
                 </a>
-                <!-- dropdown -->
                 <ul class="dropdown-menu animated fadeInRight w">
-                    <!--li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
+                    <li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
                         <div>
                             <p>300mb of 500mb used</p>
                         </div>
@@ -242,7 +248,7 @@
                             Help
                         </a>
                     </li>
-                    <li class="divider"></li-->
+                    <li class="divider"></li>
 
                     <li ng-if="vm.auth.isAuthenticated()">
                         <a ui-sref="profile">Profile</a>
@@ -250,18 +256,17 @@
                     <li class="divider"></li>
                     <li ng-if="vm.auth.isAuthenticated()">
                         <a ui-sref="access.signin" ng-click="vm.auth.logout()">
-                  Logout
-              </a>
+                            Logout
+                        </a>
                     </li>
                     <li ng-if="!vm.auth.isAuthenticated()">
                         <a ui-sref="access.signin" ng-click="vm.auth.login()">
-                Log In
-            </a>
+                        Log In
+                    </a>
                     </li>
                 </ul>
-                <!-- / dropdown -->
             </li>
-        </ul>
+        </ul-->
         <!-- / navbar right -->
     </div>
     <!-- / navbar collapse -->
@@ -334,7 +339,7 @@
                                     <i class="fa fa-fw fa-angle-right text"></i>
                                     <i class="fa fa-fw fa-angle-down text-active"></i>
                                 </span>
-                                <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+                                <i class="glyphicon glyphicon-briefcase icon text-primary-dker"></i>
                                 <span class="font-bold">Glenn Doman</span>
                             </a>
                         <ul class="nav nav-sub dk">

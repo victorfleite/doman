@@ -414,7 +414,9 @@ a.list-group-item.hover {
 
 .panel {
   border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
+
 
 .panel .accordion-toggle {
   display: block;
@@ -677,7 +679,7 @@ body {
   z-index: -1;
   display: block;
   width: inherit;
-  background-color: #f0f3f4;
+  /*background-color: #f0f3f4;*/
   border: inherit;
   content: "";
 }

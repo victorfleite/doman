@@ -6,6 +6,13 @@
     .module('app')
     .controller('CallbackController', callbackController);
 
-  function callbackController() {}
+	callbackController.$inject = [];
+
+  function callbackController() {
+
+  		
+
+
+  }
 
 })();

@@ -6,14 +6,16 @@
     .module('app')
     .controller('HomeController', homeController);
 
-  homeController.$inject = ['authService'];
+  homeController.$inject = ['authService', '$location'];
 
-  function homeController(authService) {
+  function homeController(authService, $location) {
 
     var vm = this;
     vm.auth = authService;
 
     vm.profile;
+
+    $location.path("/atividade");
 
   }
 
