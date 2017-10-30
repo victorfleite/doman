@@ -49,7 +49,6 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  border: 2px solid #2B2E85;
   border-radius: 0;
   box-shadow: none;
 }
@@ -59,7 +58,7 @@ a {
   right: 0;
   left: 0;
   height: 50px;
-  padding: 10px;
+  padding: 10px;  
   background: #FFE204;
   border: 0;
 }

@@ -138,7 +138,7 @@
                 <div>
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                            <img ng-src="{{slide.image}}"  class="img-responsive" style="margin:auto;">
+                            <img ng-src="{{slide.image}}" class="img-responsive" style="margin:auto;">
                             <div class="carousel-caption">
                                 <h4>{{slide.id}}</h4>
                                 <p>{{slide.text}}</p>
@@ -152,13 +152,16 @@
 
             <!-- footer -->
             <div class="modal-footer">
+                <button class="btn btn-primary">
+                            Já sabe
+                          </button>
                 <!--button class="btn btn-secondary" data-dismiss="modal">
   close
 </button>
                 <button class="btn btn-default">
   Default
 </button-->
-                <button class="btn btn-primary" ng-click="ok()">
+                <button class="btn btn-warning" ng-click="ok()">
   Fechar
 </button>
             </div>
