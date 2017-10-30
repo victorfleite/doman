@@ -1034,6 +1034,7 @@ body {
   .col.show {
     display: table-cell !important;
   }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -5088,6 +5089,29 @@ a.text-#000000:hover {
   -webkit-animation: movingbar 0.75s infinite;
      -moz-animation: movingbar 0.75s infinite;
           animation: movingbar 0.75s infinite;
+}
+
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+}
+.video-thumbnail:before{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  content: "\f01d";
+  font-family: FontAwesome;
+  font-size: 7.2em;
+  color: #fff;
+  opacity: .8;
+  text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+}
+.video-thumbnail:hover:before{
+  color: #eee;
 }
 
 /* Moving bar */

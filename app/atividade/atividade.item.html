@@ -6,9 +6,11 @@
         <div class="col-sm-7">
             <div class="blog-post">
                 <div class="panel">
-                    <div>
-                        <img src="assets/img/c0.jpg" class="img-full">
-                    </div>
+                    <a href="#" ng-click="open('lg')">
+                        <div class="video-thumbnail">
+                            <img src="assets/img/c0.jpg" class="img-full">
+                        </div>
+                    </a>
                     <div class="wrapper-lg">
                         <h3 class="m-t-none"><a href>Descrição</a></h3>
                         <div class="line line-lg b-b b-light"></div>
@@ -113,3 +115,58 @@
         </div>
     </div>
 </div>
+
+<script type="text/ng-template" id="myModalContent.html">
+
+    <!-- dialog -->
+    <div class="modal-dialog">
+
+        <!-- content -->
+        <div class="modal-content">
+
+            <!-- header -->
+            <div class="modal-header">
+                <h1 id="myModalLabel" class="modal-title">
+                    Animais 1
+                </h1>
+            </div>
+            <!-- header -->
+
+            <!-- body -->
+            <div class="modal-body">
+
+                <div>
+                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                            <img ng-src="{{slide.image}}"  class="img-responsive" style="margin:auto;">
+                            <div class="carousel-caption">
+                                <h4>{{slide.id}}</h4>
+                                <p>{{slide.text}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- body -->
+
+            <!-- footer -->
+            <div class="modal-footer">
+                <!--button class="btn btn-secondary" data-dismiss="modal">
+  close
+</button>
+                <button class="btn btn-default">
+  Default
+</button-->
+                <button class="btn btn-primary" ng-click="ok()">
+  Fechar
+</button>
+            </div>
+            <!-- footer -->
+
+        </div>
+        <!-- content -->
+
+    </div>
+    <!-- dialog -->
+</script>
