@@ -6,7 +6,7 @@
         .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
             $scope.items = items;
             
-            $scope.myInterval = 5000;
+            $scope.myInterval = 0;
             $scope.noWrapSlides = false;
             $scope.active = 0;
             var slides = $scope.slides = [];
@@ -73,6 +73,20 @@
             $scope.cancel = function () {
                 $uibModalInstance.dismiss('cancel');
             };
+            $scope.carouselNext = function() {
+                $('#carousel-main').carousel('next');
+              }
+              $scope.carouselPrev = function() {
+                $('#carousel-main').carousel('prev');
+            }
+            $scope.swipeFn = function(side){                
+                if(side == 'swipe-left'){
+                    $scope.carouselPrev();
+                }else if(side == 'swipe-right'){
+                    $scope.carouselNext();
+                }
+            }
+            
         });
 
     angular

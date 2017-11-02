@@ -17,8 +17,20 @@
                             <carousel-item>
                                 <div class="slides-thumbnail-slide">
                                     <img src="assets/img/c0.jpg" width="100px" class="img-full">
-                                </div>                                
+                                </div>
                             </carousel-item>
+                            <!-- For customize carousel next, previous button -->
+                            <carousel-prev>
+                                <!-- placed your previous button here -->
+                                <!--button>Prev</button-->
+                                <!-- end -->
+                            </carousel-prev>
+
+                            <carousel-next>
+                                <!-- placed your next button here -->
+                                <!--button>next</button-->
+                                <!-- end -->
+                            </carousel-next>
                         </ui-carousel>
                     </div>
                     <div class="wrapper-lg">
@@ -146,9 +158,9 @@
             <div class="modal-body">
 
                 <div>
-                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                    <div id="carousel-main" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                            <img ng-src="{{slide.image}}" class="img-responsive" style="margin:auto;">
+                            <img ng-src="{{slide.image}}"  ng-swipe-left="swipeFn('swipe-left')" ng-swipe-right="swipeFn('swipe-right')" class="img-responsive" style="margin:auto;">
                             <div class="carousel-caption">
                                 <h4>{{slide.id}}</h4>
                                 <p>{{slide.text}}</p>
@@ -162,8 +174,8 @@
 
             <!-- footer -->
             <div class="modal-footer">
-                <button class="btn btn-primary">
-                            Já sabe
+                <button class="btn btn-primary" ng-click="randomize();">
+                            Aleatório
                           </button>
                 <!--button class="btn btn-secondary" data-dismiss="modal">
   close

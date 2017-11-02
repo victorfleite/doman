@@ -72,16 +72,6 @@ a {
   padding: 10px;
   background: #f1f3f5;
 }
-.btn {
-  height: 40px;
-  border-radius: 0;
-}
-.btn:focus,
-.btn:active,
-.btn:active:focus {
-  box-shadow: none;
-  outline: none;
-}
 .btn-modal {
   position: absolute;
   top: 50%;
@@ -89,71 +79,6 @@ a {
   margin-top: -20px;
   margin-left: -100px;
   width: 200px;
-}
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-  font-weight: 300;
-  font-size: 1.6rem;
-  color: #767b93;
-  color: #fff;
-  text-align: center;
-  background: #60cc69;
-  border: 1px solid #36a940;
-  border-bottom: 3px solid #36a940;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-}
-.btn-primary:active,
-.btn-primary:hover:active,
-.btn-primary:focus:active,
-.btn-primary:active:active {
-  border-bottom: 1px solid #36a940;
-}
-.btn-default,
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active {
-  font-weight: 300;
-  font-size: 1.6rem;
-  color: #fff;
-  text-align: center;
-  background: #bfc5ce;
-  border: 1px solid #a2aab8;
-  border-bottom: 3px solid #a2aab8;
-}
-.btn-default:active,
-.btn-default:hover:active,
-.btn-default:focus:active,
-.btn-default:active:active {
-  border-bottom: 1px solid #a2aab8;
-}
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus,
-.btn-secondary:active {
-  color: #cc7272;
-  background: transparent;
-  border: 0;
-}
-h1,
-h2,
-h3 {
-  color: #60cc69;
-  line-height: 1.5;
-}
-h1:first-child,
-h2:first-child,
-h3:first-child {
-  margin-top: 0;
-}
-p {
-  font-size: 1.4em;
-  line-height: 1.5;
-  color: #9397a9;
-}
-p:last-child {
-  margin-bottom: 0;
 }
 ::-webkit-scrollbar {
   -webkit-appearance: none;

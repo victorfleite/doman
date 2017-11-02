@@ -8,7 +8,8 @@
       'ui.router',
       'easypiechart',
       'ui.bootstrap',
-      'ui.carousel'
+      'ui.carousel',
+      'ngTouch'
     ])
     .config(config);
 
