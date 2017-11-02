@@ -5114,6 +5114,15 @@ a.text-#000000:hover {
   color: #eee;
 }
 
+.slides-thumbnail{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.slides-thumbnail-slide{
+  margin:3px;
+}
+
 /* Moving bar */
 
 @-webkit-keyframes movingbar {

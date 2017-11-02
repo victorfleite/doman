@@ -7,7 +7,8 @@
       'auth0.auth0',
       'ui.router',
       'easypiechart',
-      'ui.bootstrap'
+      'ui.bootstrap',
+      'ui.carousel'
     ])
     .config(config);
 
