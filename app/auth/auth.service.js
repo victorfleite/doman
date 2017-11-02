@@ -16,7 +16,7 @@
     function login() {
       angularAuth0.authorize();
     }
-    
+
     function handleAuthentication() {
       angularAuth0.parseHash(function(err, authResult) {
         if (authResult && authResult.idToken) {

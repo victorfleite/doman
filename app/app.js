@@ -36,7 +36,8 @@
         url: '/profile',
         controller: 'ProfileController',
         templateUrl: 'app/profile/profile.html',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        onEnter: checkAuthentication
       })
       .state('callback', {
         url: '/callback',
@@ -48,13 +49,15 @@
         url: '/atividade',
         controller: 'AtividadeController',
         templateUrl: 'app/atividade/atividade.html',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        onEnter: checkAuthentication
       })
       .state('atividade-item', {
         url: '/atividade-item',
         controller: 'AtividadeItemController',
         templateUrl: 'app/atividade/atividade.item.html',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        onEnter: checkAuthentication
       })
       .state('doman-sobre', {
         url: '/doman-sobre',
@@ -69,6 +72,13 @@
         controllerAs: 'vm'
       });
 
+    function checkAuthentication($transition$) {
+      var $state = $transition$.router.stateService;
+      var auth = $transition$.injector().get('authService');
+      if (!auth.isAuthenticated()) {
+        return $state.target('home');
+      }
+    }
     // Initialization for the angular-auth0 library
     angularAuth0Provider.init({
       clientID: AUTH0_CLIENT_ID,
@@ -78,6 +88,7 @@
       redirectUri: AUTH0_CALLBACK_URL,
       scope: 'openid profile'
     });
+
 
     $urlRouterProvider.otherwise('/');
 
