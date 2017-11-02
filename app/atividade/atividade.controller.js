@@ -13,9 +13,7 @@
     var vm = this;
     vm.auth = authService;
 
-    // Verifica se esta logado, senao redireciona para o login.  
-    authService.checkLogged();
-   
+ 
   }
 
 })();
