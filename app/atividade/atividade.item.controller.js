@@ -5,7 +5,7 @@
     angular.module('app')
         .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
             $scope.items = items;
-
+            
             $scope.myInterval = 5000;
             $scope.noWrapSlides = false;
             $scope.active = 0;

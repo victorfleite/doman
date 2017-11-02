@@ -2,19 +2,6 @@
   margin-top: 7px
 }
 
-.loading {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-}
-
 a {
   cursor: pointer;
 }
@@ -177,3 +164,31 @@ p:last-child {
 ::-webkit-scrollbar-thumb {
   background: #b5c0cb;
 }
+
+
+/* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 1999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
