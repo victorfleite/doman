@@ -9,7 +9,8 @@
       'easypiechart',
       'ui.bootstrap',
       'ui.carousel',
-      'ngTouch'
+      'ngTouch',
+      'angularScreenfull'
     ])
     .config(config);
 

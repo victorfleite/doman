@@ -5121,6 +5121,11 @@ a.text-#000000:hover {
 }
 .slides-thumbnail-slide{
   margin:3px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.image-center {
+  margin: auto;
+  width: 50%;
 }
 
 /* Moving bar */

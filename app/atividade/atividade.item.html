@@ -12,11 +12,13 @@
                         </div>
                     </a>
                     <div class="slides-thumbnail" style="height: 100px">
-                        <ui-carousel slides="[1,2,3,4]" slides-to-show="3" slides-to-scroll="1" initial-slide="1" autoplay="true" autoplay-speed="2000"
-                            dots="true">
+                        <ui-carousel slides="slides" slides-to-show="4" slides-to-scroll="1" initial-slide="1" autoplay="true" autoplay-speed="2000"
+                            dots="false">
                             <carousel-item>
                                 <div class="slides-thumbnail-slide">
-                                    <img src="assets/img/c0.jpg" width="100px" class="img-full">
+                                    <div class="image-center">
+                                        <img ng-src="{{item.image}}"  height="113px" width="150x" class="img-responsive">
+                                    </div>                                    
                                 </div>
                             </carousel-item>
                             <!-- For customize carousel next, previous button -->
@@ -38,7 +40,10 @@
                         <div class="line line-lg b-b b-light"></div>
                         <div>
                             <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis suscipit erat, eget pulvinar
-                                lorem. Vestibulum viverra, nisl in suscipit molestie, lorem nisi cursus ligula, sit amet
+                                lorem. Vestibulum viverra, nisl in suscipit molestie, lorem nisi cursus ligula, sit amet Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in facilisis odio. In erat mi, volutpat non sem vel, condimentum pretium metus. Vestibulum enim nibh, aliquet eget ullamcorper id, laoreet a lorem. Ut ac rhoncus dui. Aenean laoreet sagittis orci nec suscipit. Nulla feugiat urna a urna vulputate maximus. Etiam eget varius libero. Cras rutrum euismod urna, non molestie tortor bibendum vitae. Nullam pellentesque tortor nec lorem laoreet, sit amet consectetur dolor ullamcorper. Sed accumsan mi quis nibh auctor pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc quis massa vitae eros accumsan efficitur a quis turpis. 
+                            </p>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis suscipit erat, eget pulvinar
+                                lorem. Vestibulum viverra, nisl in suscipit molestie, lorem nisi cursus ligula, sit amet Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in facilisis odio. In erat mi, volutpat non sem vel, condimentum pretium metus. Vestibulum enim nibh, aliquet eget ullamcorper id, laoreet a lorem. Ut ac rhoncus dui. Aenean laoreet sagittis orci nec suscipit. Nulla feugiat urna a urna vulputate maximus. Etiam eget varius libero. Cras rutrum euismod urna, non molestie tortor bibendum vitae. Nullam pellentesque tortor nec lorem laoreet, sit amet consectetur dolor ullamcorper. Sed accumsan mi quis nibh auctor pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc quis massa vitae eros accumsan efficitur a quis turpis. 
                             </p>
                         </div>
                     </div>
@@ -73,7 +78,7 @@
                     <div class="inline">
                         <div easypiechart options="options" percent="percent">
                             <div>
-                                <span class="h2 m-l-sm step">65</span>%
+                                <span class="h2 m-l-sm step">{{percent}}</span>%
                                 <div class="text text-sm">até hoje</div>
                             </div>
                         </div>
@@ -157,7 +162,7 @@
             <!-- body -->
             <div class="modal-body">
 
-                <div>
+                <div ngsf-fullscreen="fullscreenCtrl">
                     <div id="carousel-main" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                             <img ng-src="{{slide.image}}"  ng-swipe-left="swipeFn('swipe-left')" ng-swipe-right="swipeFn('swipe-right')" class="img-responsive" style="margin:auto;">
@@ -174,9 +179,14 @@
 
             <!-- footer -->
             <div class="modal-footer">
+                    <button class="btn btn-success" ng-click="fullscreenCtrl.toggleFullscreen()">
+                            Fullscreen
+                          </button>
                 <button class="btn btn-primary" ng-click="randomize();">
                             Aleatório
                           </button>
+
+                          
                 <!--button class="btn btn-secondary" data-dismiss="modal">
   close
 </button>

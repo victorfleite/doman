@@ -3,91 +3,108 @@
     'use strict';
 
     angular.module('app')
-        .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
-            $scope.items = items;
-            
-            $scope.myInterval = 0;
-            $scope.noWrapSlides = false;
-            $scope.active = 0;
-            var slides = $scope.slides = [];
-            var currIndex = 0;
+        .controller('ModalInstanceCtrl', modalInstanceCtrl);
 
-            $scope.addSlide = function () {
-                var newWidth = 800 + slides.length + 1;
-                slides.push({
-                    image: '//unsplash.it/' + newWidth + '/550',
-                    text: ['', '', '', ''][slides.length % 4],
-                    id: currIndex++
-                });
-            };
+    function modalInstanceCtrl($scope, $uibModalInstance, items) {
 
-            $scope.randomize = function () {
-                var indexes = generateIndexesArray();
-                assignNewIndexesToSlides(indexes);
-            };
+        var slides = $scope.slides = [];
+        $scope.items = items;
 
-            for (var i = 0; i < 4; i++) {
-                $scope.addSlide();
+
+        $scope.addSlide = function (image, id) {
+            var newWidth = 800 + slides.length + 1;
+            slides.push({
+                image: image,
+                text: ['', '', '', ''][slides.length % 4],
+                id: id
+            });
+        };
+
+        for (var i = 0; i < items.length; i++) {
+            $scope.addSlide(items[i].image, i);
+        }
+
+
+        $scope.myInterval = 0;
+        $scope.noWrapSlides = false;
+        $scope.active = 0;
+
+        var currIndex = 0;
+
+
+
+        $scope.randomize = function () {
+            var indexes = generateIndexesArray();
+            assignNewIndexesToSlides(indexes);
+        };
+
+
+        // Randomize logic below
+
+        function assignNewIndexesToSlides(indexes) {
+            for (var i = 0, l = slides.length; i < l; i++) {
+                slides[i].id = indexes.pop();
             }
+        }
 
-            // Randomize logic below
+        function generateIndexesArray() {
+            var indexes = [];
+            for (var i = 0; i < currIndex; ++i) {
+                indexes[i] = i;
+            }
+            return shuffle(indexes);
+        }
 
-            function assignNewIndexesToSlides(indexes) {
-                for (var i = 0, l = slides.length; i < l; i++) {
-                    slides[i].id = indexes.pop();
+        // http://stackoverflow.com/questions/962802#962890
+        function shuffle(array) {
+            var tmp, current, top = array.length;
+
+            if (top) {
+                while (--top) {
+                    current = Math.floor(Math.random() * (top + 1));
+                    tmp = array[current];
+                    array[current] = array[top];
+                    array[top] = tmp;
                 }
             }
 
-            function generateIndexesArray() {
-                var indexes = [];
-                for (var i = 0; i < currIndex; ++i) {
-                    indexes[i] = i;
-                }
-                return shuffle(indexes);
+            return array;
+        }
+
+        $scope.selected = {
+            item: $scope.items[0]
+        };
+
+        $scope.ok = function () {
+            $uibModalInstance.close($scope.selected.item);
+        };
+
+        $scope.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+        $scope.carouselNext = function () {
+            $('#carousel-main').carousel('next');
+        }
+        $scope.carouselPrev = function () {
+            $('#carousel-main').carousel('prev');
+        }
+        $scope.swipeFn = function (side) {
+            if (side == 'swipe-left') {
+                $scope.carouselPrev();
+            } else if (side == 'swipe-right') {
+                $scope.carouselNext();
             }
+        }
 
-            // http://stackoverflow.com/questions/962802#962890
-            function shuffle(array) {
-                var tmp, current, top = array.length;
 
-                if (top) {
-                    while (--top) {
-                        current = Math.floor(Math.random() * (top + 1));
-                        tmp = array[current];
-                        array[current] = array[top];
-                        array[top] = tmp;
-                    }
-                }
-
-                return array;
+        $scope.setFullScreen = function () {
+            if (screenfull.enabled) {
+                screenfull.request();
             }
+        }
 
-            $scope.selected = {
-                item: $scope.items[0]
-            };
+    }
 
-            $scope.ok = function () {
-                $uibModalInstance.close($scope.selected.item);
-            };
-
-            $scope.cancel = function () {
-                $uibModalInstance.dismiss('cancel');
-            };
-            $scope.carouselNext = function() {
-                $('#carousel-main').carousel('next');
-              }
-              $scope.carouselPrev = function() {
-                $('#carousel-main').carousel('prev');
-            }
-            $scope.swipeFn = function(side){                
-                if(side == 'swipe-left'){
-                    $scope.carouselPrev();
-                }else if(side == 'swipe-right'){
-                    $scope.carouselNext();
-                }
-            }
-            
-        });
 
     angular
         .module('app')
@@ -123,7 +140,13 @@
 
         // MODAL ATIVIDADES
 
-        $scope.items = ['item1', 'item2', 'item3'];
+        $scope.slides = [
+            { image: 'assets/img/01' },
+            { image: 'assets/img/02' },
+            { image: 'assets/img/03' },
+            { image: 'assets/img/04' },
+            { image: 'assets/img/05' }
+        ]
 
         $scope.open = function (size, parentSelector) {
 
@@ -140,7 +163,7 @@
                 appendTo: parentElem,
                 resolve: {
                     items: function () {
-                        return $scope.items;
+                        return $scope.slides;
                     }
                 }
             });
