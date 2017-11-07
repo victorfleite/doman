@@ -16,7 +16,7 @@ class Educador extends BaseEducador {
     public function rules() {
         return [
             [['nome', 'email'], 'required'],
-            [['tipo', 'status'], 'integer'],
+            [['tipo', 'status', 'user_id'], 'integer'],
             [['nome', 'email'], 'string', 'max' => 255]
         ];
     }

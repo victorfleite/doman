@@ -15,9 +15,9 @@ class AtividadeAluno extends BaseAtividadeAluno {
      */
     public function rules() {
         return [
-            [['atividade_id', 'aluno_id'], 'required'],
-            [['atividade_id', 'aluno_id', 'status', 'atividade_pai'], 'integer'],
-            [['data_criacao'], 'safe']
+            [['atividade_id', 'aluno_id', 'grupo_id'], 'required'],
+            [['atividade_id', 'aluno_id', 'status', 'atividade_pai', 'grupo_id'], 'integer'],
+            [['data_abertura', 'data_finalizacao'], 'safe'],
         ];
     }
 

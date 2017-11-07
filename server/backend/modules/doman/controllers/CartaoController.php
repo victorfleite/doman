@@ -14,16 +14,13 @@ use yii\filters\VerbFilter;
  */
 class CartaoController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['post'],
                 ],
             ],
         ];
@@ -51,8 +48,13 @@ class CartaoController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        $providerCartaoAluno = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->cartaoAlunos,
+        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'providerCartaoAluno' => $providerCartaoAluno,
         ]);
     }
 
@@ -65,7 +67,7 @@ class CartaoController extends Controller
     {
         $model = new Cartao();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -84,7 +86,7 @@ class CartaoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -101,11 +103,12 @@ class CartaoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $this->findModel($id)->deleteWithRelated();
 
         return $this->redirect(['index']);
     }
 
+    
     /**
      * Finds the Cartao model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -118,7 +121,27 @@ class CartaoController extends Controller
         if (($model = Cartao::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for CartaoAluno
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddCartaoAluno()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('CartaoAluno');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formCartaoAluno', ['row' => $row]);
+        } else {
+            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
         }
     }
 }

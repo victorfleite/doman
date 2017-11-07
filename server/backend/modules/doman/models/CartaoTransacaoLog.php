@@ -17,7 +17,6 @@ class CartaoTransacaoLog extends BaseCartaoTransacaoLog {
         return [
             [['cartao_aluno_id'], 'required'],
             [['cartao_aluno_id', 'transacao_status'], 'integer'],
-            [['data_transacao'], 'safe']
         ];
     }
 

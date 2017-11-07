@@ -11,38 +11,37 @@ use Yii;
  * @property string $nome
  * @property string $descricao
  * @property integer $status
+ * @property string $data_criacao
+ * @property integer $user_id
  *
- * @property \app\modules\doman\models\PlanoAtividade[] $planoAtividades
- * @property \app\modules\doman\models\Atividade[] $atividades
  * @property \app\modules\doman\models\PlanoEducadorLicenca[] $planoEducadorLicencas
+ * @property \app\modules\doman\models\PlanoGrupo[] $planoGrupos
+ * @property \app\modules\doman\models\Grupo[] $grupos
  */
-class Plano extends \yii\db\ActiveRecord
-{
+class Plano extends \yii\db\ActiveRecord {
+
     use \mootensai\relation\RelationTrait;
 
-
     /**
-    * This function helps \mootensai\relation\RelationTrait runs faster
-    * @return array relation names of this model
-    */
-    public function relationNames()
-    {
+     * This function helps \mootensai\relation\RelationTrait runs faster
+     * @return array relation names of this model
+     */
+    public function relationNames() {
         return [
-            'planoAtividades',
-            'atividades',
-            'planoEducadorLicencas'
+            'planoEducadorLicencas',
+            'planoGrupos',
+            'grupos'
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['nome'], 'required'],
             [['descricao'], 'string'],
-            [['status'], 'integer'],
+            [['status', 'user_id'], 'integer'],
             [['nome'], 'string', 'max' => 255]
         ];
     }
@@ -50,45 +49,43 @@ class Plano extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'plano';
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
-            'id' => 'ID',
-            'nome' => 'Nome',
-            'descricao' => 'Descricao',
-            'status' => 'Status',
+            'id' => Yii::t('translation', 'ID'),
+            'nome' => Yii::t('translation', 'Nome'),
+            'descricao' => Yii::t('translation', 'Descricao'),
+            'status' => Yii::t('translation', 'Status'),
+            'data_criacao' => Yii::t('translation', 'Data Criacao'),
+            'user_id' => Yii::t('translation', 'User ID'),
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPlanoAtividades()
-    {
-        return $this->hasMany(\app\modules\doman\models\PlanoAtividade::className(), ['plano_id' => 'id']);
-    }
-        
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getAtividades()
-    {
-        return $this->hasMany(\app\modules\doman\models\Atividade::className(), ['id' => 'atividade_id'])->viaTable('plano_atividade', ['plano_id' => 'id']);
-    }
-        
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPlanoEducadorLicencas()
-    {
+    public function getPlanoEducadorLicencas() {
         return $this->hasMany(\app\modules\doman\models\PlanoEducadorLicenca::className(), ['plano_id' => 'id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPlanoGrupos() {
+        return $this->hasMany(\app\modules\doman\models\PlanoGrupo::className(), ['plano_id' => 'id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGrupos() {
+        return $this->hasMany(\app\modules\doman\models\Grupo::className(), ['id' => 'grupo_id'])->viaTable('plano_grupo', ['plano_id' => 'id']);
+    }
+
+}

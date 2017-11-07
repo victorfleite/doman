@@ -16,8 +16,8 @@ class Licenca extends BaseLicenca {
     public function rules() {
         return [
             [['educador_id', 'tipo'], 'required'],
-            [['educador_id', 'tipo', 'status'], 'integer'],
-            [['data_inicio', 'data_fim', 'data_criacao'], 'safe']
+            [['educador_id', 'tipo', 'status', 'user_id'], 'integer'],
+            [['data_inicio', 'data_fim'], 'safe'],
         ];
     }
 

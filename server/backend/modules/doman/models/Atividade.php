@@ -15,9 +15,9 @@ class Atividade extends BaseAtividade {
      */
     public function rules() {
         return [
-            [['titulo'], 'required'],
-            [['status'], 'integer'],
-            [['data_publicacao', 'data_criacao'], 'safe'],
+            [['titulo', 'user_id'], 'required'],
+            [['status', 'user_id', 'user_publicacao_id'], 'integer'],
+            [['data_publicacao'], 'safe'],
             [['titulo'], 'string', 'max' => 255]
         ];
     }

@@ -14,17 +14,15 @@ use Yii;
  *
  * @property \app\modules\doman\models\CartaoAluno $cartaoAluno
  */
-class CartaoTransacaoLog extends \yii\db\ActiveRecord
-{
+class CartaoTransacaoLog extends \yii\db\ActiveRecord {
+
     use \mootensai\relation\RelationTrait;
 
-
     /**
-    * This function helps \mootensai\relation\RelationTrait runs faster
-    * @return array relation names of this model
-    */
-    public function relationNames()
-    {
+     * This function helps \mootensai\relation\RelationTrait runs faster
+     * @return array relation names of this model
+     */
+    public function relationNames() {
         return [
             'cartaoAluno'
         ];
@@ -33,41 +31,37 @@ class CartaoTransacaoLog extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['cartao_aluno_id'], 'required'],
             [['cartao_aluno_id', 'transacao_status'], 'integer'],
-            [['data_transacao'], 'safe']
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'cartao_transacao_log';
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
-            'id' => 'ID',
-            'cartao_aluno_id' => 'Cartao Aluno ID',
-            'transacao_status' => 'Transacao Status',
-            'data_transacao' => 'Data Transacao',
+            'id' => Yii::t('translation', 'ID'),
+            'cartao_aluno_id' => Yii::t('translation', 'Cartao Aluno ID'),
+            'transacao_status' => Yii::t('translation', 'Transacao Status'),
+            'data_transacao' => Yii::t('translation', 'Data Transacao'),
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCartaoAluno()
-    {
+    public function getCartaoAluno() {
         return $this->hasOne(\app\modules\doman\models\CartaoAluno::className(), ['id' => 'cartao_aluno_id']);
     }
-    }
+
+}

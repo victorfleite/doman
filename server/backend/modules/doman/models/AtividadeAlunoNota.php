@@ -16,7 +16,8 @@ class AtividadeAlunoNota extends BaseAtividadeAlunoNota {
     public function rules() {
         return [
             [['atividade_aluno_id', 'educador_id', 'nota'], 'required'],
-            [['atividade_aluno_id', 'educador_id', 'nota'], 'integer']
+            [['atividade_aluno_id', 'educador_id', 'nota'], 'integer'],
+            [['data_criacao'], 'safe']
         ];
     }
 

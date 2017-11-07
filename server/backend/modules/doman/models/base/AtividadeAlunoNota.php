@@ -11,6 +11,7 @@ use Yii;
  * @property integer $atividade_aluno_id
  * @property integer $educador_id
  * @property integer $nota
+ * @property string $data_criacao
  *
  * @property \app\modules\doman\models\AtividadeAluno $atividadeAluno
  * @property \app\modules\doman\models\Educador $educador
@@ -18,7 +19,6 @@ use Yii;
 class AtividadeAlunoNota extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
-
 
     /**
     * This function helps \mootensai\relation\RelationTrait runs faster
@@ -39,7 +39,7 @@ class AtividadeAlunoNota extends \yii\db\ActiveRecord
     {
         return [
             [['atividade_aluno_id', 'educador_id', 'nota'], 'required'],
-            [['atividade_aluno_id', 'educador_id', 'nota'], 'integer']
+            [['atividade_aluno_id', 'educador_id', 'nota'], 'integer'],
         ];
     }
 
@@ -57,10 +57,11 @@ class AtividadeAlunoNota extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'atividade_aluno_id' => 'Atividade Aluno ID',
-            'educador_id' => 'Educador ID',
-            'nota' => 'Nota',
+            'id' => Yii::t('translation', 'ID'),
+            'atividade_aluno_id' => Yii::t('translation', 'Atividade Aluno ID'),
+            'educador_id' => Yii::t('translation', 'Educador ID'),
+            'nota' => Yii::t('translation', 'Nota'),
+            'data_criacao' => Yii::t('translation', 'Data Criacao'),
         ];
     }
     

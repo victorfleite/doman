@@ -5,10 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Cartao */
 
-$this->title = 'Update Cartao: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Cartaos', 'url' => ['index']];
+$this->title = Yii::t('translation', 'Update {modelClass}: ', [
+    'modelClass' => 'Cartao',
+]) . ' ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Cartao'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = Yii::t('translation', 'Update');
 ?>
 <div class="cartao-update">
 

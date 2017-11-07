@@ -16,7 +16,8 @@ class CartaoAluno extends BaseCartaoAluno {
     public function rules() {
         return [
             [['atividade_aluno_id', 'cartao_id'], 'required'],
-            [['atividade_aluno_id', 'cartao_id', 'transacao_status', 'conhecido'], 'integer']
+            [['atividade_aluno_id', 'cartao_id', 'transacao_status', 'conhecido'], 'integer'],
+            [['data_conhecimento'], 'safe'],
         ];
     }
 

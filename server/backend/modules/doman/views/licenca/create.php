@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Licenca */
 
-$this->title = 'Create Licenca';
-$this->params['breadcrumbs'][] = ['label' => 'Licencas', 'url' => ['index']];
+$this->title = Yii::t('translation', 'Create Licenca');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Licenca'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="licenca-create">

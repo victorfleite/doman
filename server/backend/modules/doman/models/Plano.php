@@ -17,7 +17,7 @@ class Plano extends BasePlano {
         return [
             [['nome'], 'required'],
             [['descricao'], 'string'],
-            [['status'], 'integer'],
+            [['status', 'user_id'], 'integer'],
             [['nome'], 'string', 'max' => 255]
         ];
     }

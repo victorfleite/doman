@@ -16,7 +16,7 @@ class EducadorAluno extends BaseEducadorAluno {
     public function rules() {
         return [
             [['educador_id', 'aluno_id'], 'required'],
-            [['educador_id', 'aluno_id'], 'integer']
+            [['educador_id', 'aluno_id'], 'integer'],
         ];
     }
 

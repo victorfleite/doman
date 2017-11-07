@@ -15,9 +15,9 @@ class HistoricoAtividadeAluno extends BaseHistoricoAtividadeAluno {
      */
     public function rules() {
         return [
-            [['atividade_aluno_id', 'educador_id'], 'required'],
+            [['atividade_aluno_id', 'educador_id', 'sessao'], 'required'],
             [['atividade_aluno_id', 'educador_id'], 'integer'],
-            [['data_atividade'], 'safe']
+            [['sessao'], 'string', 'max' => 50]
         ];
     }
 

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Cartao */
 
-$this->title = 'Create Cartao';
-$this->params['breadcrumbs'][] = ['label' => 'Cartaos', 'url' => ['index']];
+$this->title = Yii::t('translation', 'Create Cartao');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Cartao'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cartao-create">

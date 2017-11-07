@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Educador */
 
-$this->title = 'Create Educador';
-$this->params['breadcrumbs'][] = ['label' => 'Educadors', 'url' => ['index']];
+$this->title = Yii::t('translation', 'Create Educador');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Educador'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="educador-create">

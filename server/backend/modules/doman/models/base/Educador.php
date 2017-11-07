@@ -12,27 +12,29 @@ use Yii;
  * @property string $email
  * @property integer $tipo
  * @property integer $status
+ * @property integer $user_id
+ * @property string $data_criacao
  *
  * @property \app\modules\doman\models\AtividadeAlunoNota[] $atividadeAlunoNotas
+ * @property \app\modules\doman\models\User $user
  * @property \app\modules\doman\models\EducadorAluno[] $educadorAlunos
  * @property \app\modules\doman\models\Aluno[] $alunos
  * @property \app\modules\doman\models\HistoricoAtividadeAluno[] $historicoAtividadeAlunos
  * @property \app\modules\doman\models\Licenca[] $licencas
  * @property \app\modules\doman\models\PlanoEducadorLicenca[] $planoEducadorLicencas
  */
-class Educador extends \yii\db\ActiveRecord
-{
+class Educador extends \yii\db\ActiveRecord {
+
     use \mootensai\relation\RelationTrait;
 
-
     /**
-    * This function helps \mootensai\relation\RelationTrait runs faster
-    * @return array relation names of this model
-    */
-    public function relationNames()
-    {
+     * This function helps \mootensai\relation\RelationTrait runs faster
+     * @return array relation names of this model
+     */
+    public function relationNames() {
         return [
             'atividadeAlunoNotas',
+            'user',
             'educadorAlunos',
             'alunos',
             'historicoAtividadeAlunos',
@@ -44,11 +46,10 @@ class Educador extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['nome', 'email'], 'required'],
-            [['tipo', 'status'], 'integer'],
+            [['tipo', 'status', 'user_id'], 'integer'],
             [['nome', 'email'], 'string', 'max' => 255]
         ];
     }
@@ -56,70 +57,72 @@ class Educador extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'educador';
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
-            'id' => 'ID',
-            'nome' => 'Nome',
-            'email' => 'Email',
-            'tipo' => 'Tipo',
-            'status' => 'Status',
+            'id' => Yii::t('translation', 'ID'),
+            'nome' => Yii::t('translation', 'Nome'),
+            'email' => Yii::t('translation', 'Email'),
+            'tipo' => Yii::t('translation', 'Tipo'),
+            'status' => Yii::t('translation', 'Status'),
+            'user_id' => Yii::t('translation', 'User ID'),
+            'data_criacao' => Yii::t('translation', 'Data Criacao'),
         ];
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAtividadeAlunoNotas()
-    {
+    public function getAtividadeAlunoNotas() {
         return $this->hasMany(\app\modules\doman\models\AtividadeAlunoNota::className(), ['educador_id' => 'id']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEducadorAlunos()
-    {
+    public function getUser() {
+        return $this->hasOne(\app\modules\doman\models\User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEducadorAlunos() {
         return $this->hasMany(\app\modules\doman\models\EducadorAluno::className(), ['educador_id' => 'id']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAlunos()
-    {
+    public function getAlunos() {
         return $this->hasMany(\app\modules\doman\models\Aluno::className(), ['id' => 'aluno_id'])->viaTable('educador_aluno', ['educador_id' => 'id']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getHistoricoAtividadeAlunos()
-    {
+    public function getHistoricoAtividadeAlunos() {
         return $this->hasMany(\app\modules\doman\models\HistoricoAtividadeAluno::className(), ['educador_id' => 'id']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getLicencas()
-    {
+    public function getLicencas() {
         return $this->hasMany(\app\modules\doman\models\Licenca::className(), ['educador_id' => 'id']);
     }
-        
+
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPlanoEducadorLicencas()
-    {
+    public function getPlanoEducadorLicencas() {
         return $this->hasMany(\app\modules\doman\models\PlanoEducadorLicenca::className(), ['educador_id' => 'id']);
     }
-    }
+
+}

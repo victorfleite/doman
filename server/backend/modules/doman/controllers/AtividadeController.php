@@ -14,16 +14,13 @@ use yii\filters\VerbFilter;
  */
 class AtividadeController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['post'],
                 ],
             ],
         ];
@@ -51,8 +48,21 @@ class AtividadeController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        $providerAtividadeAluno = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->atividadeAlunos,
+        ]);
+        $providerCartao = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->cartaos,
+        ]);
+        $providerGrupoAtividade = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->grupoAtividades,
+        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'providerAtividadeAluno' => $providerAtividadeAluno,
+            'providerCartao' => $providerCartao,
+            'providerGrupoAtividade' => $providerGrupoAtividade,
         ]);
     }
 
@@ -65,7 +75,7 @@ class AtividadeController extends Controller
     {
         $model = new Atividade();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -84,7 +94,7 @@ class AtividadeController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -101,11 +111,12 @@ class AtividadeController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $this->findModel($id)->deleteWithRelated();
 
         return $this->redirect(['index']);
     }
 
+    
     /**
      * Finds the Atividade model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -118,7 +129,67 @@ class AtividadeController extends Controller
         if (($model = Atividade::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for AtividadeAluno
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddAtividadeAluno()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('AtividadeAluno');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formAtividadeAluno', ['row' => $row]);
+        } else {
+            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for Cartao
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddCartao()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('Cartao');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formCartao', ['row' => $row]);
+        } else {
+            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for GrupoAtividade
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddGrupoAtividade()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('GrupoAtividade');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formGrupoAtividade', ['row' => $row]);
+        } else {
+            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
         }
     }
 }

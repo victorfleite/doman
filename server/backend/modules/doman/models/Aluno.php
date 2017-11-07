@@ -17,7 +17,7 @@ class Aluno extends BaseAluno {
         return [
             [['nome', 'data_nascimento'], 'required'],
             [['data_nascimento'], 'safe'],
-            [['tipo'], 'integer'],
+            [['tipo', 'user_id'], 'integer'],
             [['nome'], 'string', 'max' => 255]
         ];
     }
