@@ -17,6 +17,8 @@ class Educador extends BaseEducador {
         return [
             [['nome', 'email'], 'required'],
             [['tipo', 'status', 'user_id'], 'integer'],
+            [['data_criacao'], 'safe'],
+            [['deletado'], 'boolean'],
             [['nome', 'email'], 'string', 'max' => 255]
         ];
     }

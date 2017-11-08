@@ -6,6 +6,10 @@ use yii\data\ArrayDataProvider;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 
+if(empty($row)){
+    $row[] = [];
+}
+
 $dataProvider = new ArrayDataProvider([
     'allModels' => $row,
     'pagination' => [
@@ -21,7 +25,7 @@ echo TabularForm::widget([
         'type' => TabularForm::INPUT_TEXT,
     ],
     'attributes' => [
-        "id" => ['type' => TabularForm::INPUT_HIDDEN, 'visible' => false],
+        "id" => ['type' => TabularForm::INPUT_HIDDEN, 'columnOptions' => ['hidden'=>true]],
         'data_inicio' => ['type' => TabularForm::INPUT_TEXT],
         'data_fim' => ['type' => TabularForm::INPUT_TEXT],
         'data_criacao' => ['type' => TabularForm::INPUT_TEXT],
@@ -37,11 +41,19 @@ echo TabularForm::widget([
             ],
             'columnOptions' => ['width' => '200px']
         ],
+        'deletado' => ['type' => TabularForm::INPUT_CHECKBOX,
+            'options' => [
+                'style' => 'position : relative; margin-top : -9px'
+            ]
+        ],
+        'identificador' => ['type' => TabularForm::INPUT_TEXT],
         'del' => [
             'type' => 'raw',
             'label' => '',
             'value' => function($model, $key) {
-                return Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('translation', 'Delete'), 'onClick' => 'delRowLicenca(' . $key . '); return false;', 'id' => 'licenca-del-btn']);
+                return
+                    Html::hiddenInput('Children[' . $key . '][id]', (!empty($model['id'])) ? $model['id'] : "") .
+                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('translation', 'Delete'), 'onClick' => 'delRowLicenca(' . $key . '); return false;', 'id' => 'licenca-del-btn']);
             },
         ],
     ],

@@ -17,6 +17,7 @@ class HistoricoAtividadeAluno extends BaseHistoricoAtividadeAluno {
         return [
             [['atividade_aluno_id', 'educador_id', 'sessao'], 'required'],
             [['atividade_aluno_id', 'educador_id'], 'integer'],
+            [['data_atividade'], 'safe'],
             [['sessao'], 'string', 'max' => 50]
         ];
     }

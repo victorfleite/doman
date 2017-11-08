@@ -17,7 +17,7 @@ class AtividadeAluno extends BaseAtividadeAluno {
         return [
             [['atividade_id', 'aluno_id', 'grupo_id'], 'required'],
             [['atividade_id', 'aluno_id', 'status', 'atividade_pai', 'grupo_id'], 'integer'],
-            [['data_abertura', 'data_finalizacao'], 'safe'],
+            [['data_criacao', 'data_abertura', 'data_finalizacao'], 'safe']
         ];
     }
 

@@ -13,15 +13,29 @@ use Yii;
  * @property \app\modules\doman\models\Atividade $atividade
  * @property \app\modules\doman\models\Grupo $grupo
  */
-class GrupoAtividade extends \yii\db\ActiveRecord {
-
+class GrupoAtividade extends \yii\db\ActiveRecord
+{
     use \mootensai\relation\RelationTrait;
 
+    private $_rt_softdelete;
+    private $_rt_softrestore;
+
+    public function __construct(){
+        parent::__construct();
+        $this->_rt_softdelete = [
+            'deletado' => true,
+        ];
+        $this->_rt_softrestore = [
+            'deletado' => 0,
+        ];
+    }
+
     /**
-     * This function helps \mootensai\relation\RelationTrait runs faster
-     * @return array relation names of this model
-     */
-    public function relationNames() {
+    * This function helps \mootensai\relation\RelationTrait runs faster
+    * @return array relation names of this model
+    */
+    public function relationNames()
+    {
         return [
             'atividade',
             'grupo'
@@ -31,7 +45,8 @@ class GrupoAtividade extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['grupo_id', 'atividade_id'], 'required'],
             [['grupo_id', 'atividade_id'], 'integer']
@@ -41,32 +56,35 @@ class GrupoAtividade extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return 'grupo_atividade';
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'grupo_id' => Yii::t('translation', 'Grupo ID'),
             'atividade_id' => Yii::t('translation', 'Atividade ID'),
         ];
     }
-
+    
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAtividade() {
+    public function getAtividade()
+    {
         return $this->hasOne(\app\modules\doman\models\Atividade::className(), ['id' => 'atividade_id']);
     }
-
+        
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getGrupo() {
+    public function getGrupo()
+    {
         return $this->hasOne(\app\modules\doman\models\Grupo::className(), ['id' => 'grupo_id']);
     }
-
-}
+    }

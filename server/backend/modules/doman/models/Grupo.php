@@ -3,6 +3,7 @@
 namespace app\modules\doman\models;
 
 use Yii;
+use yii2tech\ar\softdelete\SoftDeleteBehavior;
 use \app\modules\doman\models\base\Grupo as BaseGrupo;
 
 /**
@@ -15,11 +16,24 @@ class Grupo extends BaseGrupo {
      */
     public function rules() {
         return [
-            [['titulo', 'status', 'user_id'], 'required'],
+            [['titulo', 'user_id'], 'required'],
             [['descricao'], 'string'],
             [['status', 'user_id', 'user_publicacao_id'], 'integer'],
-            [['data_publicacao'], 'safe'],
+            [['data_criacao', 'data_publicacao'], 'safe'],
+            [['deletado'], 'boolean'],
             [['titulo'], 'string', 'max' => 255]
+        ];
+    }
+
+    public function behaviors() {
+        return [
+            'softDeleteBehavior' => [
+                'class' => SoftDeleteBehavior::className(),
+                'softDeleteAttributeValues' => [
+                    'deletado' => true
+                ],
+                'replaceRegularDelete' => true // mutate native `delete()` method
+            ],
         ];
     }
 

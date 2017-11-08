@@ -17,7 +17,9 @@ class Licenca extends BaseLicenca {
         return [
             [['educador_id', 'tipo'], 'required'],
             [['educador_id', 'tipo', 'status', 'user_id'], 'integer'],
-            [['data_inicio', 'data_fim'], 'safe'],
+            [['data_inicio', 'data_fim', 'data_criacao'], 'safe'],
+            [['deletado'], 'boolean'],
+            [['identificador'], 'string']
         ];
     }
 

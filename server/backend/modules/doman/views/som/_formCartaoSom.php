@@ -1,4 +1,4 @@
-<div class="form-group" id="add-plano-grupo">
+<div class="form-group" id="add-cartao-som">
 <?php
 use kartik\grid\GridView;
 use kartik\builder\TabularForm;
@@ -18,20 +18,20 @@ $dataProvider = new ArrayDataProvider([
 ]);
 echo TabularForm::widget([
     'dataProvider' => $dataProvider,
-    'formName' => 'PlanoGrupo',
+    'formName' => 'CartaoSom',
     'checkboxColumn' => false,
     'actionColumn' => false,
     'attributeDefaults' => [
         'type' => TabularForm::INPUT_TEXT,
     ],
     'attributes' => [
-        'grupo_id' => [
-            'label' => 'Grupo',
+        'cartao_id' => [
+            'label' => 'Cartao',
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\Grupo::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-                'options' => ['placeholder' => Yii::t('translation', 'Choose Grupo')],
+                'data' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\Cartao::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
+                'options' => ['placeholder' => Yii::t('translation', 'Choose Cartao')],
             ],
             'columnOptions' => ['width' => '200px']
         ],
@@ -39,7 +39,9 @@ echo TabularForm::widget([
             'type' => 'raw',
             'label' => '',
             'value' => function($model, $key) {
-                return Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('translation', 'Delete'), 'onClick' => 'delRowPlanoGrupo(' . $key . '); return false;', 'id' => 'plano-grupo-del-btn']);
+                return
+                    Html::hiddenInput('Children[' . $key . '][id]', (!empty($model['id'])) ? $model['id'] : "") .
+                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('translation', 'Delete'), 'onClick' => 'delRowCartaoSom(' . $key . '); return false;', 'id' => 'cartao-som-del-btn']);
             },
         ],
     ],
@@ -49,7 +51,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('translation', 'Add Plano Grupo'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowPlanoGrupo()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('translation', 'Add Cartao Som'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowCartaoSom()']),
         ]
     ]
 ]);

@@ -33,8 +33,8 @@ $this->registerJs($search);
         [
                 'attribute' => 'user_id',
                 'label' => Yii::t('translation', 'User'),
-                'value' => function($model){
-                    return $model->user->username;
+                'value' => function($model){                   
+                    return $model->user->username;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\User::find()->asArray()->all(), 'id', 'username'),
@@ -47,7 +47,10 @@ $this->registerJs($search);
                 'attribute' => 'user_publicacao_id',
                 'label' => Yii::t('translation', 'User Publicacao'),
                 'value' => function($model){
-                    return $model->userPublicacao->username;
+                    if ($model->userPublicacao)
+                    {return $model->userPublicacao->username;}
+                    else
+                    {return NULL;}
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\User::find()->asArray()->all(), 'id', 'username'),
@@ -55,6 +58,26 @@ $this->registerJs($search);
                     'pluginOptions' => ['allowClear' => true],
                 ],
                 'filterInputOptions' => ['placeholder' => 'User', 'id' => 'grid--user_publicacao_id']
+            ],
+        'deletado:boolean',
+        'tipo',
+        'video_url:url',
+        'autoplay:boolean',
+        [
+                'attribute' => 'som_id',
+                'label' => Yii::t('translation', 'Som'),
+                'value' => function($model){
+                    if ($model->som)
+                    {return $model->som->id;}
+                    else
+                    {return NULL;}
+                },
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\Som::find()->asArray()->all(), 'id', 'id'),
+                'filterWidgetOptions' => [
+                    'pluginOptions' => ['allowClear' => true],
+                ],
+                'filterInputOptions' => ['placeholder' => 'Som', 'id' => 'grid--som_id']
             ],
         [
             'class' => 'yii\grid\ActionColumn',

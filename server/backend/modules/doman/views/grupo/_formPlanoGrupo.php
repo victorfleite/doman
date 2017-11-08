@@ -6,6 +6,10 @@ use yii\data\ArrayDataProvider;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 
+if(empty($row)){
+    $row[] = [];
+}
+
 $dataProvider = new ArrayDataProvider([
     'allModels' => $row,
     'pagination' => [

@@ -7,7 +7,6 @@ use yii\widgets\ActiveForm;
 /* @var $model app\modules\doman\models\Educador */
 /* @var $form yii\widgets\ActiveForm */
 
-
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
         'class' => 'EducadorAluno', 
@@ -16,7 +15,6 @@ use yii\widgets\ActiveForm;
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
-
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
         'class' => 'Licenca', 
@@ -61,6 +59,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'data_criacao')->textInput(['placeholder' => 'Data Criacao']) ?>
 
+    <?= $form->field($model, 'deletado')->checkbox() ?>
+
     <?php
     $forms = [
         [
@@ -68,7 +68,7 @@ use yii\widgets\ActiveForm;
             'content' => $this->render('_formEducadorAluno', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->educadorAlunos),
             ]),
-        ],       
+        ],
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('translation', 'Licenca')),
             'content' => $this->render('_formLicenca', [

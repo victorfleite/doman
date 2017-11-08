@@ -25,7 +25,8 @@
 	"kartik-v/yii2-tree-manager": "dev-master",
 	"kartik-v/yii2-datecontrol": "dev-master",
 	"filsh/yii2-oauth2-server": "2.0.0",
-        "mootensai/yii2-enhanced-gii": "dev-master"
+        "mootensai/yii2-enhanced-gii": "dev-master",
+        "yii2tech/ar-softdelete": "*"
     },
     "require-dev": {
 	"yiisoft/yii2-debug": "~2.0.0",

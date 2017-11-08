@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Plano */
 /* @var $form yii\widgets\ActiveForm */
-
+/*
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
         'class' => 'PlanoEducadorLicenca', 
@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
         'value' => \yii\helpers\Json::encode($model->planoEducadorLicencas),
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
-]);
+]);*/
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
         'class' => 'PlanoGrupo', 
@@ -45,12 +45,12 @@ use yii\widgets\ActiveForm;
 
     <?php
     $forms = [
-        [
+        /*[
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('translation', 'PlanoEducadorLicenca')),
             'content' => $this->render('_formPlanoEducadorLicenca', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->planoEducadorLicencas),
             ]),
-        ],
+        ],*/
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('translation', 'PlanoGrupo')),
             'content' => $this->render('_formPlanoGrupo', [

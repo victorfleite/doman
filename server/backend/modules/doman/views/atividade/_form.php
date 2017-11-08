@@ -65,6 +65,22 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
+    <?= $form->field($model, 'deletado')->checkbox() ?>
+
+    <?= $form->field($model, 'tipo')->textInput(['placeholder' => 'Tipo']) ?>
+
+    <?= $form->field($model, 'video_url')->textInput(['maxlength' => true, 'placeholder' => 'Video Url']) ?>
+
+    <?= $form->field($model, 'autoplay')->checkbox() ?>
+
+    <?= $form->field($model, 'som_id')->widget(\kartik\widgets\Select2::classname(), [
+        'data' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\Som::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
+        'options' => ['placeholder' => Yii::t('translation', 'Choose Som')],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]); ?>
+
     <?php
     $forms = [
         [

@@ -1,4 +1,4 @@
-<div class="form-group" id="add-cartao">
+<div class="form-group" id="add-atividade">
 <?php
 use kartik\grid\GridView;
 use kartik\builder\TabularForm;
@@ -18,7 +18,7 @@ $dataProvider = new ArrayDataProvider([
 ]);
 echo TabularForm::widget([
     'dataProvider' => $dataProvider,
-    'formName' => 'Cartao',
+    'formName' => 'Atividade',
     'checkboxColumn' => false,
     'actionColumn' => false,
     'attributeDefaults' => [
@@ -26,11 +26,10 @@ echo TabularForm::widget([
     ],
     'attributes' => [
         "id" => ['type' => TabularForm::INPUT_HIDDEN, 'columnOptions' => ['hidden'=>true]],
-        'nome' => ['type' => TabularForm::INPUT_TEXT],
+        'titulo' => ['type' => TabularForm::INPUT_TEXT],
         'status' => ['type' => TabularForm::INPUT_TEXT],
+        'data_publicacao' => ['type' => TabularForm::INPUT_TEXT],
         'data_criacao' => ['type' => TabularForm::INPUT_TEXT],
-        'ordem' => ['type' => TabularForm::INPUT_TEXT],
-        'imagem_caminho' => ['type' => TabularForm::INPUT_TEXT],
         'user_id' => [
             'label' => 'User',
             'type' => TabularForm::INPUT_WIDGET,
@@ -41,7 +40,6 @@ echo TabularForm::widget([
             ],
             'columnOptions' => ['width' => '200px']
         ],
-        'data_publicacao' => ['type' => TabularForm::INPUT_TEXT],
         'user_publicacao_id' => [
             'label' => 'User',
             'type' => TabularForm::INPUT_WIDGET,
@@ -57,7 +55,9 @@ echo TabularForm::widget([
                 'style' => 'position : relative; margin-top : -9px'
             ]
         ],
-        'som_autoplay' => ['type' => TabularForm::INPUT_CHECKBOX,
+        'tipo' => ['type' => TabularForm::INPUT_TEXT],
+        'video_url' => ['type' => TabularForm::INPUT_TEXT],
+        'autoplay' => ['type' => TabularForm::INPUT_CHECKBOX,
             'options' => [
                 'style' => 'position : relative; margin-top : -9px'
             ]
@@ -68,7 +68,7 @@ echo TabularForm::widget([
             'value' => function($model, $key) {
                 return
                     Html::hiddenInput('Children[' . $key . '][id]', (!empty($model['id'])) ? $model['id'] : "") .
-                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('translation', 'Delete'), 'onClick' => 'delRowCartao(' . $key . '); return false;', 'id' => 'cartao-del-btn']);
+                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('translation', 'Delete'), 'onClick' => 'delRowAtividade(' . $key . '); return false;', 'id' => 'atividade-del-btn']);
             },
         ],
     ],
@@ -78,7 +78,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('translation', 'Add Cartao'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowCartao()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('translation', 'Add Atividade'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowAtividade()']),
         ]
     ]
 ]);

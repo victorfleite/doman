@@ -33,7 +33,7 @@ class GrupoController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Grupo::find(),
+            'query' => Grupo::find()->where(['deletado'=>false]),
         ]);
 
         return $this->render('index', [
@@ -115,7 +115,7 @@ class GrupoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->deleteWithRelated();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }

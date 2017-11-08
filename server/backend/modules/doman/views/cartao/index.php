@@ -33,8 +33,8 @@ $this->registerJs($search);
         [
                 'attribute' => 'atividade_id',
                 'label' => Yii::t('translation', 'Atividade'),
-                'value' => function($model){
-                    return $model->atividade->id;
+                'value' => function($model){                   
+                    return $model->atividade->id;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\Atividade::find()->asArray()->all(), 'id', 'id'),
@@ -44,12 +44,11 @@ $this->registerJs($search);
                 'filterInputOptions' => ['placeholder' => 'Atividade', 'id' => 'grid--atividade_id']
             ],
         'imagem_caminho',
-        'som_caminho',
         [
                 'attribute' => 'user_id',
                 'label' => Yii::t('translation', 'User'),
-                'value' => function($model){
-                    return $model->user->username;
+                'value' => function($model){                   
+                    return $model->user->username;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\User::find()->asArray()->all(), 'id', 'username'),
@@ -63,7 +62,10 @@ $this->registerJs($search);
                 'attribute' => 'user_publicacao_id',
                 'label' => Yii::t('translation', 'User Publicacao'),
                 'value' => function($model){
-                    return $model->userPublicacao->username;
+                    if ($model->userPublicacao)
+                    {return $model->userPublicacao->username;}
+                    else
+                    {return NULL;}
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\User::find()->asArray()->all(), 'id', 'username'),
@@ -72,6 +74,8 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'User', 'id' => 'grid--user_publicacao_id']
             ],
+        'deletado:boolean',
+        'som_autoplay:boolean',
         [
             'class' => 'yii\grid\ActionColumn',
         ],

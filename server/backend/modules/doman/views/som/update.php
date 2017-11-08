@@ -3,16 +3,16 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\doman\models\Educador */
+/* @var $model app\modules\doman\models\Som */
 
 $this->title = Yii::t('translation', 'Update {modelClass}: ', [
-    'modelClass' => 'Educador',
+    'modelClass' => 'Som',
 ]) . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Educador'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Som'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('translation', 'Update');
 ?>
-<div class="educador-update">
+<div class="som-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

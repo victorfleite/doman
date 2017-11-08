@@ -47,13 +47,74 @@ $this->params['breadcrumbs'][] = $this->title;
             'attribute' => 'userPublicacao.username',
             'label' => Yii::t('translation', 'User Publicacao'),
         ],
+        'deletado:boolean',
+        'tipo',
+        'video_url:url',
+        'autoplay:boolean',
+        [
+            'attribute' => 'som.id',
+            'label' => Yii::t('translation', 'Som'),
+        ],
     ];
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]); 
+    ]);
 ?>
     </div>
+    <div class="row">
+        <h4>Som<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnSom = [
+        ['attribute' => 'id', 'visible' => false],
+        'titulo',
+        'caminho',
+    ];
+    echo DetailView::widget([
+        'model' => $model->som,
+        'attributes' => $gridColumnSom    ]);
+    ?>
+    <div class="row">
+        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnUser = [
+        ['attribute' => 'id', 'visible' => false],
+        'username',
+        'auth_key',
+        'password_hash',
+        'password_reset_token',
+        'email',
+        'status',
+        'created_at',
+        'updated_at',
+        'name',
+    ];
+    echo DetailView::widget([
+        'model' => $model->user,
+        'attributes' => $gridColumnUser    ]);
+    ?>
+    <div class="row">
+        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnUser = [
+        ['attribute' => 'id', 'visible' => false],
+        'username',
+        'auth_key',
+        'password_hash',
+        'password_reset_token',
+        'email',
+        'status',
+        'created_at',
+        'updated_at',
+        'name',
+    ];
+    echo DetailView::widget([
+        'model' => $model->userPublicacao,
+        'attributes' => $gridColumnUser    ]);
+    ?>
     
     <div class="row">
 <?php
@@ -83,13 +144,15 @@ if($providerAtividadeAluno->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-atividade-aluno']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Atividade Aluno')),
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Atividade Aluno')),
         ],
+        'export' => false,
         'columns' => $gridColumnAtividadeAluno
     ]);
 }
 ?>
+
     </div>
     
     <div class="row">
@@ -103,7 +166,6 @@ if($providerCartao->totalCount){
             'data_criacao',
             'ordem',
                         'imagem_caminho',
-            'som_caminho',
             [
                 'attribute' => 'user.username',
                 'label' => Yii::t('translation', 'User')
@@ -113,19 +175,23 @@ if($providerCartao->totalCount){
                 'attribute' => 'userPublicacao.username',
                 'label' => Yii::t('translation', 'User Publicacao')
             ],
+            'deletado:boolean',
+            'som_autoplay:boolean',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerCartao,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-cartao']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Cartao')),
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Cartao')),
         ],
+        'export' => false,
         'columns' => $gridColumnCartao
     ]);
 }
 ?>
+
     </div>
     
     <div class="row">
@@ -143,12 +209,14 @@ if($providerGrupoAtividade->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-grupo-atividade']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Grupo Atividade')),
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Grupo Atividade')),
         ],
+        'export' => false,
         'columns' => $gridColumnGrupoAtividade
     ]);
 }
 ?>
+
     </div>
 </div>

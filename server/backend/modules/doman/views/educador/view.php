@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Educador */
 
-$this->title = $model->nome;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Educador'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= Yii::t('translation', 'Educador') ?></h2>
+            <h2><?= Yii::t('translation', 'Educador').' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-3" style="margin-top: 15px">
             
@@ -36,23 +36,71 @@ $this->params['breadcrumbs'][] = $this->title;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         'nome',
-        'email',
+        'email:email',
         'tipo',
         'status',
         [
             'attribute' => 'user.username',
             'label' => Yii::t('translation', 'User'),
         ],
-        'data_criacao:datetime',
+        'data_criacao',
+        'deletado:boolean',
     ];
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]); 
+    ]);
 ?>
     </div>
     
-    
+    <div class="row">
+<?php
+if($providerAtividadeAlunoNota->totalCount){
+    $gridColumnAtividadeAlunoNota = [
+        ['class' => 'yii\grid\SerialColumn'],
+            ['attribute' => 'id', 'visible' => false],
+            [
+                'attribute' => 'atividadeAluno.id',
+                'label' => Yii::t('translation', 'Atividade Aluno')
+            ],
+                        'nota',
+            'data_criacao',
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerAtividadeAlunoNota,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-atividade-aluno-nota']],
+        'panel' => [
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Atividade Aluno Nota')),
+        ],
+        'export' => false,
+        'columns' => $gridColumnAtividadeAlunoNota
+    ]);
+}
+?>
+
+    </div>
+    <div class="row">
+        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnUser = [
+        ['attribute' => 'id', 'visible' => false],
+        'username',
+        'auth_key',
+        'password_hash',
+        'password_reset_token',
+        'email:email',
+        'status',
+        'created_at',
+        'updated_at',
+        'name',
+    ];
+    echo DetailView::widget([
+        'model' => $model->user,
+        'attributes' => $gridColumnUser    ]);
+    ?>
     
     <div class="row">
 <?php
@@ -60,23 +108,25 @@ if($providerEducadorAluno->totalCount){
     $gridColumnEducadorAluno = [
         ['class' => 'yii\grid\SerialColumn'],
                         [
-                'attribute' => 'aluno.nome',
+                'attribute' => 'aluno.id',
                 'label' => Yii::t('translation', 'Aluno')
             ],
-            'data_criacao:datetime',
+            'data_criacao',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerEducadorAluno,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-educador-aluno']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Educador Aluno')),
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Educador Aluno')),
         ],
+        'export' => false,
         'columns' => $gridColumnEducadorAluno
     ]);
 }
 ?>
+
     </div>
     
     <div class="row">
@@ -94,13 +144,15 @@ if($providerHistoricoAtividadeAluno->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-historico-atividade-aluno']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Historico Atividade Aluno')),
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Historico Atividade Aluno')),
         ],
+        'export' => false,
         'columns' => $gridColumnHistoricoAtividadeAluno
     ]);
 }
 ?>
+
     </div>
     
     <div class="row">
@@ -118,19 +170,23 @@ if($providerLicenca->totalCount){
                 'attribute' => 'user.username',
                 'label' => Yii::t('translation', 'User')
             ],
+            'deletado:boolean',
+            'identificador',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerLicenca,
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-licenca']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Licenca')),
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Licenca')),
         ],
+        'export' => false,
         'columns' => $gridColumnLicenca
     ]);
 }
 ?>
+
     </div>
     
     <div class="row">
@@ -152,12 +208,14 @@ if($providerPlanoEducadorLicenca->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-plano-educador-licenca']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Plano Educador Licenca')),
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Plano Educador Licenca')),
         ],
+        'export' => false,
         'columns' => $gridColumnPlanoEducadorLicenca
     ]);
 }
 ?>
+
     </div>
 </div>

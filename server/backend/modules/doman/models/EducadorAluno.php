@@ -17,6 +17,7 @@ class EducadorAluno extends BaseEducadorAluno {
         return [
             [['educador_id', 'aluno_id'], 'required'],
             [['educador_id', 'aluno_id'], 'integer'],
+            [['data_criacao'], 'safe']
         ];
     }
 

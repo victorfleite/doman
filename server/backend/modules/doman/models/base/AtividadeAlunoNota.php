@@ -20,6 +20,19 @@ class AtividadeAlunoNota extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
+    private $_rt_softdelete;
+    private $_rt_softrestore;
+
+    public function __construct(){
+        parent::__construct();
+        $this->_rt_softdelete = [
+            'deletado' => true,
+        ];
+        $this->_rt_softrestore = [
+            'deletado' => 0,
+        ];
+    }
+
     /**
     * This function helps \mootensai\relation\RelationTrait runs faster
     * @return array relation names of this model
@@ -40,6 +53,7 @@ class AtividadeAlunoNota extends \yii\db\ActiveRecord
         return [
             [['atividade_aluno_id', 'educador_id', 'nota'], 'required'],
             [['atividade_aluno_id', 'educador_id', 'nota'], 'integer'],
+            [['data_criacao'], 'safe']
         ];
     }
 

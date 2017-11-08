@@ -15,6 +15,14 @@ use yii\widgets\ActiveForm;
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
+\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
+    'viewParams' => [
+        'class' => 'CartaoSom', 
+        'relID' => 'cartao-som', 
+        'value' => \yii\helpers\Json::encode($model->cartaoSoms),
+        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
+    ]
+]);
 ?>
 
 <div class="cartao-form">
@@ -43,8 +51,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'imagem_caminho')->textInput(['maxlength' => true, 'placeholder' => 'Imagem Caminho']) ?>
 
-    <?= $form->field($model, 'som_caminho')->textInput(['maxlength' => true, 'placeholder' => 'Som Caminho']) ?>
-
     <?= $form->field($model, 'user_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\User::find()->orderBy('id')->asArray()->all(), 'id', 'username'),
         'options' => ['placeholder' => Yii::t('translation', 'Choose User')],
@@ -63,12 +69,22 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
+    <?= $form->field($model, 'deletado')->checkbox() ?>
+
+    <?= $form->field($model, 'som_autoplay')->checkbox() ?>
+
     <?php
     $forms = [
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('translation', 'CartaoAluno')),
             'content' => $this->render('_formCartaoAluno', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->cartaoAlunos),
+            ]),
+        ],
+        [
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('translation', 'CartaoSom')),
+            'content' => $this->render('_formCartaoSom', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->cartaoSoms),
             ]),
         ],
     ];

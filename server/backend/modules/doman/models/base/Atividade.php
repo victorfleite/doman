@@ -14,7 +14,13 @@ use Yii;
  * @property string $data_criacao
  * @property integer $user_id
  * @property integer $user_publicacao_id
+ * @property boolean $deletado
+ * @property integer $tipo
+ * @property string $video_url
+ * @property boolean $autoplay
+ * @property integer $som_id
  *
+ * @property \app\modules\doman\models\Som $som
  * @property \app\modules\doman\models\User $user
  * @property \app\modules\doman\models\User $userPublicacao
  * @property \app\modules\doman\models\AtividadeAluno[] $atividadeAlunos
@@ -22,16 +28,31 @@ use Yii;
  * @property \app\modules\doman\models\GrupoAtividade[] $grupoAtividades
  * @property \app\modules\doman\models\Grupo[] $grupos
  */
-class Atividade extends \yii\db\ActiveRecord {
-
+class Atividade extends \yii\db\ActiveRecord
+{
     use \mootensai\relation\RelationTrait;
 
+    private $_rt_softdelete;
+    private $_rt_softrestore;
+
+    public function __construct(){
+        parent::__construct();
+        $this->_rt_softdelete = [
+            'deletado' => true,
+        ];
+        $this->_rt_softrestore = [
+            'deletado' => 0,
+        ];
+    }
+
     /**
-     * This function helps \mootensai\relation\RelationTrait runs faster
-     * @return array relation names of this model
-     */
-    public function relationNames() {
+    * This function helps \mootensai\relation\RelationTrait runs faster
+    * @return array relation names of this model
+    */
+    public function relationNames()
+    {
         return [
+            'som',
             'user',
             'userPublicacao',
             'atividadeAlunos',
@@ -44,26 +65,30 @@ class Atividade extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['titulo', 'user_id'], 'required'],
-            [['status', 'user_id', 'user_publicacao_id'], 'integer'],
-            [['data_publicacao'], 'safe'],
-            [['titulo'], 'string', 'max' => 255]
+            [['status', 'user_id', 'user_publicacao_id', 'tipo', 'som_id'], 'integer'],
+            [['data_publicacao', 'data_criacao'], 'safe'],
+            [['deletado', 'autoplay'], 'boolean'],
+            [['titulo', 'video_url'], 'string', 'max' => 255]
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return 'atividade';
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => Yii::t('translation', 'ID'),
             'titulo' => Yii::t('translation', 'Titulo'),
@@ -72,49 +97,67 @@ class Atividade extends \yii\db\ActiveRecord {
             'data_criacao' => Yii::t('translation', 'Data Criacao'),
             'user_id' => Yii::t('translation', 'User ID'),
             'user_publicacao_id' => Yii::t('translation', 'User Publicacao ID'),
+            'deletado' => Yii::t('translation', 'Deletado'),
+            'tipo' => Yii::t('translation', 'Tipo'),
+            'video_url' => Yii::t('translation', 'Video Url'),
+            'autoplay' => Yii::t('translation', 'Autoplay'),
+            'som_id' => Yii::t('translation', 'Som ID'),
         ];
     }
-
+    
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUser() {
+    public function getSom()
+    {
+        return $this->hasOne(\app\modules\doman\models\Som::className(), ['id' => 'som_id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
         return $this->hasOne(\app\modules\doman\models\User::className(), ['id' => 'user_id']);
     }
-
+        
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUserPublicacao() {
+    public function getUserPublicacao()
+    {
         return $this->hasOne(\app\modules\doman\models\User::className(), ['id' => 'user_publicacao_id']);
     }
-
+        
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAtividadeAlunos() {
+    public function getAtividadeAlunos()
+    {
         return $this->hasMany(\app\modules\doman\models\AtividadeAluno::className(), ['atividade_id' => 'id']);
     }
-
+        
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCartaos() {
+    public function getCartaos()
+    {
         return $this->hasMany(\app\modules\doman\models\Cartao::className(), ['atividade_id' => 'id']);
     }
-
+        
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getGrupoAtividades() {
+    public function getGrupoAtividades()
+    {
         return $this->hasMany(\app\modules\doman\models\GrupoAtividade::className(), ['atividade_id' => 'id']);
     }
-
+        
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getGrupos() {
+    public function getGrupos()
+    {
         return $this->hasMany(\app\modules\doman\models\Grupo::className(), ['id' => 'grupo_id'])->viaTable('grupo_atividade', ['atividade_id' => 'id']);
     }
-
-}
+    }

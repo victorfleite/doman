@@ -15,15 +15,29 @@ use Yii;
  *
  * @property \app\modules\doman\models\Educador $educador
  */
-class HistoricoAtividadeAluno extends \yii\db\ActiveRecord {
-
+class HistoricoAtividadeAluno extends \yii\db\ActiveRecord
+{
     use \mootensai\relation\RelationTrait;
 
+    private $_rt_softdelete;
+    private $_rt_softrestore;
+
+    public function __construct(){
+        parent::__construct();
+        $this->_rt_softdelete = [
+            'deletado' => true,
+        ];
+        $this->_rt_softrestore = [
+            'deletado' => 0,
+        ];
+    }
+
     /**
-     * This function helps \mootensai\relation\RelationTrait runs faster
-     * @return array relation names of this model
-     */
-    public function relationNames() {
+    * This function helps \mootensai\relation\RelationTrait runs faster
+    * @return array relation names of this model
+    */
+    public function relationNames()
+    {
         return [
             'educador'
         ];
@@ -32,10 +46,12 @@ class HistoricoAtividadeAluno extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['atividade_aluno_id', 'educador_id', 'sessao'], 'required'],
             [['atividade_aluno_id', 'educador_id'], 'integer'],
+            [['data_atividade'], 'safe'],
             [['sessao'], 'string', 'max' => 50]
         ];
     }
@@ -43,14 +59,16 @@ class HistoricoAtividadeAluno extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return 'historico_atividade_aluno';
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => Yii::t('translation', 'ID'),
             'atividade_aluno_id' => Yii::t('translation', 'Atividade Aluno ID'),
@@ -59,12 +77,12 @@ class HistoricoAtividadeAluno extends \yii\db\ActiveRecord {
             'sessao' => Yii::t('translation', 'Sessao'),
         ];
     }
-
+    
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEducador() {
+    public function getEducador()
+    {
         return $this->hasOne(\app\modules\doman\models\Educador::className(), ['id' => 'educador_id']);
     }
-
-}
+    }

@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = Yii::t('translation', 'Educador');
+$this->title = Yii::t('translation', 'Som');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -15,39 +15,19 @@ $search = "$('.search-button').click(function(){
 });";
 $this->registerJs($search);
 ?>
-<div class="educador-index">
+<div class="som-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('translation', 'Create Educador'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('translation', 'Create Som'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php 
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
-        'nome',
-        'email:email',
-        'tipo',
-        'status',
-        [
-                'attribute' => 'user_id',
-                'label' => Yii::t('translation', 'User'),
-                'value' => function($model){
-                    if ($model->user)
-                    {return $model->user->username;}
-                    else
-                    {return NULL;}
-                },
-                'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\User::find()->asArray()->all(), 'id', 'username'),
-                'filterWidgetOptions' => [
-                    'pluginOptions' => ['allowClear' => true],
-                ],
-                'filterInputOptions' => ['placeholder' => 'User', 'id' => 'grid--user_id']
-            ],
-        'data_criacao',
-        'deletado:boolean',
+        'titulo',
+        'caminho',
         [
             'class' => 'yii\grid\ActionColumn',
         ],
@@ -57,7 +37,7 @@ $this->registerJs($search);
         'dataProvider' => $dataProvider,
         'columns' => $gridColumn,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-educador']],
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-som']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),

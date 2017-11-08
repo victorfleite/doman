@@ -16,9 +16,10 @@ class Atividade extends BaseAtividade {
     public function rules() {
         return [
             [['titulo', 'user_id'], 'required'],
-            [['status', 'user_id', 'user_publicacao_id'], 'integer'],
-            [['data_publicacao'], 'safe'],
-            [['titulo'], 'string', 'max' => 255]
+            [['status', 'user_id', 'user_publicacao_id', 'tipo', 'som_id'], 'integer'],
+            [['data_publicacao', 'data_criacao'], 'safe'],
+            [['deletado', 'autoplay'], 'boolean'],
+            [['titulo', 'video_url'], 'string', 'max' => 255]
         ];
     }
 

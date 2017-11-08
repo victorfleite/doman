@@ -18,6 +18,8 @@ class Plano extends BasePlano {
             [['nome'], 'required'],
             [['descricao'], 'string'],
             [['status', 'user_id'], 'integer'],
+            [['data_criacao'], 'safe'],
+            [['deletado'], 'boolean'],
             [['nome'], 'string', 'max' => 255]
         ];
     }

@@ -31,6 +31,7 @@ class Menu {
                     ['label' => "Alunos", 'url' => ['/doman/aluno/index']],
                     ['label' => "Grupos", 'url' => ['/doman/grupo/index']],
                     ['label' => "Atividades", 'url' => ['/doman/atividade/index']],
+                    ['label' => "Sons", 'url' => ['/doman/som/index']],
                     ['label' => "Planos", 'url' => ['/doman/plano/index']],
                     ['label' => "Licenças", 'url' => ['/doman/licenca/index']],
             ]];

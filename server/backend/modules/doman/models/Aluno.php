@@ -16,8 +16,9 @@ class Aluno extends BaseAluno {
     public function rules() {
         return [
             [['nome', 'data_nascimento'], 'required'],
-            [['data_nascimento'], 'safe'],
+            [['data_nascimento', 'data_criacao'], 'safe'],
             [['tipo', 'user_id'], 'integer'],
+            [['deletado'], 'boolean'],
             [['nome'], 'string', 'max' => 255]
         ];
     }

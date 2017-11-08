@@ -17,7 +17,7 @@ class GrupoAluno extends BaseGrupoAluno {
         return [
             [['grupo_id', 'aluno_id'], 'required'],
             [['grupo_id', 'aluno_id', 'grupo_pai', 'status'], 'integer'],
-            [['data_abertura', 'data_finalizacao'], 'safe'],
+            [['data_abertura', 'data_finalizacao', 'data_criacao'], 'safe']
         ];
     }
 
