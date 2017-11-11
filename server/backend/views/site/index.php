@@ -1,5 +1,6 @@
 <?php
 /* @var $this yii\web\View */
+
 use yii\helpers\Url;
 
 //$this->title = 'My Yii Application';
@@ -68,21 +69,21 @@ use yii\helpers\Url;
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-object-group fa-5x"></i>
+                                <i class="fa fa-id-card-o fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">
                                     <?php
-                                    echo \app\modules\doman\models\Grupo::find()->where(['deletado' => false])->count();
-                                    ?>                                    
+                                    echo \app\modules\doman\models\Licenca::find()->where(['deletado' => false])->count();
+                                    ?>
                                 </div>
-                                <div>Grupos</div>
+                                <div>Licenças</div>
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo Url::to(['/doman/grupo/index']); ?>">
+                    <a href="<?php echo Url::to(['/doman/licenca/index']); ?>">
                         <div class="panel-footer">
-                            <span class="pull-left">Acessar Grupos</span>
+                            <span class="pull-left">Acessar Licenças</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                             <div class="clearfix"></div>
@@ -119,33 +120,60 @@ use yii\helpers\Url;
             </div>            
         </div>
         <div class="row">
-                <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-id-card-o fa-5x"></i>
+                                <i class="fa fa-object-group fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">
                                     <?php
-                                    echo \app\modules\doman\models\Licenca::find()->where(['deletado' => false])->count();
-                                    ?>
+                                    echo \app\modules\doman\models\Grupo::find()->where(['deletado' => false])->count();
+                                    ?>                                    
                                 </div>
-                                <div>Licenças</div>
+                                <div>Grupos</div>
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo Url::to(['/doman/licenca/index']); ?>">
+                    <a href="<?php echo Url::to(['/doman/grupo/index']); ?>">
                         <div class="panel-footer">
-                            <span class="pull-left">Acessar Licenças</span>
+                            <span class="pull-left">Acessar Grupos</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                             <div class="clearfix"></div>
                         </div>
                     </a>
                 </div>
-            </div>            
+            </div>           
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-music fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">
+                                    <?php
+                                    echo \app\modules\doman\models\Som::find()->count();
+                                    ?>
+                                </div>
+                                <div>Sons</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="<?php echo Url::to(['/doman/som/index']); ?>">
+                        <div class="panel-footer">
+                            <span class="pull-left">Acessar Sons</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
             <div class="col-lg-3 col-md-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -174,33 +202,6 @@ use yii\helpers\Url;
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-music fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">
-                                    <?php
-                                    echo \app\modules\doman\models\Som::find()->count();
-                                    ?>
-                                </div>
-                                <div>Sons</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="<?php echo Url::to(['/doman/som/index']); ?>">
-                        <div class="panel-footer">
-                            <span class="pull-left">Acessar Sons</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
-                            <div class="clearfix"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-             <div class="col-lg-3 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
@@ -224,7 +225,7 @@ use yii\helpers\Url;
                     </a>
                 </div>
             </div>       
-            
+
         </div>
         <div class="row">            
             <div class="col-lg-3 col-md-6">
