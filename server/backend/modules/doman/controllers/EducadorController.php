@@ -8,17 +8,18 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use \app\modules\doman\models\AssociarAlunoEducadorForm;
+use \app\modules\doman\models\EducadorAluno;
 
 /**
  * EducadorController implements the CRUD actions for Educador model.
  */
-class EducadorController extends Controller
-{
+class EducadorController extends Controller {
+
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -33,15 +34,14 @@ class EducadorController extends Controller
      * Lists all Educador models.
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $dataProvider = new ActiveDataProvider([
-            'query' => Educador::find()->where(['deletado'=>false]),
-            'sort'=> ['defaultOrder' => ['nome'=>SORT_ASC, 'id'=>SORT_DESC]]
+            'query' => Educador::find()->where(['deletado' => false]),
+            'sort' => ['defaultOrder' => ['nome' => SORT_ASC, 'id' => SORT_DESC]]
         ]);
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -50,10 +50,9 @@ class EducadorController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
-    {
+    public function actionView($id) {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -62,8 +61,7 @@ class EducadorController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new Educador();
         $model->user_id = Yii::$app->user->id;
 
@@ -71,7 +69,7 @@ class EducadorController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -82,8 +80,7 @@ class EducadorController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
-    {
+    public function actionUpdate($id) {
         $model = $this->findModel($id);
         $model->user_id = Yii::$app->user->id;
 
@@ -91,7 +88,7 @@ class EducadorController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -102,8 +99,7 @@ class EducadorController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id) {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -116,12 +112,38 @@ class EducadorController extends Controller
      * @return Educador the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         if (($model = Educador::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    public function actionAssociarAluno($id) {
+
+        $model = new AssociarAlunoEducadorForm;
+        $educador = $this->findModel($id);
+        if ($model->load(Yii::$app->request->post())) {
+            $alunos = $model->alunos;
+            // Delete todos os alunos encontrados
+            EducadorAluno::deleteAll('educador_id = :educador_id', [':educador_id' => $educador->id]);
+            // Criando todos os alunos novamente
+            if (is_array($alunos)) {
+                foreach ($alunos as $id) {
+                    $rl = new EducadorAluno();
+                    $rl->aluno_id = $id;
+                    $rl->educador_id = $educador->id;
+                    $rl->save();
+                }
+            }
+            return $this->redirect(['/doman/educador/view', 'id' => $educador->id]);
+        }
+        $model->alunos = $educador->getTodosIdsAlunos();
+        return $this->render('associar-aluno', [
+                    'model' => $model,
+                    'educador' => $educador,
+        ]);
+    }
+
 }

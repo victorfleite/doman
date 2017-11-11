@@ -53,6 +53,20 @@ class Educador extends BaseEducador implements \common\components\traits\SimpleS
         ];
     }
 
+    /**
+     * @return Array de Alunos
+     */
+    public function getTodosIdsAlunos() {
+        $alunos = parent::getAlunos()->all();
+        $alunosIds = [];
+        if (is_array($alunos)) {
+            foreach ($alunos as $j) {
+                $alunosIds[] = $j->id;
+            }
+        }
+        return $alunosIds;
+    }
+
     public function behaviors() {
         return [
             'softDeleteBehavior' => [

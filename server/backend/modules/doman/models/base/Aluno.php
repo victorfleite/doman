@@ -50,7 +50,7 @@ class Aluno extends \yii\db\ActiveRecord
             'user',
             'atividadeAlunos',
             'educadorAlunos',
-            'educadors',
+            'educadores',
             'grupoAlunos',
             'grupos'
         ];
@@ -122,7 +122,7 @@ class Aluno extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEducadors()
+    public function getEducadores()
     {
         return $this->hasMany(\app\modules\doman\models\Educador::className(), ['id' => 'educador_id'])->viaTable('educador_aluno', ['aluno_id' => 'id']);
     }

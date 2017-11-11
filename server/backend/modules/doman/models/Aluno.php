@@ -16,7 +16,7 @@ class Aluno extends BaseAluno implements \common\components\traits\SimpleStatusI
     const TIPO_INTERNET = 2;
     const TIPO_ESCOLA_LABEL = 'Escola';
     const TIPO_INTERNET_LABEL = 'Internet';
-    
+
     /**
      * @inheritdoc
      */
@@ -46,6 +46,20 @@ class Aluno extends BaseAluno implements \common\components\traits\SimpleStatusI
             self::TIPO_ESCOLA => self::TIPO_ESCOLA_LABEL,
             self::TIPO_INTERNET => self::TIPO_INTERNET_LABEL,
         ];
+    }
+
+    /**
+     * @return Array de Educadores
+     */
+    public function getTodosIdsEducadores() {
+        $educadores = parent::getEducadores()->all();
+        $educadoresIds = [];
+        if (is_array($educadores)) {
+            foreach ($educadores as $j) {
+                $educadoresIds[] = $j->id;
+            }
+        }
+        return $educadoresIds;
     }
 
     public function behaviors() {

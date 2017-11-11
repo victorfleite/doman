@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\data\ArrayDataProvider;
+use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Aluno */
@@ -16,16 +19,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p class="text-right">
         <?= Html::a(Yii::t('translation', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('translation', 'Delete'), ['delete', 'id' => $model->id], [
+        <?=
+        Html::a(Yii::t('translation', 'Delete'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => Yii::t('translation', 'Are you sure you want to delete this item?'),
                 'method' => 'post',
             ],
-        ]) ?>
+        ])
+        ?>
     </p>
 
-    <?= DetailView::widget([
+    <?=
+    DetailView::widget([
         'model' => $model,
         'template' => "<tr><th width='200px'>{label}</th><td>{value}</td></tr>",
         'attributes' => [
@@ -44,13 +50,65 @@ $this->params['breadcrumbs'][] = $this->title;
                     return app\modules\doman\models\Aluno::getStatusLabel($data->status);
                 }
             ],
-                    [
+            [
                 'attribute' => 'user_id',
                 'value' => function($data) {
                     return $data->user->name;
                 }
             ],
         ],
-    ]) ?>
+    ])
+    ?>
 
 </div>
+
+<p class="text-right">
+    <?= Html::a('Associar Educador', ['associar-educador', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+</p>
+<h3>Educador Associados</h3>
+<?php
+$educadores = $model->getEducadores()->where(['deletado'=>false])->all();
+$dataProvider = new ArrayDataProvider([
+    'allModels' => $educadores,
+    'sort' => [
+        'attributes' => ['nome'],
+    ],
+    'pagination' => [
+        'pageSize' => 10,
+    ],
+        ]);
+
+ echo GridView::widget([
+    'dataProvider' => $dataProvider,
+    'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
+        'nome',
+        'email',
+        [
+            'attribute' => 'tipo',
+            'value' => function($data) {
+                return app\modules\doman\models\Educador::getTipoLabel($data->tipo);
+            }
+        ],
+        [
+            'attribute' => 'status',
+            'value' => function($data) {
+                return app\modules\doman\models\Educador::getStatusLabel($data->status);
+            }
+        ],
+        // 'user_id',
+        // 'data_criacao',
+        // 'deletado:boolean',
+        [
+            'class' => 'yii\grid\ActionColumn',
+            'contentOptions' => ['class' => 'text-right'],
+            'template' => '{view}',
+            'urlCreator' => function ($action, $model, $key, $index) {
+                if ($action === 'view') {
+                    return Url::to(['/doman/educador/view', 'id' => $model->id]);
+                }
+            }
+        ],
+    ],
+]);
+?>
