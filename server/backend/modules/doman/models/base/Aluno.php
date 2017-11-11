@@ -14,6 +14,7 @@ use Yii;
  * @property integer $user_id
  * @property string $data_criacao
  * @property boolean $deletado
+ * @property integer $status
  *
  * @property \app\modules\doman\models\User $user
  * @property \app\modules\doman\models\AtividadeAluno[] $atividadeAlunos
@@ -63,7 +64,7 @@ class Aluno extends \yii\db\ActiveRecord
         return [
             [['nome', 'data_nascimento'], 'required'],
             [['data_nascimento', 'data_criacao'], 'safe'],
-            [['tipo', 'user_id'], 'integer'],
+            [['tipo', 'user_id', 'status'], 'integer'],
             [['deletado'], 'boolean'],
             [['nome'], 'string', 'max' => 255]
         ];
@@ -87,9 +88,10 @@ class Aluno extends \yii\db\ActiveRecord
             'nome' => Yii::t('translation', 'Nome'),
             'data_nascimento' => Yii::t('translation', 'Data Nascimento'),
             'tipo' => Yii::t('translation', 'Tipo'),
-            'user_id' => Yii::t('translation', 'User ID'),
+            'user_id' => Yii::t('translation', 'Criador'),
             'data_criacao' => Yii::t('translation', 'Data Criacao'),
             'deletado' => Yii::t('translation', 'Deletado'),
+            'status' => Yii::t('translation', 'Status'),
         ];
     }
     

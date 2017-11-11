@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Atividade */
 
-$this->title = Yii::t('translation', 'Create Atividade');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Atividade'), 'url' => ['index']];
+$this->title = 'Nova Atividade';
+$this->params['breadcrumbs'][] = ['label' => 'Atividades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="atividade-create">

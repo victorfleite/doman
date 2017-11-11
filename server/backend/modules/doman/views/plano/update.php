@@ -5,12 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Plano */
 
-$this->title = Yii::t('translation', 'Update {modelClass}: ', [
-    'modelClass' => 'Plano',
-]) . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Plano'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('translation', 'Update');
+$this->title = $model->nome;
+$this->params['breadcrumbs'][] = ['label' => 'Planos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->nome, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Atualizar';
 ?>
 <div class="plano-update">
 

@@ -5,12 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Licenca */
 
-$this->title = Yii::t('translation', 'Update {modelClass}: ', [
-    'modelClass' => 'Licenca',
-]) . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Licenca'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('translation', 'Update');
+$this->title = $model->identificador;
+$this->params['breadcrumbs'][] = ['label' => 'Licencas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->identificador, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Atualizar';
 ?>
 <div class="licenca-update">
 

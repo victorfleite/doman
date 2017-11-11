@@ -51,7 +51,7 @@ class Som extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titulo', 'caminho'], 'required'],
+            [['titulo'], 'required'],
             [['titulo'], 'string'],
             [['caminho'], 'string', 'max' => 255]
         ];
@@ -73,7 +73,7 @@ class Som extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('translation', 'ID'),
             'titulo' => Yii::t('translation', 'Titulo'),
-            'caminho' => Yii::t('translation', 'Caminho'),
+            'caminho' => Yii::t('translation', 'Arquivo'),
         ];
     }
     

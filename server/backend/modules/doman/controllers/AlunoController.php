@@ -14,13 +14,16 @@ use yii\filters\VerbFilter;
  */
 class AlunoController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['post'],
+                    'delete' => ['POST'],
                 ],
             ],
         ];
@@ -33,7 +36,7 @@ class AlunoController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Aluno::find(),
+            'query' => Aluno::find()->where(['deletado'=>false]),
         ]);
 
         return $this->render('index', [
@@ -48,21 +51,8 @@ class AlunoController extends Controller
      */
     public function actionView($id)
     {
-        $model = $this->findModel($id);
-        $providerAtividadeAluno = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->atividadeAlunos,
-        ]);
-        $providerEducadorAluno = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->educadorAlunos,
-        ]);
-        $providerGrupoAluno = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->grupoAlunos,
-        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerAtividadeAluno' => $providerAtividadeAluno,
-            'providerEducadorAluno' => $providerEducadorAluno,
-            'providerGrupoAluno' => $providerGrupoAluno,
         ]);
     }
 
@@ -74,8 +64,9 @@ class AlunoController extends Controller
     public function actionCreate()
     {
         $model = new Aluno();
+        $model->user_id = Yii::$app->user->id;
 
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -93,8 +84,9 @@ class AlunoController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $model->user_id = Yii::$app->user->id;
 
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -111,12 +103,11 @@ class AlunoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->deleteWithRelated();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
 
-    
     /**
      * Finds the Aluno model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -129,67 +120,7 @@ class AlunoController extends Controller
         if (($model = Aluno::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for AtividadeAluno
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddAtividadeAluno()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('AtividadeAluno');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formAtividadeAluno', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for EducadorAluno
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddEducadorAluno()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('EducadorAluno');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formEducadorAluno', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for GrupoAluno
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddGrupoAluno()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('GrupoAluno');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formGrupoAluno', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
+            throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
 }

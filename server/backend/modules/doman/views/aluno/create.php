@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\modules\doman\models\Aluno */
 
 $this->title = Yii::t('translation', 'Create Aluno');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Aluno'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Alunos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="aluno-create">

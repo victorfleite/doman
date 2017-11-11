@@ -13,8 +13,8 @@ use Yii;
  * @property integer $status
  * @property string $data_criacao
  * @property integer $user_id
- * @property boolean $deletado
  *
+ * @property \app\modules\doman\models\User $user
  * @property \app\modules\doman\models\PlanoEducadorLicenca[] $planoEducadorLicencas
  * @property \app\modules\doman\models\PlanoGrupo[] $planoGrupos
  * @property \app\modules\doman\models\Grupo[] $grupos
@@ -23,18 +23,6 @@ class Plano extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
-    private $_rt_softdelete;
-    private $_rt_softrestore;
-
-    public function __construct(){
-        parent::__construct();
-        $this->_rt_softdelete = [
-            'deletado' => true,
-        ];
-        $this->_rt_softrestore = [
-            'deletado' => 0,
-        ];
-    }
 
     /**
     * This function helps \mootensai\relation\RelationTrait runs faster
@@ -43,6 +31,7 @@ class Plano extends \yii\db\ActiveRecord
     public function relationNames()
     {
         return [
+            'user',
             'planoEducadorLicencas',
             'planoGrupos',
             'grupos'
@@ -59,7 +48,6 @@ class Plano extends \yii\db\ActiveRecord
             [['descricao'], 'string'],
             [['status', 'user_id'], 'integer'],
             [['data_criacao'], 'safe'],
-            [['deletado'], 'boolean'],
             [['nome'], 'string', 'max' => 255]
         ];
     }
@@ -80,14 +68,21 @@ class Plano extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('translation', 'ID'),
             'nome' => Yii::t('translation', 'Nome'),
-            'descricao' => Yii::t('translation', 'Descricao'),
+            'descricao' => Yii::t('translation', 'Descrição'),
             'status' => Yii::t('translation', 'Status'),
-            'data_criacao' => Yii::t('translation', 'Data Criacao'),
-            'user_id' => Yii::t('translation', 'User ID'),
-            'deletado' => Yii::t('translation', 'Deletado'),
+            'data_criacao' => Yii::t('translation', 'Data Criação'),
+            'user_id' => Yii::t('translation', 'Criador'),
         ];
     }
     
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(\app\modules\doman\models\User::className(), ['id' => 'user_id']);
+    }
+        
     /**
      * @return \yii\db\ActiveQuery
      */

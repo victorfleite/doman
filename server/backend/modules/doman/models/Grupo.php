@@ -9,7 +9,10 @@ use \app\modules\doman\models\base\Grupo as BaseGrupo;
 /**
  * This is the model class for table "grupo".
  */
-class Grupo extends BaseGrupo {
+class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoStatusInterface {
+
+    use \common\components\traits\PublicacaoStatusTrait;
+ 
 
     /**
      * @inheritdoc

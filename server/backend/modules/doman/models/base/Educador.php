@@ -86,14 +86,14 @@ class Educador extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('translation', 'ID'),
-            'nome' => Yii::t('translation', 'Nome'),
-            'email' => Yii::t('translation', 'Email'),
-            'tipo' => Yii::t('translation', 'Tipo'),
-            'status' => Yii::t('translation', 'Status'),
-            'user_id' => Yii::t('translation', 'User ID'),
-            'data_criacao' => Yii::t('translation', 'Data Criacao'),
-            'deletado' => Yii::t('translation', 'Deletado'),
+            'id' => "id",
+            'nome' => "Nome",
+            'email' => "Email",
+            'tipo' => "Tipo",
+            'status' => "Status",
+            'user_id' => "Criador",
+            'data_criacao' => "Data Criação",
+            'deletado' => "Apagado",
         ];
     }
     

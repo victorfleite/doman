@@ -14,13 +14,16 @@ use yii\filters\VerbFilter;
  */
 class GrupoController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['post'],
+                    'delete' => ['POST'],
                 ],
             ],
         ];
@@ -48,25 +51,8 @@ class GrupoController extends Controller
      */
     public function actionView($id)
     {
-        $model = $this->findModel($id);
-        $providerAtividadeAluno = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->atividadeAlunos,
-        ]);
-        $providerGrupoAluno = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->grupoAlunos,
-        ]);
-        $providerGrupoAtividade = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->grupoAtividades,
-        ]);
-        $providerPlanoGrupo = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->planoGrupos,
-        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerAtividadeAluno' => $providerAtividadeAluno,
-            'providerGrupoAluno' => $providerGrupoAluno,
-            'providerGrupoAtividade' => $providerGrupoAtividade,
-            'providerPlanoGrupo' => $providerPlanoGrupo,
         ]);
     }
 
@@ -77,9 +63,10 @@ class GrupoController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Grupo();
+        $model = new Grupo();        
+        $model->user_id = Yii::$app->user->id;
 
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -97,8 +84,9 @@ class GrupoController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        $model->user_id = Yii::$app->user->id;
+        
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -120,7 +108,6 @@ class GrupoController extends Controller
         return $this->redirect(['index']);
     }
 
-    
     /**
      * Finds the Grupo model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -133,87 +120,7 @@ class GrupoController extends Controller
         if (($model = Grupo::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for AtividadeAluno
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddAtividadeAluno()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('AtividadeAluno');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formAtividadeAluno', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for GrupoAluno
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddGrupoAluno()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('GrupoAluno');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formGrupoAluno', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for GrupoAtividade
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddGrupoAtividade()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('GrupoAtividade');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formGrupoAtividade', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for PlanoGrupo
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddPlanoGrupo()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('PlanoGrupo');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formPlanoGrupo', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
+            throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
 }

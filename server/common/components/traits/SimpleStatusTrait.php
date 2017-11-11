@@ -9,8 +9,6 @@
 
 namespace common\components\traits;
 
-use \yii\helpers\StringHelper;
-
 trait SimpleStatusTrait {
 
     public static function getStatusLabel($p) {

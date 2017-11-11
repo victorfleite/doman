@@ -16,7 +16,10 @@ return [
     'menu.language.portuguese' => 'Português',
     
     /** GENERAL **/
-    'update'=>'Atualizar',
+    'Create'=>'Salvar',
+    'Update'=>'Atualizar',
+    'Delete'=>'Apagar',
+    'Are you sure you want to delete this item?' => 'Tem certeza que deseja apagar?',
     
     /** SITE CONTROLLER * */
     'site.set_language.message_language_selected' => 'Idioma selecionado ({language})',

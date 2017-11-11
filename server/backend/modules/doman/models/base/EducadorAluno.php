@@ -69,9 +69,9 @@ class EducadorAluno extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'educador_id' => Yii::t('translation', 'Educador ID'),
-            'aluno_id' => Yii::t('translation', 'Aluno ID'),
-            'data_criacao' => Yii::t('translation', 'Data Criacao'),
+            'educador_id' => Yii::t('translation', 'Educador'),
+            'aluno_id' => Yii::t('translation', 'Aluno'),
+            'data_criacao' => Yii::t('translation', 'Data Criação'),
         ];
     }
     

@@ -14,13 +14,16 @@ use yii\filters\VerbFilter;
  */
 class PlanoController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['post'],
+                    'delete' => ['POST'],
                 ],
             ],
         ];
@@ -48,17 +51,8 @@ class PlanoController extends Controller
      */
     public function actionView($id)
     {
-        $model = $this->findModel($id);
-        $providerPlanoEducadorLicenca = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->planoEducadorLicencas,
-        ]);
-        $providerPlanoGrupo = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->planoGrupos,
-        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerPlanoEducadorLicenca' => $providerPlanoEducadorLicenca,
-            'providerPlanoGrupo' => $providerPlanoGrupo,
         ]);
     }
 
@@ -71,7 +65,7 @@ class PlanoController extends Controller
     {
         $model = new Plano();
 
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -90,7 +84,7 @@ class PlanoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -107,12 +101,11 @@ class PlanoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->deleteWithRelated();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
 
-    
     /**
      * Finds the Plano model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -125,47 +118,7 @@ class PlanoController extends Controller
         if (($model = Plano::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for PlanoEducadorLicenca
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddPlanoEducadorLicenca()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('PlanoEducadorLicenca');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formPlanoEducadorLicenca', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for PlanoGrupo
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddPlanoGrupo()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('PlanoGrupo');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formPlanoGrupo', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('translation', 'The requested page does not exist.'));
+            throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
 }

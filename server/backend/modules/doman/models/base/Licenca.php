@@ -81,13 +81,13 @@ class Licenca extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('translation', 'ID'),
-            'educador_id' => Yii::t('translation', 'Educador ID'),
-            'data_inicio' => Yii::t('translation', 'Data Inicio'),
+            'educador_id' => Yii::t('translation', 'Educador'),
+            'data_inicio' => Yii::t('translation', 'Data Início'),
             'data_fim' => Yii::t('translation', 'Data Fim'),
-            'data_criacao' => Yii::t('translation', 'Data Criacao'),
+            'data_criacao' => Yii::t('translation', 'Data Criação'),
             'tipo' => Yii::t('translation', 'Tipo'),
             'status' => Yii::t('translation', 'Status'),
-            'user_id' => Yii::t('translation', 'User ID'),
+            'user_id' => Yii::t('translation', 'Criador'),
             'deletado' => Yii::t('translation', 'Deletado'),
             'identificador' => Yii::t('translation', 'Identificador'),
         ];

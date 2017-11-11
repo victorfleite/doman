@@ -5,12 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Educador */
 
-$this->title = Yii::t('translation', 'Update {modelClass}: ', [
-    'modelClass' => 'Educador',
-]) . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Educador'), 'url' => ['index']];
+$this->title = 'Update Educador: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Educadors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('translation', 'Update');
+$this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="educador-update">
 
