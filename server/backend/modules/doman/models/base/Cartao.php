@@ -67,7 +67,7 @@ class Cartao extends \yii\db\ActiveRecord
     {
         return [
             [['nome', 'atividade_id', 'imagem_caminho', 'user_id'], 'required'],
-            [['status', 'ordem', 'atividade_id', 'user_id', 'user_publicacao_id'], 'integer'],
+            [['status', 'ordem', 'atividade_id', 'user_id', 'user_publicacao_id', 'status_convocacao'], 'integer'],
             [['data_criacao', 'data_publicacao'], 'safe'],
             [['deletado', 'som_autoplay'], 'boolean'],
             [['nome', 'imagem_caminho'], 'string', 'max' => 255]
@@ -91,15 +91,16 @@ class Cartao extends \yii\db\ActiveRecord
             'id' => Yii::t('translation', 'ID'),
             'nome' => Yii::t('translation', 'Nome'),
             'status' => Yii::t('translation', 'Status'),
-            'data_criacao' => Yii::t('translation', 'Data Criacao'),
+            'data_criacao' => Yii::t('translation', 'Data Criação'),
             'ordem' => Yii::t('translation', 'Ordem'),
-            'atividade_id' => Yii::t('translation', 'Atividade ID'),
-            'imagem_caminho' => Yii::t('translation', 'Imagem Caminho'),
+            'atividade_id' => Yii::t('translation', 'Atividade'),
+            'imagem_caminho' => Yii::t('translation', 'Arquivo'),
             'user_id' => Yii::t('translation', 'User ID'),
             'data_publicacao' => Yii::t('translation', 'Data Publicacao'),
             'user_publicacao_id' => Yii::t('translation', 'User Publicacao ID'),
             'deletado' => Yii::t('translation', 'Deletado'),
             'som_autoplay' => Yii::t('translation', 'Som Autoplay'),
+            'status_convocacao' => Yii::t('translation', 'Convocado'),
         ];
     }
     

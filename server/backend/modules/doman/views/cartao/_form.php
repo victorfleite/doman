@@ -2,105 +2,49 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\widgets\FileInput;
+use common\models\Util;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Cartao */
 /* @var $form yii\widgets\ActiveForm */
-
-\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
-    'viewParams' => [
-        'class' => 'CartaoAluno', 
-        'relID' => 'cartao-aluno', 
-        'value' => \yii\helpers\Json::encode($model->cartaoAlunos),
-        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
-    ]
-]);
-\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
-    'viewParams' => [
-        'class' => 'CartaoSom', 
-        'relID' => 'cartao-som', 
-        'value' => \yii\helpers\Json::encode($model->cartaoSoms),
-        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
-    ]
-]);
 ?>
 
 <div class="cartao-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
+    <div class="row">	
+        <div class="col-lg-6">
+            <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-lg-2">
+            <?= $form->field($model, 'status_convocacao')->dropDownList(\app\modules\doman\models\Cartao::getStatusConvocacaoCombo()); ?>
+        </div> 
+        <div class="col-lg-2">
+            <?= $form->field($model, 'ordem')->textInput(['type' => 'number']); ?>
+        </div> 
+        <div class="col-lg-2">
+            <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Cartao::getStatusCombo()); ?>
+        </div>         
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <?php
+            $label = 'Arquivo';
+            $label .= (!$model->isNewRecord) ? '  [ ' . Html::a(Util::fileRemovePath($model->imagem_caminho), $model->imagem_caminho, $options = ['target' => '_blank']) . ' ]' : '';
+            echo $form->field($model, 'imagem')->label($label)->widget(FileInput::classname(), [
+                'options' => ['accept' => 'image/*'],
+                'pluginOptions' => ['allowedFileExtensions' => ['jpg', 'png'], 'showUpload' => false],
+            ]);
+            ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'placeholder' => 'Nome']) ?>
-
-    <?= $form->field($model, 'status')->textInput(['placeholder' => 'Status']) ?>
-
-    <?= $form->field($model, 'data_criacao')->textInput(['placeholder' => 'Data Criacao']) ?>
-
-    <?= $form->field($model, 'ordem')->textInput(['placeholder' => 'Ordem']) ?>
-
-    <?= $form->field($model, 'atividade_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\Atividade::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-        'options' => ['placeholder' => Yii::t('translation', 'Choose Atividade')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'imagem_caminho')->textInput(['maxlength' => true, 'placeholder' => 'Imagem Caminho']) ?>
-
-    <?= $form->field($model, 'user_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\User::find()->orderBy('id')->asArray()->all(), 'id', 'username'),
-        'options' => ['placeholder' => Yii::t('translation', 'Choose User')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'data_publicacao')->textInput(['placeholder' => 'Data Publicacao']) ?>
-
-    <?= $form->field($model, 'user_publicacao_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\User::find()->orderBy('id')->asArray()->all(), 'id', 'username'),
-        'options' => ['placeholder' => Yii::t('translation', 'Choose User')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'deletado')->checkbox() ?>
-
-    <?= $form->field($model, 'som_autoplay')->checkbox() ?>
-
-    <?php
-    $forms = [
-        [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('translation', 'CartaoAluno')),
-            'content' => $this->render('_formCartaoAluno', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->cartaoAlunos),
-            ]),
-        ],
-        [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('translation', 'CartaoSom')),
-            'content' => $this->render('_formCartaoSom', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->cartaoSoms),
-            ]),
-        ],
-    ];
-    echo kartik\tabs\TabsX::widget([
-        'items' => $forms,
-        'position' => kartik\tabs\TabsX::POS_ABOVE,
-        'encodeLabels' => false,
-        'pluginOptions' => [
-            'bordered' => true,
-            'sideways' => true,
-            'enableCache' => false,
-        ],
-    ]);
-    ?>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('translation', 'Create') : Yii::t('translation', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

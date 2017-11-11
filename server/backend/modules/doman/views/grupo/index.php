@@ -23,9 +23,19 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             'titulo',
             [
+                'attribute' => 'grupo_pai',
+                'value' => function($data) {
+                    return $data->grupoPai->titulo;
+                }
+            ],
+            [
+                'attribute' => 'ordem',
+                'contentOptions' => ['class' => 'text-right']
+            ],
+            [
                 'attribute' => 'status',
                 'value' => function($data) {
-                    return app\modules\doman\models\Plano::getStatusLabel($data->status);
+                    return app\modules\doman\models\Grupo::getStatusLabel($data->status);
                 }
             ],
             //'user_id',

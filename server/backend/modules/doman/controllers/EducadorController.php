@@ -37,6 +37,7 @@ class EducadorController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Educador::find()->where(['deletado'=>false]),
+            'sort'=> ['defaultOrder' => ['nome'=>SORT_ASC, 'id'=>SORT_DESC]]
         ]);
 
         return $this->render('index', [

@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\modules\doman\models\Cartao;
 
 /**
  * AtividadeController implements the CRUD actions for Atividade model.
@@ -37,6 +38,7 @@ class AtividadeController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Atividade::find()->where(['deletado'=>false]),
+            'sort'=> ['defaultOrder' => ['id'=>SORT_DESC]]
         ]);
 
         return $this->render('index', [
@@ -51,8 +53,14 @@ class AtividadeController extends Controller
      */
     public function actionView($id)
     {
+        
+         $cartoesDataProvider = new ActiveDataProvider([
+            'query' => Cartao::find()->where(['deletado'=>false, 'atividade_id'=>$id]),
+             'sort'=> ['defaultOrder' => ['ordem'=>SORT_ASC, 'nome'=>SORT_DESC]]
+        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'cartoesDataProvider'=>$cartoesDataProvider
         ]);
     }
 

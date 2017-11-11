@@ -19,7 +19,7 @@ class Plano extends BasePlano implements \common\components\traits\SimpleStatusI
         return array_replace_recursive(parent::rules(), [
             [['nome'], 'required'],
             [['descricao'], 'string'],
-            [['status', 'user_id'], 'integer'],
+            [['status', 'user_id', 'ordem'], 'integer'],
             [['data_criacao'], 'safe'],
             [['nome'], 'string', 'max' => 255]
         ]);

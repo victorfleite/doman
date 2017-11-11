@@ -43,14 +43,19 @@ class Som extends BaseSom {
                 // generate a unique file name to prevent duplicate filenames
                 $fileName = Util::generateHashSha256(6) . "_" . Util::sanitizeString($this->mp3->baseName) . ".{$ext}";
                 $this->caminho = SOM::SOM_PATH . strtolower($fileName);
-                $this->mp3->saveAs($this->caminho, false);
 
+                if ($this->isNewRecord && is_null($this->mp3)) {
+                    $this->addError('caminho', 'O arquivo de som é obrigatório.');
+                    return false;
+                } else {
+                    $this->mp3->saveAs($this->caminho, false);
+                }
                 return $this->save();
             } else {
                 return false;
             }
         }
-        return true;
+        return $this->save();
     }
 
 }

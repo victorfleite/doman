@@ -2,188 +2,74 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Cartao */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('translation', 'Cartao'), 'url' => ['index']];
+$this->title = $model->nome;
+$this->params['breadcrumbs'][] = ['label' => 'Atividades', 'url' => ['/doman/atividade/index']];
+$this->params['breadcrumbs'][] = ['label' => $model->atividade->titulo, 'url' => ['/doman/atividade/view', 'id' => $model->atividade_id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cartao-view">
 
-    <div class="row">
-        <div class="col-sm-9">
-            <h2><?= Yii::t('translation', 'Cartao').' '. Html::encode($this->title) ?></h2>
-        </div>
-        <div class="col-sm-3" style="margin-top: 15px">
-            
-            <?= Html::a(Yii::t('translation', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a(Yii::t('translation', 'Delete'), ['delete', 'id' => $model->id], [
-                'class' => 'btn btn-danger',
-                'data' => [
-                    'confirm' => Yii::t('translation', 'Are you sure you want to delete this item?'),
-                    'method' => 'post',
-                ],
-            ])
-            ?>
-        </div>
-    </div>
+    <h1><?= Html::encode($this->title) ?></h1>
 
-    <div class="row">
-<?php 
-    $gridColumn = [
-        ['attribute' => 'id', 'visible' => false],
-        'nome',
-        'status',
-        'data_criacao',
-        'ordem',
-        [
-            'attribute' => 'atividade.id',
-            'label' => Yii::t('translation', 'Atividade'),
-        ],
-        'imagem_caminho',
-        [
-            'attribute' => 'user.username',
-            'label' => Yii::t('translation', 'User'),
-        ],
-        'data_publicacao',
-        [
-            'attribute' => 'userPublicacao.username',
-            'label' => Yii::t('translation', 'User Publicacao'),
-        ],
-        'deletado:boolean',
-        'som_autoplay:boolean',
-    ];
-    echo DetailView::widget([
+    <p class="text-right">
+        <?= Html::a('Editar', ['update', 'id' => $model->id, 'atividade_id' => $model->atividade_id], ['class' => 'btn btn-primary']) ?>
+        <?=
+        Html::a('Apagar', ['delete', 'id' => $model->id, 'atividade_id' => $model->atividade_id], [
+            'class' => 'btn btn-danger',
+            'data' => [
+                'confirm' => 'Deseja realmente apagar este cartão?',
+                'method' => 'post',
+            ],
+        ])
+        ?>
+    </p>
+
+    <?=
+    DetailView::widget([
         'model' => $model,
-        'attributes' => $gridColumn
-    ]);
-?>
-    </div>
-    <div class="row">
-        <h4>Atividade<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnAtividade = [
-        ['attribute' => 'id', 'visible' => false],
-        'titulo',
-        'status',
-        'data_publicacao',
-        'data_criacao',
-        [
-            'attribute' => 'user.username',
-            'label' => Yii::t('translation', 'User'),
-        ],
-        [
-            'attribute' => 'userPublicacao.username',
-            'label' => Yii::t('translation', 'User Publicacao'),
-        ],
-        'deletado:boolean',
-        'tipo',
-        'video_url',
-        'autoplay',
-        'som_id',
-    ];
-    echo DetailView::widget([
-        'model' => $model->atividade,
-        'attributes' => $gridColumnAtividade    ]);
-    ?>
-    <div class="row">
-        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnUser = [
-        ['attribute' => 'id', 'visible' => false],
-        'username',
-        'auth_key',
-        'password_hash',
-        'password_reset_token',
-        'email',
-        'status',
-        'created_at',
-        'updated_at',
-        'name',
-    ];
-    echo DetailView::widget([
-        'model' => $model->user,
-        'attributes' => $gridColumnUser    ]);
-    ?>
-    <div class="row">
-        <h4>User<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnUser = [
-        ['attribute' => 'id', 'visible' => false],
-        'username',
-        'auth_key',
-        'password_hash',
-        'password_reset_token',
-        'email',
-        'status',
-        'created_at',
-        'updated_at',
-        'name',
-    ];
-    echo DetailView::widget([
-        'model' => $model->userPublicacao,
-        'attributes' => $gridColumnUser    ]);
-    ?>
-    
-    <div class="row">
-<?php
-if($providerCartaoAluno->totalCount){
-    $gridColumnCartaoAluno = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
+        'template' => "<tr><th width='200px'>{label}</th><td>{value}</td></tr>",
+        'attributes' => [
             [
-                'attribute' => 'atividadeAluno.id',
-                'label' => Yii::t('translation', 'Atividade Aluno')
+                'attribute' => 'imagem_caminho',
+                'format' => 'raw',
+                'contentOptions' => [],
+                'value' => function($data) {
+                    return Html::a(Html::img($data->imagem_caminho, ['width' => 400, 'height' => 300]), $data->imagem_caminho, $options = ['target' => '_blank']);
+                },
             ],
-                        'transacao_status',
-            'conhecido',
-            'data_conhecimento',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerCartaoAluno,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-cartao-aluno']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Cartao Aluno')),
-        ],
-        'export' => false,
-        'columns' => $gridColumnCartaoAluno
-    ]);
-}
-?>
-
-    </div>
-    
-    <div class="row">
-<?php
-if($providerCartaoSom->totalCount){
-    $gridColumnCartaoSom = [
-        ['class' => 'yii\grid\SerialColumn'],
-                        [
-                'attribute' => 'som.id',
-                'label' => Yii::t('translation', 'Som')
+            'nome',
+            [
+                'attribute' => 'atividade_id',
+                'value' => function($data) {
+                    return $data->atividade->titulo;
+                }
             ],
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerCartaoSom,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-cartao-som']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('translation', 'Cartao Som')),
+            [
+                'attribute' => 'status_convocacao',
+                'value' => function($data) {
+                    return app\modules\doman\models\Cartao::getStatusConvocacaoLabel($data->status_convocacao);
+                }
+            ],
+            [
+                'attribute' => 'status',
+                'value' => function($data) {
+                    return app\modules\doman\models\Cartao::getStatusLabel($data->status);
+                }
+            ],
+            'data_criacao:date',
+            'ordem',
+            [
+                'attribute' => 'user_id',
+                'value' => function($data) {
+                    return $data->user->name;
+                }
+            ],
         ],
-        'export' => false,
-        'columns' => $gridColumnCartaoSom
-    ]);
-}
-?>
+    ])
+    ?>
 
-    </div>
 </div>

@@ -37,6 +37,7 @@ class GrupoController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Grupo::find()->where(['deletado'=>false]),
+            'sort'=> ['defaultOrder' => ['ordem'=>SORT_ASC, 'id'=>SORT_DESC]]
         ]);
 
         return $this->render('index', [

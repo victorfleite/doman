@@ -37,6 +37,7 @@ class AlunoController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Aluno::find()->where(['deletado'=>false]),
+            'sort'=> ['defaultOrder' => ['nome'=>SORT_ASC, 'data_nascimento'=>SORT_DESC]]
         ]);
 
         return $this->render('index', [

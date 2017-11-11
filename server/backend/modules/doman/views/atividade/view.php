@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Atividade */
@@ -66,3 +68,67 @@ $this->params['breadcrumbs'][] = $this->title;
     ?>
 
 </div>
+
+<?php if ($model->tipo == \app\modules\doman\models\Atividade::TIPO_BIT_INTELIGENCIA) { ?>
+
+    <p class="text-right">
+        <?= Html::a('Novo Cartao', ['/doman/cartao/create', 'atividade_id' => $model->id], ['class' => 'btn btn-success']) ?>
+    </p>
+
+    <?=
+    GridView::widget([
+        'dataProvider' => $cartoesDataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'imagem_caminho',
+                'format' => 'raw',
+                'contentOptions' => [],
+                'value' => function($data) {
+                    return Html::a(Html::img($data->imagem_caminho, ['width' => 80, 'height' => 60]), $data->imagem_caminho, $options = ['target' => '_blank']);
+                },
+            ],
+            'nome',
+            [
+                'attribute' => 'ordem',
+                'contentOptions' => ['class' => 'text-right']
+            ],
+            [
+                'attribute' => 'status_convocacao',
+                'value' => function($data) {
+                    return app\modules\doman\models\Cartao::getStatusConvocacaoLabel($data->status_convocacao);
+                }
+            ],
+            'data_criacao:date',
+            [
+                'attribute' => 'status',
+                'value' => function($data) {
+                    return app\modules\doman\models\Cartao::getStatusLabel($data->status);
+                }
+            ],
+            // 'atividade_id',
+            // 'imagem_caminho',
+            // 'user_id',
+            // 'data_publicacao',
+            // 'user_publicacao_id',
+            // 'deletado:boolean',
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'contentOptions' => ['class' => 'text-right'],
+                'template' => '{view}{update}{delete}',
+                'urlCreator' => function ($action, $data, $key, $index) {
+                    if ($action === 'view') {
+                        return Url::to(['/doman/cartao/view', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);
+                    }
+                    if ($action === 'update') {
+                        return Url::to(['/doman/cartao/update', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);
+                    }
+                    if ($action === 'delete') {
+                        return Url::to(['/doman/cartao/delete', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);
+                    }
+                }
+            ],
+        ],
+    ]);
+}
+?>

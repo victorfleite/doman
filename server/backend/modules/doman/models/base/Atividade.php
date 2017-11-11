@@ -55,7 +55,7 @@ class Atividade extends \yii\db\ActiveRecord {
             'user',
             'userPublicacao',
             'atividadeAlunos',
-            'cartaos',
+            'cartoes',
             'grupoAtividades',
             'grupos'
         ];
@@ -98,6 +98,7 @@ class Atividade extends \yii\db\ActiveRecord {
             'video_url' => Yii::t('translation', 'Vídeo Url'),
             'autoplay' => Yii::t('translation', 'Autoplay'),
             'som_id' => Yii::t('translation', 'Som'),
+            'atividade_pai' => Yii::t('translation', 'Atividade Pai'),
         ];
     }
 
@@ -132,7 +133,7 @@ class Atividade extends \yii\db\ActiveRecord {
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCartaos() {
+    public function getCartoes() {
         return $this->hasMany(\app\modules\doman\models\Cartao::className(), ['atividade_id' => 'id']);
     }
 
@@ -149,5 +150,6 @@ class Atividade extends \yii\db\ActiveRecord {
     public function getGrupos() {
         return $this->hasMany(\app\modules\doman\models\Grupo::className(), ['id' => 'grupo_id'])->viaTable('grupo_atividade', ['atividade_id' => 'id']);
     }
+
 
 }

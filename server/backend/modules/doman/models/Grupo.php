@@ -21,7 +21,7 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
         return [
             [['titulo', 'user_id'], 'required'],
             [['descricao'], 'string'],
-            [['status', 'user_id', 'user_publicacao_id'], 'integer'],
+            [['status', 'user_id', 'user_publicacao_id', 'grupo_pai', 'ordem'], 'integer'],
             [['data_criacao', 'data_publicacao'], 'safe'],
             [['deletado'], 'boolean'],
             [['titulo'], 'string', 'max' => 255]

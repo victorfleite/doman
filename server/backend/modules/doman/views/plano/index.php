@@ -24,6 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'nome',
             'data_criacao:date',
             [
+                'attribute' => 'ordem',
+                'contentOptions' => ['class' => 'text-right']
+            ],
+            [
                 'attribute' => 'status',
                 'value' => function($data) {
                     return app\modules\doman\models\Plano::getStatusLabel($data->status);

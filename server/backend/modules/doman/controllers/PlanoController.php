@@ -37,6 +37,7 @@ class PlanoController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Plano::find(),
+            'sort'=> ['defaultOrder' => ['ordem'=>SORT_ASC, 'id'=>SORT_DESC]]
         ]);
 
         return $this->render('index', [

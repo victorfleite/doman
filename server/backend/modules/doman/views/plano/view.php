@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'nome',
             'descricao:ntext',
             'data_criacao:date',
+            'ordem',
             [
                 'attribute' => 'status',
                 'value' => function($data) {

@@ -55,7 +55,7 @@ class CartaoAluno extends \yii\db\ActiveRecord
     {
         return [
             [['atividade_aluno_id', 'cartao_id'], 'required'],
-            [['atividade_aluno_id', 'cartao_id', 'transacao_status', 'conhecido'], 'integer'],
+            [['atividade_aluno_id', 'cartao_id', 'status_convocacao', 'conhecido'], 'integer'],
             [['data_conhecimento'], 'safe']
         ];
     }
@@ -77,7 +77,7 @@ class CartaoAluno extends \yii\db\ActiveRecord
             'id' => Yii::t('translation', 'ID'),
             'atividade_aluno_id' => Yii::t('translation', 'Atividade Aluno ID'),
             'cartao_id' => Yii::t('translation', 'Cartao ID'),
-            'transacao_status' => Yii::t('translation', 'Transacao Status'),
+            'status_convocacao' => Yii::t('translation', 'Convocacao Status'),
             'conhecido' => Yii::t('translation', 'Conhecido'),
             'data_conhecimento' => Yii::t('translation', 'Data Conhecimento'),
         ];

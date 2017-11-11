@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\modules\doman\models\Som */
 
 $this->title = $model->titulo;
-$this->params['breadcrumbs'][] = ['label' => 'Soms', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Sons', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="som-view">

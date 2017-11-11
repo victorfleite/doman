@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use \app\modules\doman\models\Atividade;
+use \app\modules\doman\models\Cartao;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -25,13 +27,23 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'tipo',
                 'value' => function($data) {
-                    return app\modules\doman\models\Atividade::getTipoLabel($data->tipo);
+                    return Atividade::getTipoLabel($data->tipo);
+                }
+            ],
+            [
+                'label' => 'Qtd. Cartões',
+                'contentOptions' => ['class' => 'text-right'],
+                'value' => function($data) {
+                    if ($data->tipo == Atividade::TIPO_BIT_INTELIGENCIA) {
+                        return $data->getCartoes()->where(['deletado' => false, 'status' => Cartao::STATUS_ACTIVE])->count();
+                    }
+                    return '';
                 }
             ],
             [
                 'attribute' => 'status',
                 'value' => function($data) {
-                    return app\modules\doman\models\Atividade::getStatusLabel($data->status);
+                    return Atividade::getStatusLabel($data->status);
                 }
             ],
             //'data_publicacao',

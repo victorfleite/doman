@@ -32,8 +32,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'template' => "<tr><th width='200px'>{label}</th><td>{value}</td></tr>",
         'attributes' => [
-            'titulo',
+            'titulo',            
             'descricao:ntext',
+            [
+                'attribute' => 'grupo_pai',
+                'value' => function($data) {
+                    return $data->grupoPai->titulo;
+                }
+            ],
+            'ordem',
             [
                 'attribute' => 'status',
                 'value' => function($data) {

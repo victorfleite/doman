@@ -19,10 +19,10 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'titulo')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-lg-4">
-            <?= $form->field($model, 'tipo')->dropDownList(\app\modules\doman\models\Atividade::getTipoCombo()); ?>
+            <?= $form->field($model, 'tipo')->dropDownList(\app\modules\doman\models\Atividade::getTipoCombo(), ['disabled'=>!$model->isNewRecord]); ?>
         </div>
         <div class="col-lg-2">
-            <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Aluno::getStatusCombo()); ?>
+            <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Atividade::getStatusCombo()); ?>
         </div>
     </div>
     <div class="row">	

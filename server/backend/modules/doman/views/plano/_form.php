@@ -11,17 +11,21 @@ use yii\widgets\ActiveForm;
 <div class="plano-form">
 
     <?php $form = ActiveForm::begin(); ?>
-    
+
     <?= $form->errorSummary($model); ?>
 
-   <div class="row">	
-        <div class="col-lg-8">
+    <div class="row">	
+        <div class="col-lg-6">
             <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
         </div>
-         <div class="col-lg-4">
-                <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Grupo::getStatusCombo()); ?>
-         </div>         
-     </div>
+        <div class="col-lg-2">
+            <?= $form->field($model, 'ordem')->textInput(['type' => 'number']);
+            ?>
+        </div> 
+        <div class="col-lg-4">
+            <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Grupo::getStatusCombo()); ?>
+        </div>         
+    </div>
     <hr>
     <?= $form->field($model, 'descricao')->textarea(['rows' => 6]) ?>
 
