@@ -12,7 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="grupo-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    
+    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    
     <p class="text-right">
         <?= Html::a('Novo Grupo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>

@@ -4,7 +4,7 @@ namespace app\modules\doman\controllers;
 
 use Yii;
 use app\modules\doman\models\Som;
-use yii\data\ActiveDataProvider;
+use app\modules\doman\models\SomSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,11 +35,11 @@ class SomController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Som::find(),
-        ]);
+        $searchModel = new SomSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+                    'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
         ]);
     }

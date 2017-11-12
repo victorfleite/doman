@@ -72,7 +72,7 @@ class Som extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('translation', 'ID'),
-            'titulo' => Yii::t('translation', 'Titulo'),
+            'titulo' => Yii::t('translation', 'Título'),
             'caminho' => Yii::t('translation', 'Arquivo'),
         ];
     }
