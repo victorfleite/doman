@@ -70,11 +70,11 @@ $this->params['breadcrumbs'][] = $this->title;
 </p>
 <h3>Atividades Associadas</h3>
 <?php
-$atividades = $model->getAtividades()->where(['deletado' => false])->all();
+$relational = $model->getGrupoAtividades()->all();
 $dataProvider = new ArrayDataProvider([
-    'allModels' => $atividades,
+    'allModels' => $relational,
     'sort' => [
-        'attributes' => ['titulo'],
+        'attributes' => ['ordem'],
     ],
     'pagination' => [
         'pageSize' => 10,
@@ -84,19 +84,25 @@ $dataProvider = new ArrayDataProvider([
 echo GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [
-        'titulo',
         [
-            'attribute' => 'tipo',
+            'label' => 'Título',
             'value' => function($data) {
-                return Atividade::getTipoLabel($data->tipo);
+                return $data->atividade->titulo;
             }
         ],
+        [
+            'label' => 'Tipo',
+            'value' => function($data) {
+                return Atividade::getTipoLabel($data->atividade->tipo);
+            }
+        ],
+        'ordem',
         [
             'label' => 'Qtd. Cartões',
             'contentOptions' => ['class' => 'text-right'],
             'value' => function($data) {
-                if ($data->tipo == Atividade::TIPO_BIT_INTELIGENCIA) {
-                    return $data->getCartoes()->where(['deletado' => false, 'status' => Cartao::STATUS_ACTIVE])->count();
+                if ($data->atividade->tipo == Atividade::TIPO_BIT_INTELIGENCIA) {
+                    return $data->atividade->getCartoes()->where(['deletado' => false, 'status' => Cartao::STATUS_ACTIVE])->count();
                 }
                 return '';
             }
@@ -104,7 +110,7 @@ echo GridView::widget([
         [
             'attribute' => 'status',
             'value' => function($data) {
-                return Atividade::getStatusLabel($data->status);
+                return Atividade::getStatusLabel($data->atividade->status);
             }
         ],
         [
@@ -113,13 +119,13 @@ echo GridView::widget([
             'template' => '{view}',
             'urlCreator' => function ($action, $data, $key, $index) {
                 if ($action === 'view') {
-                    return Url::to(['/doman/atividade/view', 'id' => $data->id]);
+                    return Url::to(['/doman/atividade/view', 'id' => $data->atividade->id]);
                 }
                 if ($action === 'update') {
-                    return Url::to(['/doman/atividade/update', 'id' => $data->id]);
+                    return Url::to(['/doman/grupo/editar-associacao-atividade', 'id' => $data->grupo->id, 'atividade_id' => $data->atividade->id, 'ordem' => $data->ordem]);
                 }
                 if ($action === 'delete') {
-                    return Url::to(['/doman/atividade/delete', 'id' => $data->id]);
+                    return Url::to(['/doman/atividade/delete', 'id' => $data->atividade->id]);
                 }
             }
         ],

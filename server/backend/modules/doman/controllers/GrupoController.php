@@ -150,6 +150,7 @@ class GrupoController extends Controller {
         $grupo = $this->findModel($id);
         $model->grupo_id = $id;
         $model->atividade_id = Yii::$app->request->get('atividade_id');
+        $model->ordem = Yii::$app->request->get('ordem');
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             // Atualizar Relacional
