@@ -20,11 +20,6 @@ $this->params['breadcrumbs'][] = $this->title*/
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p class='text-right'>
-	<?= Html::a('Editar', ['/doman/aluno/update', 'id' => $aluno->id], ['class' => 'btn btn-primary']) ?>
-    </p>
-
-
     <h3>Aluno</h3>
     <?= DetailView::widget([
         'model' => $aluno,

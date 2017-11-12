@@ -8,6 +8,8 @@ use app\modules\doman\models\GrupoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\modules\doman\models\AssociarGrupoAtividadeForm;
+use \app\modules\doman\models\GrupoAtividade;
 
 /**
  * GrupoController implements the CRUD actions for Grupo model.
@@ -115,6 +117,30 @@ class GrupoController extends Controller {
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public function actionAssociarAtividade($id) {
+
+        $model = new AssociarGrupoAtividadeForm;
+        $grupo = $this->findModel($id);
+        $model->grupo_id = $id;
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            // Salvar Relacional
+            $grupoAtidade = new GrupoAtividade;
+            $grupoAtidade->grupo_id = $model->grupo_id;
+            $grupoAtidade->atividade_id = $model->atividade_id;
+            $grupoAtidade->ordem = $model->ordem;
+            $grupoAtidade->save();
+
+            return $this->redirect(['/doman/grupo/view', 'id' => $grupo->id]);
+        }
+
+
+        return $this->render('associar-atividade', [
+                    'model' => $model,
+                    'grupo' => $grupo,
+        ]);
     }
 
 }

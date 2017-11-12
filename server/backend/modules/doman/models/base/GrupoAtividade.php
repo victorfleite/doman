@@ -48,8 +48,8 @@ class GrupoAtividade extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['grupo_id', 'atividade_id'], 'required'],
-            [['grupo_id', 'atividade_id'], 'integer']
+            [['grupo_id', 'atividade_id', 'ordem'], 'required'],
+            [['grupo_id', 'atividade_id', 'ordem'], 'integer']
         ];
     }
 
