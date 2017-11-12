@@ -12,6 +12,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="aluno-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    
+    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p class="text-right">
         <?= Html::a('Novo Aluno', ['create'], ['class' => 'btn btn-success']) ?>

@@ -4,7 +4,7 @@ namespace app\modules\doman\controllers;
 
 use Yii;
 use app\modules\doman\models\Aluno;
-use yii\data\ActiveDataProvider;
+use app\modules\doman\models\AlunoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -29,22 +29,23 @@ class AlunoController extends Controller {
             ],
         ];
     }
-
+    
     /**
      * Lists all Aluno models.
      * @return mixed
      */
-    public function actionIndex() {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Aluno::find()->where(['deletado' => false]),
-            'sort' => ['defaultOrder' => ['nome' => SORT_ASC, 'data_nascimento' => SORT_DESC]]
-        ]);
+    public function actionIndex()
+    {
+        $searchModel = new AlunoSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-                    'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
+   
     /**
      * Displays a single Aluno model.
      * @param integer $id

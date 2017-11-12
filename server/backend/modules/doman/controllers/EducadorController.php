@@ -4,7 +4,7 @@ namespace app\modules\doman\controllers;
 
 use Yii;
 use app\modules\doman\models\Educador;
-use yii\data\ActiveDataProvider;
+use app\modules\doman\models\EducadorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,12 +35,11 @@ class EducadorController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Educador::find()->where(['deletado' => false]),
-            'sort' => ['defaultOrder' => ['nome' => SORT_ASC, 'id' => SORT_DESC]]
-        ]);
+        $searchModel = new EducadorSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+                    'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
         ]);
     }
