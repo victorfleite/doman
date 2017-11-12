@@ -14,6 +14,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="atividade-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    
+    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p class="text-right">
         <?= Html::a('Nova Atividade', ['create'], ['class' => 'btn btn-success']) ?>

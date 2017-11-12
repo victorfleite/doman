@@ -4,6 +4,7 @@ namespace app\modules\doman\controllers;
 
 use Yii;
 use app\modules\doman\models\Atividade;
+use app\modules\doman\models\AtividadeSearch;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -13,13 +14,12 @@ use app\modules\doman\models\Cartao;
 /**
  * AtividadeController implements the CRUD actions for Atividade model.
  */
-class AtividadeController extends Controller
-{
+class AtividadeController extends Controller {
+
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -34,15 +34,13 @@ class AtividadeController extends Controller
      * Lists all Atividade models.
      * @return mixed
      */
-    public function actionIndex()
-    {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Atividade::find()->where(['deletado'=>false]),
-            'sort'=> ['defaultOrder' => ['id'=>SORT_DESC]]
-        ]);
+    public function actionIndex() {
+        $searchModel = new AtividadeSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -51,16 +49,15 @@ class AtividadeController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
-    {
-        
-         $cartoesDataProvider = new ActiveDataProvider([
-            'query' => Cartao::find()->where(['deletado'=>false, 'atividade_id'=>$id]),
-             'sort'=> ['defaultOrder' => ['ordem'=>SORT_ASC, 'nome'=>SORT_DESC]]
+    public function actionView($id) {
+
+        $cartoesDataProvider = new ActiveDataProvider([
+            'query' => Cartao::find()->where(['deletado' => false, 'atividade_id' => $id]),
+            'sort' => ['defaultOrder' => ['ordem' => SORT_ASC, 'nome' => SORT_DESC]]
         ]);
         return $this->render('view', [
-            'model' => $this->findModel($id),
-            'cartoesDataProvider'=>$cartoesDataProvider
+                    'model' => $this->findModel($id),
+                    'cartoesDataProvider' => $cartoesDataProvider
         ]);
     }
 
@@ -69,8 +66,7 @@ class AtividadeController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new Atividade();
         $model->user_id = Yii::$app->user->id;
 
@@ -78,7 +74,7 @@ class AtividadeController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -89,8 +85,7 @@ class AtividadeController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
-    {
+    public function actionUpdate($id) {
         $model = $this->findModel($id);
         $model->user_id = Yii::$app->user->id;
 
@@ -98,7 +93,7 @@ class AtividadeController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -109,8 +104,7 @@ class AtividadeController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id) {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -123,12 +117,12 @@ class AtividadeController extends Controller
      * @return Atividade the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         if (($model = Atividade::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 }
