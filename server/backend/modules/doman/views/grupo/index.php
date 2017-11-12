@@ -32,6 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             [
+                'label' => 'Qtd. Atividades',
+                'contentOptions' => ['class' => 'text-right'],
+                'value' => function($data) {
+                    return $data->getAtividades()->where(['deletado' => false])->count();
+                }
+            ],
+            [
                 'attribute' => 'ordem',
                 'contentOptions' => ['class' => 'text-right']
             ],
@@ -62,7 +69,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'urlCreator' => function ($action, $data, $key, $index) {
                     if ($action === 'associar') {
                         return Url::to(['/doman/grupo/associar-atividade', 'id' => $data->id]);
-                    }                   
+                    }
+                    if ($action === 'view') {
+                        return Url::to(['/doman/grupo/view', 'id' => $data->id]);
+                    }
+                    if ($action === 'update') {
+                        return Url::to(['/doman/grupo/update', 'id' => $data->id]);
+                    }
+                    if ($action === 'delete') {
+                        return Url::to(['/doman/grupo/delete', 'id' => $data->id]);
+                    }
                 }
             ],
         ],

@@ -5,7 +5,6 @@ use yii\widgets\DetailView;
 use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
 use yii\helpers\Url;
-
 use app\modules\doman\models\Atividade;
 use app\modules\doman\models\Cartao;
 
@@ -112,9 +111,15 @@ echo GridView::widget([
             'class' => 'yii\grid\ActionColumn',
             'contentOptions' => ['class' => 'text-right'],
             'template' => '{view}',
-            'urlCreator' => function ($action, $model, $key, $index) {
+            'urlCreator' => function ($action, $data, $key, $index) {
                 if ($action === 'view') {
-                    return Url::to(['/doman/atividade/view', 'id' => $model->id]);
+                    return Url::to(['/doman/atividade/view', 'id' => $data->id]);
+                }
+                if ($action === 'update') {
+                    return Url::to(['/doman/atividade/update', 'id' => $data->id]);
+                }
+                if ($action === 'delete') {
+                    return Url::to(['/doman/atividade/delete', 'id' => $data->id]);
                 }
             }
         ],

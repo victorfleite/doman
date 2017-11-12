@@ -139,7 +139,34 @@ class GrupoController extends Controller {
 
         return $this->render('associar-atividade', [
                     'model' => $model,
+                    'grupo' => $grupo,            
+                    'isNewRecord'=>true
+        ]);
+    }
+    
+    public function actionEditarAssociacaoAtividade($id) {
+
+        $model = new AssociarGrupoAtividadeForm;
+        $grupo = $this->findModel($id);
+        $model->grupo_id = $id;
+        $model->atividade_id = Yii::$app->request->get('atividade_id');
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            // Atualizar Relacional
+            $grupoAtidade = GrupoAtividade::find()->where(['grupo_id'=>$model->grupo_id, 'atividade_id'=>$model->atividade_id]);
+            $grupoAtidade->grupo_id = $model->grupo_id;
+            $grupoAtidade->atividade_id = $model->atividade_id;
+            $grupoAtidade->ordem = $model->ordem;
+            $grupoAtidade->save();
+
+            return $this->redirect(['/doman/grupo/view', 'id' => $grupo->id]);
+        }
+
+
+        return $this->render('associar-atividade', [
+                    'model' => $model,
                     'grupo' => $grupo,
+                    'isNewRecord'=>false
         ]);
     }
 

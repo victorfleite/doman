@@ -89,12 +89,12 @@ class Grupo extends \yii\db\ActiveRecord {
     public function attributeLabels() {
         return [
             'id' => Yii::t('translation', 'ID'),
-            'titulo' => Yii::t('translation', 'Titulo'),
-            'descricao' => Yii::t('translation', 'Descricao'),
+            'titulo' => Yii::t('translation', 'Título'),
+            'descricao' => Yii::t('translation', 'Descrição'),
             'status' => Yii::t('translation', 'Status'),
-            'user_id' => Yii::t('translation', 'User ID'),
-            'data_criacao' => Yii::t('translation', 'Data Criacao'),
-            'data_publicacao' => Yii::t('translation', 'Data Publicacao'),
+            'user_id' => Yii::t('translation', 'Criador'),
+            'data_criacao' => Yii::t('translation', 'Data Criação'),
+            'data_publicacao' => Yii::t('translation', 'Data Publicação'),
             'user_publicacao_id' => Yii::t('translation', 'User Publicacao ID'),
             'deletado' => Yii::t('translation', 'Deletado'),
             'grupo_pai' => Yii::t('translation', 'Grupo Pai'),

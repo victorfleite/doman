@@ -4,6 +4,8 @@ namespace app\modules\doman\controllers;
 
 use Yii;
 use app\modules\doman\models\Plano;
+use \app\modules\doman\models\PlanoGrupo;
+use app\modules\doman\models\AssociarPlanoGrupoForm;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -121,5 +123,33 @@ class PlanoController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    /**
+     * 
+     * @param type $id
+     * @return type
+     */
+    public function actionAssociarGrupo($id) {
+
+        $model = new AssociarPlanoGrupoForm;
+        $plano = $this->findModel($id);
+        $model->plano_id = $id;
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            // Salvar Relacional
+            $planoGrupo = new PlanoGrupo;
+            $planoGrupo->plano_id = $model->plano_id;
+            $planoGrupo->grupo_id = $model->grupo_id;
+            $planoGrupo->ordem = $model->ordem;
+            $planoGrupo->save();
+
+            return $this->redirect(['/doman/plano/view', 'id' => $plano->id]);
+        }
+
+
+        return $this->render('associar-grupo', [
+                    'model' => $model,
+                    'plano' => $plano,
+        ]);
     }
 }

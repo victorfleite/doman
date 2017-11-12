@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\DetailView;
 use yii\widgets\ActiveForm;
-use \app\modules\doman\models\Atividade;
+use \app\modules\doman\models\Grupo;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Workgroup */
@@ -19,19 +19,15 @@ use \app\modules\doman\models\Atividade;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <h3>Grupo</h3>
+    <h3>Plano</h3>
     <?=
     DetailView::widget([
-        'model' => $grupo,
+        'model' => $plano,
         'template' => "<tr><th width='200px'>{label}</th><td>{value}</td></tr>",
         'attributes' => [
-            'titulo',
-            [
-                'attribute' => 'grupo_pai',
-                'value' => function($data) {
-                    return $data->grupoPai->titulo;
-                }
-            ],
+            'nome',
+            'descricao:ntext',
+            'data_criacao:date',
             'ordem',
             [
                 'attribute' => 'status',
@@ -45,22 +41,21 @@ use \app\modules\doman\models\Atividade;
                     return $data->user->name;
                 }
             ],
-            'data_criacao:date',
         ],
     ])
     ?>
     <?php
     $form = ActiveForm::begin();
-    $form->field($model, 'grupo_id')->hiddenInput()->label(null);
+    $form->field($model, 'plano_id')->hiddenInput()->label(null);
     ?>
 
     <h3>Associar Atividade</h3>
     <div class="row">	
         <div class="col-lg-8">
             <?=
-            $form->field($model, 'atividade_id')->widget(\kartik\widgets\Select2::classname(), [
-                'data' => \yii\helpers\ArrayHelper::map(Atividade::find()->where(['deletado'=>false, 'status'=> Atividade::STATUS_PUBLICADO])->orderBy('id')->asArray()->all(), 'id', 'titulo'),
-                'options' => ['placeholder' => Yii::t('translation', 'Selecione a Atividade'), 'disabled'=>!$isNewRecord],
+            $form->field($model, 'grupo_id')->widget(\kartik\widgets\Select2::classname(), [
+                'data' => \yii\helpers\ArrayHelper::map(Grupo::find()->where(['deletado'=>false, 'status'=> Grupo::STATUS_PUBLICADO])->orderBy('id')->asArray()->all(), 'id', 'titulo'),
+                'options' => ['placeholder' => Yii::t('translation', 'Selecione o Grupo')],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],
@@ -75,7 +70,7 @@ use \app\modules\doman\models\Atividade;
 
     <p>&nbsp;</p>
     <div class="form-group">
-        <?= Html::a(Yii::t('translation', 'Cancel'), ['/doman/grupo/view', 'id' => $grupo->id], ['class' => 'btn btn-primary']) ?>	
+        <?= Html::a(Yii::t('translation', 'Cancel'), ['/doman/plano/view', 'id' => $plano->id], ['class' => 'btn btn-primary']) ?>	
         <?= Html::submitButton(Yii::t('translation', 'Update'), ['class' => 'btn btn-primary']) ?>
     </div>
 
