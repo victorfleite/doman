@@ -8,6 +8,7 @@ use app\modules\doman\models\GrupoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 use app\modules\doman\models\AssociarGrupoAtividadeForm;
 use \app\modules\doman\models\GrupoAtividade;
 
@@ -64,8 +65,17 @@ class GrupoController extends Controller {
         $model = new Grupo();
         $model->user_id = Yii::$app->user->id;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->image = UploadedFile::getInstance($model, 'image');
+
+            if ($model->upload()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('create', [
+                            'model' => $model,
+                ]);
+            }
         } else {
             return $this->render('create', [
                         'model' => $model,
@@ -83,8 +93,17 @@ class GrupoController extends Controller {
         $model = $this->findModel($id);
         $model->user_id = Yii::$app->user->id;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->image = UploadedFile::getInstance($model, 'image');
+
+            if ($model->upload()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('update', [
+                            'model' => $model,
+                ]);
+            }
         } else {
             return $this->render('update', [
                         'model' => $model,
@@ -139,11 +158,11 @@ class GrupoController extends Controller {
 
         return $this->render('associar-atividade', [
                     'model' => $model,
-                    'grupo' => $grupo,            
-                    'isNewRecord'=>true
+                    'grupo' => $grupo,
+                    'isNewRecord' => true
         ]);
     }
-    
+
     public function actionEditarAssociacaoAtividade($id) {
 
         $model = new AssociarGrupoAtividadeForm;
@@ -154,7 +173,7 @@ class GrupoController extends Controller {
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             // Atualizar Relacional
-            $grupoAtidade = GrupoAtividade::find()->where(['grupo_id'=>$model->grupo_id, 'atividade_id'=>$model->atividade_id]);
+            $grupoAtidade = GrupoAtividade::find()->where(['grupo_id' => $model->grupo_id, 'atividade_id' => $model->atividade_id]);
             $grupoAtidade->grupo_id = $model->grupo_id;
             $grupoAtidade->atividade_id = $model->atividade_id;
             $grupoAtidade->ordem = $model->ordem;
@@ -167,7 +186,7 @@ class GrupoController extends Controller {
         return $this->render('associar-atividade', [
                     'model' => $model,
                     'grupo' => $grupo,
-                    'isNewRecord'=>false
+                    'isNewRecord' => false
         ]);
     }
 

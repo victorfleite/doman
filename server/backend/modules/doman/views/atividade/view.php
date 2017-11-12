@@ -34,6 +34,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'template' => "<tr><th width='200px'>{label}</th><td>{value}</td></tr>",
         'attributes' => [
+            [
+                'attribute' => 'imagem',
+                'format' => 'raw',
+                'contentOptions' => [],
+                'value' => function($data) {
+                    return Html::a(Html::img($data->imagem, ['width' => 290, 'height' => 163]), $data->imagem, $options = ['target' => '_blank']);
+                },
+            ],
             'titulo',
             [
                 'attribute' => 'tipo',
@@ -59,7 +67,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'som_id',
                 'format' => 'raw',
                 'value' => function($data) {
-                    return Html::a($data->som->caminho, $data->som->caminho, $options = ['target' => '_blank']);
+                    if(empty($data->som_id)) return '';                    
+                    $audio =  '<audio controls>';
+                    $audio .= '     <source src="'. $data->som->caminho .'" type="audio/mpeg">';
+                    $audio .= '     Your browser does not support the audio element.';
+                    $audio .= '</audio>';
+                    return $audio;
                 },
             ],
             'autoplay:boolean',

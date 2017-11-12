@@ -2,7 +2,7 @@
 
 namespace app\modules\doman\models;
 
-use Yii;
+use common\models\Util;
 use \app\modules\doman\models\base\Atividade as BaseAtividade;
 
 /**
@@ -18,6 +18,12 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
     const TIPO_MIDIA_YOUTUBE_LABEL = 'Mídia Youtube';
     const TIPO_MIDIA_SOM = 3;
     const TIPO_MIDIA_SOM_LABEL = 'Mídia Som';
+    const IMAGENS_PATH = 'imagens/';
+
+    /**
+     * @var UploadedFile
+     */
+    public $image;
 
     /**
      * @inheritdoc
@@ -31,6 +37,12 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
             [['deletado', 'autoplay'], 'boolean'],
             [['titulo', 'video_url'], 'string', 'max' => 255],
             [['video_url'], 'url'],
+            [['imagem', 'image'], 'safe'],
+            [['image'], 'file', 'maxSize' => 1024 * 1024 * 1024 * 1],
+            ['image', 'image', 'extensions' => 'jpg, png',
+                'minWidth' => 600, 'maxWidth' => 600,
+                'minHeight' => 338, 'maxHeight' => 338,
+            ]
         ];
     }
 
@@ -79,6 +91,29 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
                 'replaceRegularDelete' => true
             ],
         ];
+    }
+    
+    /**
+     * save imagem
+     * @return boolean
+     */
+    public function upload() {
+
+        if ($this->isNewRecord || !is_null($this->image)) {
+            if ($this->validate()) {
+                $ext = end((explode(".", $this->image->name)));
+                // generate a unique file name to prevent duplicate filenames
+                $fileName = Util::generateHashSha256(6) . "_" . Util::sanitizeString($this->image->baseName) . ".{$ext}";
+                $this->imagem = Atividade::IMAGENS_PATH . strtolower($fileName);
+                if (!is_null($this->image)) {
+                  $this->image->saveAs($this->imagem, false);
+                }
+                return $this->save();
+            } else {
+                return false;
+            }
+        }
+        return $this->save();
     }
 
 }

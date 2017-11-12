@@ -23,7 +23,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            'titulo',
+            [
+                'attribute' => 'titulo',
+                'format'=>'raw',
+                'value' => function($data) {
+                    $titulo = $data->titulo;
+                                   
+                        $audio =  '<br><audio controls>';
+                        $audio .= '     <source src="'. $data->caminho .'" type="audio/mpeg">';
+                        $audio .= '     Your browser does not support the audio element.';
+                        $audio .= '</audio>';
+                        $titulo .= $audio;
+                   
+                    return $titulo;
+                }
+            ],
             [
                 'attribute' => 'caminho',
                 'format' => 'raw',

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use \app\modules\doman\models\Atividade;
 use \app\modules\doman\models\Cartao;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -14,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="atividade-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    
+
     <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p class="text-right">
@@ -25,7 +26,35 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            'titulo',
+            [
+                'attribute' => 'imagem',
+                'format' => 'raw',
+                'contentOptions' => [],
+                'value' => function($data) {
+                    return Html::a(Html::img($data->imagem, ['width' => 80, 'height' => 45]), Url::to(['view', 'id' => $data->id]), $options = []);
+                },
+            ],
+             [
+                'attribute' => 'titulo',
+                'format'=>'raw',
+                'value' => function($data) {
+                    $titulo = $data->titulo;
+                    if ($data->tipo == Atividade::TIPO_MIDIA_SOM) {                    
+                        $audio =  '<br><audio controls>';
+                        $audio .= '     <source src="'. $data->som->caminho .'" type="audio/mpeg">';
+                        $audio .= '     Your browser does not support the audio element.';
+                        $audio .= '</audio>';
+                        $titulo .= $audio;
+                    }
+                    if ($data->tipo == Atividade::TIPO_MIDIA_YOUTUBE) {                    
+                        $audio =  '<br><a href="'. $data->video_url .'" target="_blank">'.$data->video_url.'</a>';
+                        $titulo .= $audio;
+                    }
+                    return $titulo;
+                }
+            ],
+                        
+                       
             [
                 'attribute' => 'tipo',
                 'value' => function($data) {

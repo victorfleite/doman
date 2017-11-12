@@ -24,6 +24,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
+             [
+                'attribute' => 'imagem',
+                'format' => 'raw',
+                'contentOptions' => [],
+                'value' => function($data) {
+                    return Html::a(Html::img($data->imagem, ['width' => 80, 'height' => 45]), Url::to(['view', 'id' => $data->id]), $options = []);
+                },
+            ],
             'titulo',
             [
                 'attribute' => 'grupo_pai',

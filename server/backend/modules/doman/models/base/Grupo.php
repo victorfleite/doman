@@ -98,6 +98,7 @@ class Grupo extends \yii\db\ActiveRecord {
             'user_publicacao_id' => Yii::t('translation', 'User Publicacao ID'),
             'deletado' => Yii::t('translation', 'Deletado'),
             'grupo_pai' => Yii::t('translation', 'Grupo Pai'),
+            'imagem' => Yii::t('translation', 'Imagem'),
         ];
     }
 
