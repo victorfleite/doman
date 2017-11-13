@@ -46,7 +46,7 @@ class AssociarPlanoGrupoForm extends \yii\base\Model {
         $exists = PlanoGrupo::find()->where(['plano_id' => $this->plano_id, 'grupo_id' => $this->grupo_id])->exists();
         if ($exists) {
             $plano = Plano::find($this->plano_id)->one();
-            $this->addError('grupo_id', 'Grupo já associada ao Plano '+ $plano->nome);
+            $this->addError('grupo_id', 'Grupo já associada ao Plano '. $plano->nome);
         }
     }
 
