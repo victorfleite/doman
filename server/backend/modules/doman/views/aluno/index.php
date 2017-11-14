@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -23,8 +24,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'imagem',
+                'format' => 'raw',
+                'contentOptions' => [],
+                'value' => function($data) {
+                    return Html::a(Html::img($data->imagem, ['width' => 80, 'height' => 80]), Url::to(['view', 'id' => $data->id]), $options = []);
+                },
+            ],
             'nome',
             'data_nascimento:date',
+            [
+                'attribute' => 'sexo',
+                'value' => function($data) {
+                    return app\modules\doman\models\Aluno::getSexoLabel($data->sexo);
+                }
+            ],
             [
                 'attribute' => 'tipo',
                 'value' => function($data) {

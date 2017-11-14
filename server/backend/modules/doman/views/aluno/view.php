@@ -35,6 +35,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'template' => "<tr><th width='200px'>{label}</th><td>{value}</td></tr>",
         'attributes' => [
+            [
+                'attribute' => 'imagem',
+                'format' => 'raw',
+                'contentOptions' => [],
+                'value' => function($data) {
+                    return Html::a(Html::img($data->imagem, ['width' => 80, 'height' => 80]), $data->imagem, $options = []);
+                },
+            ],
             'nome',
             'data_nascimento',
             'data_criacao:date',

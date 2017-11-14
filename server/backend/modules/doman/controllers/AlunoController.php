@@ -8,6 +8,7 @@ use app\modules\doman\models\AlunoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 use \app\modules\doman\models\AssociarAlunoEducadorForm;
 use \app\modules\doman\models\EducadorAluno;
 
@@ -29,23 +30,21 @@ class AlunoController extends Controller {
             ],
         ];
     }
-    
+
     /**
      * Lists all Aluno models.
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $searchModel = new AlunoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
-   
     /**
      * Displays a single Aluno model.
      * @param integer $id
@@ -66,8 +65,17 @@ class AlunoController extends Controller {
         $model = new Aluno();
         $model->user_id = Yii::$app->user->id;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->image = UploadedFile::getInstance($model, 'image');
+
+            if ($model->upload()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('create', [
+                            'model' => $model,
+                ]);
+            }
         } else {
             return $this->render('create', [
                         'model' => $model,
@@ -85,8 +93,17 @@ class AlunoController extends Controller {
         $model = $this->findModel($id);
         $model->user_id = Yii::$app->user->id;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->image = UploadedFile::getInstance($model, 'image');
+
+            if ($model->upload()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('update', [
+                            'model' => $model,
+                ]);
+            }
         } else {
             return $this->render('update', [
                         'model' => $model,

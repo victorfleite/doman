@@ -62,10 +62,11 @@ class Aluno extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'data_nascimento'], 'required'],
+            [['nome', 'data_nascimento', 'sexo'], 'required'],
             [['data_nascimento', 'data_criacao'], 'safe'],
             [['tipo', 'user_id', 'status'], 'integer'],
             [['deletado'], 'boolean'],
+            [['sexo'], 'string', 'max' => 1],
             [['nome'], 'string', 'max' => 255]
         ];
     }

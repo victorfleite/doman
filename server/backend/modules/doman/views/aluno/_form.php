@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\widgets\FileInput;
+use common\models\Util;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Aluno */
@@ -14,11 +16,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->errorSummary($model); ?>
 
-    <div class="row">	
-        <div class="col-lg-4">
-            <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-lg-4">
+    
+    <div class="row">
+        <div class="col-lg-6">
+            <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>            
             <?=
             $form->field($model, 'data_nascimento')->widget(\kartik\datecontrol\DateControl::classname(), [
                 'type' => \kartik\datecontrol\DateControl::FORMAT_DATE,
@@ -32,13 +33,20 @@ use yii\widgets\ActiveForm;
                 ],
             ]);
             ?>
-        </div>
-        <div class="col-lg-2">
             <?= $form->field($model, 'tipo')->dropDownList(\app\modules\doman\models\Aluno::getTipoCombo()); ?>
-        </div>
-        <div class="col-lg-2">
+            <?= $form->field($model, 'sexo')->dropDownList(\app\modules\doman\models\Aluno::getSexoCombo()); ?>
             <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Aluno::getStatusCombo()); ?>
         </div>
+        <div class="col-lg-6">
+            <?php
+            $label = 'Arquivo - largura:128px, altura: 128px (.jpg ou .png)';
+            $label .= (!$model->isNewRecord) ? '  [ ' . Html::a(Util::fileRemovePath($model->imagem), $model->imagem, $options = ['target' => '_blank']) . ' ]' : '';
+            echo $form->field($model, 'image')->label($label)->widget(FileInput::classname(), [
+                'options' => ['accept' => 'image/*'],
+                'pluginOptions' => ['allowedFileExtensions' => ['jpg', 'png'], 'showUpload' => false],
+            ]);
+            ?>
+        </div>        
     </div>
 
     <div class="form-group">

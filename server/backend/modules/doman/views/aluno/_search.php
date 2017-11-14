@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
     ?>
 
     <div class="row">	
-        <div class="col-lg-5">
+        <div class="col-lg-3">
             <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-lg-3">
@@ -35,6 +35,9 @@ use yii\widgets\ActiveForm;
                 ],
             ]);
             ?>
+        </div>
+         <div class="col-lg-2">
+            <?= $form->field($model, 'sexo')->dropDownList(\app\modules\doman\models\Aluno::getSexoCombo(), ['prompt'=>'Selecione']); ?>
         </div>
         <div class="col-lg-2">
             <?= $form->field($model, 'tipo')->dropDownList(\app\modules\doman\models\Aluno::getTipoCombo(), ['prompt'=>'Selecione']); ?>
