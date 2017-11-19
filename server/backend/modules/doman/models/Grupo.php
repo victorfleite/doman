@@ -13,6 +13,10 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
 
     use \common\components\traits\PublicacaoStatusTrait;
 
+    const INICIALIZACAO_FECHADO = 0;
+    const INICIALIZACAO_ABERTO = 1;
+    const INICIALIZACAO_FECHADO_LABEL = 'Fechado';
+    const INICIALIZACAO_ABERTO_LABEL = 'Aberto';
     const IMAGENS_PATH = 'imagens/';
 
     /**
@@ -25,7 +29,7 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
      */
     public function rules() {
         return [
-            [['titulo', 'user_id'], 'required'],
+            [['titulo', 'user_id', 'inicializacao'], 'required'],
             [['descricao'], 'string'],
             [['status', 'user_id', 'user_publicacao_id', 'grupo_pai', 'ordem'], 'integer'],
             [['data_criacao', 'data_publicacao'], 'safe'],
@@ -74,4 +78,29 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
         return $this->save();
     }
 
+    /**
+     * 
+     * @param type $p
+     * @return type
+     */
+    public static function getInicializacaoLabel($p) {
+        switch ($p) {
+            case self::INICIALIZACAO_FECHADO:
+                return self::INICIALIZACAO_FECHADO_LABEL;
+            case self::INICIALIZACAO_ABERTO:
+                return self::INICIALIZACAO_ABERTO_LABEL;
+            default:
+                break;
+        }
+    }
+    /**
+     * 
+     * @return type
+     */
+    public static function getInicializacaoCombo() {
+        return [
+            self::INICIALIZACAO_FECHADO => self::INICIALIZACAO_FECHADO_LABEL,
+            self::INICIALIZACAO_ABERTO => self::INICIALIZACAO_ABERTO_LABEL,
+        ];
+    }
 }

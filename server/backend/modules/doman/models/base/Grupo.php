@@ -67,7 +67,7 @@ class Grupo extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['titulo', 'user_id'], 'required'],
+            [['titulo', 'user_id', 'inicializacao'], 'required'],
             [['descricao'], 'string'],
             [['status', 'user_id', 'user_publicacao_id', 'grupo_pai', 'ordem'], 'integer'],
             [['data_criacao', 'data_publicacao'], 'safe'],
@@ -99,6 +99,7 @@ class Grupo extends \yii\db\ActiveRecord {
             'deletado' => Yii::t('translation', 'Deletado'),
             'grupo_pai' => Yii::t('translation', 'Grupo Pai'),
             'imagem' => Yii::t('translation', 'Imagem'),
+            'inicializacao' => Yii::t('translation', 'Inicialização'),
         ];
     }
 

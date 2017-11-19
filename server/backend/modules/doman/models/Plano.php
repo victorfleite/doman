@@ -11,6 +11,9 @@ use \app\modules\doman\models\base\Plano as BasePlano;
 class Plano extends BasePlano implements \common\components\traits\SimpleStatusInterface {
 
     use \common\components\traits\SimpleStatusTrait;
+    
+    const PLANO_FREE_ID = 1;
+    const PLANO_PREMIUM_ID = 2;
 
     /**
      * @inheritdoc

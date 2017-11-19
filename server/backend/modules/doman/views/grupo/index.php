@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-             [
+            [
                 'attribute' => 'imagem',
                 'format' => 'raw',
                 'contentOptions' => [],
@@ -34,12 +34,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'titulo',
             [
-                'attribute' => 'grupo_pai',
-                'value' => function($data) {
-                    return $data->grupoPai->titulo;
-                }
-            ],
-            [
                 'label' => 'Qtd. Atividades',
                 'contentOptions' => ['class' => 'text-right'],
                 'value' => function($data) {
@@ -47,8 +41,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             [
-                'attribute' => 'ordem',
-                'contentOptions' => ['class' => 'text-right']
+                'attribute' => 'inicializacao',
+                'value' => function($data) {
+                    return app\modules\doman\models\Grupo::getInicializacaoLabel($data->inicializacao);
+                }
             ],
             [
                 'attribute' => 'status',

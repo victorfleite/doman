@@ -67,9 +67,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'som_id',
                 'format' => 'raw',
                 'value' => function($data) {
-                    if(empty($data->som_id)) return '';                    
-                    $audio =  '<audio controls>';
-                    $audio .= '     <source src="'. $data->som->caminho .'" type="audio/mpeg">';
+                    if (empty($data->som_id))
+                        return '';
+                    $audio = '<audio controls>';
+                    $audio .= '     <source src="' . $data->som->caminho . '" type="audio/mpeg">';
                     $audio .= '     Your browser does not support the audio element.';
                     $audio .= '</audio>';
                     return $audio;
@@ -85,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php if ($model->tipo == \app\modules\doman\models\Atividade::TIPO_BIT_INTELIGENCIA) { ?>
 
     <p class="text-right">
-        <?= Html::a('Novo Cartao', ['/doman/cartao/create', 'atividade_id' => $model->id], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Novo Cartao', ['/doman/cartao/create', 'atividade_id' => $model->id], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?=
@@ -112,7 +113,23 @@ $this->params['breadcrumbs'][] = $this->title;
                     return app\modules\doman\models\Cartao::getStatusConvocacaoLabel($data->status_convocacao);
                 }
             ],
-            'data_criacao:date',
+            [
+                'attribute' => 'som_id',
+                'format' => 'raw',
+                'value' => function($data) {
+                    if ($data->som_id) {
+                        $titulo = $data->som->titulo;
+
+                        $audio = '<br><audio controls>';
+                        $audio .= '     <source src="' . $data->som->caminho . '" type="audio/mpeg">';
+                        $audio .= '     Your browser does not support the audio element.';
+                        $audio .= '</audio>';
+                        $titulo .= $audio;
+
+                        return $titulo;
+                    }
+                }
+            ],
             [
                 'attribute' => 'status',
                 'value' => function($data) {

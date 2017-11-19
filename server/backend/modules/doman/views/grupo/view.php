@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'template' => "<tr><th width='200px'>{label}</th><td>{value}</td></tr>",
         'attributes' => [
-             [
+            [
                 'attribute' => 'imagem',
                 'format' => 'raw',
                 'contentOptions' => [],
@@ -48,25 +48,24 @@ $this->params['breadcrumbs'][] = $this->title;
             'titulo',
             'descricao:ntext',
             [
-                'attribute' => 'grupo_pai',
-                'value' => function($data) {
-                    return $data->grupoPai->titulo;
-                }
-            ],
-            'ordem',
-            [
-                'attribute' => 'status',
-                'value' => function($data) {
-                    return app\modules\doman\models\Grupo::getStatusLabel($data->status);
-                }
-            ],
-            [
                 'attribute' => 'user_id',
                 'value' => function($data) {
                     return $data->user->name;
                 }
             ],
             'data_criacao:date',
+            [
+                'attribute' => 'inicializacao',
+                'value' => function($data) {
+                    return app\modules\doman\models\Grupo::getInicializacaoLabel($data->inicializacao);
+                }
+            ],
+            [
+                'attribute' => 'status',
+                'value' => function($data) {
+                    return app\modules\doman\models\Grupo::getStatusLabel($data->status);
+                }
+            ],
         ],
     ])
     ?>
@@ -83,6 +82,7 @@ $dataProvider = new ArrayDataProvider([
     'allModels' => $relational,
     'sort' => [
         'attributes' => ['ordem'],
+        'defaultOrder' => ['ordem' => SORT_ASC]
     ],
     'pagination' => [
         'pageSize' => 10,
@@ -93,9 +93,30 @@ echo GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [
         [
-            'label' => 'Título',
+            'attribute' => 'imagem',
+            'format' => 'raw',
+            'contentOptions' => [],
             'value' => function($data) {
-                return $data->atividade->titulo;
+                return Html::a(Html::img($data->atividade->imagem, ['width' => 80, 'height' => 45]), Url::to(['/doman/atividade/view', 'id' => $data->atividade->id]), $options = []);
+            },
+        ],
+        [
+            'attribute' => 'titulo',
+            'format' => 'raw',
+            'value' => function($data) {
+                $titulo = $data->atividade->titulo;
+                if ($data->atividade->tipo == Atividade::TIPO_MIDIA_SOM) {
+                    $audio = '<br><audio controls>';
+                    $audio .= '     <source src="' . $data->atividade->som->caminho . '" type="audio/mpeg">';
+                    $audio .= '     Your browser does not support the audio element.';
+                    $audio .= '</audio>';
+                    $titulo .= $audio;
+                }
+                if ($data->atividade->tipo == Atividade::TIPO_MIDIA_YOUTUBE) {
+                    $audio = '<br><a href="' . $data->atividade->video_url . '" target="_blank">' . $data->atividade->video_url . '</a>';
+                    $titulo .= $audio;
+                }
+                return $titulo;
             }
         ],
         [

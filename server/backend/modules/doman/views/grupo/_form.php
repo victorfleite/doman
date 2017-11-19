@@ -17,24 +17,12 @@ use common\models\Util;
     <?= $form->errorSummary($model); ?>
 
     <div class="row">	
-        <div class="col-lg-5">
+        <div class="col-lg-7">
             <?= $form->field($model, 'titulo')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-lg-3">
-            <?=
-            $form->field($model, 'grupo_pai')->widget(\kartik\widgets\Select2::classname(), [
-                'data' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\Grupo::find()->where(['deletado' => false])->andwhere(['<>', 'id', $model->id])->orderBy('id')->asArray()->all(), 'id', 'titulo'),
-                'options' => ['placeholder' => Yii::t('translation', 'Selecione o Grupo')],
-                'pluginOptions' => [
-                    'allowClear' => true
-                ],
-            ]);
-            ?>
+             <?= $form->field($model, 'inicializacao')->dropDownList(\app\modules\doman\models\Grupo::getInicializacaoCombo()); ?>
         </div>
-        <div class="col-lg-2">
-            <?= $form->field($model, 'ordem')->textInput(['type' => 'number']);
-            ?>
-        </div> 
         <div class="col-lg-2">
             <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Grupo::getStatusCombo()); ?>
         </div>         

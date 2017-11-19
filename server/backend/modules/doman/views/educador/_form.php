@@ -22,10 +22,10 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-lg-2">
-            <?= $form->field($model, 'tipo')->dropDownList(\app\modules\doman\models\Aluno::getTipoCombo()); ?>
+            <?= $form->field($model, 'tipo')->dropDownList(\app\modules\doman\models\Educador::getTipoCombo()); ?>
         </div>
         <div class="col-lg-2">
-            <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Aluno::getStatusCombo()); ?>
+            <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Educador::getStatusCombo()); ?>
         </div>
     </div>
 

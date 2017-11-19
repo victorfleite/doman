@@ -32,7 +32,6 @@ use \app\modules\doman\models\Atividade;
                     return $data->grupoPai->titulo;
                 }
             ],
-            'ordem',
             [
                 'attribute' => 'status',
                 'value' => function($data) {

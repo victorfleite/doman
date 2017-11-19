@@ -17,8 +17,19 @@ use common\models\Util;
     <?= $form->errorSummary($model); ?>
 
     <div class="row">	
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-lg-2">
+            <?=
+            $form->field($model, 'som_id')->widget(\kartik\widgets\Select2::classname(), [
+                'data' => \yii\helpers\ArrayHelper::map(\app\modules\doman\models\Som::find()->orderBy('id')->asArray()->all(), 'id', 'titulo'),
+                'options' => ['placeholder' => Yii::t('translation', 'Selecione o Som')],
+                'pluginOptions' => [
+                    'allowClear' => true
+                ],
+            ]);
+            ?>
         </div>
         <div class="col-lg-2">
             <?= $form->field($model, 'status_convocacao')->dropDownList(\app\modules\doman\models\Cartao::getStatusConvocacaoCombo()); ?>

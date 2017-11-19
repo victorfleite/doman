@@ -28,7 +28,7 @@ class Cartao extends BaseCartao implements SimpleStatusInterface, ConvocacaoStat
     public function rules() {
         return [
             [['nome', 'atividade_id', 'user_id', 'ordem'], 'required'],
-            [['status', 'ordem', 'atividade_id', 'user_id', 'user_publicacao_id', 'status_convocacao'], 'integer'],
+            [['status', 'ordem', 'atividade_id', 'user_id', 'user_publicacao_id', 'status_convocacao', 'som_id'], 'integer'],
             [['data_criacao', 'data_publicacao'], 'safe'],
             [['deletado'], 'boolean'],
             [['nome'], 'string', 'max' => 255],

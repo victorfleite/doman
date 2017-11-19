@@ -5,6 +5,7 @@ namespace app\modules\doman\models;
 use Yii;
 use \app\modules\doman\models\base\Educador as BaseEducador;
 
+
 /**
  * This is the model class for table "educador".
  */

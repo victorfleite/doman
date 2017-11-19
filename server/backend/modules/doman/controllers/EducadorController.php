@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \app\modules\doman\models\AssociarAlunoEducadorForm;
 use \app\modules\doman\models\EducadorAluno;
+use \common\components\behaviors\LicencaFreePremiumBehavior;
 
 /**
  * EducadorController implements the CRUD actions for Educador model.
@@ -63,6 +64,8 @@ class EducadorController extends Controller {
     public function actionCreate() {
         $model = new Educador();
         $model->user_id = Yii::$app->user->id;
+        
+        $model->attachBehavior('LicencaFreePremiumBehavior', LicencaFreePremiumBehavior::className());
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

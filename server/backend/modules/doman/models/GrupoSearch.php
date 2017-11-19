@@ -45,7 +45,7 @@ class GrupoSearch extends Grupo {
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => ['defaultOrder' => ['ordem' => SORT_ASC, 'id' => SORT_DESC]]
+            'sort' => ['defaultOrder' => ['id' => SORT_DESC]]
         ]);
 
         $this->load($params);
