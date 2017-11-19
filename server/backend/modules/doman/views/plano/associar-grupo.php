@@ -1,10 +1,9 @@
 <?php
 
 use yii\helpers\Html;
-use yii\helpers\ArrayHelper;
 use yii\widgets\DetailView;
 use yii\widgets\ActiveForm;
-use \app\modules\doman\models\Grupo;
+use app\modules\doman\models\AssociarPlanoGrupoForm;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Workgroup */
@@ -49,13 +48,13 @@ use \app\modules\doman\models\Grupo;
     $form->field($model, 'plano_id')->hiddenInput()->label(null);
     ?>
 
-    <h3>Associar Atividade</h3>
+    <h3>Associar Grupo</h3>
     <div class="row">	
         <div class="col-lg-8">
             <?=
             $form->field($model, 'grupo_id')->widget(\kartik\widgets\Select2::classname(), [
-                'data' => \yii\helpers\ArrayHelper::map(Grupo::find()->where(['deletado'=>false, 'status'=> Grupo::STATUS_PUBLICADO])->orderBy('id')->asArray()->all(), 'id', 'titulo'),
-                'options' => ['placeholder' => Yii::t('translation', 'Selecione o Grupo')],
+                'data' => $model->getComboGrupos(),
+                'options' => ['placeholder' => Yii::t('translation', 'Selecione o Grupo'), 'disabled'=>($model->scenario == AssociarPlanoGrupoForm::SCENARIO_INSERT)? false: true],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],

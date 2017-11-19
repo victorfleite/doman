@@ -5,6 +5,7 @@ use yii\widgets\DetailView;
 use yii\grid\GridView;
 use yii\data\ArrayDataProvider;
 use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Plano */
 
@@ -61,11 +62,14 @@ $this->params['breadcrumbs'][] = $this->title;
 </p>
 <h3>Grupos Associados</h3>
 <?php
-$grupos = $model->getGrupos()->where(['deletado' => false])->all();
+$relational = $model->getPlanoGrupos()->joinWith(['grupo' => function ($q) {
+                $q->where(['deletado' => false]);
+            }])->all();
 $dataProvider = new ArrayDataProvider([
-    'allModels' => $grupos,
+    'allModels' => $relational,
     'sort' => [
-        'attributes' => ['titulo'],
+        'attributes' => ['ordem'],
+        'defaultOrder' => ['ordem' => SORT_ASC]
     ],
     'pagination' => [
         'pageSize' => 10,
@@ -76,18 +80,17 @@ echo GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
-        'titulo',
         [
-            'attribute' => 'grupo_pai',
+            'label' => 'Título',
             'value' => function($data) {
-                return $data->grupoPai->titulo;
+                return $data->grupo->titulo;
             }
         ],
         [
             'label' => 'Qtd. Atividades',
             'contentOptions' => ['class' => 'text-right'],
             'value' => function($data) {
-                return $data->getAtividades()->where(['deletado' => false])->count();
+                return $data->grupo->getAtividades()->where(['deletado' => false])->count();
             }
         ],
         [
@@ -97,7 +100,7 @@ echo GridView::widget([
         [
             'attribute' => 'status',
             'value' => function($data) {
-                return app\modules\doman\models\Grupo::getStatusLabel($data->status);
+                return app\modules\doman\models\Grupo::getStatusLabel($data->grupo->status);
             }
         ],
         //'user_id',
@@ -108,16 +111,16 @@ echo GridView::widget([
         [
             'class' => 'yii\grid\ActionColumn',
             'contentOptions' => ['class' => 'text-right'],
-            'template' => '{view}',
+            'template' => '{view} {update} {delete}',
             'urlCreator' => function ($action, $data, $key, $index) {
                 if ($action === 'view') {
-                    return Url::to(['/doman/grupo/view', 'id' => $data->id]);
+                    return Url::to(['/doman/grupo/view', 'id' => $data->grupo->id]);
                 }
                 if ($action === 'update') {
-                    return Url::to(['/doman/grupo/update', 'id' => $data->id]);
+                    return Url::to(['/doman/plano/editar-associacao-grupo', 'id' => $data->plano->id, 'grupo_id' => $data->grupo_id, 'ordem' => $data->ordem]);
                 }
                 if ($action === 'delete') {
-                    return Url::to(['/doman/grupo/delete', 'id' => $data->id]);
+                    return Url::to(['/doman/plano/delete-grupo', 'id' => $data->plano->id, 'grupo_id' => $data->grupo_id]);
                 }
             }
         ],

@@ -14,13 +14,12 @@ use yii\filters\VerbFilter;
 /**
  * PlanoController implements the CRUD actions for Plano model.
  */
-class PlanoController extends Controller
-{
+class PlanoController extends Controller {
+
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -35,15 +34,14 @@ class PlanoController extends Controller
      * Lists all Plano models.
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $dataProvider = new ActiveDataProvider([
             'query' => Plano::find(),
-            'sort'=> ['defaultOrder' => ['ordem'=>SORT_ASC, 'id'=>SORT_DESC]]
+            'sort' => ['defaultOrder' => ['ordem' => SORT_ASC, 'id' => SORT_DESC]]
         ]);
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -52,10 +50,9 @@ class PlanoController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
-    {
+    public function actionView($id) {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -64,15 +61,14 @@ class PlanoController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new Plano();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -83,15 +79,14 @@ class PlanoController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
-    {
+    public function actionUpdate($id) {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -102,8 +97,7 @@ class PlanoController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id) {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -116,14 +110,14 @@ class PlanoController extends Controller
      * @return Plano the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         if (($model = Plano::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
     /**
      * 
      * @param type $id
@@ -132,8 +126,10 @@ class PlanoController extends Controller
     public function actionAssociarGrupo($id) {
 
         $model = new AssociarPlanoGrupoForm;
+        $model->scenario = AssociarPlanoGrupoForm::SCENARIO_INSERT;
         $plano = $this->findModel($id);
         $model->plano_id = $id;
+        $model->ordem = $plano->getGrupos()->count() + 1;
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             // Salvar Relacional
@@ -152,4 +148,50 @@ class PlanoController extends Controller
                     'plano' => $plano,
         ]);
     }
+
+    /**
+     * 
+     * @param type $id
+     * @return type
+     */
+    public function actionEditarAssociacaoGrupo($id) {
+
+        $model = new AssociarPlanoGrupoForm;
+        $model->scenario = AssociarPlanoGrupoForm::SCENARIO_UPDATE;
+        $plano = $this->findModel($id);
+        $model->plano_id = $id;
+        $model->grupo_id = Yii::$app->request->get('grupo_id');
+        $model->ordem = $plano->getGrupos()->count() + 1;
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            // Salvar Relacional
+            $planoGrupo = PlanoGrupo::find()->where(['plano_id' => $model->plano_id, 'grupo_id' => $model->grupo_id])->one();
+            $planoGrupo->plano_id = $model->plano_id;
+            $planoGrupo->grupo_id = $model->grupo_id;
+            $planoGrupo->ordem = $model->ordem;
+            $planoGrupo->save();
+
+            return $this->redirect(['/doman/plano/view', 'id' => $plano->id]);
+        }
+
+
+        return $this->render('associar-grupo', [
+                    'model' => $model,
+                    'plano' => $plano,
+        ]);
+    }
+
+    /**
+     * 
+     * @param type $grupoId
+     * @return type
+     */
+    public function actionDeleteGrupo($id) {
+
+        $grupoId = Yii::$app->request->get('grupo_id');
+        \app\modules\doman\models\base\PlanoGrupo::deleteAll(['plano_id' => $id, 'grupo_id' => $grupoId]);
+
+        return $this->redirect(['view', 'id' => $id]);
+    }
+
 }

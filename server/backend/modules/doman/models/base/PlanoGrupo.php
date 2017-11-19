@@ -48,7 +48,7 @@ class PlanoGrupo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['plano_id', 'grupo_id'], 'required'],
+            [['plano_id', 'grupo_id', 'ordem'], 'required'],
             [['plano_id', 'grupo_id'], 'integer']
         ];
     }

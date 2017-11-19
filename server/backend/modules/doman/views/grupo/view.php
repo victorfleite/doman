@@ -77,7 +77,9 @@ $this->params['breadcrumbs'][] = $this->title;
 </p>
 <h3>Atividades Associadas</h3>
 <?php
-$relational = $model->getGrupoAtividades()->all();
+$relational = $model->getGrupoAtividades()->joinWith(['atividade' => function ($q) {
+        $q->where(['deletado'=>false]);
+}])->all();
 $dataProvider = new ArrayDataProvider([
     'allModels' => $relational,
     'sort' => [
@@ -125,7 +127,6 @@ echo GridView::widget([
                 return Atividade::getTipoLabel($data->atividade->tipo);
             }
         ],
-        'ordem',
         [
             'label' => 'Qtd. Cartões',
             'contentOptions' => ['class' => 'text-right'],
@@ -137,6 +138,10 @@ echo GridView::widget([
             }
         ],
         [
+            'attribute' => 'ordem',
+            'contentOptions' => ['class' => 'text-right'],
+        ],
+        [
             'attribute' => 'status',
             'value' => function($data) {
                 return Atividade::getStatusLabel($data->atividade->status);
@@ -145,7 +150,7 @@ echo GridView::widget([
         [
             'class' => 'yii\grid\ActionColumn',
             'contentOptions' => ['class' => 'text-right'],
-            'template' => '{view}',
+            'template' => '{view} {update} {delete}',
             'urlCreator' => function ($action, $data, $key, $index) {
                 if ($action === 'view') {
                     return Url::to(['/doman/atividade/view', 'id' => $data->atividade->id]);
@@ -154,7 +159,7 @@ echo GridView::widget([
                     return Url::to(['/doman/grupo/editar-associacao-atividade', 'id' => $data->grupo->id, 'atividade_id' => $data->atividade->id, 'ordem' => $data->ordem]);
                 }
                 if ($action === 'delete') {
-                    return Url::to(['/doman/atividade/delete', 'id' => $data->atividade->id]);
+                    return Url::to(['/doman/grupo/delete-atividade', 'id' => $data->grupo->id, 'atividade_id' => $data->atividade->id ]);
                 }
             }
         ],

@@ -1,10 +1,9 @@
 <?php
 
 use yii\helpers\Html;
-use yii\helpers\ArrayHelper;
 use yii\widgets\DetailView;
 use yii\widgets\ActiveForm;
-use \app\modules\doman\models\Atividade;
+use app\modules\doman\models\AssociarGrupoAtividadeForm;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Workgroup */
@@ -26,12 +25,6 @@ use \app\modules\doman\models\Atividade;
         'template' => "<tr><th width='200px'>{label}</th><td>{value}</td></tr>",
         'attributes' => [
             'titulo',
-            [
-                'attribute' => 'grupo_pai',
-                'value' => function($data) {
-                    return $data->grupoPai->titulo;
-                }
-            ],
             [
                 'attribute' => 'status',
                 'value' => function($data) {
@@ -58,8 +51,8 @@ use \app\modules\doman\models\Atividade;
         <div class="col-lg-8">
             <?=
             $form->field($model, 'atividade_id')->widget(\kartik\widgets\Select2::classname(), [
-                'data' => \yii\helpers\ArrayHelper::map(Atividade::find()->where(['deletado'=>false, 'status'=> Atividade::STATUS_PUBLICADO])->orderBy('id')->asArray()->all(), 'id', 'titulo'),
-                'options' => ['placeholder' => Yii::t('translation', 'Selecione a Atividade'), 'disabled'=>!$isNewRecord],
+                'data' => $model->getComboAtividade(),
+                'options' => ['placeholder' => Yii::t('translation', 'Selecione a Atividade'), 'disabled'=>($model->scenario == AssociarGrupoAtividadeForm::SCENARIO_INSERT)? false: true],
                 'pluginOptions' => [
                     'allowClear' => true
                 ],
@@ -75,7 +68,7 @@ use \app\modules\doman\models\Atividade;
     <p>&nbsp;</p>
     <div class="form-group">
         <?= Html::a(Yii::t('translation', 'Cancel'), ['/doman/grupo/view', 'id' => $grupo->id], ['class' => 'btn btn-primary']) ?>	
-        <?= Html::submitButton(Yii::t('translation', 'Update'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton(Yii::t('translation', 'Salvar'), ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

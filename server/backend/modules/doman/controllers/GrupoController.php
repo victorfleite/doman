@@ -26,6 +26,7 @@ class GrupoController extends Controller {
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                    'delete-atividade' => ['POST'],
                 ],
             ],
         ];
@@ -137,12 +138,18 @@ class GrupoController extends Controller {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-
+    /**
+     * 
+     * @param type $id
+     * @return type
+     */
     public function actionAssociarAtividade($id) {
 
         $model = new AssociarGrupoAtividadeForm;
+        $model->scenario = AssociarGrupoAtividadeForm::SCENARIO_INSERT;
         $grupo = $this->findModel($id);
         $model->grupo_id = $id;
+        $model->ordem = $grupo->getAtividades()->count() + 1;
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             // Salvar Relacional
@@ -159,13 +166,17 @@ class GrupoController extends Controller {
         return $this->render('associar-atividade', [
                     'model' => $model,
                     'grupo' => $grupo,
-                    'isNewRecord' => true
         ]);
     }
-
+    /**
+     * 
+     * @param type $id
+     * @return type
+     */
     public function actionEditarAssociacaoAtividade($id) {
 
         $model = new AssociarGrupoAtividadeForm;
+        $model->scenario = AssociarGrupoAtividadeForm::SCENARIO_UPDATE;
         $grupo = $this->findModel($id);
         $model->grupo_id = $id;
         $model->atividade_id = Yii::$app->request->get('atividade_id');
@@ -173,7 +184,7 @@ class GrupoController extends Controller {
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             // Atualizar Relacional
-            $grupoAtidade = GrupoAtividade::find()->where(['grupo_id' => $model->grupo_id, 'atividade_id' => $model->atividade_id]);
+            $grupoAtidade = GrupoAtividade::find()->where(['grupo_id' => $model->grupo_id, 'atividade_id' => $model->atividade_id])->one();
             $grupoAtidade->grupo_id = $model->grupo_id;
             $grupoAtidade->atividade_id = $model->atividade_id;
             $grupoAtidade->ordem = $model->ordem;
@@ -188,6 +199,18 @@ class GrupoController extends Controller {
                     'grupo' => $grupo,
                     'isNewRecord' => false
         ]);
+    }
+    /**
+     * 
+     * @param type $grupoId
+     * @return type
+     */
+    public function actionDeleteAtividade($id) {
+
+        $atividadeId = Yii::$app->request->get('atividade_id');
+        \app\modules\doman\models\base\GrupoAtividade::deleteAll(['grupo_id' => $id, 'atividade_id' => $atividadeId]);
+
+        return $this->redirect(['view', 'id'=>$id]);
     }
 
 }
