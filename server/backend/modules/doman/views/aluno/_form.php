@@ -33,7 +33,7 @@ use common\models\Util;
                 ],
             ]);
             ?>
-            <?= $form->field($model, 'tipo')->dropDownList(\app\modules\doman\models\Aluno::getTipoCombo()); ?>
+            <?= $form->field($model, 'tipo')->hiddenInput()->label(false); ?>
             <?= $form->field($model, 'sexo')->dropDownList(\app\modules\doman\models\Aluno::getSexoCombo()); ?>
             <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Aluno::getStatusCombo()); ?>
         </div>

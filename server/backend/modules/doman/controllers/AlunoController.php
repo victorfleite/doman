@@ -64,6 +64,7 @@ class AlunoController extends Controller {
     public function actionCreate() {
         $model = new Aluno();
         $model->user_id = Yii::$app->user->id;
+        $model->tipo = Aluno::TIPO_ESCOLA;
 
         if ($model->load(Yii::$app->request->post())) {
 
@@ -92,6 +93,7 @@ class AlunoController extends Controller {
     public function actionUpdate($id) {
         $model = $this->findModel($id);
         $model->user_id = Yii::$app->user->id;
+        $model->tipo = Aluno::TIPO_ESCOLA;
 
         if ($model->load(Yii::$app->request->post())) {
 

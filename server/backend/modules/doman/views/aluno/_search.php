@@ -18,10 +18,10 @@ use yii\widgets\ActiveForm;
     ?>
 
     <div class="row">	
-        <div class="col-lg-3">
+        <div class="col-lg-4">
             <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-4">
             <?=
             $form->field($model, 'data_nascimento')->widget(\kartik\datecontrol\DateControl::classname(), [
                 'type' => \kartik\datecontrol\DateControl::FORMAT_DATE,
@@ -38,9 +38,6 @@ use yii\widgets\ActiveForm;
         </div>
          <div class="col-lg-2">
             <?= $form->field($model, 'sexo')->dropDownList(\app\modules\doman\models\Aluno::getSexoCombo(), ['prompt'=>'Selecione']); ?>
-        </div>
-        <div class="col-lg-2">
-            <?= $form->field($model, 'tipo')->dropDownList(\app\modules\doman\models\Aluno::getTipoCombo(), ['prompt'=>'Selecione']); ?>
         </div>
         <div class="col-lg-2">
             <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Aluno::getStatusCombo(), ['prompt'=>'Selecione']); ?>
