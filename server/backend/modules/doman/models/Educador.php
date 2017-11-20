@@ -29,8 +29,25 @@ class Educador extends BaseEducador implements \common\components\traits\SimpleS
             [['email'], 'email'],
             [['tipo', 'status', 'user_id'], 'integer'],
             [['data_criacao'], 'safe'],
-            [['nome', 'email'], 'string', 'max' => 255]
+            [['nome', 'email'], 'string', 'max' => 255],
+            [['email'], 'checkUnicidadeEmail']
         ];
+    }
+    /**
+     * Verifica a Unicidade do Email
+     * @param type $attribute
+     * @param type $params
+     * @param type $validator
+     */
+    public function checkUnicidadeEmail($attribute, $params, $validator) {         
+        $query = Educador::find()->where(['email' => $this->email, 'deletado'=>false]);
+        if(!$this->isNewRecord){
+            $query->andWhere(['<>', 'id', $this->id]);
+        }
+        $exists = $query->exists();
+        if ($exists) {
+            $this->addError('email', 'Este email já está sendo utilizado por outro educacador');
+        }
     }
 
     public static function getTipoLabel($p) {

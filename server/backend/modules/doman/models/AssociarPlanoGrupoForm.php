@@ -38,9 +38,8 @@ class AssociarPlanoGrupoForm extends \yii\base\Model {
      */
     public function rules() {
         return [
-            [['plano_id', 'grupo_id', 'ordem'], 'required'],
-            [['plano_id', 'grupo_id'], 'safe'],
-            [['grupo_id'], 'validarGrupo']
+            [['plano_id', 'grupo_id', 'ordem']],
+            [['grupo_id'], 'validarGrupo', 'on' => self::SCENARIO_INSERT]
         ];
     }
 

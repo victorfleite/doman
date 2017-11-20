@@ -37,8 +37,7 @@ class AssociarGrupoAtividadeForm extends \yii\base\Model {
      */
     public function rules() {
         return [
-            [['grupo_id', 'atividade_id', 'ordem'], 'required', 'on' => self::SCENARIO_INSERT],
-            [['grupo_id', 'atividade_id', 'ordem'], 'required', 'on' => self::SCENARIO_UPDATE],
+            [['grupo_id', 'atividade_id', 'ordem'], 'required'],
             [['atividade_id'], 'validarAtividade', 'on' => self::SCENARIO_INSERT]
         ];
     }
