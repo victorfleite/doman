@@ -145,7 +145,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'yii\grid\ActionColumn',
                 'contentOptions' => ['class' => 'text-right'],
-                'template' => '{view}{update}{delete}',
+                'template' => '{view} {update} {delete}',
                 'urlCreator' => function ($action, $data, $key, $index) {
                     if ($action === 'view') {
                         return Url::to(['/doman/cartao/view', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);

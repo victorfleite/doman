@@ -21,4 +21,12 @@ class EducadorAluno extends BaseEducadorAluno {
         ];
     }
 
+    public function behaviors() {
+        return [
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),
+            ],
+        ];
+    }
+
 }

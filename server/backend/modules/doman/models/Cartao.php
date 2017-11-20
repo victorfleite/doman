@@ -75,6 +75,9 @@ class Cartao extends BaseCartao implements SimpleStatusInterface, ConvocacaoStat
                 ],
                 'replaceRegularDelete' => true // mutate native `delete()` method
             ],
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
+            ],
         ];
     }
 

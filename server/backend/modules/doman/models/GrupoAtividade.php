@@ -19,5 +19,13 @@ class GrupoAtividade extends BaseGrupoAtividade {
             [['grupo_id', 'atividade_id', 'ordem'], 'integer']
         ];
     }
+    
+    public function behaviors() {
+        return [
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),
+            ],
+        ];
+    }
 
 }

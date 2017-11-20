@@ -90,6 +90,9 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
                 ],
                 'replaceRegularDelete' => true
             ],
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
+            ],
         ];
     }
     

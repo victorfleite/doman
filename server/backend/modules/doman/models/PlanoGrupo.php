@@ -20,4 +20,12 @@ class PlanoGrupo extends BasePlanoGrupo {
         ];
     }
 
+    public function behaviors() {
+        return [
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),
+            ],
+        ];
+    }
+
 }

@@ -94,6 +94,9 @@ class Educador extends BaseEducador implements \common\components\traits\SimpleS
                 ],
                 'replaceRegularDelete' => true
             ],
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
+            ],
         ];
     }
 

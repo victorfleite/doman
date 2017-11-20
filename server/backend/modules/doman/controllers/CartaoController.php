@@ -48,6 +48,8 @@ class CartaoController extends Controller {
         $model = new Cartao();
         $model->user_id = Yii::$app->user->id;
         $model->atividade_id = Yii::$app->request->get('atividade_id');
+        $totalDeCartoes = $model->getAtividade()->one()->getCartoes()->where(['deletado'=>false])->count();
+        $model->ordem =  $totalDeCartoes + 1;
 
         if ($model->load(Yii::$app->request->post())) {
 

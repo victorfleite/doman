@@ -11,7 +11,7 @@ use \app\modules\doman\models\base\Plano as BasePlano;
 class Plano extends BasePlano implements \common\components\traits\SimpleStatusInterface {
 
     use \common\components\traits\SimpleStatusTrait;
-    
+
     const PLANO_FREE_ID = 1;
     const PLANO_PREMIUM_ID = 2;
 
@@ -26,6 +26,14 @@ class Plano extends BasePlano implements \common\components\traits\SimpleStatusI
             [['data_criacao'], 'safe'],
             [['nome'], 'string', 'max' => 255]
         ]);
+    }
+
+    public function behaviors() {
+        return [
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),
+            ],
+        ];
     }
 
 }

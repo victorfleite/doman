@@ -52,6 +52,9 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
                 ],
                 'replaceRegularDelete' => true // mutate native `delete()` method
             ],
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
+            ],
         ];
     }
 

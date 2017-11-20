@@ -106,6 +106,9 @@ class Aluno extends BaseAluno implements \common\components\traits\SimpleStatusI
                 ],
                 'replaceRegularDelete' => true
             ],
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
+            ],
         ];
     }
 

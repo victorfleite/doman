@@ -20,4 +20,12 @@ class PlanoEducadorLicenca extends BasePlanoEducadorLicenca {
         ];
     }
 
+    public function behaviors() {
+        return [
+            'normalizador' => [
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),
+            ],
+        ];
+    }
+
 }
