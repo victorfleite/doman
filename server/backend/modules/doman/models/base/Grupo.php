@@ -69,6 +69,7 @@ class Grupo extends \yii\db\ActiveRecord {
         return [
             [['titulo', 'user_id', 'inicializacao'], 'required'],
             [['descricao'], 'string'],
+            [['tagNames'], 'safe'],
             [['status', 'user_id', 'user_publicacao_id', 'grupo_pai', 'ordem'], 'integer'],
             [['data_criacao', 'data_publicacao'], 'safe'],
             [['deletado'], 'boolean'],
@@ -100,6 +101,7 @@ class Grupo extends \yii\db\ActiveRecord {
             'grupo_pai' => Yii::t('translation', 'Grupo Pai'),
             'imagem' => Yii::t('translation', 'Imagem'),
             'inicializacao' => Yii::t('translation', 'Inicialização'),
+            'tagNames' => Yii::t('translation', 'Tags'),
         ];
     }
 
@@ -171,6 +173,13 @@ class Grupo extends \yii\db\ActiveRecord {
      */
     public function getGrupoPai() {
         return $this->hasOne(\app\modules\doman\models\Grupo::className(), ['id' => 'grupo_pai']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTags() {
+        return $this->hasMany(Tag::className(), ['id' => 'tag_id'])->viaTable('grupo_tag', ['grupo_id' => 'id']);
     }
 
 }

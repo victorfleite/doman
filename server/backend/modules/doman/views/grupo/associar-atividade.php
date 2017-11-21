@@ -24,13 +24,16 @@ use app\modules\doman\models\AssociarGrupoAtividadeForm;
         'model' => $grupo,
         'template' => "<tr><th width='200px'>{label}</th><td>{value}</td></tr>",
         'attributes' => [
-            'titulo',
             [
-                'attribute' => 'status',
+                'attribute' => 'imagem',
+                'format' => 'raw',
+                'contentOptions' => [],
                 'value' => function($data) {
-                    return app\modules\doman\models\Grupo::getStatusLabel($data->status);
-                }
+                    return Html::a(Html::img($data->imagem, ['width' => 290, 'height' => 163]), $data->imagem, $options = ['target' => '_blank']);
+                },
             ],
+            'titulo',
+            'descricao:ntext',
             [
                 'attribute' => 'user_id',
                 'value' => function($data) {
@@ -38,6 +41,29 @@ use app\modules\doman\models\AssociarGrupoAtividadeForm;
                 }
             ],
             'data_criacao:date',
+            [
+                'label' => 'Tags',
+                'value' => function($data) {
+                    $tags = [];
+                    $list = $data->getTags()->all();
+                    foreach($list as $item){
+                        $tags[] = $item['name'];
+                    }                
+                    return implode($tags, ', ');
+                }
+            ],
+            [
+                'attribute' => 'inicializacao',
+                'value' => function($data) {
+                    return app\modules\doman\models\Grupo::getInicializacaoLabel($data->inicializacao);
+                }
+            ],
+            [
+                'attribute' => 'status',
+                'value' => function($data) {
+                    return app\modules\doman\models\Grupo::getStatusLabel($data->status);
+                }
+            ],
         ],
     ])
     ?>
@@ -67,7 +93,7 @@ use app\modules\doman\models\AssociarGrupoAtividadeForm;
 
     <p>&nbsp;</p>
     <div class="form-group">
-        <?= Html::a(Yii::t('translation', 'Cancel'), ['/doman/grupo/view', 'id' => $grupo->id], ['class' => 'btn btn-primary']) ?>	
+        <?= Html::a(Yii::t('translation', 'Cancelar'), ['/doman/grupo/view', 'id' => $grupo->id], ['class' => 'btn btn-primary']) ?>	
         <?= Html::submitButton(Yii::t('translation', 'Salvar'), ['class' => 'btn btn-primary']) ?>
     </div>
 

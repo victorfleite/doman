@@ -31,6 +31,7 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
         return [
             [['titulo', 'user_id', 'inicializacao'], 'required'],
             [['descricao'], 'string'],
+            [['tagNames'], 'safe'],
             [['status', 'user_id', 'user_publicacao_id', 'grupo_pai', 'ordem'], 'integer'],
             [['data_criacao', 'data_publicacao'], 'safe'],
             [['deletado'], 'boolean'],
@@ -52,8 +53,11 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
                 ],
                 'replaceRegularDelete' => true // mutate native `delete()` method
             ],
+            'taggable' => [
+                'class' => \dosamigos\taggable\Taggable::className(),
+            ],
             'normalizador' => [
-                'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),
             ],
         ];
     }
@@ -71,7 +75,7 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
                 $fileName = Util::generateHashSha256(6) . "_" . Util::sanitizeString($this->image->baseName) . ".{$ext}";
                 $this->imagem = Grupo::IMAGENS_PATH . strtolower($fileName);
                 if (!is_null($this->image)) {
-                  $this->image->saveAs($this->imagem, false);
+                    $this->image->saveAs($this->imagem, false);
                 }
                 return $this->save();
             } else {
@@ -96,6 +100,7 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
                 break;
         }
     }
+
     /**
      * 
      * @return type
@@ -106,4 +111,5 @@ class Grupo extends BaseGrupo implements \common\components\traits\PublicacaoSta
             self::INICIALIZACAO_ABERTO => self::INICIALIZACAO_ABERTO_LABEL,
         ];
     }
+
 }

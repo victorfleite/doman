@@ -55,6 +55,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'data_criacao:date',
             [
+                'label' => 'Tags',
+                'value' => function($data) {
+                    $tags = [];
+                    $list = $data->getTags()->all();
+                    foreach($list as $item){
+                        $tags[] = $item['name'];
+                    }                
+                    return implode($tags, ', ');
+                }
+            ],
+            [
                 'attribute' => 'inicializacao',
                 'value' => function($data) {
                     return app\modules\doman\models\Grupo::getInicializacaoLabel($data->inicializacao);
@@ -78,8 +89,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <h3>Atividades Associadas</h3>
 <?php
 $relational = $model->getGrupoAtividades()->joinWith(['atividade' => function ($q) {
-        $q->where(['deletado'=>false]);
-}])->all();
+                $q->where(['deletado' => false]);
+            }])->all();
 $dataProvider = new ArrayDataProvider([
     'allModels' => $relational,
     'sort' => [
@@ -159,7 +170,7 @@ echo GridView::widget([
                     return Url::to(['/doman/grupo/editar-associacao-atividade', 'id' => $data->grupo->id, 'atividade_id' => $data->atividade->id, 'ordem' => $data->ordem]);
                 }
                 if ($action === 'delete') {
-                    return Url::to(['/doman/grupo/delete-atividade', 'id' => $data->grupo->id, 'atividade_id' => $data->atividade->id ]);
+                    return Url::to(['/doman/grupo/delete-atividade', 'id' => $data->grupo->id, 'atividade_id' => $data->atividade->id]);
                 }
             }
         ],

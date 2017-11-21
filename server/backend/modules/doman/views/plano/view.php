@@ -87,6 +87,17 @@ echo GridView::widget([
             }
         ],
         [
+            'label' => 'Tags',
+            'value' => function($data) {
+                $tags = [];
+                $list = $data->grupo->getTags()->all();
+                foreach ($list as $item) {
+                    $tags[] = $item['name'];
+                }
+                return implode($tags, ', ');
+            }
+        ],
+        [
             'label' => 'Qtd. Atividades',
             'contentOptions' => ['class' => 'text-right'],
             'value' => function($data) {

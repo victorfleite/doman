@@ -17,11 +17,26 @@ use common\models\Util;
     <?= $form->errorSummary($model); ?>
 
     <div class="row">	
-        <div class="col-lg-7">
+        <div class="col-lg-4">
             <?= $form->field($model, 'titulo')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-lg-3">
-             <?= $form->field($model, 'inicializacao')->dropDownList(\app\modules\doman\models\Grupo::getInicializacaoCombo()); ?>
+            <?=
+            $form->field($model, 'tagNames')->widget(dosamigos\selectize\SelectizeTextInput::className(), [
+                'loadUrl' => ['tag/list'],
+                'options' => ['class' => 'form-control'],
+                'clientOptions' => [
+                    'plugins' => ['remove_button'],
+                    'valueField' => 'name',
+                    'labelField' => 'name',
+                    'searchField' => ['name'],
+                    'create' => true,
+                ],
+            ]);
+            ?>
+        </div>
+        <div class="col-lg-3">
+            <?= $form->field($model, 'inicializacao')->dropDownList(\app\modules\doman\models\Grupo::getInicializacaoCombo()); ?>
         </div>
         <div class="col-lg-2">
             <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Grupo::getStatusCombo()); ?>
@@ -41,15 +56,15 @@ use common\models\Util;
             ?>
         </div>        
     </div>
-    
-    
+
+
 
 
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
-    <?php ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 
 </div>
