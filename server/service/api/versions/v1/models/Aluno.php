@@ -31,11 +31,12 @@ class Aluno extends \yii\db\ActiveRecord {
 
     static function getAtividade($alunoId, $grupoId, $atividadeId) {
 
-        $sql = 'SELECT titulo, status, data_publicacao, data_criacao,'.
-               ' tipo, video_url, autoplay, som_id, descricao, imagem ' .
-               ' FROM atividade ' .
-               ' where id=:atividadeId and deletado=false and status=2';
+        $sql = ' SELECT * ' .
+                ' FROM vw_atividade_aluno' .
+                ' where aluno_id=:alunoId and grupo_id=:grupoId and atividade_id=:atividadeId';
         $command = \Yii::$app->db->createCommand($sql);
+        $command->bindValue(':alunoId', $alunoId);
+        $command->bindValue(':grupoId', $grupoId);
         $command->bindValue(':atividadeId', $atividadeId);
         return $command->queryAll();
     }

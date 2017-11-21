@@ -6,7 +6,7 @@
 namespace api\versions\v1\controllers;
 
 use api\versions\v1\models\Educador;
-use api\versions\v1\models\Aluno;
+use api\versions\v1\models\Atividade;
 
 class ServiceController extends \api\components\Controller {
 
@@ -76,10 +76,18 @@ class ServiceController extends \api\components\Controller {
         if (!isset($alunoId) || !isset($grupoId)) {
             throw new \Exception('Ops algo errado nos parâmetros');
         }
-        
-        return ['retorno' => Aluno::getAtividades($alunoId, $grupoId)];
+
+        $atividades = Atividade::getAtividades($alunoId, $grupoId);
+        $out = [];
+        foreach ($atividades as $atividade){
+            if ($atividade['atividade_tipo'] == Atividade::TIPO_BIT_INTELIGENCIA) {
+                $atividade['cartoes'] = Atividade::getCartoesAluno($alunoId, $grupoId, $atividade['atividade_id']);
+            }
+            $out[] = $atividade;
+        }
+        return ['retorno' => $out];
     }
-    
+
     /**
      * 
      * @return type
@@ -94,8 +102,11 @@ class ServiceController extends \api\components\Controller {
         if (!isset($alunoId) || !isset($grupoId) || !isset($atividadeId)) {
             throw new \Exception('Ops algo errado nos parâmetros');
         }
-        
-        return ['retorno' => Aluno::getAtividade($alunoId, $grupoId, $atividadeId)];
+        $atividade = Atividade::getAtividade($alunoId, $grupoId, $atividadeId)[0];
+        if (isset($atividade) && $atividade['atividade_tipo'] == Atividade::TIPO_BIT_INTELIGENCIA) {
+            $atividade['cartoes'] = Atividade::getCartoesAluno($alunoId, $grupoId, $atividadeId);
+        }
+        return ['retorno' => $atividade];
     }
 
 }

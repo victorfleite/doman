@@ -1935,3 +1935,213 @@ HINT:  Nenhum operador corresponde com o nome e o(s) tipo(s) de argumento(s) inf
     'REQUEST_TIME_FLOAT' => 1511230639.304
     'REQUEST_TIME' => 1511230639
 ]
+2017-11-21 19:06:05 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY093]: Invalid parameter number: :alunoId in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:306
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(306): PDOStatement->bindValue(':alunoId', 10, 1)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(250): yii\db\Command->bindPendingParams()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1062): yii\db\Command->prepare(true)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#4 /var/www/html/doman/server/service/api/versions/v1/models/Aluno.php(43): yii\db\Command->queryAll()
+#5 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(98): api\versions\v1\models\Aluno::getAtividade(10, 6, 7)
+#6 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAtividade()
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividade', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[HY093]: Invalid parameter number: :alunoId
+Failed to prepare SQL:  SELECT id, aluno_id, grupo_id, atividade_id,  atividade_titulo, atividade_tipo, status, data_criacao, data_abertura, data_finalizacao, ordem  FROM vw_atividade_aluno where aluno_id:alunoId and grupo_id:grupoId and atividade_id=:atividadeId in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:254
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1062): yii\db\Command->prepare(true)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/Aluno.php(43): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(98): api\versions\v1\models\Aluno::getAtividade(10, 6, 7)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAtividade()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividade', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => HY093
+    [1] => 0
+)
+
+2017-11-21 19:06:05 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '47'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '371c24f8-0624-f419-ddc9-d78b173143ff'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45170'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-atividade'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-atividade'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'REQUEST_TIME_FLOAT' => 1511298365.919
+    'REQUEST_TIME' => 1511298365
+]
+2017-11-21 19:06:48 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "status" não existe
+LINE 1: ... atividade_id,  atividade_titulo, atividade_tipo, status, da...
+                                                             ^ in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/Aluno.php(43): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(98): api\versions\v1\models\Aluno::getAtividade(10, 6, 7)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAtividade()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividade', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "status" não existe
+LINE 1: ... atividade_id,  atividade_titulo, atividade_tipo, status, da...
+                                                             ^
+The SQL being executed was:  SELECT id, aluno_id, grupo_id, atividade_id,  atividade_titulo, atividade_tipo, status, data_criacao, data_abertura, data_finalizacao, ordem  FROM vw_atividade_aluno where aluno_id=10 and grupo_id=6 and atividade_id=7 in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), ' SELECT id, alu...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/Aluno.php(43): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(98): api\versions\v1\models\Aluno::getAtividade(10, 6, 7)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAtividade()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividade', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERRO:  coluna "status" não existe
+LINE 1: ... atividade_id,  atividade_titulo, atividade_tipo, status, da...
+                                                             ^
+)
+
+2017-11-21 19:06:48 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '47'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'a87daf05-ab7f-a6e4-4efa-7972c7784ad6'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45178'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-atividade'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-atividade'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'REQUEST_TIME_FLOAT' => 1511298408.616
+    'REQUEST_TIME' => 1511298408
+]
+2017-11-21 19:13:26 [::1][-][-][error][Exception] Exception: O email deve ser informado. in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:40
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-21 19:13:26 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '33'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '32696f55-0685-fdad-6347-8acf99e34a04'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45210'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511298806.625
+    'REQUEST_TIME' => 1511298806
+]
