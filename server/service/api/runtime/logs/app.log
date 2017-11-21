@@ -1,0 +1,1937 @@
+2017-11-20 22:27:55 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: v1/service/get-aluno in /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-aluno', Array)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#2 {main}
+2017-11-20 22:27:55 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '229ebec4-cb5e-c669-a5e7-6f53228a3a55'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45796'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-aluno'
+    'REQUEST_TIME_FLOAT' => 1511224075.768
+    'REQUEST_TIME' => 1511224075
+]
+2017-11-20 22:28:20 [::1][-][-][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Login Required in /var/www/html/doman/server/vendor/yiisoft/yii2/web/User.php:427
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/filters/AccessControl.php(156): yii\web\User->loginRequired()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/filters/AccessControl.php(140): yii\filters\AccessControl->denyAccess(Object(yii\web\User))
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Component.php(557): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(274): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#12 {main}
+2017-11-20 22:28:20 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '7d616971-259b-1eb2-4fee-ce699cfa7082'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45802'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224100.598
+    'REQUEST_TIME' => 1511224100
+]
+2017-11-20 22:28:30 [::1][-][-][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: You are not allowed to perform this action. in /var/www/html/doman/server/service/api/components/filters/OAuth2AccessFilter.php:60
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/ActionFilter.php(75): api\components\filters\OAuth2AccessFilter->beforeAction(Object(yii\base\InlineAction))
+#1 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Component.php(557): call_user_func(Array, Object(yii\base\ActionEvent))
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(274): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#10 {main}
+2017-11-20 22:28:30 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '0010f853-64f5-0971-9ffd-e6ab1b4a1bfd'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45804'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224110.369
+    'REQUEST_TIME' => 1511224110
+]
+2017-11-20 22:28:42 [::1][-][-][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: You are not allowed to perform this action. in /var/www/html/doman/server/service/api/components/filters/OAuth2AccessFilter.php:60
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/ActionFilter.php(75): api\components\filters\OAuth2AccessFilter->beforeAction(Object(yii\base\InlineAction))
+#1 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Component.php(557): call_user_func(Array, Object(yii\base\ActionEvent))
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(274): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#10 {main}
+2017-11-20 22:28:42 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'ef7f5d53-643b-8dab-2e99-12fbc34c9976'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45808'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224122.559
+    'REQUEST_TIME' => 1511224122
+]
+2017-11-20 22:28:46 [::1][-][-][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: You are not allowed to perform this action. in /var/www/html/doman/server/service/api/components/filters/OAuth2AccessFilter.php:60
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/ActionFilter.php(75): api\components\filters\OAuth2AccessFilter->beforeAction(Object(yii\base\InlineAction))
+#1 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Component.php(557): call_user_func(Array, Object(yii\base\ActionEvent))
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(274): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#10 {main}
+2017-11-20 22:28:46 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '06f335a4-7455-ad58-65b7-63294179bba7'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45808'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224126.714
+    'REQUEST_TIME' => 1511224126
+]
+2017-11-20 22:28:50 [::1][-][-][error][Error] Error: Class 'api\versions\v1\controllers\Yii' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:29
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:28:50 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '573a53cf-504f-b78c-164b-3d10d69a2322'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45808'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224130.403
+    'REQUEST_TIME' => 1511224130
+]
+2017-11-20 22:29:00 [::1][-][-][error][Error] Error: Class 'api\versions\v1\controllers\Exception' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:33
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:29:00 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'cb13a281-abca-ffe6-818f-f3420ddfc789'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45814'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224140.005
+    'REQUEST_TIME' => 1511224140
+]
+2017-11-20 22:29:14 [::1][-][-][error][Exception] Exception: O email deve ser informado. in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:33
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:29:14 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '67693294-a642-5803-e65f-5761e998bfd5'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45816'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224154.339
+    'REQUEST_TIME' => 1511224154
+]
+2017-11-20 22:29:57 [::1][-][-][error][Exception] Exception: O email deve ser informado. in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:33
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:29:57 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_POSTMAN_TOKEN' => 'e059703d-0ed5-fcae-fd7e-f0bdaeea5275'
+    'CONTENT_TYPE' => 'text/plain;charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45818'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224197.265
+    'REQUEST_TIME' => 1511224197
+]
+2017-11-20 22:30:11 [::1][-][-][error][Exception] Exception: O email deve ser informado. in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:33
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:30:11 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_POSTMAN_TOKEN' => '61f28c1b-5357-30ac-2fea-8d84312e407f'
+    'CONTENT_TYPE' => 'text/plain;charset=UTF-8'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45820'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224211.105
+    'REQUEST_TIME' => 1511224211
+]
+2017-11-20 22:30:42 [::1][-][-][error][Exception] Exception: O email deve ser informado. in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:33
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:30:42 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '47e14670-05b4-d929-7a79-c5960cb09abb'
+    'CONTENT_TYPE' => 'text/plain;charset=UTF-8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '45824'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224242.384
+    'REQUEST_TIME' => 1511224242
+]
+2017-11-20 22:35:57 [::1][-][-][error][Exception] Exception: O email deve ser informado corretamente. (exemplo@email.com) in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:37
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:35:57 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '24'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '4586507e-132c-6848-4bf5-360b6096bd0b'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46016'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224557.697
+    'REQUEST_TIME' => 1511224557
+]
+2017-11-20 22:36:07 [::1][-][-][error][Exception] Exception: O email deve ser informado. in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:37
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:36:07 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '24'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '986fe8ba-e36c-bf7d-7234-61c6257f04ba'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46022'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224567.079
+    'REQUEST_TIME' => 1511224567
+]
+2017-11-20 22:40:37 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:40:37 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'd4992ff7-3422-4a23-b3c8-8f94122617e5'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46038'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511224837.759
+    'REQUEST_TIME' => 1511224837
+]
+2017-11-20 22:43:21 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:43:21 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '968073c5-f7ab-2e87-b0c2-734865f233f5'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46044'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511225001.517
+    'REQUEST_TIME' => 1511225001
+]
+2017-11-20 22:48:05 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:48:05 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '3e08884a-b6fa-b9bd-8497-b9279c57fe19'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46056'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511225285.22
+    'REQUEST_TIME' => 1511225285
+]
+2017-11-20 22:48:24 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:48:24 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'fe23f3c5-2dda-fdb9-9400-7ff246305fd7'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46058'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511225304.305
+    'REQUEST_TIME' => 1511225304
+]
+2017-11-20 22:52:56 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:52:56 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '7443a35a-0ae3-bc53-fa20-6007986eb678'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46090'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511225576.543
+    'REQUEST_TIME' => 1511225576
+]
+2017-11-20 22:54:16 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:54:16 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'e636e4a5-2a5c-34a0-1de6-6f1284bcfb57'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46102'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511225656.725
+    'REQUEST_TIME' => 1511225656
+]
+2017-11-20 22:55:35 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:55:35 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '308052c5-101e-2976-bb89-bae47fc972d9'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46104'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511225735.055
+    'REQUEST_TIME' => 1511225735
+]
+2017-11-20 22:56:39 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 22:56:39 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'c6d9527e-2a01-3df6-5d61-25c60e8d4362'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46106'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511225799.556
+    'REQUEST_TIME' => 1511225799
+]
+2017-11-20 23:02:35 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:02:35 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'a6d50922-17c4-d84a-1e2b-3ce526b5bfb0'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46376'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511226155.609
+    'REQUEST_TIME' => 1511226155
+]
+2017-11-20 23:04:13 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:04:13 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '1494e60d-b85f-8dcb-75c7-2831b0907dec'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46430'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511226253.615
+    'REQUEST_TIME' => 1511226253
+]
+2017-11-20 23:11:37 [::1][-][-][error][Error] Error: Class 'app\modules\doman\models\Educador' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:11:37 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '27a29c13-fa5f-a95b-ed34-dc5931d92620'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46668'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511226697.628
+    'REQUEST_TIME' => 1511226697
+]
+2017-11-20 23:16:47 [::1][-][-][error][Error] Error: Undefined class constant 'STATUS_ACTIVE' in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:41
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:16:47 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'abe2161f-2e1a-c586-8335-723b70f1d6e1'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46678'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511227007.16
+    'REQUEST_TIME' => 1511227007
+]
+2017-11-20 23:19:34 [::1][-][-][error][Error] Error: Class 'api\versions\v1\controllers\Aluno' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:42
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:19:34 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '6da00f45-67c7-1868-b8e6-2c4c3bf06c64'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46700'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511227174.236
+    'REQUEST_TIME' => 1511227174
+]
+2017-11-20 23:19:35 [::1][-][-][error][Error] Error: Class 'api\versions\v1\controllers\Aluno' not found in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:42
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:19:35 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'bd565c9f-8f34-6792-75bf-0aa777ed657c'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46704'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511227175.737
+    'REQUEST_TIME' => 1511227175
+]
+2017-11-20 23:35:21 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:61
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:35:21 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '7005aefd-a8c5-76dd-2dee-c61e00efcee8'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46888'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'REQUEST_TIME_FLOAT' => 1511228121.976
+    'REQUEST_TIME' => 1511228121
+]
+2017-11-20 23:36:11 [::1][-][-][error][Error] Error: Class 'api\versions\v1\models\Yii' not found in /var/www/html/doman/server/service/api/versions/v1/models/Educador.php:31
+Stack trace:
+#0 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(64): api\versions\v1\models\Educador::getGruposDoAluno(16, 10)
+#1 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupos()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupos', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#8 {main}
+2017-11-20 23:36:11 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '33'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'fadd5d80-766f-e8d2-aa65-876788500942'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46894'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'REQUEST_TIME_FLOAT' => 1511228171.914
+    'REQUEST_TIME' => 1511228171
+]
+2017-11-20 23:49:06 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY093]: Invalid parameter number: :educadorId in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:306
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(306): PDOStatement->bindValue(':educadorId', NULL, 0)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(250): yii\db\Command->bindPendingParams()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1062): yii\db\Command->prepare(true)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#4 /var/www/html/doman/server/service/api/versions/v1/models/Educador.php(34): yii\db\Command->queryAll()
+#5 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(44): api\versions\v1\models\Educador::getAlunos('victor.leite@gm...')
+#6 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[HY093]: Invalid parameter number: :educadorId
+Failed to prepare SQL: SELECT  aluno_nome, aluno_data_nascimento,  aluno_tipo, aluno_sexo, aluno_imagem  FROM vw_educador_aluno  where educador_email=:$educadorEmail  order by aluno_nome in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:254
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1062): yii\db\Command->prepare(true)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/Educador.php(34): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(44): api\versions\v1\models\Educador::getAlunos('victor.leite@gm...')
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => HY093
+    [1] => 0
+)
+
+2017-11-20 23:49:06 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '34'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '82304d72-f183-6b83-9a1a-2530a4150b18'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46946'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511228946.177
+    'REQUEST_TIME' => 1511228946
+]
+2017-11-20 23:57:52 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:59
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:57:52 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '29'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'f9f2894d-6622-9e20-ad70-61a5ec24f1ea'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46968'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'REQUEST_TIME_FLOAT' => 1511229472.516
+    'REQUEST_TIME' => 1511229472
+]
+2017-11-20 23:59:26 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:59
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:59:26 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '29'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '6e33b4ba-8356-8679-0cca-450c2f05dfda'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46992'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'REQUEST_TIME_FLOAT' => 1511229566.258
+    'REQUEST_TIME' => 1511229566
+]
+2017-11-20 23:59:41 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:59
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:59:41 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '29'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '46f81d6a-203a-7c6a-f55b-8874d4c5ba62'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '46994'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'REQUEST_TIME_FLOAT' => 1511229581.55
+    'REQUEST_TIME' => 1511229581
+]
+2017-11-20 23:59:52 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:59
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-20 23:59:52 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '29'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '0314e02a-6209-5b09-d224-a2c576048eaa'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '47000'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'REQUEST_TIME_FLOAT' => 1511229592.555
+    'REQUEST_TIME' => 1511229592
+]
+2017-11-21 00:05:28 [::1][-][-][error][Exception] Exception: O email deve ser informado. in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:39
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAlunos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-21 00:05:28 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '33'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'f1cc8912-e5e0-5d17-59dd-2f4726f93613'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '47016'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511229928.756
+    'REQUEST_TIME' => 1511229928
+]
+2017-11-21 00:13:07 [::1][-][-][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Login Required in /var/www/html/doman/server/vendor/yiisoft/yii2/web/User.php:427
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/filters/AccessControl.php(156): yii\web\User->loginRequired()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/filters/AccessControl.php(140): yii\filters\AccessControl->denyAccess(Object(yii\web\User))
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Component.php(557): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(274): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividade', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#12 {main}
+2017-11-21 00:13:07 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '47'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '8a4868f7-dc51-1911-b03d-1a4db465beaf'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '47042'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-atividade'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-atividade'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'REQUEST_TIME_FLOAT' => 1511230387.723
+    'REQUEST_TIME' => 1511230387
+]
+2017-11-21 00:16:18 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:95
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAtividade()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividade', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-11-21 00:16:18 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '29'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'e709940c-1cd9-9bff-f170-09be1459412a'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '47068'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-atividade'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-atividade'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'REQUEST_TIME_FLOAT' => 1511230578.438
+    'REQUEST_TIME' => 1511230578
+]
+2017-11-21 00:17:19 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42883]: Undefined function: 7 ERRO:  operador não existe: boolean = integer
+LINE 1: ..., imagem  FROM atividade  where id=$1 and deletado=0 and sta...
+                                                             ^
+HINT:  Nenhum operador corresponde com o nome e o(s) tipo(s) de argumento(s) informados. Você precisa adicionar conversões de tipo explícitas. in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/Aluno.php(40): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(98): api\versions\v1\models\Aluno::getAtividade(10, 6, 7)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAtividade()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividade', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[42883]: Undefined function: 7 ERRO:  operador não existe: boolean = integer
+LINE 1: ..., imagem  FROM atividade  where id=$1 and deletado=0 and sta...
+                                                             ^
+HINT:  Nenhum operador corresponde com o nome e o(s) tipo(s) de argumento(s) informados. Você precisa adicionar conversões de tipo explícitas.
+The SQL being executed was: SELECT titulo, status, data_publicacao, data_criacao, tipo, video_url, autoplay, som_id, descricao, imagem  FROM atividade  where id=7 and deletado=0 and status = 1 in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), 'SELECT titulo, ...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/Aluno.php(40): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(98): api\versions\v1\models\Aluno::getAtividade(10, 6, 7)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAtividade()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividade', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42883
+    [1] => 7
+    [2] => ERRO:  operador não existe: boolean = integer
+LINE 1: ..., imagem  FROM atividade  where id=$1 and deletado=0 and sta...
+                                                             ^
+HINT:  Nenhum operador corresponde com o nome e o(s) tipo(s) de argumento(s) informados. Você precisa adicionar conversões de tipo explícitas.
+)
+
+2017-11-21 00:17:19 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '47'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '34b0e7bf-01ac-1456-39a8-60866752c36c'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '47078'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-atividade'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-atividade'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-atividade'
+    'REQUEST_TIME_FLOAT' => 1511230639.304
+    'REQUEST_TIME' => 1511230639
+]

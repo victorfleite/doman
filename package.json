@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel server api",
-    "server": "node server.js",
-    "api": "node server/api.js"
+     "start" : "node server.js"
   },
   "author": "victor.leite@gmail.com",
   "license": "MIT",
