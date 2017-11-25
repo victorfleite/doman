@@ -6,11 +6,11 @@
     .module('app')
     .controller('CallbackController', callbackController);
 
-	callbackController.$inject = [];
+	callbackController.$inject = ['$location'];
 
-  function callbackController() {
+  function callbackController($location) {
 
-
+    //$location.redirect('/dashboard');
 
   }
 

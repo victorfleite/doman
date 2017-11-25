@@ -38,6 +38,13 @@
         templateUrl: 'app/home/home.html',
         controllerAs: 'vm'
       })
+      .state('dashboard', {
+        url: '/dashboard',
+        controller: 'DashboardController',
+        templateUrl: 'app/home/dashboard.html',
+        controllerAs: 'vm',
+        onEnter: checkAuthentication
+      })
       .state('profile', {
         url: '/profile',
         controller: 'ProfileController',
@@ -92,7 +99,7 @@
       responseType: 'token id_token',
       audience: AUTH0_AUDIENCE,
       redirectUri: AUTH0_CALLBACK_URL,
-      scope: 'openid profile'
+      scope: 'openid email profile'
     });
 
 

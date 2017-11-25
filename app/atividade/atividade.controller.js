@@ -12,9 +12,8 @@
 
     var vm = this;
     vm.auth = authService;
-
     $rootScope.loading = false;
 
-  }
+}
 
 })();
