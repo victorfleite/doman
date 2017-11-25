@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <script>
+    var hash = window.location.hash;
+    var idx = hash.indexOf('#access_token');
+    if (idx >= 0) {
+      // has '#access_token' in URL
+      var at_str = hash.substring(idx);
+      var access_token = at_str.substring(at_str.indexOf('=') + 1).trim();
+      if (access_token !== "") {
+        // we're good to go
+        window.location.href = "http://localhost/doman/#!/callback&access_token=" + access_token;
+      } else {
+        console.error('This page found an empty access_token in the location hash.');
+      }
+    } else {
+      console.error('This page expected an access_token in the location hash.');
+    }
+    </script>
+</html>

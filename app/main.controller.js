@@ -10,7 +10,7 @@
 
         var vm = this;
         vm.auth = authService;
-
+        
 
     }
 

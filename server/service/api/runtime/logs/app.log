@@ -2145,3 +2145,106 @@ Stack trace:
     'REQUEST_TIME_FLOAT' => 1511298806.625
     'REQUEST_TIME' => 1511298806
 ]
+2017-11-25 16:55:36 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "v1//service/get-alunos". in /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1//service/get...', Array)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#2 {main}
+2017-11-25 16:55:35 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'POST'
+    'HTTP_ORIGIN' => 'http://localhost:3000'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_REFERER' => 'http://localhost:3000/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '48640'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1//service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1//service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511636135.925
+    'REQUEST_TIME' => 1511636135
+]
+2017-11-25 16:56:09 [::1][-][-][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Login Required in /var/www/html/doman/server/vendor/yiisoft/yii2/web/User.php:427
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/filters/AccessControl.php(156): yii\web\User->loginRequired()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/filters/AccessControl.php(140): yii\filters\AccessControl->denyAccess(Object(yii\web\User))
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Component.php(557): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(274): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-alunos', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#12 {main}
+2017-11-25 16:56:09 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'POST'
+    'HTTP_ORIGIN' => 'http://localhost:3000'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_REFERER' => 'http://localhost:3000/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '48930'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-alunos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-alunos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-alunos'
+    'REQUEST_TIME_FLOAT' => 1511636169.688
+    'REQUEST_TIME' => 1511636169
+]

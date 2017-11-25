@@ -12,6 +12,9 @@
       'ngTouch',
       'angularScreenfull'
     ])
+    .constant('CONSTANTES', {
+      API: 'http://localhost/doman/server/service/api/www/index.php/v1',
+   })
     .config(config);
 
   config.$inject = [
@@ -95,11 +98,11 @@
 
     $urlRouterProvider.otherwise('/');
 
-    $locationProvider.hashPrefix('');
+    //$locationProvider.hashPrefix('');
 
     // Comment out the line below to run the app
     // without HTML5 mode (will use hashes in routes)
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
   }
 
 })();
