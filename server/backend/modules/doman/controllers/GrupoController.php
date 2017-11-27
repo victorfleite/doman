@@ -196,8 +196,7 @@ class GrupoController extends Controller {
 
         return $this->render('associar-atividade', [
                     'model' => $model,
-                    'grupo' => $grupo,
-                    'isNewRecord' => false
+                    'grupo' => $grupo
         ]);
     }
     /**

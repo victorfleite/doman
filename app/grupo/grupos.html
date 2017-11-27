@@ -1,0 +1,57 @@
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#!/alunos">Alunos</a></li>
+        <li class="breadcrumb-item" aria-current="page">{{vm.alunoService.getAluno().aluno_nome}}</li>
+        <li class="breadcrumb-item active" aria-current="page">Grupos</li>
+    </ol>
+</nav>
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Grupos</h1>
+</div>
+
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            Pesquisa
+        </div>
+        <div class="panel-body">
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <label class="sr-only" for="filtro">Nome</label>
+                    <input type="text" ng-model="filtro" class="form-control" id="filtro" placeholder="Digite o nome">
+                </div>
+                <button type="submit" class="btn btn-success">Procurar</button>
+            </form>
+        </div>
+    </div>
+    <h1 class="m-n font-thin h3">Selecione um grupo:</h1><br>
+    <div class="row">
+        <div ng-repeat="grupo in vm.grupos | fitrarPorNome:filtro:'grupo_titulo' " class="col-lg-3">
+            <div class="panel b-a">
+                <div ng-class="['panel-heading', 'no-border', (grupo.status)?'bg-success':'bg-light']">
+                    <span class="text-lt"><strong>{{($index+1)+ ' . ' + grupo.grupo_titulo }}</strong></span>
+                </div>
+                <a ng-click="vm.setSelecionado(grupo)">
+                    <div class="item m-l-n-xxs m-r-n-xxs">
+                        <!--div style="background-color: rgba(0,0,0,0.5); padding: 5px" class="bottom wrapper bg-gd-dk text-white">
+                            <div class="text-u-c h3 m-b-sm text-primary-lter">Coffee</div>
+                            <div>Aplicado</div>
+                            <div>06/10/2017 19:20</div>
+                        </div-->
+                        <img ng-src="{{vm.path + grupo.grupo_imagem}}" class="img-full" style="{{(grupo.status)?'':'filter: grayscale(100%);'}}">
+                    </div>
+                </a>
+                <div class="hbox text-center b-b b-light text-sm">
+                    <!--a ui-sref="atividade-item" class="col padder-v text-muted b-r b-light">
+                  <i class="fa fa-check-square-o block m-b-xs fa-2x"  style="color:green"></i>
+                  <span style="color:green">Aplicado</span>
+                </a-->
+                    <a ui-sref="atividade-item" class="col padder-v text-muted">
+                  <i class="fa {{(grupo.status)?'fa-play-circle-o':'fa-stop-circle'}}" block m-b-xs fa-2x" style="{{(grupo.status)?'color:green':''}}"></i>
+                  <span style="{{(grupo.status)?'color:green':''}}">{{(grupo.status)?'Play':'Desabilitado'}}</span>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

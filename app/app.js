@@ -13,6 +13,7 @@
       'angularScreenfull'
     ])
     .constant('CONSTANTES', {
+      PATH_IMAGENS: 'server/backend/web/',
       API: 'http://localhost/doman/server/service/api/www/index.php/v1',
    })
     .config(config);
@@ -38,10 +39,10 @@
         templateUrl: 'app/home/home.html',
         controllerAs: 'vm'
       })
-      .state('dashboard', {
-        url: '/dashboard',
-        controller: 'DashboardController',
-        templateUrl: 'app/home/dashboard.html',
+      .state('alunos', {
+        url: '/alunos',
+        controller: 'AlunoController',
+        templateUrl: 'app/aluno/alunos.html',
         controllerAs: 'vm',
         onEnter: checkAuthentication
       })
@@ -58,17 +59,17 @@
         templateUrl: 'app/callback/callback.html',
         controllerAs: 'vm'
       })
-      .state('atividade', {
-        url: '/atividade',
-        controller: 'AtividadeController',
-        templateUrl: 'app/atividade/atividade.html',
+      .state('grupos', {
+        url: '/grupos/:educador/:aluno',
+        controller: 'GrupoController',
+        templateUrl: 'app/grupo/grupos.html',
         controllerAs: 'vm',
         onEnter: checkAuthentication
       })
-      .state('atividade-item', {
-        url: '/atividade-item',
-        controller: 'AtividadeItemController',
-        templateUrl: 'app/atividade/atividade.item.html',
+      .state('atividades', {
+        url: '/atividades/:aluno/:grupo',
+        controller: 'AtividadeController',
+        templateUrl: 'app/atividade/atividades.html',
         controllerAs: 'vm',
         onEnter: checkAuthentication
       })

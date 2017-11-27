@@ -17,8 +17,15 @@
 
     }
 
+    var getGrupos = function(educador, aluno){
+      var params = {"educador_id" : educador, "aluno_id": aluno};
+      var url = CONSTANTES.API + '/service/get-grupos';
+      return $http.post(url, params);
+    }
+
     return {
-      getAlunos: getAlunos
+      getAlunos: getAlunos,
+      getGrupos: getGrupos
     }
   }
 })();

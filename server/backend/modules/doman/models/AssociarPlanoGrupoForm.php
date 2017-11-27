@@ -38,7 +38,7 @@ class AssociarPlanoGrupoForm extends \yii\base\Model {
      */
     public function rules() {
         return [
-            [['plano_id', 'grupo_id', 'ordem']],
+            [['plano_id', 'grupo_id', 'ordem'], 'required'],
             [['grupo_id'], 'validarGrupo', 'on' => self::SCENARIO_INSERT]
         ];
     }
@@ -62,7 +62,7 @@ class AssociarPlanoGrupoForm extends \yii\base\Model {
     }
 
     public function getComboGrupos() {
-
+        
         if ($this->scenario == AssociarPlanoGrupoForm::SCENARIO_UPDATE) {
             return ArrayHelper::map(Grupo::find()->where(['deletado' => false, 'status' => Grupo::STATUS_PUBLICADO])->orderBy('id')->asArray()->all(), 'id', 'titulo');
         } else {

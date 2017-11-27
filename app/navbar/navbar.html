@@ -52,9 +52,16 @@
                 </li>
         </ul>
         <ul class="nav navbar-nav hidden-sm" ng-if="vm.auth.isAuthenticated()">
+                <li class="dropdown pos-stc">
+                    <a ui-sref="home" class="dropdown-toggle">
+                <span><i class="icon-home"></i> Home</span>
+            </a>
+                </li>
+            </ul>
+        <ul class="nav navbar-nav hidden-sm" ng-if="vm.auth.isAuthenticated()">
             <li class="dropdown pos-stc">
-                <a href="/atividade" class="dropdown-toggle">
-            <span><i class="fa fa-paper-plane m-r-xs"></i>Atividades</span>
+                <a ui-sref="alunos" class="dropdown-toggle">
+            <span><i class="icon-graduation"></i> Alunos</span>
         </a>
             </li>
         </ul>
@@ -334,7 +341,7 @@
                         <span>Metodologia</span>
                     </li>
                     <li>
-                        <a href="#" class="auto">      
+                        <a class="auto">      
                                 <span class="pull-right text-muted">
                                     <i class="fa fa-fw fa-angle-right text"></i>
                                     <i class="fa fa-fw fa-angle-down text-active"></i>

@@ -1,0 +1,43 @@
+<nav aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#!/alunos">Alunos</a></li>
+            <li class="breadcrumb-item" aria-current="page">{{vm.alunoService.getAluno().aluno_nome}}</li>
+            <li class="breadcrumb-item" aria-current="page">Grupos</li>
+            <li class="breadcrumb-item active" aria-current="page">{{vm.alunoService.getGrupo().grupo_titulo}}</li>
+        </ol>
+    </nav> 
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">Atividades</h1>
+</div>
+<div class="wrapper-md">
+    <h1 class="m-n font-thin h3">Selecione uma atividade:</h1><br>
+    <div class="row">
+        <div ng-repeat="atividade in vm.atividades " class="col-lg-3">
+            <div class="panel b-a">
+                <div ng-class="['panel-heading', 'no-border', (atividade.atividade_status)?'bg-success':'bg-light']">
+                    <span class="text-lt"><strong>{{($index+1)+ ' . ' + atividade.atividade_titulo.substring(0,33) }}</strong></span>
+                </div>
+                <a ui-sref="atividade-item({aluno: vm.aluno, grupo: grupo.grupo_id})">
+                    <div class="item m-l-n-xxs m-r-n-xxs">
+                        <!--div style="background-color: rgba(0,0,0,0.5); padding: 5px" class="bottom wrapper bg-gd-dk text-white">
+                            <div class="text-u-c h3 m-b-sm text-primary-lter">Coffee</div>
+                            <div>Aplicado</div>
+                            <div>06/10/2017 19:20</div>
+                        </div-->
+                        <img ng-src="{{vm.path + atividade.atividade_imagem}}" class="img-full"  style="{{(atividade.atividade_status)?'':'filter: grayscale(100%);'}}">
+                    </div>
+                </a>
+                <div class="hbox text-center b-b b-light text-sm">
+                    <!--a ui-sref="atividade-item" class="col padder-v text-muted b-r b-light">
+                  <i class="fa fa-check-square-o block m-b-xs fa-2x"  style="color:green"></i>
+                  <span style="color:green">Aplicado</span>
+                </a-->
+                    <a ui-sref="atividade-item" class="col padder-v text-muted">
+                  <i class="fa {{(atividade.atividade_status)?'fa-play-circle-o':'fa-stop-circle'}}" block m-b-xs fa-2x" style="{{(atividdade.atividade_status)?'color:green':''}}"></i>
+                  <span style="{{(atividade.atividade_status)?'color:green':''}}">{{(atividade.atividade_status)?'Play':'Desabilitado'}}</span>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

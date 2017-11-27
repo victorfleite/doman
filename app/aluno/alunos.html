@@ -1,0 +1,62 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Alunos</h1>
+</div>
+<div class="wrapper-md">
+  <div class="panel panel-default">
+    <div class="panel-heading font-bold">
+      Pesquisa
+    </div>
+    <div class="panel-body">
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label class="sr-only" for="filtro">Nome</label>
+          <input type="text" ng-model="filtro" class="form-control" id="filtro" placeholder="Digite o nome">
+        </div>
+        <button type="submit" class="btn btn-success">Procurar</button>
+      </form>
+    </div>
+  </div>
+  <h1 class="m-n font-thin h3">Selecione um aluno:</h1><br>
+  <div class="row">    
+    <div ng-repeat="aluno in vm.alunos | fitrarPorNome:filtro:'aluno_nome' " class="col-lg-4">
+      <a ng-click="vm.setSelecionado(aluno)">
+        <div class="panel panel-default bg-light">
+          <div class="panel-body">
+            <div class="clearfix text-center m-t">
+              <div class="inline">
+                <div class="thumb-xl">
+                  <img ng-src="{{vm.path + aluno.aluno_imagem}}" class="img-circle" alt="...">
+                </div>
+                <div class="h4 m-t m-b-xs">{{aluno.aluno_nome}}</div>
+                <small class="text-muted m-b">{{aluno.aluno_data_nascimento}}</small>
+              </div>
+            </div>
+          </div>
+          <!--footer class="panel-footer bg-info text-center no-padder">
+          <div class="row no-gutter">
+            <div class="col-xs-4">
+              <div class="wrapper">
+                <span class="m-b-xs h3 block text-white">245</span>
+                <small class="text-muted">Followers</small>
+              </div>
+            </div>
+            <div class="col-xs-4 dk">
+              <div class="wrapper">
+                <span class="m-b-xs h3 block text-white">55</span>
+                <small class="text-muted">Following</small>
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="wrapper">
+                <span class="m-b-xs h3 block text-white">2,035</span>
+                <small class="text-muted">Tweets</small>
+              </div>
+            </div>
+          </div>
+        </footer-->
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>

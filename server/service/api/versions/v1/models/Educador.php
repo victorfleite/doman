@@ -18,7 +18,8 @@ class Educador extends \yii\db\ActiveRecord {
      */
     static function getAlunos($educadorEmail) {
         $sql = 'SELECT ' .
-                ' aluno_nome, aluno_data_nascimento, ' .
+                ' educador_id, aluno_id, aluno_nome, '.
+                ' TO_CHAR(aluno_data_nascimento, \'DD/MM/YYYY\') as aluno_data_nascimento, ' .
                 ' aluno_tipo, aluno_sexo, aluno_imagem ' .
                 ' FROM vw_educador_aluno ' .
                 ' where educador_email=:educadorEmail ' .

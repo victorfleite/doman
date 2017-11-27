@@ -5,12 +5,15 @@
     angular
         .module('app')
         .controller('MainController', mainController);
-    mainController.$inject = ['$scope', 'authService'];
-    function mainController($scope, authService) {
+    mainController.$inject = ['$rootScope', 'authService'];
+    function mainController($rootScope, authService) {
 
         var vm = this;
         vm.auth = authService;
         
+        $rootScope.aluno = {};
+        $rootScope.grupo = {};
+        $rootScope.atividade = {};
 
     }
 
