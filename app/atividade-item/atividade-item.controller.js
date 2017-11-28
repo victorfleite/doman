@@ -31,13 +31,10 @@
 
         var currIndex = 0;
 
-
-
         $scope.randomize = function () {
             var indexes = generateIndexesArray();
             assignNewIndexesToSlides(indexes);
         };
-
 
         // Randomize logic below
 
@@ -110,10 +107,26 @@
         .module('app')
         .controller('AtividadeItemController', atividadeItemController);
 
-    atividadeItemController.$inject = ['$scope', 'authService', '$uibModal', '$document'];
+    atividadeItemController.$inject = [
+        '$scope', 
+        'authService', 
+        '$uibModal', 
+        '$document',
+        'selecionadosService',
+        '$log',
+    ];
 
-    function atividadeItemController($scope, authService, $uibModal, $document) {
+    function atividadeItemController(
+        $scope, 
+        authService, 
+        $uibModal, 
+        $document,
+        selecionadosService,
+        $log,
+    ) {
 
+        var vm = this;
+        vm.atividade = selecionadosService.getAtividade();
         // GRAFICO PIZZA
         $scope.percent = 65;
         $scope.options = {
@@ -141,11 +154,11 @@
         // MODAL ATIVIDADES
 
         $scope.slides = [
-            { image: 'assets/img/01' },
-            { image: 'assets/img/02' },
-            { image: 'assets/img/03' },
-            { image: 'assets/img/04' },
-            { image: 'assets/img/05' }
+            { image: 'assets/img/01.png' },
+            { image: 'assets/img/02.png' },
+            { image: 'assets/img/03.png' },
+            { image: 'assets/img/04.png' },
+            { image: 'assets/img/05.png' }
         ]
 
         $scope.open = function (size, parentSelector) {

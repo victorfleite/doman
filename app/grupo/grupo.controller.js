@@ -33,20 +33,20 @@
     var vm = this;
     vm.path = CONSTANTES.PATH_IMAGENS;
     vm.auth = authService;
-    vm.alunoService = selecionadosService;
+    vm.alunoSelecionado = selecionadosService.getAluno();
     vm.grupos = [];
     $rootScope.loading = false;
-    vm.educador = $stateParams.educador; 
-    vm.aluno = $stateParams.aluno;
+    vm.educadorId = $stateParams.educador; 
+    vm.alunoId = $stateParams.aluno;
     
     vm.setSelecionado = function(grupo){
-      var params = {aluno: vm.aluno, grupo: grupo.grupo_id};      
+      var params = {aluno: vm.alunoId, grupo: grupo.grupo_id};      
       selecionadosService.setGrupo(grupo);
       $state.go('atividades', params);
     }
     
     $rootScope.loading = true;
-    alunoService.getGrupos(vm.educador, vm.aluno).then(function(resultado){
+    alunoService.getGrupos(vm.educadorId, vm.alunoId).then(function(resultado){
         vm.grupos = resultado.data.retorno; 
         $rootScope.loading = false;        
     });

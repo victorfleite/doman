@@ -10,10 +10,6 @@
 
         var vm = this;
         vm.auth = authService;
-        
-        $rootScope.aluno = {};
-        $rootScope.grupo = {};
-        $rootScope.atividade = {};
 
     }
 

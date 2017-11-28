@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#!/alunos">Alunos</a></li>
-        <li class="breadcrumb-item" aria-current="page">{{vm.alunoService.getAluno().aluno_nome}}</li>
+        <li class="breadcrumb-item" aria-current="page">{{vm.alunoSelecionado.aluno_nome}}</li>
         <li class="breadcrumb-item active" aria-current="page">Grupos</li>
     </ol>
 </nav>
@@ -38,7 +38,7 @@
                             <div>Aplicado</div>
                             <div>06/10/2017 19:20</div>
                         </div-->
-                        <img ng-src="{{vm.path + grupo.grupo_imagem}}" class="img-full" style="{{(grupo.status)?'':'filter: grayscale(100%);'}}">
+                        <img ng-src="{{vm.path + grupo.grupo_imagem}}" class="img-full line-bottom"" style="{{(grupo.status)?'':'filter: grayscale(100%);'}}">
                     </div>
                 </a>
                 <div class="hbox text-center b-b b-light text-sm">

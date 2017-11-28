@@ -62,7 +62,7 @@
     }
     function getAlunos(){      
       alunoService.getAlunos(vm.profile.email).then(function(resultado){
-          vm.alunos = resultado.data.retorno;  
+          vm.alunos = resultado.data.retorno;          
           $rootScope.loading = false;        
       });
     }

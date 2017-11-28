@@ -10,7 +10,8 @@
       'ui.bootstrap',
       'ui.carousel',
       'ngTouch',
-      'angularScreenfull'
+      'angularScreenfull',
+      'ngStorage'
     ])
     .constant('CONSTANTES', {
       PATH_IMAGENS: 'server/backend/web/',
@@ -70,6 +71,13 @@
         url: '/atividades/:aluno/:grupo',
         controller: 'AtividadeController',
         templateUrl: 'app/atividade/atividades.html',
+        controllerAs: 'vm',
+        onEnter: checkAuthentication
+      })
+      .state('atividade-item', {
+        url: '/atividade/:aluno/:grupo/:atividade',
+        controller: 'AtividadeItemController',
+        templateUrl: 'app/atividade-item/atividade-item.html',
         controllerAs: 'vm',
         onEnter: checkAuthentication
       })
