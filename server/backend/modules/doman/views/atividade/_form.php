@@ -28,7 +28,7 @@ use common\models\Util;
         </div>
     </div>
     <div class="row">	
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <?= $form->field($model, 'video_url')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-lg-4">
@@ -42,13 +42,7 @@ use common\models\Util;
             ]);
             ?>
         </div>
-        <div class="col-lg-2">
-            <div class="form-group">
-                <label class="control-label"></label>
-                <?= $form->field($model, 'autoplay')->checkbox() ?>
-
-            </div>
-        </div>
+        
     </div>
     <hr>
     <div class="row">

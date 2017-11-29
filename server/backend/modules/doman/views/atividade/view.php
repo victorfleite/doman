@@ -76,12 +76,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $audio;
                 },
             ],
-            'autoplay:boolean',
         ],
     ])
     ?>
 
 </div>
+<h2>Descrição</h1>
+<p class="text-justify"><?php echo (!empty($model->descricao))?$model->descricao:'Sem descrição'; ?></p>
 
 <?php if ($model->tipo == \app\modules\doman\models\Atividade::TIPO_BIT_INTELIGENCIA) { ?>
 

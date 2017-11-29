@@ -1,0 +1,141 @@
+<div class="wrapper-md">
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="blog-post">
+                <div class="panel">
+                    <a href="#" ng-click="open('lg')">
+                        <div class="video-thumbnail">
+                            <img src="assets/img/c0.jpg" class="img-full">
+                        </div>
+                    </a>
+                    <div class="slides-thumbnail" style="height: 100px">
+                        <ui-carousel slides="slides" slides-to-show="4" slides-to-scroll="1" initial-slide="1" autoplay="true" autoplay-speed="2000"
+                            dots="false">
+                            <carousel-item>
+                                <div class="slides-thumbnail-slide">
+                                    <div class="image-center">
+                                        <img ng-src="{{item.image}}"  height="113px" width="150x" class="img-responsive">
+                                    </div>                                    
+                                </div>
+                            </carousel-item>
+                            <!-- For customize carousel next, previous button -->
+                            <carousel-prev>
+                                <!-- placed your previous button here -->
+                                <!--button>Prev</button-->
+                                <!-- end -->
+                            </carousel-prev>
+
+                            <carousel-next>
+                                <!-- placed your next button here -->
+                                <!--button>next</button-->
+                                <!-- end -->
+                            </carousel-next>
+                        </ui-carousel>
+                    </div>
+                    <div class="wrapper-lg">
+                        <h3 class="m-t-none"><a href>Descrição</a></h3>
+                        <div class="line line-lg b-b b-light"></div>
+                        <div>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis suscipit erat, eget pulvinar
+                                lorem. Vestibulum viverra, nisl in suscipit molestie, lorem nisi cursus ligula, sit amet Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in facilisis odio. In erat mi, volutpat non sem vel, condimentum pretium metus. Vestibulum enim nibh, aliquet eget ullamcorper id, laoreet a lorem. Ut ac rhoncus dui. Aenean laoreet sagittis orci nec suscipit. Nulla feugiat urna a urna vulputate maximus. Etiam eget varius libero. Cras rutrum euismod urna, non molestie tortor bibendum vitae. Nullam pellentesque tortor nec lorem laoreet, sit amet consectetur dolor ullamcorper. Sed accumsan mi quis nibh auctor pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc quis massa vitae eros accumsan efficitur a quis turpis. 
+                            </p>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis suscipit erat, eget pulvinar
+                                lorem. Vestibulum viverra, nisl in suscipit molestie, lorem nisi cursus ligula, sit amet Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in facilisis odio. In erat mi, volutpat non sem vel, condimentum pretium metus. Vestibulum enim nibh, aliquet eget ullamcorper id, laoreet a lorem. Ut ac rhoncus dui. Aenean laoreet sagittis orci nec suscipit. Nulla feugiat urna a urna vulputate maximus. Etiam eget varius libero. Cras rutrum euismod urna, non molestie tortor bibendum vitae. Nullam pellentesque tortor nec lorem laoreet, sit amet consectetur dolor ullamcorper. Sed accumsan mi quis nibh auctor pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc quis massa vitae eros accumsan efficitur a quis turpis. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-sm-5">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"
+                        titles="['Uma Estrela','Duas Estrelas','Três Estrelas', 'Quatro Estrelas', 'Cinco Estrelas']" aria-labelledby="default-rating"></span>
+                    <br>{{'Excelente'}}
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-right" style="margin: 0 0 15 0;">
+                        <button class="btn btn-info btn-addon"><i class="fa fa-print "></i>Imprimir</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">
+                    Cartões
+                </div>
+                <div class="panel-body text-center">
+                    <!--h4><small>last </small>12<small> hrs</small></h4>--
+                        <small class="text-muted block">60%</small-->
+                    <div class="inline">
+                        <div easypiechart options="options" percent="percent">
+                            <div>
+                                <span class="h2 m-l-sm step">{{percent}}</span>%
+                                <div class="text text-sm">até hoje</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel-footer"><small>% de aprendizado</small></div>
+            </div>
+            <div class="line line-lg b-b b-light"></div>
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading font-bold">
+                        Linha do Tempo
+                    </div>
+                    <div class="panel-body">
+                        <div class="wrapper">
+                            <ul class="timeline">
+                                <li class="tl-header">
+                                    <div class="btn btn-success">Agora</div>
+                                </li>
+                                <li class="tl-item">
+                                    <div class="tl-wrap b-success">
+                                        <span class="tl-date">29/10/2017<br>16:00</span>
+                                        <div class="tl-content panel padder b-a">
+                                            <span class="arrow left pull-up"></span>
+                                            <div>Identificou 4</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="tl-item tl-left">
+                                    <div class="tl-wrap b-success">
+                                        <span class="tl-date">29/10/2017<br>12:00</span>
+                                        <div class="tl-content panel padder b-a">
+                                            <span class="arrow left pull-up"></span>
+                                            <div>Identificou 2</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="tl-item tl-left">
+                                    <div class="tl-wrap b-success">
+                                        <span class="tl-date">29/10/2017<br>09:00</span>
+                                        <!--div class="tl-content panel padder b-a">
+                                    <span class="arrow left pull-up"></span>
+                                    <div>Identificou 2</div>
+                            </div-->
+                                    </div>
+                                </li>
+                                <li class="tl-header">
+                                    <div class="btn btn-sm btn-success btn-rounded">Início</div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>

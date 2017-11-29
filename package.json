@@ -22,6 +22,7 @@
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "jquery": "^3.2.1",
+    "ng-youtube-embed": "^1.7.11",
     "ngstorage": "^0.3.11",
     "npm-run-all": "^4.1.1",
     "screenfull": "^3.3.2",

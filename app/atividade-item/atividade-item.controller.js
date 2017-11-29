@@ -108,25 +108,57 @@
         .controller('AtividadeItemController', atividadeItemController);
 
     atividadeItemController.$inject = [
-        '$scope', 
-        'authService', 
-        '$uibModal', 
+        '$scope',
+        'authService',
+        '$uibModal',
         '$document',
         'selecionadosService',
+        'alunoService',
         '$log',
+        'ngYoutubeEmbedService',
+        'CONSTANTES'
     ];
 
     function atividadeItemController(
-        $scope, 
-        authService, 
-        $uibModal, 
+        $scope,
+        authService,
+        $uibModal,
         $document,
         selecionadosService,
+        alunoService,
         $log,
+        ngYoutubeEmbedService,
+        CONSTANTES
     ) {
 
         var vm = this;
+        vm.path = CONSTANTES.PATH_IMAGENS;
         vm.atividade = selecionadosService.getAtividade();
+
+        vm.getAutoPlay = function(){
+            return 'autoplay';
+        }
+        $log.log(vm.atividade);
+
+        vm.getTemplate = function (tipo) {
+            switch (tipo) {
+                case 1:
+                    return 'app/atividade-item/atividade-item-bit-inteligencia.html';
+                    break;
+                case 2:
+                    return 'app/atividade-item/atividade-item-youtube.html';
+                    break;
+                case 3:
+                    return 'app/atividade-item/atividade-item-mp3.html';
+                    break;
+                default:
+                    throw new Error('O tipo de template não foi definido');
+                    break;
+            }
+
+        }
+
+
         // GRAFICO PIZZA
         $scope.percent = 65;
         $scope.options = {

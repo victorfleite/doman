@@ -1,0 +1,96 @@
+<div class="wrapper-md">
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="blog-post">
+                <div class="panel">
+                    <div>
+                        <img ng-src="{{vm.path + vm.atividade.atividade_imagem}}" class="img-full">
+                    </div>
+                    <div class="slides-thumbnail" style="height: 100px">
+                        <div class="audio-player">
+                            <audio id="audio-player" width="300" height="32" controls autoplay>
+                                <source src="{{vm.path + vm.atividade.som_caminho}}" type="audio/mpeg"> Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="wrapper-lg" ng-if="vm.atividade.atividade_descricao">
+                        <h3 class="m-t-none"><a href>Descrição</a></h3>
+                        <div class="line line-lg b-b b-light"></div>
+                        <div>
+                            <p class="text-justify" ng-bind="vm.atividade.atividade_descricao">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-sm-5">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <span uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"
+                        titles="['Uma Estrela','Duas Estrelas','Três Estrelas', 'Quatro Estrelas', 'Cinco Estrelas']" aria-labelledby="default-rating"></span>
+                    <br>{{'Excelente'}}
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-right" style="margin: 0 0 15 0;">
+                        <a href="{{vm.path + vm.atividade.som_caminho}}" download="{{vm.path + vm.atividade.som_caminho}}" class="btn btn-info btn-addon"><i class="glyphicon glyphicon-download-alt"></i>Download</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading font-bold">
+                        Linha do Tempo
+                    </div>
+                    <div class="panel-body">
+                        <div class="wrapper">
+                            <ul class="timeline">
+                                <li class="tl-header">
+                                    <div class="btn btn-success">Agora</div>
+                                </li>
+                                <li class="tl-item">
+                                    <div class="tl-wrap b-success">
+                                        <span class="tl-date">29/10/2017<br>16:00</span>
+                                        <div class="tl-content panel padder b-a">
+                                            <span class="arrow left pull-up"></span>
+                                            <div>Identificou 4</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="tl-item tl-left">
+                                    <div class="tl-wrap b-success">
+                                        <span class="tl-date">29/10/2017<br>12:00</span>
+                                        <div class="tl-content panel padder b-a">
+                                            <span class="arrow left pull-up"></span>
+                                            <div>Identificou 2</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="tl-item tl-left">
+                                    <div class="tl-wrap b-success">
+                                        <span class="tl-date">29/10/2017<br>09:00</span>
+                                        <!--div class="tl-content panel padder b-a">
+                                    <span class="arrow left pull-up"></span>
+                                    <div>Identificou 2</div>
+                            </div-->
+                                    </div>
+                                </li>
+                                <li class="tl-header">
+                                    <div class="btn btn-sm btn-success btn-rounded">Início</div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>

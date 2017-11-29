@@ -11,7 +11,8 @@
       'ui.carousel',
       'ngTouch',
       'angularScreenfull',
-      'ngStorage'
+      'ngStorage',
+      'ngYoutubeEmbed'
     ])
     .constant('CONSTANTES', {
       PATH_IMAGENS: 'server/backend/web/',
