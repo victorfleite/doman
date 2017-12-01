@@ -10,6 +10,7 @@
         var slides = $scope.slides = [];
         $scope.items = items;
         $scope.atividade = atividade;
+        $scope.audio_play = true;
 
         $scope.addSlide = function (image, id) {
             var newWidth = 800 + slides.length + 1;
@@ -69,7 +70,8 @@
 
         $scope.$watch('active', function(active) {
             
-            if(items[active] && items[active].sound_player){
+            // Play no audio
+            if(items[active] && items[active].sound_player && $scope.audio_play){
                 items[active].sound_player.play();
             }
             
@@ -196,6 +198,8 @@
 
         function filtrarAtividadesConvocadas (cartoes){
             var out = [];
+            if (!cartoes) return out;
+
             for (var i = 0; i < cartoes.length; i++) {
                 var e = cartoes[i];
                 if(e.status_convocacao == 1){ // Ativo

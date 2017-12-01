@@ -123,40 +123,4 @@ a {
   border-bottom: 1px solid #d3d9e0;
 }
 
-.audio-player, .audio-player div, .audio-player h2, .audio-player a, .audio-player span, .audio-player button {
-  margin: 0;
-  padding: 18px;
-  border: none;
-  outline: none;
-}
 
-audio:hover, audio:focus, audio:active
-{
--webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
--moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
--webkit-transform: scale(1.05);
--moz-transform: scale(1.05);
-transform: scale(1.05);
-}
-
-
-audio
-{
--webkit-transition:all 0.5s linear;
--moz-transition:all 0.5s linear;
--o-transition:all 0.5s linear;
-transition:all 0.5s linear;
--moz-box-shadow: 2px 2px 4px 0px #006773;
--webkit-box-shadow:  2px 2px 4px 0px #006773;
-box-shadow: 2px 2px 4px 0px #006773;
--moz-border-radius:7px 7px 7px 7px ;
--webkit-border-radius:7px 7px 7px 7px ;
-border-radius:7px 7px 7px 7px ;
-}
-div.audio-player {
-  position: relative;
-  height: 70px;
-  margin: 0 auto;
-  background: #ccc;
-}

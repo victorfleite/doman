@@ -6,12 +6,10 @@
                     <div>
                         <img ng-src="{{vm.path + vm.atividade.atividade_imagem}}" class="img-full">
                     </div>
-                    <div class="slides-thumbnail" style="height: 100px">
-                        <div class="audio-player">
-                            <audio id="audio-player" width="300" height="32" controls autoplay>
-                                <source src="{{vm.path + vm.atividade.som_caminho}}" type="audio/mpeg"> Your browser does not support the audio element.
-                            </audio>
-                        </div>
+                    <div class="slides-thumbnail" style="text-align:center; padding:5px">
+                        <audio id="player" controls autoplay>
+                            <source src="{{vm.path + vm.atividade.som_caminho}}" type="audio/mpeg"> Your browser does not support the audio element.
+                        </audio>
                     </div>
                     <div class="wrapper-lg" ng-if="vm.atividade.atividade_descricao">
                         <h3 class="m-t-none"><a href>Descrição</a></h3>
