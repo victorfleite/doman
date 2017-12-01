@@ -23,7 +23,7 @@ class Atividade extends \yii\db\ActiveRecord {
         $sql = ' SELECT id, aluno_id, nome, grupo_id,' .
                 ' grupo_titulo, atividade_id, atividade_titulo,' .
                 ' atividade_tipo, video_url, autoplay, som_id, som_titulo,' .
-                ' som_caminho, atividade_descricao, atividade_imagem, ' .
+                ' som_caminho, atividade_descricao, atividade_instrucao, atividade_imagem, ' .
                 ' atividade_status, TO_CHAR(data_criacao, \'DD/MM/YYYY HH24:MI\') as data_criacao, ' .
                 ' TO_CHAR(data_abertura, \'DD/MM/YYYY HH24:MI\') as data_abertura, ' .
                 ' TO_CHAR(data_finalizacao, \'DD/MM/YYYY HH24:MI\') as data_finalizacao , ordem ' .

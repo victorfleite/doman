@@ -12,7 +12,8 @@
       'ngTouch',
       'angularScreenfull',
       'ngStorage',
-      'ngYoutubeEmbed'
+      'ngYoutubeEmbed',
+      'ngAudio'
     ])
     .constant('CONSTANTES', {
       PATH_IMAGENS: 'server/backend/web/',

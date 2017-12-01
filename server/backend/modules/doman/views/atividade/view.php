@@ -83,6 +83,8 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <h2>Descrição</h1>
 <p class="text-justify"><?php echo (!empty($model->descricao))?$model->descricao:'Sem descrição'; ?></p>
+<h2>Instrução</h1>
+<p class="text-justify"><?php echo (!empty($model->instrucao))?$model->instrucao:'Sem instrução'; ?></p>
 
 <?php if ($model->tipo == \app\modules\doman\models\Atividade::TIPO_BIT_INTELIGENCIA) { ?>
 

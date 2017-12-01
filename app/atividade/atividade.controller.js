@@ -33,7 +33,7 @@
     var vm = this;
     vm.path = CONSTANTES.PATH_IMAGENS;
     vm.auth = authService;
-    vm.alunoService = selecionadosService;
+    vm.service = selecionadosService;
     vm.atividades = [];
     $rootScope.loading = false;
     vm.aluno = $stateParams.aluno;

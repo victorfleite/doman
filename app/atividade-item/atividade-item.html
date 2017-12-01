@@ -3,10 +3,11 @@
         <li class="breadcrumb-item"><a ui-sref="alunos">Alunos</a></li>
         <li class="breadcrumb-item" aria-current="page">{{vm.alunoService.getAluno().aluno_nome}}</li>
         <li class="breadcrumb-item" aria-current="page">Grupos</li>
-        <li class="breadcrumb-item" aria-current="page">{{vm.alunoService.getGrupo().grupo_titulo}}</a></li>
+        <li class="breadcrumb-item" aria-current="page">{{vm.alunoService.getGrupo().grupo_titulo}}</a>
+        </li>
         <li class="breadcrumb-item active" aria-current="page">Atividades</li>
     </ol>
-</nav> 
+</nav>
 <div class="bg-light lter b-b wrapper-md">
     <h1 class="m-n font-thin h3">{{vm.atividade.atividade_titulo}}</h1>
 </div>
@@ -28,7 +29,7 @@
             <!-- header -->
             <div class="modal-header">
                 <h1 id="myModalLabel" class="modal-title">
-                    Animais 1
+                    {{atividade.atividade_titulo}}
                 </h1>
             </div>
             <!-- header -->
@@ -38,8 +39,9 @@
 
                 <div ngsf-fullscreen="fullscreenCtrl">
                     <div id="carousel-main" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-                        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                            <img ng-src="{{slide.image}}"  ng-swipe-left="swipeFn('swipe-left')" ng-swipe-right="swipeFn('swipe-right')" class="img-responsive" style="margin:auto;">
+                        <div uib-slide active="active" ng-repeat="slide in slides track by slide.id" index="slide.id">
+                            <img ng-src="{{slide.image}}" ng-swipe-left="swipeFn('swipe-left')" ng-swipe-right="swipeFn('swipe-right')" class="img-responsive"
+                                style="margin:auto;">
                             <div class="carousel-caption">
                                 <h4>{{slide.id}}</h4>
                                 <p>{{slide.text}}</p>
@@ -53,14 +55,14 @@
 
             <!-- footer -->
             <div class="modal-footer">
-                    <button class="btn btn-success" ng-click="fullscreenCtrl.toggleFullscreen()">
+                <button class="btn btn-success" ng-click="fullscreenCtrl.toggleFullscreen()">
                             Fullscreen
                           </button>
                 <button class="btn btn-primary" ng-click="randomize();">
                             Aleatório
                           </button>
 
-                          
+
                 <!--button class="btn btn-secondary" data-dismiss="modal">
   close
 </button>
@@ -68,8 +70,8 @@
   Default
 </button-->
                 <button class="btn btn-warning" ng-click="ok()">
-  Fechar
-</button>
+                    Fechar
+                </button>
             </div>
             <!-- footer -->
 

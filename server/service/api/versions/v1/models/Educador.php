@@ -6,6 +6,9 @@ namespace api\versions\v1\models;
  */
 class Educador extends \yii\db\ActiveRecord {
 
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+
     /**
      * @inheritdoc
      */
@@ -16,9 +19,16 @@ class Educador extends \yii\db\ActiveRecord {
     /**
      * @return \yii\db\ActiveQuery
      */
+    static function getEducador($email) {
+        return Educador::find(['email' => $email])->where(['status' => Educador::STATUS_ACTIVE, 'deletado'=>false])->one();
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     static function getAlunos($educadorEmail) {
         $sql = 'SELECT ' .
-                ' educador_id, aluno_id, aluno_nome, '.
+                ' educador_id, aluno_id, aluno_nome, ' .
                 ' TO_CHAR(aluno_data_nascimento, \'DD/MM/YYYY\') as aluno_data_nascimento, ' .
                 ' aluno_tipo, aluno_sexo, aluno_imagem ' .
                 ' FROM vw_educador_aluno ' .

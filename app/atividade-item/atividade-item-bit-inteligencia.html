@@ -5,7 +5,7 @@
                 <div class="panel">
                     <a href="#" ng-click="open('lg')">
                         <div class="video-thumbnail">
-                            <img src="assets/img/c0.jpg" class="img-full">
+                            <img ng-src="{{vm.path + vm.atividade.atividade_imagem}}" class="img-full">
                         </div>
                     </a>
                     <div class="slides-thumbnail" style="height: 100px">
@@ -14,8 +14,8 @@
                             <carousel-item>
                                 <div class="slides-thumbnail-slide">
                                     <div class="image-center">
-                                        <img ng-src="{{item.image}}"  height="113px" width="150x" class="img-responsive">
-                                    </div>                                    
+                                        <img ng-src="{{ item.imagem_caminho}}" height="113px" width="150x" class="img-responsive">
+                                    </div>
                                 </div>
                             </carousel-item>
                             <!-- For customize carousel next, previous button -->
@@ -32,15 +32,19 @@
                             </carousel-next>
                         </ui-carousel>
                     </div>
-                    <div class="wrapper-lg">
+                    <div class="wrapper-lg" ng-if="vm.atividade.atividade_descricao">
                         <h3 class="m-t-none"><a href>Descrição</a></h3>
                         <div class="line line-lg b-b b-light"></div>
                         <div>
-                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis suscipit erat, eget pulvinar
-                                lorem. Vestibulum viverra, nisl in suscipit molestie, lorem nisi cursus ligula, sit amet Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in facilisis odio. In erat mi, volutpat non sem vel, condimentum pretium metus. Vestibulum enim nibh, aliquet eget ullamcorper id, laoreet a lorem. Ut ac rhoncus dui. Aenean laoreet sagittis orci nec suscipit. Nulla feugiat urna a urna vulputate maximus. Etiam eget varius libero. Cras rutrum euismod urna, non molestie tortor bibendum vitae. Nullam pellentesque tortor nec lorem laoreet, sit amet consectetur dolor ullamcorper. Sed accumsan mi quis nibh auctor pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc quis massa vitae eros accumsan efficitur a quis turpis. 
+                            <p class="text-justify" ng-bind="vm.atividade.atividade_descricao">
                             </p>
-                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis suscipit erat, eget pulvinar
-                                lorem. Vestibulum viverra, nisl in suscipit molestie, lorem nisi cursus ligula, sit amet Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in facilisis odio. In erat mi, volutpat non sem vel, condimentum pretium metus. Vestibulum enim nibh, aliquet eget ullamcorper id, laoreet a lorem. Ut ac rhoncus dui. Aenean laoreet sagittis orci nec suscipit. Nulla feugiat urna a urna vulputate maximus. Etiam eget varius libero. Cras rutrum euismod urna, non molestie tortor bibendum vitae. Nullam pellentesque tortor nec lorem laoreet, sit amet consectetur dolor ullamcorper. Sed accumsan mi quis nibh auctor pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc quis massa vitae eros accumsan efficitur a quis turpis. 
+                        </div>
+                    </div>
+                    <div class="wrapper-lg" ng-if="vm.atividade.atividade_instrucao">
+                        <h3 class="m-t-none"><a href>Instrução</a></h3>
+                        <div class="line line-lg b-b b-light"></div>
+                        <div>
+                            <p class="text-justify" ng-bind="vm.atividade.atividade_instrucao">
                             </p>
                         </div>
                     </div>

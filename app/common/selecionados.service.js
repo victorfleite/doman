@@ -15,6 +15,9 @@
         $log,
         $localStorage
     ) {
+        this.setEducador = function (educador) {
+            $localStorage.educador = JSON.stringify(educador);
+        }
         this.setAluno = function (aluno) {
             $localStorage.aluno = JSON.stringify(aluno);
         }
@@ -23,6 +26,9 @@
         }
         this.setAtividade = function (atividade) {
             $localStorage.atividade = JSON.stringify(atividade);
+        }
+        this.getEducador = function () {
+            return JSON.parse($localStorage.educador);
         }
         this.getAluno = function () {
             return JSON.parse($localStorage.aluno);

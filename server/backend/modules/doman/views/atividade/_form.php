@@ -46,7 +46,10 @@ use common\models\Util;
     </div>
     <hr>
     <div class="row">
-        <div class="col-lg-6"><?= $form->field($model, 'descricao')->textarea(['rows' => 15]) ?></div>
+        <div class="col-lg-6">
+        <?= $form->field($model, 'descricao')->textarea(['rows' => 7]) ?>
+        <?= $form->field($model, 'instrucao')->textarea(['rows' => 7]) ?>
+        </div>
         <div class="col-lg-6">
             <?php
             $label = 'Arquivo - largura:600px, altura: 338px (.jpg ou .png)';

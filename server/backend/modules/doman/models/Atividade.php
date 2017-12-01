@@ -33,7 +33,7 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
             [['titulo', 'tipo', 'user_id'], 'required'],
             [['tipo'], 'validarTipo'],
             [['status', 'user_id', 'user_publicacao_id', 'tipo', 'som_id'], 'integer'],
-            [['data_publicacao', 'data_criacao', 'descricao'], 'safe'],
+            [['data_publicacao', 'data_criacao', 'descricao', 'instrucao'], 'safe'],
             [['deletado', 'autoplay'], 'boolean'],
             [['titulo', 'video_url'], 'string', 'max' => 255],
             [['video_url'], 'url'],

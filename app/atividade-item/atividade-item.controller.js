@@ -5,11 +5,11 @@
     angular.module('app')
         .controller('ModalInstanceCtrl', modalInstanceCtrl);
 
-    function modalInstanceCtrl($scope, $uibModalInstance, items) {
+    function modalInstanceCtrl($scope, $uibModalInstance, log, atividade, items, ngAudio) {
 
         var slides = $scope.slides = [];
         $scope.items = items;
-
+        $scope.atividade = atividade;
 
         $scope.addSlide = function (image, id) {
             var newWidth = 800 + slides.length + 1;
@@ -21,7 +21,7 @@
         };
 
         for (var i = 0; i < items.length; i++) {
-            $scope.addSlide(items[i].image, i);
+            $scope.addSlide(items[i].imagem_caminho , i);
         }
 
 
@@ -52,7 +52,6 @@
             return shuffle(indexes);
         }
 
-        // http://stackoverflow.com/questions/962802#962890
         function shuffle(array) {
             var tmp, current, top = array.length;
 
@@ -68,12 +67,21 @@
             return array;
         }
 
+        $scope.$watch('active', function(active) {
+            
+            if(items[active] && items[active].sound_player){
+                items[active].sound_player.play();
+            }
+            
+            
+        });
+
         $scope.selected = {
             item: $scope.items[0]
         };
 
         $scope.ok = function () {
-            $uibModalInstance.close($scope.selected.item);
+            $uibModalInstance.dismiss('cancel');
         };
 
         $scope.cancel = function () {
@@ -87,9 +95,9 @@
         }
         $scope.swipeFn = function (side) {
             if (side == 'swipe-left') {
-                $scope.carouselPrev();
-            } else if (side == 'swipe-right') {
                 $scope.carouselNext();
+            } else if (side == 'swipe-right') {                
+                $scope.carouselPrev();
             }
         }
 
@@ -116,6 +124,7 @@
         'alunoService',
         '$log',
         'ngYoutubeEmbedService',
+        'ngAudio',
         'CONSTANTES'
     ];
 
@@ -128,7 +137,8 @@
         alunoService,
         $log,
         ngYoutubeEmbedService,
-        CONSTANTES
+        ngAudio,
+        CONSTANTES,
     ) {
 
         var vm = this;
@@ -138,7 +148,6 @@
         vm.getAutoPlay = function(){
             return 'autoplay';
         }
-        $log.log(vm.atividade);
 
         vm.getTemplate = function (tipo) {
             switch (tipo) {
@@ -183,30 +192,44 @@
             //$scope.percentRating = 100 * (value / $scope.max);
         };
 
-        // MODAL ATIVIDADES
+        // MODAL ATIVIDADE
 
-        $scope.slides = [
-            { image: 'assets/img/01.png' },
-            { image: 'assets/img/02.png' },
-            { image: 'assets/img/03.png' },
-            { image: 'assets/img/04.png' },
-            { image: 'assets/img/05.png' }
-        ]
+        function filtrarAtividadesConvocadas (cartoes){
+            var out = [];
+            for (var i = 0; i < cartoes.length; i++) {
+                var e = cartoes[i];
+                if(e.status_convocacao == 1){ // Ativo
+                    e.imagem_caminho = vm.path + e.imagem_caminho;
+                    if(e.som_caminho){
+                        e.sound_player = ngAudio.load(vm.path + e.som_caminho);
+                    }                    
+                    out.push(e);
+                }                               
+            }
+            return out; 
+        }
 
+
+        $scope.slides = filtrarAtividadesConvocadas(vm.atividade.cartoes);
         $scope.open = function (size, parentSelector) {
 
-            var parentElem = parentSelector ?
+            /*var parentElem = parentSelector ?
                 angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            */
             var modalInstance = $uibModal.open({
                 animation: false,
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
                 templateUrl: 'myModalContent.html',
                 controller: 'ModalInstanceCtrl',
-                controllerAs: '$scope',
+                //controllerAs: '$scope',
                 size: size,
-                appendTo: parentElem,
+                //appendTo: parentElem,
                 resolve: {
+                    log: $log,
+                    atividade: function(){
+                        return vm.atividade;
+                    },
                     items: function () {
                         return $scope.slides;
                     }
@@ -214,7 +237,6 @@
             });
 
             modalInstance.result.then(function (selectedItem) {
-                $scope.selected = selectedItem;
             }, function () {
                 $log.info('Modal dismissed at: ' + new Date());
             });

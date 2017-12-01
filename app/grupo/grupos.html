@@ -6,7 +6,7 @@
     </ol>
 </nav>
 <div class="bg-light lter b-b wrapper-md">
-    <h1 class="m-n font-thin h3">Grupos</h1>
+    <h1 class="m-n font-thin h3">Grupos de Atividades de {{vm.alunoSelecionado.aluno_nome}}</h1>
 </div>
 
 <div class="wrapper-md">
@@ -46,7 +46,7 @@
                   <i class="fa fa-check-square-o block m-b-xs fa-2x"  style="color:green"></i>
                   <span style="color:green">Aplicado</span>
                 </a-->
-                    <a ui-sref="atividade-item" class="col padder-v text-muted">
+                    <a ng-click="vm.setSelecionado(grupo)" class="col padder-v text-muted">
                   <i class="fa {{(grupo.status)?'fa-play-circle-o':'fa-stop-circle'}}" block m-b-xs fa-2x" style="{{(grupo.status)?'color:green':''}}"></i>
                   <span style="{{(grupo.status)?'color:green':''}}">{{(grupo.status)?'Play':'Desabilitado'}}</span>
                 </a>

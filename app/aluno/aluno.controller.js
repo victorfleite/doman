@@ -43,31 +43,18 @@
       $state.go('grupos', params);
     }
 
-    $rootScope.loading = true;
-    var check = $timeout(checkAuth, 500);
-    function checkAuth() {
-      check = $timeout(checkAuth, 500);
-      if(authService.isAuthenticated()){
-        $timeout.cancel(check);
-        if (authService.getCachedProfile()) {
-          vm.profile = authService.getCachedProfile();
-          getAlunos();
-        } else {
-          authService.getProfile(function(err, profile) {
-            vm.profile = profile;
-            getAlunos();
-          });
-        }
-      }
-    }
-    function getAlunos(){      
-      alunoService.getAlunos(vm.profile.email).then(function(resultado){
-          vm.alunos = resultado.data.retorno;          
+    vm.getAlunos = function(){     
+      var educador = selecionadosService.getEducador();
+      alunoService.getAlunos(educador.email).then(function(resultado){
+          vm.alunos = resultado.data.retorno; 
+          if(vm.alunos.length == 1){
+              vm.setSelecionado(vm.alunos[0]);
+          }         
           $rootScope.loading = false;        
       });
-    }
+    };
     
-
+    vm.getAlunos();
   }
   
 })();

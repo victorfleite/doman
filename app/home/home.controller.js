@@ -14,6 +14,9 @@
     vm.alunos = [];
     vm.auth = authService;
 
+    
+    
+
 
   }
 

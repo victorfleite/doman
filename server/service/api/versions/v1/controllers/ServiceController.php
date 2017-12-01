@@ -16,6 +16,7 @@ class ServiceController extends \api\components\Controller {
             [
                 'allow' => true,
                 'actions' => [
+                    'get-educador',
                     'get-alunos',
                     'get-grupos',
                     'get-atividades',
@@ -25,6 +26,26 @@ class ServiceController extends \api\components\Controller {
                 'roles' => ['?'],
             ],
         ];
+    }
+    
+    /**
+     * 
+     * @return type
+     * @throws \Exception
+     */
+    public function actionGetEducador() {
+
+        $post = \Yii::$app->request->post();
+        $email = $post["email"];
+
+        if (!isset($email)) {
+            throw new \Exception('O email deve ser informado.');
+        }
+        $validator = new \yii\validators\EmailValidator();
+        if (!$validator->validate($email)) {
+            throw new \Exception('O email deve ser informado.');
+        }
+        return ['retorno' => Educador::getEducador($email)];
     }
 
     /**

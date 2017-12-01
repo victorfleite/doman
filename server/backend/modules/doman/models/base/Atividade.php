@@ -68,7 +68,7 @@ class Atividade extends \yii\db\ActiveRecord {
         return [
             [['titulo', 'user_id'], 'required'],
             [['status', 'user_id', 'user_publicacao_id', 'tipo', 'som_id'], 'integer'],
-            [['data_publicacao', 'data_criacao', 'descricao'], 'safe'],
+            [['data_publicacao', 'data_criacao', 'descricao', 'instrucao'], 'safe'],
             [['deletado', 'autoplay'], 'boolean'],
             [['titulo', 'video_url'], 'string', 'max' => 255]
         ];
@@ -99,6 +99,7 @@ class Atividade extends \yii\db\ActiveRecord {
             'autoplay' => Yii::t('translation', 'Autoplay'),
             'som_id' => Yii::t('translation', 'Som'),
             'atividade_pai' => Yii::t('translation', 'Atividade Pai'),
+            'instrucao'=>Yii::t('translation', 'Instrução'),
         ];
     }
 
