@@ -5,7 +5,7 @@
     angular.module('app')
         .controller('ModalInstanceCtrl', modalInstanceCtrl);
 
-    function modalInstanceCtrl($scope, $uibModalInstance, log, atividade, items, ngAudio) {
+    function modalInstanceCtrl($scope, $uibModalInstance, log, atividade, items, ngAudio, hotkeys) {
 
         var slides = $scope.slides = [];
         $scope.items = items;
@@ -22,13 +22,14 @@
         };
 
         for (var i = 0; i < items.length; i++) {
-            $scope.addSlide(items[i].imagem_caminho , i);
+            $scope.addSlide(items[i].imagem_caminho, i);
         }
 
 
         $scope.myInterval = 0;
         $scope.noWrapSlides = false;
         $scope.active = 0;
+        $scope.indexCarousel = 0;
 
         var currIndex = 0;
 
@@ -67,15 +68,27 @@
 
             return array;
         }
-
-        $scope.$watch('active', function(active) {
-            
+        $scope.$watch("active", function (newValue) {
             // Play no audio
-            if(items[active] && items[active].sound_player && $scope.audio_play){
-                items[active].sound_player.play();
+            if (items[newValue] && items[newValue].sound_player && $scope.audio_play) {
+                items[newValue].sound_player.play();
             }
-            
-            
+        });
+
+        //log.log(hotkeys);
+        hotkeys.add({
+            combo: 'right',
+            description: 'Próximo',
+            callback: function () {
+                $scope.carouselNext();
+            }
+        });
+        hotkeys.add({
+            combo: 'left',
+            description: 'Previo',
+            callback: function () {
+                $scope.carouselPrev();
+            }
         });
 
         $scope.selected = {
@@ -85,20 +98,19 @@
         $scope.ok = function () {
             $uibModalInstance.dismiss('cancel');
         };
-
         $scope.cancel = function () {
             $uibModalInstance.dismiss('cancel');
         };
         $scope.carouselNext = function () {
-            $('#carousel-main').carousel('next');
+            //$('#carousel-main').carousel('next');
         }
         $scope.carouselPrev = function () {
-            $('#carousel-main').carousel('prev');
+            //$('#carousel-main').carousel('prev');
         }
         $scope.swipeFn = function (side) {
             if (side == 'swipe-left') {
                 $scope.carouselNext();
-            } else if (side == 'swipe-right') {                
+            } else if (side == 'swipe-right') {
                 $scope.carouselPrev();
             }
         }
@@ -123,11 +135,12 @@
         '$uibModal',
         '$document',
         'selecionadosService',
-        'alunoService',
         '$log',
         'ngYoutubeEmbedService',
         'ngAudio',
-        'CONSTANTES'
+        '$state',
+        'hotkeys',
+        'CONSTANTES',
     ];
 
     function atividadeItemController(
@@ -136,18 +149,21 @@
         $uibModal,
         $document,
         selecionadosService,
-        alunoService,
         $log,
         ngYoutubeEmbedService,
         ngAudio,
+        $state,
+        hotkeys,
         CONSTANTES,
     ) {
+        //$log.log(hotkeys);
 
         var vm = this;
         vm.path = CONSTANTES.PATH_IMAGENS;
+        vm.service = selecionadosService;
         vm.atividade = selecionadosService.getAtividade();
 
-        vm.getAutoPlay = function(){
+        vm.getAutoPlay = function () {
             return 'autoplay';
         }
 
@@ -196,21 +212,21 @@
 
         // MODAL ATIVIDADE
 
-        function filtrarAtividadesConvocadas (cartoes){
+        function filtrarAtividadesConvocadas(cartoes) {
             var out = [];
             if (!cartoes) return out;
 
             for (var i = 0; i < cartoes.length; i++) {
                 var e = cartoes[i];
-                if(e.status_convocacao == 1){ // Ativo
+                if (e.status_convocacao == 1) { // Ativo
                     e.imagem_caminho = vm.path + e.imagem_caminho;
-                    if(e.som_caminho){
+                    if (e.som_caminho) {
                         e.sound_player = ngAudio.load(vm.path + e.som_caminho);
-                    }                    
+                    }
                     out.push(e);
-                }                               
+                }
             }
-            return out; 
+            return out;
         }
 
 
@@ -231,18 +247,22 @@
                 //appendTo: parentElem,
                 resolve: {
                     log: $log,
-                    atividade: function(){
+                    atividade: function () {
                         return vm.atividade;
                     },
                     items: function () {
                         return $scope.slides;
+                    },
+                    hotkeys: function () {
+                        return hotkeys;
                     }
                 }
             });
 
             modalInstance.result.then(function (selectedItem) {
             }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
+                var params = { aluno: vm.service.getAluno().aluno_id, grupo: vm.service.getGrupo().grupo_id, atividade: vm.service.getAtividade().atividade_id  };
+                $state.go('atividade-item', params);
             });
         };
 

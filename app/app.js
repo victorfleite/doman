@@ -13,7 +13,8 @@
       'angularScreenfull',
       'ngStorage',
       'ngYoutubeEmbed',
-      'ngAudio'
+      'ngAudio',
+      'cfp.hotkeys' 
     ])
     .constant('CONSTANTES', {
       PATH_IMAGENS: 'server/backend/web/',
@@ -25,15 +26,20 @@
     '$stateProvider',
     '$locationProvider',
     '$urlRouterProvider',
-    'angularAuth0Provider'
+    'angularAuth0Provider',
+    'hotkeysProvider'
   ];
 
   function config(
     $stateProvider,
     $locationProvider,
     $urlRouterProvider,
-    angularAuth0Provider
+    angularAuth0Provider,
+    hotkeysProvider
   ) {
+
+    hotkeysProvider.useNgRoute = false;
+    hotkeysProvider.includeCheatSheet = false;
 
     $stateProvider
       .state('home', {

@@ -32,14 +32,14 @@
                     {{atividade.atividade_titulo}}
                 </h1>
             </div>
-            <!-- header -->
+            <!-- header --> 
 
-            <!-- body -->
+            <!-- body --> 
             <div class="modal-body">
 
                 <div ngsf-fullscreen="fullscreenCtrl">
-                    <div id="carousel-main" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-                        <div uib-slide active="active" ng-repeat="slide in slides track by slide.id" index="slide.id">
+                    <div id="carousel-main" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" on-carousel-next="fuck()" >
+                        <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
                             <img ng-src="{{slide.image}}" ng-swipe-left="swipeFn('swipe-left')" ng-swipe-right="swipeFn('swipe-right')" class="img-responsive"
                                 style="margin:auto;">
                             <div class="carousel-caption">
@@ -47,9 +47,7 @@
                                 <p>{{slide.text}}</p>
                             </div>
                         </div>
-                    </div>
                 </div>
-
             </div>
             <!-- body -->
 

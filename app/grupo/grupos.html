@@ -38,17 +38,26 @@
                             <div>Aplicado</div>
                             <div>06/10/2017 19:20</div>
                         </div-->
-                        <img ng-src="{{vm.path + grupo.grupo_imagem}}" class="img-full line-bottom"" style="{{(grupo.status)?'':'filter: grayscale(100%);'}}">
+                        <img ng-src="{{vm.path + grupo.grupo_imagem}}" class="img-full line-bottom" " style="{{(grupo.status)? '':
+                            'filter: grayscale(100%);'}} ">
                     </div>
                 </a>
-                <div class="hbox text-center b-b b-light text-sm">
-                    <!--a ui-sref="atividade-item" class="col padder-v text-muted b-r b-light">
-                  <i class="fa fa-check-square-o block m-b-xs fa-2x"  style="color:green"></i>
-                  <span style="color:green">Aplicado</span>
-                </a-->
-                    <a ng-click="vm.setSelecionado(grupo)" class="col padder-v text-muted">
-                  <i class="fa {{(grupo.status)?'fa-play-circle-o':'fa-stop-circle'}}" block m-b-xs fa-2x" style="{{(grupo.status)?'color:green':''}}"></i>
-                  <span style="{{(grupo.status)?'color:green':''}}">{{(grupo.status)?'Play':'Desabilitado'}}</span>
+                <div class="form-group">
+                        <label class="col-sm-2 control-label">Ativo:</label>
+                        <div class="col-sm-10">
+                          <label class="i-switch m-t-xs m-r">
+                            <input type="checkbox" checked>
+                            <i></i>
+                          </label>                         
+                        </div>
+                      </div>
+                <div class="hbox text-center b-b b-light text-sm ">
+                    
+                            
+                    
+                    <a ng-click="vm.setSelecionado(grupo) " class="col padder-v text-muted ">
+                        <i class="fa {{(grupo.status)? 'fa-play-circle-o': 'fa-stop-circle'}} " block m-b-xs fa-2x" style="{{(grupo.status)?'color:green':''}}"></i>
+                        <span style="{{(grupo.status)?'color:green':''}}">{{(grupo.status)?'Play':'Desabilitado'}}</span>
                 </a>
                 </div>
             </div>
