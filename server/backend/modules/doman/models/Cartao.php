@@ -78,6 +78,9 @@ class Cartao extends BaseCartao implements SimpleStatusInterface, ConvocacaoStat
             'normalizador' => [
                 'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
             ],
+            'pdf' => [
+                'class' => behaviors\AtividadePDFBehavior::className(),            
+            ],
         ];
     }
 

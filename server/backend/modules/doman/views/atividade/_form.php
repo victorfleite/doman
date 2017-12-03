@@ -17,11 +17,26 @@ use common\models\Util;
     <?= $form->errorSummary($model); ?>
 
     <div class="row">	
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <?= $form->field($model, 'titulo')->textInput(['maxlength' => true]) ?>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <?= $form->field($model, 'tipo')->dropDownList(\app\modules\doman\models\Atividade::getTipoCombo(), ['disabled' => !$model->isNewRecord]); ?>
+        </div>
+        <div class="col-lg-3">
+            <?=
+            $form->field($model, 'tagNames')->widget(dosamigos\selectize\SelectizeTextInput::className(), [
+                'loadUrl' => ['tag/list'],
+                'options' => ['class' => 'form-control'],
+                'clientOptions' => [
+                    'plugins' => ['remove_button'],
+                    'valueField' => 'name',
+                    'labelField' => 'name',
+                    'searchField' => ['name'],
+                    'create' => true,
+                ],
+            ]);
+            ?>
         </div>
         <div class="col-lg-2">
             <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Atividade::getStatusCombo()); ?>
@@ -52,11 +67,11 @@ use common\models\Util;
         </div>
         <div class="col-lg-6">
             <?php
-            $label = 'Arquivo - largura:600px, altura: 338px (.jpg ou .png)';
+            $label = 'Arquivo - largura:600px, altura: 338px (.png)';
             $label .= (!$model->isNewRecord) ? '  [ ' . Html::a(Util::fileRemovePath($model->imagem), $model->imagem, $options = ['target' => '_blank']) . ' ]' : '';
             echo $form->field($model, 'image')->label($label)->widget(FileInput::classname(), [
                 'options' => ['accept' => 'image/*'],
-                'pluginOptions' => ['allowedFileExtensions' => ['jpg', 'png'], 'showUpload' => false],
+                'pluginOptions' => ['allowedFileExtensions' => ['png'], 'showUpload' => false],
             ]);
             ?>
         </div>        

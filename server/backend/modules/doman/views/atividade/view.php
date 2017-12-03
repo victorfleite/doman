@@ -50,6 +50,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             [
+                'attribute' => 'pdf',
+                'format' => 'raw',
+                'contentOptions' => [],
+                'value' => function($data) {
+                    return Html::a($data->pdf, $data->pdf, $options = ['target' => '_blank']);
+                },
+            ],
+            [
                 'attribute' => 'status',
                 'value' => function($data) {
                     return app\modules\doman\models\Atividade::getStatusLabel($data->status);
@@ -76,92 +84,103 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $audio;
                 },
             ],
+            [
+                'label' => 'Tags',
+                'value' => function($data) {
+                    $tags = [];
+                    $list = $data->getTags()->all();
+                    foreach ($list as $item) {
+                        $tags[] = $item['name'];
+                    }
+                    return implode($tags, ', ');
+                }
+            ],
         ],
     ])
     ?>
 
 </div>
 <h2>Descrição</h1>
-<p class="text-justify"><?php echo (!empty($model->descricao))?$model->descricao:'Sem descrição'; ?></p>
+<p class="text-justify"><?php echo (!empty($model->descricao)) ? $model->descricao : 'Sem descrição'; ?></p>
 <h2>Instrução</h1>
-<p class="text-justify"><?php echo (!empty($model->instrucao))?$model->instrucao:'Sem instrução'; ?></p>
+    <p class="text-justify"><?php echo (!empty($model->instrucao)) ? $model->instrucao : 'Sem instrução'; ?></p>
 
-<?php if ($model->tipo == \app\modules\doman\models\Atividade::TIPO_BIT_INTELIGENCIA) { ?>
+    <?php if ($model->tipo == \app\modules\doman\models\Atividade::TIPO_BIT_INTELIGENCIA) { ?>
 
-    <p class="text-right">
-    <?= Html::a('Novo Cartao', ['/doman/cartao/create', 'atividade_id' => $model->id], ['class' => 'btn btn-success']) ?>
-    </p>
+        <p class="text-right">
+            <?= Html::a('Novo Cartao', ['/doman/cartao/create', 'atividade_id' => $model->id], ['class' => 'btn btn-success']) ?>
+        </p>
 
-    <?=
-    GridView::widget([
-        'dataProvider' => $cartoesDataProvider,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            [
-                'attribute' => 'imagem_caminho',
-                'format' => 'raw',
-                'contentOptions' => [],
-                'value' => function($data) {
-                    return Html::a(Html::img($data->imagem_caminho, ['width' => 80, 'height' => 60]), $data->imagem_caminho, $options = ['target' => '_blank']);
-                },
-            ],
-            'nome',
-            [
-                'attribute' => 'ordem',
-                'contentOptions' => ['class' => 'text-right']
-            ],
-            [
-                'attribute' => 'status_convocacao',
-                'value' => function($data) {
-                    return app\modules\doman\models\Cartao::getStatusConvocacaoLabel($data->status_convocacao);
-                }
-            ],
-            [
-                'attribute' => 'som_id',
-                'format' => 'raw',
-                'value' => function($data) {
-                    if ($data->som_id) {
-                        $titulo = $data->som->titulo;
-
-                        $audio = '<br><audio controls>';
-                        $audio .= '     <source src="' . $data->som->caminho . '" type="audio/mpeg">';
-                        $audio .= '     Your browser does not support the audio element.';
-                        $audio .= '</audio>';
-                        $titulo .= $audio;
-
-                        return $titulo;
+        <?=
+        GridView::widget([
+            'dataProvider' => $cartoesDataProvider,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+                [
+                    'attribute' => 'imagem_caminho',
+                    'format' => 'raw',
+                    'contentOptions' => [],
+                    'value' => function($data) {
+                        return Html::a(Html::img($data->imagem_caminho, ['width' => 80, 'height' => 60]), $data->imagem_caminho, $options = ['target' => '_blank']);
+                    },
+                ],
+                'nome',
+                [
+                    'attribute' => 'ordem',
+                    'contentOptions' => ['class' => 'text-right']
+                ],
+                [
+                    'attribute' => 'status_convocacao',
+                    'value' => function($data) {
+                        return app\modules\doman\models\Cartao::getStatusConvocacaoLabel($data->status_convocacao);
                     }
-                }
-            ],
-            [
-                'attribute' => 'status',
-                'value' => function($data) {
-                    return app\modules\doman\models\Cartao::getStatusLabel($data->status);
-                }
-            ],
-            // 'atividade_id',
-            // 'imagem_caminho',
-            // 'user_id',
-            // 'data_publicacao',
-            // 'user_publicacao_id',
-            // 'deletado:boolean',
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'contentOptions' => ['class' => 'text-right'],
-                'template' => '{view} {update} {delete}',
-                'urlCreator' => function ($action, $data, $key, $index) {
-                    if ($action === 'view') {
-                        return Url::to(['/doman/cartao/view', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);
+                ],
+                [
+                    'attribute' => 'som_id',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        if ($data->som_id) {
+                            $titulo = $data->som->titulo;
+
+                            $audio = '<br><audio controls>';
+                            $audio .= '     <source src="' . $data->som->caminho . '" type="audio/mpeg">';
+                            $audio .= '     Your browser does not support the audio element.';
+                            $audio .= '</audio>';
+                            $titulo .= $audio;
+
+                            return $titulo;
+                        }
                     }
-                    if ($action === 'update') {
-                        return Url::to(['/doman/cartao/update', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);
+                ],
+                [
+                    'attribute' => 'status',
+                    'value' => function($data) {
+                        return app\modules\doman\models\Cartao::getStatusLabel($data->status);
                     }
-                    if ($action === 'delete') {
-                        return Url::to(['/doman/cartao/delete', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);
+                ],
+                // 'atividade_id',
+                // 'imagem_caminho',
+                // 'user_id',
+                // 'data_publicacao',
+                // 'user_publicacao_id',
+                // 'deletado:boolean',
+                [
+                    'class' => 'yii\grid\ActionColumn',
+                    'contentOptions' => ['class' => 'text-right'],
+                    'template' => '{view} {update} {delete}',
+                    'urlCreator' => function ($action, $data, $key, $index) {
+                        if ($action === 'view') {
+                            return Url::to(['/doman/cartao/view', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);
+                        }
+                        if ($action === 'update') {
+                            return Url::to(['/doman/cartao/update', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);
+                        }
+                        if ($action === 'delete') {
+                            return Url::to(['/doman/cartao/delete', 'id' => $data->id, 'atividade_id' => $data->atividade_id]);
+                        }
                     }
-                }
+                ],
             ],
-        ],
-    ]);
-}
-?>
+        ]);
+    }
+    ?>

@@ -100,6 +100,7 @@ class Atividade extends \yii\db\ActiveRecord {
             'som_id' => Yii::t('translation', 'Som'),
             'atividade_pai' => Yii::t('translation', 'Atividade Pai'),
             'instrucao'=>Yii::t('translation', 'Instrução'),
+            'tagNames' => Yii::t('translation', 'Tags'),
         ];
     }
 
@@ -150,6 +151,13 @@ class Atividade extends \yii\db\ActiveRecord {
      */
     public function getGrupos() {
         return $this->hasMany(\app\modules\doman\models\Grupo::className(), ['id' => 'grupo_id'])->viaTable('grupo_atividade', ['atividade_id' => 'id']);
+    }
+    
+     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTags() {
+        return $this->hasMany(Tag::className(), ['id' => 'tag_id'])->viaTable('atividade_tag', ['atividade_id' => 'id']);
     }
 
 

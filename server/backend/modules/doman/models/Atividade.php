@@ -19,6 +19,7 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
     const TIPO_MIDIA_SOM = 3;
     const TIPO_MIDIA_SOM_LABEL = 'Mídia Som';
     const IMAGENS_PATH = 'imagens/';
+    const PDF_PATH = 'docs/';
 
     /**
      * @var UploadedFile
@@ -34,12 +35,13 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
             [['tipo'], 'validarTipo'],
             [['status', 'user_id', 'user_publicacao_id', 'tipo', 'som_id'], 'integer'],
             [['data_publicacao', 'data_criacao', 'descricao', 'instrucao'], 'safe'],
+            [['tagNames'], 'safe'],
             [['deletado', 'autoplay'], 'boolean'],
             [['titulo', 'video_url'], 'string', 'max' => 255],
             [['video_url'], 'url'],
-            [['imagem', 'image'], 'safe'],
+            [['imagem', 'pdf', 'image'], 'safe'],
             [['image'], 'file', 'maxSize' => 1024 * 1024 * 1024 * 1],
-            ['image', 'image', 'extensions' => 'jpg, png',
+            ['image', 'image', 'extensions' => 'png',
                 'minWidth' => 600, 'maxWidth' => 600,
                 'minHeight' => 338, 'maxHeight' => 338,
             ]
@@ -90,9 +92,12 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
                 ],
                 'replaceRegularDelete' => true
             ],
+            'taggable' => [
+                'class' => \dosamigos\taggable\Taggable::className(),
+            ],
             'normalizador' => [
                 'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
-            ],
+            ],            
         ];
     }
     
@@ -118,5 +123,6 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
         }
         return $this->save();
     }
+  
 
 }
