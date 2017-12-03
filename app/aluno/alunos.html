@@ -17,8 +17,8 @@
     </div>
   </div>
   <h1 class="m-n font-thin h3">Selecione um aluno:</h1><br>
-  <div class="row">    
-    <div ng-repeat="aluno in vm.alunos | fitrarPorNome:filtro:'aluno_nome' " class="col-lg-4">
+  <div class="row">
+    <div ng-if="vm.alunos.length > 0" ng-repeat="aluno in vm.alunos | fitrarPorNome:filtro:'aluno_nome' " class="col-lg-4">
       <a ng-click="vm.setSelecionado(aluno)">
         <div class="panel panel-default bg-light">
           <div class="panel-body">
@@ -57,6 +57,11 @@
         </div>
       </a>
     </div>
-
+    <div style="margin:15px" ng-if="vm.alunos.length == 0">
+      <div class="alert alert-danger alert-dismissable" role="alert" type="warning">
+        <span class="ng-binding ng-scope">Não existem alunos associados ao email {{vm.educador.email}}. Entre em contato com a administração da escola.</span>
+      </div>
+    </div>
   </div>
+</div>
 </div>

@@ -33,6 +33,7 @@
   ) {
     var vm = this;
     vm.path = CONSTANTES.PATH_IMAGENS;
+    vm.educador = selecionadosService.getEducador();
     vm.alunos = [];
     vm.auth = authService;
     vm.profile;
