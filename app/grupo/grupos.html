@@ -1,12 +1,12 @@
 <nav aria-label="breadcrumb" role="navigation">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#!/alunos">Alunos</a></li>
-        <li class="breadcrumb-item" aria-current="page">{{vm.alunoSelecionado.aluno_nome}}</li>
+        <li class="breadcrumb-item" aria-current="page">{{vm.aluno.aluno_nome}}</li>
         <li class="breadcrumb-item active" aria-current="page">Grupos</li>
     </ol>
 </nav>
 <div class="bg-light lter b-b wrapper-md">
-    <h1 class="m-n font-thin h3">Grupos de Atividades de {{vm.alunoSelecionado.aluno_nome}}</h1>
+    <h1 class="m-n font-thin h3">Grupos de Atividades de {{vm.aluno.aluno_nome}}</h1>
 </div>
 
 <div class="wrapper-md">
@@ -42,18 +42,16 @@
                             'filter: grayscale(100%);'}} ">
                     </div>
                 </a>
-                <div class="form-group">
+                <div ng-if="vm.verificaTipoEducador()" class="form-group" style="height:25px">
                         <label class="col-sm-2 control-label">Ativo:</label>
                         <div class="col-sm-10">
                           <label class="i-switch m-t-xs m-r">
-                            <input type="checkbox" checked>
+                            <input type="checkbox" ng-model="vm.checkboxes[$index]">
                             <i></i>
                           </label>                         
                         </div>
-                      </div>
-                <div class="hbox text-center b-b b-light text-sm ">
-                    
-                            
+                </div>
+                <div class="hbox text-center b-b b-light text-sm " style="backgroud-color:red">
                     
                     <a ng-click="vm.setSelecionado(grupo) " class="col padder-v text-muted ">
                         <i class="fa {{(grupo.status)? 'fa-play-circle-o': 'fa-stop-circle'}} " block m-b-xs fa-2x" style="{{(grupo.status)?'color:green':''}}"></i>

@@ -6,9 +6,9 @@
     .module('app')
     .service('alunoService', alunoService);
 
-    alunoService.$inject = ['$http', '$state', 'CONSTANTES'];
+    alunoService.$inject = ['$http', '$state', '$log', 'CONSTANTES'];
 
-  function alunoService($http, $state, CONSTANTES) {
+  function alunoService($http, $state, $log, CONSTANTES) {
 
     var getAlunos = function(email){
       var params = {"email" : email};
@@ -23,9 +23,16 @@
       return $http.post(url, params);
     }
 
+    var setGruposStatusAluno = function(educadorId, alunoId, grupos){
+      var params = {"educador_id" : educadorId, "aluno_id" : alunoId, "grupos": grupos};
+      var url = CONSTANTES.API + '/service/set-status-grupos-aluno';
+      return $http.post(url, params);
+    }
+
     return {
       getAlunos: getAlunos,
-      getGrupos: getGrupos
+      getGrupos: getGrupos,
+      setGruposStatusAluno: setGruposStatusAluno
     }
   }
 })();

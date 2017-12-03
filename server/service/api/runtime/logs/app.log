@@ -2302,3 +2302,1016 @@ Stack trace:
     'REQUEST_TIME_FLOAT' => 1512050287.638
     'REQUEST_TIME' => 1512050287
 ]
+2017-12-02 20:09:59 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:81
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-02 20:09:59 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '29'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'd56eae37-e496-a3a7-6a54-f6f8f30f0749'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '35836'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'REQUEST_TIME_FLOAT' => 1512252599.327
+    'REQUEST_TIME' => 1512252599
+]
+2017-12-02 21:02:10 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: v1/service/set-status-grupos-aluno in /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#2 {main}
+2017-12-02 21:02:10 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '47'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '47048'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512255730.388
+    'REQUEST_TIME' => 1512255730
+]
+2017-12-02 21:02:10 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: v1/service/set-status-grupos-aluno in /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#2 {main}
+2017-12-02 21:02:10 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '47050'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512255730.447
+    'REQUEST_TIME' => 1512255730
+]
+2017-12-02 21:02:16 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: v1/service/set-status-grupos-aluno in /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#2 {main}
+2017-12-02 21:02:16 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '47050'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512255736.79
+    'REQUEST_TIME' => 1512255736
+]
+2017-12-02 21:07:01 [::1][-][-][error][ReflectionException] ReflectionException: Class common\models\Dumper does not exist in /var/www/html/doman/server/vendor/yiisoft/yii2/di/Container.php:426
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/di/Container.php(426): ReflectionClass->__construct('common\\models\\D...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/di/Container.php(364): yii\di\Container->getDependencies('common\\models\\D...')
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('common\\models\\D...', Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/BaseYii.php(349): yii\di\Container->get('common\\models\\D...', Array, Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(724): yii\di\ServiceLocator->get('dumper', true)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/di/ServiceLocator.php(74): yii\base\Module->get('dumper')
+#7 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(150): yii\di\ServiceLocator->__get('dumper')
+#8 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#12 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#13 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#15 {main}
+2017-12-02 21:07:01 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '48748'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256021.32
+    'REQUEST_TIME' => 1512256021
+]
+2017-12-02 21:09:11 [::1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Setting unknown property: yii\db\ActiveQuery::status in /var/www/html/doman/server/vendor/yiisoft/yii2/base/Component.php:203
+Stack trace:
+#0 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(157): yii\base\Component->__set('status', NULL)
+#1 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#8 {main}
+2017-12-02 21:09:11 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '49858'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256151.114
+    'REQUEST_TIME' => 1512256151
+]
+2017-12-02 21:09:12 [::1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Setting unknown property: yii\db\ActiveQuery::status in /var/www/html/doman/server/vendor/yiisoft/yii2/base/Component.php:203
+Stack trace:
+#0 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(157): yii\base\Component->__set('status', NULL)
+#1 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#8 {main}
+2017-12-02 21:09:12 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '49860'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256152.883
+    'REQUEST_TIME' => 1512256152
+]
+2017-12-02 21:09:31 [::1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:157
+Stack trace:
+#0 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(157): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', '/var/www/html/d...', 157, Array)
+#1 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#8 {main}
+2017-12-02 21:09:31 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '50048'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256171.348
+    'REQUEST_TIME' => 1512256171
+]
+2017-12-02 21:09:33 [::1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:157
+Stack trace:
+#0 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(157): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', '/var/www/html/d...', 157, Array)
+#1 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#8 {main}
+2017-12-02 21:09:32 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '50036'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256172.997
+    'REQUEST_TIME' => 1512256172
+]
+2017-12-02 21:11:16 [::1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:157
+Stack trace:
+#0 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(157): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', '/var/www/html/d...', 157, Array)
+#1 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#8 {main}
+2017-12-02 21:11:16 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '50908'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256276.072
+    'REQUEST_TIME' => 1512256276
+]
+2017-12-02 21:11:19 [::1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:157
+Stack trace:
+#0 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(157): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', '/var/www/html/d...', 157, Array)
+#1 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#8 {main}
+2017-12-02 21:11:19 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '50910'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256279.653
+    'REQUEST_TIME' => 1512256279
+]
+2017-12-02 21:11:43 [::1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:158
+Stack trace:
+#0 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(158): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', '/var/www/html/d...', 158, Array)
+#1 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#8 {main}
+2017-12-02 21:11:43 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '51150'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256303.103
+    'REQUEST_TIME' => 1512256303
+]
+2017-12-02 21:11:45 [::1][-][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:158
+Stack trace:
+#0 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(158): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', '/var/www/html/d...', 158, Array)
+#1 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#8 {main}
+2017-12-02 21:11:45 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '51138'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256305.445
+    'REQUEST_TIME' => 1512256305
+]
+2017-12-02 21:15:32 [::1][-][-][error][yii\db\IntegrityException] PDOException: SQLSTATE[23502]: Not null violation: 7 ERRO:  valor nulo na coluna "status" viola a restrição não-nula
+DETAIL:  Registro que falhou contém (5, 9, null, null, null, 2017-11-19 22:26:37.727978-02, f). in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:994
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(994): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(243): yii\db\Command->execute()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(778): yii\db\ActiveRecord::updateAll(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(587): yii\db\BaseActiveRecord->updateInternal(NULL)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(649): yii\db\ActiveRecord->update(true, NULL)
+#5 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(159): yii\db\BaseActiveRecord->save()
+#6 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23502]: Not null violation: 7 ERRO:  valor nulo na coluna "status" viola a restrição não-nula
+DETAIL:  Registro que falhou contém (5, 9, null, null, null, 2017-11-19 22:26:37.727978-02, f).
+The SQL being executed was: UPDATE "grupo_aluno" SET "status"=NULL WHERE ("grupo_id"=5) AND ("aluno_id"=9) in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1004): yii\db\Schema->convertException(Object(PDOException), 'UPDATE "grupo_a...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(243): yii\db\Command->execute()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(778): yii\db\ActiveRecord::updateAll(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(587): yii\db\BaseActiveRecord->updateInternal(NULL)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(649): yii\db\ActiveRecord->update(true, NULL)
+#5 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(159): yii\db\BaseActiveRecord->save()
+#6 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 23502
+    [1] => 7
+    [2] => ERRO:  valor nulo na coluna "status" viola a restrição não-nula
+DETAIL:  Registro que falhou contém (5, 9, null, null, null, 2017-11-19 22:26:37.727978-02, f).
+)
+
+2017-12-02 21:15:32 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '53054'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256532.826
+    'REQUEST_TIME' => 1512256532
+]
+2017-12-02 21:15:34 [::1][-][-][error][yii\db\IntegrityException] PDOException: SQLSTATE[23502]: Not null violation: 7 ERRO:  valor nulo na coluna "status" viola a restrição não-nula
+DETAIL:  Registro que falhou contém (5, 9, null, null, null, 2017-11-19 22:26:37.727978-02, f). in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:994
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(994): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(243): yii\db\Command->execute()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(778): yii\db\ActiveRecord::updateAll(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(587): yii\db\BaseActiveRecord->updateInternal(NULL)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(649): yii\db\ActiveRecord->update(true, NULL)
+#5 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(159): yii\db\BaseActiveRecord->save()
+#6 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23502]: Not null violation: 7 ERRO:  valor nulo na coluna "status" viola a restrição não-nula
+DETAIL:  Registro que falhou contém (5, 9, null, null, null, 2017-11-19 22:26:37.727978-02, f).
+The SQL being executed was: UPDATE "grupo_aluno" SET "status"=NULL WHERE ("grupo_id"=5) AND ("aluno_id"=9) in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1004): yii\db\Schema->convertException(Object(PDOException), 'UPDATE "grupo_a...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(243): yii\db\Command->execute()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(778): yii\db\ActiveRecord::updateAll(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(587): yii\db\BaseActiveRecord->updateInternal(NULL)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(649): yii\db\ActiveRecord->update(true, NULL)
+#5 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(159): yii\db\BaseActiveRecord->save()
+#6 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusGruposAluno()
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-grup...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 23502
+    [1] => 7
+    [2] => ERRO:  valor nulo na coluna "status" viola a restrição não-nula
+DETAIL:  Registro que falhou contém (5, 9, null, null, null, 2017-11-19 22:26:37.727978-02, f).
+)
+
+2017-12-02 21:15:34 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj\";}'
+    'advanced-backend' => '85qgt7b3t5gupbn0355gkpq065'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '312'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=98ca710ae694d77bd4873b88cda3984c330958aec335a6f60c7f9550dfd8dfd4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22f6tGcGr2_4y7Xb6j3d984CMZxNkAZjHj%22%3B%7D; advanced-backend=85qgt7b3t5gupbn0355gkpq065; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '53044'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-grupos-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-grupos-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-grupos-aluno'
+    'REQUEST_TIME_FLOAT' => 1512256534.695
+    'REQUEST_TIME' => 1512256534
+]
+2017-12-02 21:56:49 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: "Array" in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/Atividade.php(38): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(103): api\versions\v1\models\Atividade::getAtividades(Array, Array)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAtividades()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividades', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: "Array"
+The SQL being executed was:  SELECT id, aluno_id, nome, grupo_id, grupo_titulo, atividade_id, atividade_titulo, atividade_tipo, video_url, autoplay, som_id, som_titulo, som_caminho, atividade_descricao, atividade_instrucao, atividade_imagem,  atividade_status, TO_CHAR(data_criacao, 'DD/MM/YYYY HH24:MI') as data_criacao,  TO_CHAR(data_abertura, 'DD/MM/YYYY HH24:MI') as data_abertura,  TO_CHAR(data_finalizacao, 'DD/MM/YYYY HH24:MI') as data_finalizacao , ordem  FROM vw_atividade_aluno  where aluno_id=Array and  grupo_id=Array  order by ordem in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), ' SELECT id, alu...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/Atividade.php(38): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(103): api\versions\v1\models\Atividade::getAtividades(Array, Array)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetAtividades()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividades', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 22P02
+    [1] => 7
+    [2] => ERRO:  sintaxe de entrada é inválida para integer: "Array"
+)
+
+2017-12-02 21:56:49 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '336'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '33562'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-atividades'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-atividades'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-atividades'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-atividades'
+    'REQUEST_TIME_FLOAT' => 1512259009.374
+    'REQUEST_TIME' => 1512259009
+]
+2017-12-02 21:56:59 [::1][-][-][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Login Required in /var/www/html/doman/server/vendor/yiisoft/yii2/web/User.php:427
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/filters/AccessControl.php(156): yii\web\User->loginRequired()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/filters/AccessControl.php(140): yii\filters\AccessControl->denyAccess(Object(yii\web\User))
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/ActionFilter.php(75): yii\filters\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#3 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Component.php(557): call_user_func(Array, Object(yii\base\ActionEvent))
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(274): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-atividades', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#12 {main}
+2017-12-02 21:56:59 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_ORIGIN' => 'http://evil.com/'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '33630'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-atividades'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-atividades'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-atividades'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-atividades'
+    'REQUEST_TIME_FLOAT' => 1512259019.833
+    'REQUEST_TIME' => 1512259019
+]

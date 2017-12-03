@@ -7,6 +7,7 @@ namespace api\versions\v1\controllers;
 
 use api\versions\v1\models\Educador;
 use api\versions\v1\models\Atividade;
+use api\versions\v1\models\GrupoAluno;
 
 class ServiceController extends \api\components\Controller {
 
@@ -20,14 +21,15 @@ class ServiceController extends \api\components\Controller {
                     'get-alunos',
                     'get-grupos',
                     'get-atividades',
-                    'get-atividade'
+                    'get-atividade',
+                    'set-status-grupos-aluno'
                 ],
                 'verbs' => ['POST'],
                 'roles' => ['?'],
             ],
         ];
     }
-    
+
     /**
      * 
      * @return type
@@ -100,7 +102,7 @@ class ServiceController extends \api\components\Controller {
 
         $atividades = Atividade::getAtividades($alunoId, $grupoId);
         $out = [];
-        foreach ($atividades as $atividade){
+        foreach ($atividades as $atividade) {
             if ($atividade['atividade_tipo'] == Atividade::TIPO_BIT_INTELIGENCIA) {
                 $atividade['cartoes'] = Atividade::getCartoesAluno($alunoId, $grupoId, $atividade['atividade_id']);
             }
@@ -128,6 +130,39 @@ class ServiceController extends \api\components\Controller {
             $atividade['cartoes'] = Atividade::getCartoesAluno($alunoId, $grupoId, $atividadeId);
         }
         return ['retorno' => $atividade];
+    }
+
+    /**
+     * 
+     */
+    public function actionSetStatusGruposAluno() {
+
+        $post = \Yii::$app->request->post();
+        $educadorId = $post["educador_id"];
+        $alunoId = $post["aluno_id"];
+        $grupos = $post["grupos"];
+
+        if (!isset($educadorId) || !isset($alunoId)) {
+            throw new \Exception('Ops algo errado nos parâmetros');
+        }
+
+        $educador = Educador::findOne($educadorId);
+        
+        if ($educador->tipo == Educador::TIPO_ORIENTADOR_PEDAGOGICO ||
+                $educador->tipo == Educador::TIPO_PROFESSOR
+        ) {
+            
+            foreach ($grupos as $grupo){
+                
+                $grupoAluno = GrupoAluno::find()->where(['aluno_id'=>$alunoId, 'grupo_id'=>$grupo['grupo_id']])->one();
+                $grupoAluno->status = $grupo['status'];
+                $grupoAluno->save();
+               
+                                
+            }
+            
+        }
+        return ['retorno' => 'atualizado!'];
     }
 
 }

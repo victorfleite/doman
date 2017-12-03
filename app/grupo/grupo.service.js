@@ -6,9 +6,9 @@
     .module('app')
     .service('grupoService', grupoService);
 
-    grupoService.$inject = ['$http', '$state', 'CONSTANTES'];
+    grupoService.$inject = ['$http', '$state', '$log', 'CONSTANTES'];
 
-  function grupoService($http, $state, CONSTANTES) {
+  function grupoService($http, $state, $log, CONSTANTES) {
 
     var getAtividades = function(aluno, grupo){
       var params = {"aluno_id" : aluno, 'grupo_id': grupo};

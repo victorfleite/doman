@@ -160,8 +160,11 @@
 
         var vm = this;
         vm.path = CONSTANTES.PATH_IMAGENS;
-        vm.service = selecionadosService;
+        vm.educador = selecionadosService.getEducador();
+        vm.aluno = selecionadosService.getAluno();
+        vm.grupo = selecionadosService.getGrupo();
         vm.atividade = selecionadosService.getAtividade();
+        
 
         vm.getAutoPlay = function () {
             return 'autoplay';
@@ -261,7 +264,7 @@
 
             modalInstance.result.then(function (selectedItem) {
             }, function () {
-                var params = { aluno: vm.service.getAluno().aluno_id, grupo: vm.service.getGrupo().grupo_id, atividade: vm.service.getAtividade().atividade_id  };
+                var params = { aluno: vm.aluno.aluno_id, grupo: vm.grupo.grupo_id, atividade: vm.atividade.atividade_id  };
                 $state.go('atividade-item', params);
             });
         };

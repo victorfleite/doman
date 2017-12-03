@@ -8,6 +8,9 @@ class Educador extends \yii\db\ActiveRecord {
 
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
+    const TIPO_RESPONSAVEL = 1;
+    const TIPO_PROFESSOR = 2;
+    const TIPO_ORIENTADOR_PEDAGOGICO = 3;
 
     /**
      * @inheritdoc
@@ -20,7 +23,7 @@ class Educador extends \yii\db\ActiveRecord {
      * @return \yii\db\ActiveQuery
      */
     static function getEducador($email) {
-        return Educador::find(['email' => $email])->where(['status' => Educador::STATUS_ACTIVE, 'deletado'=>false])->one();
+        return Educador::find()->where(['email' => $email, 'status' => Educador::STATUS_ACTIVE, 'deletado' => false])->one();
     }
 
     /**
