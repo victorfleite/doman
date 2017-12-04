@@ -11,9 +11,7 @@
 		pre { font-family: DejaVuSansMono, monospaced; font-size: 9pt; margin-top: 5pt; margin-bottom: 5pt; }
 
 		h1 {	font-weight: normal; font-size: 26pt; 
-			font-family: DejaVuSansCondensed, sans-serif; margin-top: 18pt; margin-bottom: 6pt; 
-			border-bottom: 0.075cm solid #000000; 
-			text-align: ; page-break-after:avoid; }
+			font-family: DejaVuSansCondensed, sans-serif; margin-top: 18pt; margin-bottom: 6pt; page-break-after:avoid; }
 		h2 {	font-weight: bold; font-size: 12pt; color: #000066; 
 			font-family: DejaVuSansCondensed, sans-serif; margin-top: 6pt; margin-bottom: 6pt; 
 			border-top: 0.07cm solid #000000; border-bottom: 0.07cm solid #000000; 
