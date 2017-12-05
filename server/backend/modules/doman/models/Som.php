@@ -27,7 +27,7 @@ class Som extends BaseSom {
             [['titulo'], 'string'],
             [['caminho', 'mp3'], 'safe'],
             [['mp3'], 'file', 'maxSize' => 1024 * 1024 * 1024 * 15],
-            [['mp3'], 'file', 'skipOnEmpty' => true, 'extensions' => 'mp3'],
+            [['mp3'], 'file', 'skipOnEmpty' => true, /*'extensions' => 'mp3'*/],
         ];
     }
 

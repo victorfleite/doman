@@ -126,6 +126,7 @@ class ServiceController extends \api\components\Controller {
             throw new \Exception('Ops algo errado nos parâmetros');
         }
         $atividade = Atividade::getAtividade($alunoId, $grupoId, $atividadeId)[0];
+        
         if (isset($atividade) && $atividade['atividade_tipo'] == Atividade::TIPO_BIT_INTELIGENCIA) {
             $atividade['cartoes'] = Atividade::getCartoesAluno($alunoId, $grupoId, $atividadeId);
         }

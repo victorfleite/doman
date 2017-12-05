@@ -1,0 +1,58 @@
+<!-- dialog -->
+<div class="modal-dialog">
+
+    <!-- content -->
+    <div class="modal-content">
+
+        <!-- header -->
+        <div class="modal-header">
+            <h1 id="myModalLabel" class="modal-title">
+                {{atividade.atividade_titulo}}
+            </h1>
+        </div>
+        <!-- header -->
+
+        <!-- body -->
+        <div class="modal-body">
+
+            <div ngsf-fullscreen="fullscreenCtrl">
+                <div id="carousel-main" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" on-carousel-next="fuck()">
+                    <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
+                        <img ng-src="{{slide.image}}" ng-swipe-left="swipeFn('swipe-left')" ng-swipe-right="swipeFn('swipe-right')" class="img-responsive"
+                            style="margin:auto;">
+                        <div class="carousel-caption">
+                            <h4>{{slide.id}}</h4>
+                            <p>{{slide.text}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- body -->
+
+            <!-- footer -->
+            <div class="modal-footer">
+                <button class="btn btn-success" ng-click="fullscreenCtrl.toggleFullscreen()">
+                                Fullscreen
+                              </button>
+                <button class="btn btn-primary" ng-click="randomize();">
+                                Aleatório
+                              </button>
+
+
+                <!--button class="btn btn-secondary" data-dismiss="modal">
+                    close
+                </button>
+                <button class="btn btn-default">
+                    Default
+                </button-->
+                <button class="btn btn-warning" ng-click="ok()">
+                        Fechar
+                    </button>
+            </div>
+            <!-- footer -->
+
+        </div>
+        <!-- content -->
+
+    </div>
+    <!-- dialog -->
