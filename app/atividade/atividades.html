@@ -10,7 +10,7 @@
 <div class="bg-light lter b-b wrapper-md">
     <h1 class="m-n font-thin h3">Atividades</h1>
 </div>
-<div class="wrapper-md">
+<div class="wrapper-md" ng-if="vm.grupo.status">
     <h1 class="m-n font-thin h3">Selecione uma atividade:</h1><br>
     <div class="row">
         <div ng-repeat="atividade in vm.atividades " class="col-lg-3">
@@ -42,3 +42,8 @@
         </div>
     </div>
 </div>
+<div style="margin:15px" ng-if="!vm.grupo.status">
+    <div class="alert alert-danger alert-dismissable" role="alert" type="warning">
+      <span class="ng-binding ng-scope">O grupo destas atividades está desabilitado.</span>
+    </div>
+  </div>

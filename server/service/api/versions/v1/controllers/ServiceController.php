@@ -20,6 +20,7 @@ class ServiceController extends \api\components\Controller {
                     'get-educador',
                     'get-alunos',
                     'get-grupos',
+                    'get-grupo',
                     'get-atividades',
                     'get-atividade',
                     'set-status-grupos-aluno'
@@ -84,6 +85,23 @@ class ServiceController extends \api\components\Controller {
         }
 
         return ['retorno' => Educador::getGruposDoAluno($educadorId, $alunoId)];
+    }
+    
+        /**
+     * 
+     * @return type
+     */
+    public function actionGetGrupo() { 
+
+        $post = \Yii::$app->request->post();        
+        $alunoId = $post["aluno_id"];
+        $grupoId = $post["grupo_id"];
+
+        if (!isset($grupoId) || !isset($alunoId)) {
+            throw new \Exception('Ops algo errado nos parâmetros');
+        }
+
+        return ['retorno' => Educador::getGrupoDoAluno($alunoId, $grupoId)[0]];
     }
 
     /**

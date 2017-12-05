@@ -58,5 +58,20 @@ class Educador extends \yii\db\ActiveRecord {
         $command->bindValue(':alunoId', $alunoId);
         return $command->queryAll();
     }
+    
+    static function getGrupoDoAluno($alunoId, $grupoId) {
+
+        $sql = 'SELECT ' .
+                ' grupo_id, grupo_titulo, ' .
+                ' grupo_imagem, grupo_ordem, status' .
+                ' FROM vw_educador_aluno_grupo ' .
+                ' where aluno_id=:alunoId and ' .
+                ' grupo_id=:grupoId ';
+
+        $command = \Yii::$app->db->createCommand($sql);        
+        $command->bindValue(':alunoId', $alunoId);
+        $command->bindValue(':grupoId', $grupoId);
+        return $command->queryAll();
+    }
 
 }

@@ -14,6 +14,7 @@
     '$stateParams',
     'selecionadosService',
     '$log',
+    '$q',
     'grupoService',
     'CONSTANTES'
   ];
@@ -26,6 +27,7 @@
     $stateParams,
     selecionadosService,
     $log,
+    $q,
     grupoService,
     CONSTANTES
   ) {
@@ -48,11 +50,16 @@
     }
 
     $rootScope.loading = true;
-    grupoService.getAtividades(vm.alunoId, vm.grupoId).then(function (resultado) {
-      vm.atividades = resultado.data.retorno;
-      $rootScope.loading = false;
-    });
 
+    $q.all([
+      grupoService.getGrupo(vm.alunoId, vm.grupoId),
+      grupoService.getAtividades(vm.alunoId, vm.grupoId)])
+      .then(function (result) {
+        $log.log(result);
+        vm.grupo = result[0].data.retorno;
+        vm.atividades = result[1].data.retorno;
+        $rootScope.loading = false;
+    });
 
 
 
