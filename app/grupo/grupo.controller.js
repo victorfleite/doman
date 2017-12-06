@@ -55,8 +55,9 @@
         vm.grupos = resultado.data.retorno;        
         for (var i = 0; i < vm.grupos.length; i++) {
           var grupo = vm.grupos[i];
-          vm.checkboxes.push((grupo.status)?true:false);
+          vm.checkboxes.push((grupo.status));          
         }
+        $log.log(vm.checkboxes);
         $rootScope.loading = false;        
     });
 
@@ -71,12 +72,11 @@
       }
       return false;
     }
-
     $scope.$watchCollection('vm.checkboxes', function(statusListNew, statusListOld) {
       var out = [];
       for (var i = 0; i < vm.grupos.length; i++) {
         var grupo = vm.grupos[i];
-        grupo.status = (statusListNew[i])?1:0;
+        grupo.status = statusListNew[i];
         out.push(grupo);
       }
       $rootScope.loading = true;  

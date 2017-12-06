@@ -42,13 +42,11 @@
                             'filter: grayscale(100%);'}} ">
                     </div>
                 </a>
-                <div ng-if="vm.verificaTipoEducador()" class="form-group" style="height:25px">
-                        <label class="col-sm-2 control-label">Ativo:</label>
-                        <div class="col-sm-10">
-                          <label class="i-switch m-t-xs m-r">
-                            <input type="checkbox" ng-model="vm.checkboxes[$index]">
-                            <i></i>
-                          </label>                         
+                <div ng-if="vm.verificaTipoEducador()" class="form-group" style="text-align:center; padding:5px">
+                        <div class="btn-group btn-group-sm">
+                            <label ng-class=" vm.checkboxes[$index] == 1 ? ' btn bt-success' : ' btn bt-default'" ng-model="vm.checkboxes[$index]" uib-btn-radio="0" uncheckable>Dasabilitado</label>
+                            <label ng-class=" vm.checkboxes[$index] == 2 ? ' btn bt-success' : ' btn bt-default'" ng-model="vm.checkboxes[$index]" uib-btn-radio="1" uncheckable>Aberto</label>
+                            <label ng-class=" vm.checkboxes[$index] == 3 ? ' btn bt-success' : ' btn bt-default'" ng-model="vm.checkboxes[$index]" uib-btn-radio="2" uib-uncheckable="uncheckable">Finalizado</label>
                         </div>
                 </div>
                 <div class="hbox text-center b-b b-light text-sm " style="backgroud-color:red">

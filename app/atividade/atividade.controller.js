@@ -55,7 +55,6 @@
       grupoService.getGrupo(vm.alunoId, vm.grupoId),
       grupoService.getAtividades(vm.alunoId, vm.grupoId)])
       .then(function (result) {
-        $log.log(result);
         vm.grupo = result[0].data.retorno;
         vm.atividades = result[1].data.retorno;
         $rootScope.loading = false;

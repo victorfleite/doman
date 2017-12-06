@@ -86,14 +86,14 @@ class ServiceController extends \api\components\Controller {
 
         return ['retorno' => Educador::getGruposDoAluno($educadorId, $alunoId)];
     }
-    
-        /**
+
+    /**
      * 
      * @return type
      */
-    public function actionGetGrupo() { 
+    public function actionGetGrupo() {
 
-        $post = \Yii::$app->request->post();        
+        $post = \Yii::$app->request->post();
         $alunoId = $post["aluno_id"];
         $grupoId = $post["grupo_id"];
 
@@ -144,7 +144,7 @@ class ServiceController extends \api\components\Controller {
             throw new \Exception('Ops algo errado nos parâmetros');
         }
         $atividade = Atividade::getAtividade($alunoId, $grupoId, $atividadeId)[0];
-        
+
         if (isset($atividade) && $atividade['atividade_tipo'] == Atividade::TIPO_BIT_INTELIGENCIA) {
             $atividade['cartoes'] = Atividade::getCartoesAluno($alunoId, $grupoId, $atividadeId);
         }
@@ -166,20 +166,17 @@ class ServiceController extends \api\components\Controller {
         }
 
         $educador = Educador::findOne($educadorId);
-        
+
         if ($educador->tipo == Educador::TIPO_ORIENTADOR_PEDAGOGICO ||
                 $educador->tipo == Educador::TIPO_PROFESSOR
         ) {
-            
-            foreach ($grupos as $grupo){
-                
-                $grupoAluno = GrupoAluno::find()->where(['aluno_id'=>$alunoId, 'grupo_id'=>$grupo['grupo_id']])->one();
+
+            foreach ($grupos as $grupo) {
+
+                $grupoAluno = GrupoAluno::find()->where(['aluno_id' => $alunoId, 'grupo_id' => $grupo['grupo_id']])->one();
                 $grupoAluno->status = $grupo['status'];
                 $grupoAluno->save();
-               
-                                
             }
-            
         }
         return ['retorno' => 'atualizado!'];
     }
