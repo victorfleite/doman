@@ -2,8 +2,10 @@
 
 namespace app\modules\doman\models;
 
+use Yii;
 use common\models\Util;
 use \app\modules\doman\models\base\Atividade as BaseAtividade;
+use kartik\mpdf\Pdf;
 
 /**
  * This is the model class for table "atividade".
@@ -95,12 +97,16 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
             'taggable' => [
                 'class' => \dosamigos\taggable\Taggable::className(),
             ],
+            'pdf' => [
+                'class' => behaviors\AtividadePDFBehavior::className(),
+            ],
             'normalizador' => [
-                'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
-            ],            
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),
+            ],
+            
         ];
     }
-    
+
     /**
      * save imagem
      * @return boolean
@@ -114,7 +120,7 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
                 $fileName = Util::generateHashSha256(6) . "_" . Util::sanitizeString($this->image->baseName) . ".{$ext}";
                 $this->imagem = Atividade::IMAGENS_PATH . strtolower($fileName);
                 if (!is_null($this->image)) {
-                  $this->image->saveAs($this->imagem, false);
+                    $this->image->saveAs($this->imagem, false);
                 }
                 return $this->save();
             } else {
@@ -123,6 +129,54 @@ class Atividade extends BaseAtividade implements \common\components\traits\Publi
         }
         return $this->save();
     }
-  
+
+    public function savePdf() {
+        
+        // Desatachar behavior para não ficar em looping infinito
+        $this->detachBehavior('pdf');
+
+        $agrupador = Util::generateHashSha256(5);
+        // get your HTML raw content without any layouts or scripts
+        $content = Yii::$app->controller->renderPartial(
+                '@backend/modules/doman/views/atividade/_reportView', [
+            'atividade' => $this,
+            'agrupador' => $agrupador
+        ]);
+
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+            // set to use core fonts only
+            'mode' => Pdf::MODE_CORE,
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+            // portrait orientation
+            'orientation' => Pdf::ORIENT_LANDSCAPE,
+            // stream to browser inline
+            'destination' => Pdf::DEST_STRING,
+            // your html content input
+            'content' => $content,
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting 
+            'cssFile' => '@backend/web/css/atividadePdf.css',
+            // any css to be embedded if required
+            //'cssInline' => '.kv-heading-1{font-size:18px}',
+            // set mPDF properties on the fly
+            'options' => ['title' => 'Bits de Inteligência'],
+            // call mPDF methods on the fly
+            'methods' => [
+                'SetHeader' => [],
+                'SetFooter' => [],
+            ]
+        ]);
+
+        //Yii::$app->dumper->debug($pdf->render(), true);
+        $path = Yii::getAlias("@backend") . "/web/" . Atividade::PDF_PATH;
+        $fileName = Util::generateHashSha256(6) . "_" . "atividade_" . $this->id . ".pdf";
+        //Yii::$app->dumper->debug($path . $fileName, true);
+        file_put_contents($path . $fileName, $pdf->render());
+
+        $this->pdf = Atividade::PDF_PATH . $fileName;
+        $this->save();
+    }
 
 }

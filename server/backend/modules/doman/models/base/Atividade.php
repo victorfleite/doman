@@ -99,6 +99,7 @@ class Atividade extends \yii\db\ActiveRecord {
             'autoplay' => Yii::t('translation', 'Autoplay'),
             'som_id' => Yii::t('translation', 'Som'),
             'atividade_pai' => Yii::t('translation', 'Atividade Pai'),
+            'descricao'=>Yii::t('translation', 'Descrição'),
             'instrucao'=>Yii::t('translation', 'Instrução'),
             'tagNames' => Yii::t('translation', 'Tags'),
         ];
