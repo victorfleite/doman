@@ -75,7 +75,7 @@
 <div style="text-align: center;">www.cvf-brasil.com</div>
 
 <?php
-$cartoes = $atividade->getCartoes()->where(["deletado" => false, "status" => 1])->all();
+$cartoes = $atividade->getCartoes()->where(["deletado" => false, "status" => 1])->orderBy('ordem')->all();
 $i = 0;
 foreach ($cartoes as $cartao) {
     ?>

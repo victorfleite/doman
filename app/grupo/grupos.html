@@ -40,20 +40,24 @@
                         </div-->
                         <img ng-src="{{vm.path + grupo.grupo_imagem}}" class="img-full line-bottom" " style="{{(grupo.status)? '':
                             'filter: grayscale(100%);'}} ">
-                    </div>
+                        <img class="medal-honor-icon" ng-if="vm.checkboxes[$index]==2" src="assets/img/honour-medal-icon.png ">    
+                    </div>                    
                 </a>
-                <div ng-if="vm.verificaTipoEducador()" class="form-group" style="text-align:center; padding:5px">
+                <div ng-if="vm.verificaTipoEducador() " class="form-group " style="text-align:center; padding:5px ">
                         <div class="btn-group btn-group-sm">
-                            <label ng-class=" vm.checkboxes[$index] == 1 ? ' btn bt-success' : ' btn bt-default'" ng-model="vm.checkboxes[$index]" uib-btn-radio="0" uncheckable>Dasabilitado</label>
-                            <label ng-class=" vm.checkboxes[$index] == 2 ? ' btn bt-success' : ' btn bt-default'" ng-model="vm.checkboxes[$index]" uib-btn-radio="1" uncheckable>Aberto</label>
-                            <label ng-class=" vm.checkboxes[$index] == 3 ? ' btn bt-success' : ' btn bt-default'" ng-model="vm.checkboxes[$index]" uib-btn-radio="2" uib-uncheckable="uncheckable">Finalizado</label>
+                            <label ng-class="[ vm.checkboxes[$index]==0 ? 'btn btn-mini btn-primary' : 'btn btn-mini btn-default']
+                            " ng-model="vm.checkboxes[$index] " uib-btn-radio="0">Dasabilitado</label>
+                            <label ng-class="[ vm.checkboxes[$index]==1 ? 'btn btn-mini btn-primary' : 'btn btn-mini btn-default']
+                            " ng-model="vm.checkboxes[$index] " uib-btn-radio="1">Aberto</label>
+                            <label ng-class="[ vm.checkboxes[$index]==2 ? 'btn btn-mini btn-primary' : 'btn btn-mini btn-default']
+                            " ng-model="vm.checkboxes[$index] " uib-btn-radio="2">Finalizado</label>
                         </div>
                 </div>
-                <div class="hbox text-center b-b b-light text-sm " style="backgroud-color:red">
+                <div class="hbox text-center b-b b-light text-sm">
                     
                     <a ng-click="vm.setSelecionado(grupo) " class="col padder-v text-muted ">
-                        <i class="fa {{(grupo.status)? 'fa-play-circle-o': 'fa-stop-circle'}} " block m-b-xs fa-2x" style="{{(grupo.status)?'color:green':''}}"></i>
-                        <span style="{{(grupo.status)?'color:green':''}}">{{(grupo.status)?'Play':'Desabilitado'}}</span>
+                        <i ng-if="grupo.status == 1"  class="fa {{(grupo.status)? 'fa-play-circle-o': ''}} " block m-b-xs fa-2x" style="{{(grupo.status)?'color:green':''}}"></i>
+                        <span style="{{(grupo.status)?'color:green':''}}">{{vm.getLabelStatus(grupo.status)}}</span>
                 </a>
                 </div>
             </div>

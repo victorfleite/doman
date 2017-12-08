@@ -123,4 +123,9 @@ a {
   border-bottom: 1px solid #d3d9e0;
 }
 
+.medal-honor-icon{
+  position: absolute;
+  left:66%;
+  top:0%;
+}
 
