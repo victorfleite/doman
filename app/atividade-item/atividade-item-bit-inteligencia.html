@@ -56,12 +56,14 @@
         <div class="col-sm-5">
             <div class="row">
                 <div class="col-sm-6">
-
-                   
+                    <div class="text-left" style="margin: 0 0 15 0;">
+                        <a ng-click="" class="btn btn-primary btn-addon"><i class="icon-directions"></i>Cartões</a>
+                    </div>
                 </div>
                 <div class="col-sm-6">
+
                     <div class="text-right" style="margin: 0 0 15 0;">
-                        <a ng-href="{{ vm.path + vm.atividade.pdf }}"  target="_blank" class="btn btn-info btn-addon"><i class="fa fa-print "></i>Imprimir</a>
+                        <a ng-href="{{ vm.path + vm.atividade.pdf }}" target="_blank" class="btn btn-info btn-addon"><i class="fa fa-print "></i>Imprimir</a>
                     </div>
                 </div>
             </div>
@@ -75,8 +77,8 @@
                     <!--h4><small>last </small>12<small> hrs</small></h4>--
                         <small class="text-muted block">60%</small-->
                     <div class="inline">
-                        <div easypiechart options="options" percent="percent">
-                            <div>
+                        <div easypiechart style="position: relative; top: -30px;" options="options" percent="percent">
+                            <div style="position: relative;top: 120px;">
                                 <span class="h2 m-l-sm step">{{percent}}</span>%
                                 <div class="text text-sm">até hoje</div>
                             </div>
@@ -90,7 +92,7 @@
             <div>
                 <div class="panel panel-default">
                     <div class="panel-heading font-bold">
-                        Linha do Tempo
+                        Minha linha do tempo
                     </div>
                     <div class="panel-body">
                         <div class="wrapper">
@@ -101,19 +103,19 @@
                                 <li class="tl-item">
                                     <div class="tl-wrap b-success">
                                         <span class="tl-date">29/10/2017<br>16:00</span>
-                                        <div class="tl-content panel padder b-a">
+                                        <!--div class="tl-content panel padder b-a">
                                             <span class="arrow left pull-up"></span>
                                             <div>Identificou 4</div>
-                                        </div>
+                                        </div-->
                                     </div>
                                 </li>
                                 <li class="tl-item tl-left">
                                     <div class="tl-wrap b-success">
                                         <span class="tl-date">29/10/2017<br>12:00</span>
-                                        <div class="tl-content panel padder b-a">
+                                        <!--div class="tl-content panel padder b-a">
                                             <span class="arrow left pull-up"></span>
                                             <div>Identificou 2</div>
-                                        </div>
+                                        </div-->
                                     </div>
                                 </li>
                                 <li class="tl-item tl-left">
