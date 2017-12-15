@@ -4034,3 +4034,1218 @@ DETAIL:  Registro que falhou contém (6, 9, null, null, null, 2017-11-19 22:26:3
     'REQUEST_TIME_FLOAT' => 1512690313.137
     'REQUEST_TIME' => 1512690313
 ]
+2017-12-15 17:15:31 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:104
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupo()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupo', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 17:15:31 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '5f399055f4aebabef94d786f33724570e9110f48090d43ca1f559f5f6376fcbaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"YpB7JSJ5p8I6j6uXYkgH-RVPl7NffcmF\";}'
+    'advanced-backend' => 'jp28pcoe8160lsd70tqm4h1pb4'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=5f399055f4aebabef94d786f33724570e9110f48090d43ca1f559f5f6376fcbaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22YpB7JSJ5p8I6j6uXYkgH-RVPl7NffcmF%22%3B%7D; advanced-backend=jp28pcoe8160lsd70tqm4h1pb4; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '37710'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupo'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupo'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupo'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupo'
+    'REQUEST_TIME_FLOAT' => 1513365331.806
+    'REQUEST_TIME' => 1513365331
+]
+2017-12-15 17:15:37 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:104
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupo()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupo', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 17:15:37 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf-backend' => '5f399055f4aebabef94d786f33724570e9110f48090d43ca1f559f5f6376fcbaa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"YpB7JSJ5p8I6j6uXYkgH-RVPl7NffcmF\";}'
+    'advanced-backend' => 'jp28pcoe8160lsd70tqm4h1pb4'
+    'language' => 'a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea:2:{i:0;s:8:\"language\";i:1;s:5:\"pt-BR\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '32'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'HTTP_COOKIE' => '_csrf-backend=5f399055f4aebabef94d786f33724570e9110f48090d43ca1f559f5f6376fcbaa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22YpB7JSJ5p8I6j6uXYkgH-RVPl7NffcmF%22%3B%7D; advanced-backend=jp28pcoe8160lsd70tqm4h1pb4; language=a7ee0934256e3f0e08922cac4acdd15391736cca25e19dfa0f138e18716df69ea%3A2%3A%7Bi%3A0%3Bs%3A8%3A%22language%22%3Bi%3A1%3Bs%3A5%3A%22pt-BR%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '37706'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupo'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupo'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupo'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupo'
+    'REQUEST_TIME_FLOAT' => 1513365337.888
+    'REQUEST_TIME' => 1513365337
+]
+2017-12-15 17:33:54 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY093]: Invalid parameter number: :alunoId in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:306
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(306): PDOStatement->bindValue(':alunoId', 10, 1)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(250): yii\db\Command->bindPendingParams()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1062): yii\db\Command->prepare(true)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#4 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoGrupoAluno.php(32): yii\db\Command->queryOne()
+#5 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(204): api\versions\v1\models\HistoricoGrupoAluno::getHistoricoGrupoAluno(16, 10)
+#6 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessGrupoAluno()
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[HY093]: Invalid parameter number: :alunoId
+Failed to prepare SQL:  SELECT educador_id, grupo_id, aluno_id, titulo, TO_CHAR(data_acesso, 'DD.MM.YYYY HH24:MI') as data_acesso  from historico_grupo_aluno h join grupo g on h.grupo_id = g.id  where educador_id=:educadorId and aluno_id:alunoId  order by data_acesso desc limit 1 in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:254
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1062): yii\db\Command->prepare(true)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoGrupoAluno.php(32): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(204): api\versions\v1\models\HistoricoGrupoAluno::getHistoricoGrupoAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessGrupoAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => HY093
+    [1] => 0
+)
+
+2017-12-15 17:33:54 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '33'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '5e898fa1-5ff3-1ee0-76de-177b4c636c79'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '38100'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-grupo-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-last-access-grupo-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-last-access-grupo-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-grupo-aluno'
+    'REQUEST_TIME_FLOAT' => 1513366434.436
+    'REQUEST_TIME' => 1513366434
+]
+2017-12-15 19:15:12 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:86
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionGetGrupos()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-grupos', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 19:15:12 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '29'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '0b173163-a9af-0d40-327e-183306f8637f'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '41264'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-grupos'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-grupos'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-grupos'
+    'REQUEST_TIME_FLOAT' => 1513372512.572
+    'REQUEST_TIME' => 1513372512
+]
+2017-12-15 19:50:05 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "titulo" não existe
+LINE 1:  SELECT educador_id, grupo_id, aluno_id, titulo as grupo_tit...
+                                                 ^ in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoGrupoAluno.php(32): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(204): api\versions\v1\models\HistoricoGrupoAluno::getHistoricoGrupoAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessGrupoAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "titulo" não existe
+LINE 1:  SELECT educador_id, grupo_id, aluno_id, titulo as grupo_tit...
+                                                 ^
+The SQL being executed was:  SELECT educador_id, grupo_id, aluno_id, titulo as grupo_titulo, TO_CHAR(data_acesso, 'DD.MM.YYYY HH24:MI') as data_acesso  from vw_historico_grupo_aluno where educador_id=16 and aluno_id=10  order by data_acesso desc limit 1 in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), ' SELECT educado...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoGrupoAluno.php(32): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(204): api\versions\v1\models\HistoricoGrupoAluno::getHistoricoGrupoAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessGrupoAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERRO:  coluna "titulo" não existe
+LINE 1:  SELECT educador_id, grupo_id, aluno_id, titulo as grupo_tit...
+                                                 ^
+)
+
+2017-12-15 19:50:05 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '33'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'ef02a2f5-331f-bd4d-14a8-75d28d094906'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42142'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-grupo-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-last-access-grupo-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-last-access-grupo-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-grupo-aluno'
+    'REQUEST_TIME_FLOAT' => 1513374605.683
+    'REQUEST_TIME' => 1513374605
+]
+2017-12-15 19:50:29 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42P01]: Undefined table: 7 ERRO:  faltando entrada para tabela "g" na cláusula FROM
+LINE 1:  SELECT educador_id, grupo_id, aluno_id, g.titulo as grupo_t...
+                                                 ^ in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoGrupoAluno.php(32): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(204): api\versions\v1\models\HistoricoGrupoAluno::getHistoricoGrupoAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessGrupoAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[42P01]: Undefined table: 7 ERRO:  faltando entrada para tabela "g" na cláusula FROM
+LINE 1:  SELECT educador_id, grupo_id, aluno_id, g.titulo as grupo_t...
+                                                 ^
+The SQL being executed was:  SELECT educador_id, grupo_id, aluno_id, g.titulo as grupo_titulo, TO_CHAR(data_acesso, 'DD.MM.YYYY HH24:MI') as data_acesso  from vw_historico_grupo_aluno where educador_id=16 and aluno_id=10  order by data_acesso desc limit 1 in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), ' SELECT educado...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoGrupoAluno.php(32): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(204): api\versions\v1\models\HistoricoGrupoAluno::getHistoricoGrupoAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessGrupoAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42P01
+    [1] => 7
+    [2] => ERRO:  faltando entrada para tabela "g" na cláusula FROM
+LINE 1:  SELECT educador_id, grupo_id, aluno_id, g.titulo as grupo_t...
+                                                 ^
+)
+
+2017-12-15 19:50:29 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '33'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '3195ef48-48b7-a0ee-ceb0-087802c75c24'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42146'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-grupo-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-last-access-grupo-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-last-access-grupo-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-grupo-aluno'
+    'REQUEST_TIME_FLOAT' => 1513374629.951
+    'REQUEST_TIME' => 1513374629
+]
+2017-12-15 19:58:39 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42601]: Syntax error: 7 ERRO:  erro de sintaxe em ou próximo a "("
+LINE 1: ...uno_id, aluno_nome, grupo_id, grupo_titulo TO_CHAR(data_inse...
+                                                             ^ in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoAtividadeAluno.php(33): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(221): api\versions\v1\models\HistoricoAtividadeAluno::getHistoricoAtividadeAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessAtividadesAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[42601]: Syntax error: 7 ERRO:  erro de sintaxe em ou próximo a "("
+LINE 1: ...uno_id, aluno_nome, grupo_id, grupo_titulo TO_CHAR(data_inse...
+                                                             ^
+The SQL being executed was:  SELECT educador_id, educador_nome, aluno_id, aluno_nome, grupo_id, grupo_titulo TO_CHAR(data_insercao, 'DD.MM.YYYY HH24:MI') as data_insercao  from vw_historico_grupo_aluno where educador_id=16 and aluno_id=10  order by data_insercao desc in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), ' SELECT educado...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoAtividadeAluno.php(33): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(221): api\versions\v1\models\HistoricoAtividadeAluno::getHistoricoAtividadeAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessAtividadesAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERRO:  erro de sintaxe em ou próximo a "("
+LINE 1: ...uno_id, aluno_nome, grupo_id, grupo_titulo TO_CHAR(data_inse...
+                                                             ^
+)
+
+2017-12-15 19:58:39 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '33'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '153b94df-75a7-b26f-a4a9-844f3bde095c'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42156'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-atividades-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-last-access-atividades-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-last-access-atividades-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-atividades-aluno'
+    'REQUEST_TIME_FLOAT' => 1513375119.88
+    'REQUEST_TIME' => 1513375119
+]
+2017-12-15 19:59:45 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "data_insercao" não existe
+LINE 1: ..._id, aluno_nome, grupo_id, grupo_titulo,  TO_CHAR(data_inser...
+                                                             ^ in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoAtividadeAluno.php(33): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(221): api\versions\v1\models\HistoricoAtividadeAluno::getHistoricoAtividadeAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessAtividadesAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "data_insercao" não existe
+LINE 1: ..._id, aluno_nome, grupo_id, grupo_titulo,  TO_CHAR(data_inser...
+                                                             ^
+The SQL being executed was:  SELECT educador_id, educador_nome, aluno_id, aluno_nome, grupo_id, grupo_titulo,  TO_CHAR(data_insercao, 'DD.MM.YYYY HH24:MI') as data_insercao  from vw_historico_grupo_aluno where educador_id=16 and aluno_id=10  order by data_insercao desc in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), ' SELECT educado...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoAtividadeAluno.php(33): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(221): api\versions\v1\models\HistoricoAtividadeAluno::getHistoricoAtividadeAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessAtividadesAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERRO:  coluna "data_insercao" não existe
+LINE 1: ..._id, aluno_nome, grupo_id, grupo_titulo,  TO_CHAR(data_inser...
+                                                             ^
+)
+
+2017-12-15 19:59:45 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '33'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'b86e9344-a792-5a47-01c7-82dbaf356334'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42166'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-atividades-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-last-access-atividades-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-last-access-atividades-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-atividades-aluno'
+    'REQUEST_TIME_FLOAT' => 1513375185.263
+    'REQUEST_TIME' => 1513375185
+]
+2017-12-15 20:00:42 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "data_insercao" não existe
+LINE 1: ..._id, aluno_nome, grupo_id, grupo_titulo,  TO_CHAR(data_inser...
+                                                             ^ in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoAtividadeAluno.php(33): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(221): api\versions\v1\models\HistoricoAtividadeAluno::getHistoricoAtividadeAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessAtividadesAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "data_insercao" não existe
+LINE 1: ..._id, aluno_nome, grupo_id, grupo_titulo,  TO_CHAR(data_inser...
+                                                             ^
+The SQL being executed was:  SELECT educador_id, educador_nome, aluno_id, aluno_nome, grupo_id, grupo_titulo,  TO_CHAR(data_insercao, 'DD.MM.YYYY HH24:MI') as data_insercao  from vw_historico_grupo_aluno  where educador_id=16 and aluno_id=10  order by data_insercao desc in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), ' SELECT educado...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoAtividadeAluno.php(33): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(221): api\versions\v1\models\HistoricoAtividadeAluno::getHistoricoAtividadeAluno(16, 10)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetLastAccessAtividadesAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42703
+    [1] => 7
+    [2] => ERRO:  coluna "data_insercao" não existe
+LINE 1: ..._id, aluno_nome, grupo_id, grupo_titulo,  TO_CHAR(data_inser...
+                                                             ^
+)
+
+2017-12-15 20:00:42 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '33'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'e5394e43-ef4f-cf83-d824-3d2c73723884'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42170'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-atividades-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-last-access-atividades-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-last-access-atividades-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-atividades-aluno'
+    'REQUEST_TIME_FLOAT' => 1513375242.289
+    'REQUEST_TIME' => 1513375242
+]
+2017-12-15 20:08:10 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:206
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionSetHistoricoAtividadeAluno()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-historico-a...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 20:08:10 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '9aaacbc7-ec6e-4842-8b3f-b66431fa013f'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42190'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-historico-atividade-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-historico-atividade-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'REQUEST_TIME_FLOAT' => 1513375690.42
+    'REQUEST_TIME' => 1513375690
+]
+2017-12-15 20:08:17 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:206
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionSetHistoricoAtividadeAluno()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-historico-a...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 20:08:17 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'c2f4d92b-4776-1305-4863-de8da964cd0b'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42192'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-historico-atividade-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-historico-atividade-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'REQUEST_TIME_FLOAT' => 1513375697.186
+    'REQUEST_TIME' => 1513375697
+]
+2017-12-15 20:08:32 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:206
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionSetHistoricoAtividadeAluno()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-historico-a...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 20:08:32 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '79908c82-cd74-66fb-f124-c54e85007145'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42196'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-historico-atividade-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-historico-atividade-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'REQUEST_TIME_FLOAT' => 1513375712.868
+    'REQUEST_TIME' => 1513375712
+]
+2017-12-15 20:17:33 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:206
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionSetHistoricoAtividadeAluno()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-historico-a...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 20:17:33 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '32f5d15a-a0c3-61bb-a951-95ae59c9d3d2'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42316'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-historico-atividade-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-historico-atividade-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'REQUEST_TIME_FLOAT' => 1513376253.343
+    'REQUEST_TIME' => 1513376253
+]
+2017-12-15 20:19:03 [::1][-][-][error][Error] Error: Call to undefined method api\versions\v1\models\HistoricoAtividadeAluno::save() in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:213
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionSetHistoricoAtividadeAluno()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-historico-a...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 20:19:03 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '3f6a3cc2-1f98-b3fc-a6ed-7395e34d6b39'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42326'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-historico-atividade-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-historico-atividade-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'REQUEST_TIME_FLOAT' => 1513376343.735
+    'REQUEST_TIME' => 1513376343
+]
+2017-12-15 20:19:42 [::1][-][-][error][Error] Error: Call to undefined method api\versions\v1\models\HistoricoAtividadeAluno::save() in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:213
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionSetHistoricoAtividadeAluno()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-historico-a...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 20:19:42 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '4ad3dbb9-d3cc-453c-946b-9a85281676f5'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42330'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-historico-atividade-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-historico-atividade-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'REQUEST_TIME_FLOAT' => 1513376382.454
+    'REQUEST_TIME' => 1513376382
+]
+2017-12-15 20:20:48 [::1][-][-][error][Error] Error: Call to undefined method api\versions\v1\models\HistoricoAtividadeAluno::save() in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:213
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionSetHistoricoAtividadeAluno()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-historico-a...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-15 20:20:48 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '4829d04a-9cda-b540-6a8b-bcab4e563fb0'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '42334'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-historico-atividade-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-historico-atividade-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'REQUEST_TIME_FLOAT' => 1513376448.053
+    'REQUEST_TIME' => 1513376448
+]
+2017-12-15 20:35:14 [::1][-][-][error][yii\db\IntegrityException] PDOException: SQLSTATE[23503]: Foreign key violation: 7 ERRO:  inserção ou atualização em tabela "historico_atividade_aluno" viola restrição de chave estrangeira "fk_historico_educador_aluno_atividade"
+DETAIL:  Chave (atividade_id)=(60) não está presente na tabela "atividade". in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/pgsql/Schema.php(608): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(511): yii\db\pgsql\Schema->insert('public.historic...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(477): yii\db\ActiveRecord->insertInternal(NULL)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(646): yii\db\ActiveRecord->insert(true, NULL)
+#6 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(213): yii\db\BaseActiveRecord->save()
+#7 [internal function]: api\versions\v1\controllers\ServiceController->actionSetHistoricoAtividadeAluno()
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-historico-a...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#12 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23503]: Foreign key violation: 7 ERRO:  inserção ou atualização em tabela "historico_atividade_aluno" viola restrição de chave estrangeira "fk_historico_educador_aluno_atividade"
+DETAIL:  Chave (atividade_id)=(60) não está presente na tabela "atividade".
+The SQL being executed was: INSERT INTO "public"."historico_atividade_aluno" ("educador_id", "aluno_id", "grupo_id", "atividade_id") VALUES (16, 10, 5, 60) RETURNING "id" in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO "pu...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(400): yii\db\Command->queryInternal('fetch', NULL)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/pgsql/Schema.php(608): yii\db\Command->queryOne()
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(511): yii\db\pgsql\Schema->insert('public.historic...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(477): yii\db\ActiveRecord->insertInternal(NULL)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(646): yii\db\ActiveRecord->insert(true, NULL)
+#6 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(213): yii\db\BaseActiveRecord->save()
+#7 [internal function]: api\versions\v1\controllers\ServiceController->actionSetHistoricoAtividadeAluno()
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-historico-a...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#12 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 23503
+    [1] => 7
+    [2] => ERRO:  inserção ou atualização em tabela "historico_atividade_aluno" viola restrição de chave estrangeira "fk_historico_educador_aluno_atividade"
+DETAIL:  Chave (atividade_id)=(60) não está presente na tabela "atividade".
+)
+
+2017-12-15 20:35:14 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '63'
+    'HTTP_ACCEPT' => 'application/json, text/plain, */*'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'CONTENT_TYPE' => 'application/json;charset=UTF-8'
+    'HTTP_REFERER' => 'http://localhost/doman/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '43716'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-historico-atividade-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-historico-atividade-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-historico-atividade-aluno'
+    'REQUEST_TIME_FLOAT' => 1513377314.059
+    'REQUEST_TIME' => 1513377314
+]
+2017-12-15 21:23:05 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: v1/service/get-last-access-atividades-aluno in /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-last-access...', Array)
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#2 {main}
+2017-12-15 21:23:05 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '94019ade-0956-8b04-e787-68ab07db1b03'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '33242'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-atividades-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-last-access-atividades-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-last-access-atividades-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-last-access-atividades-aluno'
+    'REQUEST_TIME_FLOAT' => 1513380185.612
+    'REQUEST_TIME' => 1513380185
+]
+2017-12-15 21:23:20 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42601]: Syntax error: 7 ERRO:  erro de sintaxe em ou próximo a "grupo_id"
+LINE 1: ...dade_aluno  where educador_id=$1 and aluno_id=$2  grupo_id=$...
+                                                             ^ in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:1067
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1067): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoAtividadeAluno.php(37): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(245): api\versions\v1\models\HistoricoAtividadeAluno::getHistoricoAtividadeAluno(16, 10, 6, 4)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetHistoricoAtividadeAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-historico-a...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[42601]: Syntax error: 7 ERRO:  erro de sintaxe em ou próximo a "grupo_id"
+LINE 1: ...dade_aluno  where educador_id=$1 and aluno_id=$2  grupo_id=$...
+                                                             ^
+The SQL being executed was:  SELECT educador_id, educador_nome, aluno_id, aluno_nome, grupo_id, grupo_titulo,  TO_CHAR(data_insercao, 'DD.MM.YYYY HH24:MI') as data_insercao  from vw_historico_atividade_aluno  where educador_id=16 and aluno_id=10  grupo_id=6 and atividade_id=4  order by data_insercao desc in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1082): yii\db\Schema->convertException(Object(PDOException), ' SELECT educado...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(386): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/doman/server/service/api/versions/v1/models/HistoricoAtividadeAluno.php(37): yii\db\Command->queryAll()
+#3 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(245): api\versions\v1\models\HistoricoAtividadeAluno::getHistoricoAtividadeAluno(16, 10, 6, 4)
+#4 [internal function]: api\versions\v1\controllers\ServiceController->actionGetHistoricoAtividadeAluno()
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('get-historico-a...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/get-...', Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42601
+    [1] => 7
+    [2] => ERRO:  erro de sintaxe em ou próximo a "grupo_id"
+LINE 1: ...dade_aluno  where educador_id=$1 and aluno_id=$2  grupo_id=$...
+                                                             ^
+)
+
+2017-12-15 21:23:20 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'e0d08142-9946-f2f0-7b18-e128a9a0a0ad'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '33244'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/get-historico-atividade-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/get-historico-atividade-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/get-historico-atividade-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/get-historico-atividade-aluno'
+    'REQUEST_TIME_FLOAT' => 1513380200.584
+    'REQUEST_TIME' => 1513380200
+]

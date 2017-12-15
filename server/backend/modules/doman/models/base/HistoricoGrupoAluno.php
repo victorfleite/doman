@@ -5,16 +5,15 @@ namespace app\modules\doman\models\base;
 use Yii;
 
 /**
- * This is the base model class for table "public.historico_atividade_aluno".
+ * This is the base model class for table "public.historico_grupo_aluno".
  *
  * @property integer $id
- * @property integer $educador_id
- * @property integer $aluno_id
  * @property integer $grupo_id
- * @property integer $atividade_id
- * @property string $data_insercao
+ * @property integer $aluno_id
+ * @property integer $educador_id
+ * @property string $data_acesso
  */
-class HistoricoAtividadeAluno extends \yii\db\ActiveRecord
+class HistoricoGrupoAluno extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
@@ -48,9 +47,9 @@ class HistoricoAtividadeAluno extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['educador_id', 'aluno_id', 'grupo_id', 'atividade_id'], 'required'],
-            [['educador_id', 'aluno_id', 'grupo_id', 'atividade_id'], 'integer'],
-            [['data_insercao'], 'safe']
+            [['grupo_id', 'aluno_id', 'educador_id'], 'required'],
+            [['grupo_id', 'aluno_id', 'educador_id'], 'integer'],
+            [['data_acesso'], 'safe']
         ];
     }
 
@@ -59,7 +58,7 @@ class HistoricoAtividadeAluno extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'public.historico_atividade_aluno';
+        return 'public.historico_grupo_aluno';
     }
 
     /**
@@ -69,11 +68,10 @@ class HistoricoAtividadeAluno extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('translation', 'ID'),
-            'educador_id' => Yii::t('translation', 'Educador ID'),
-            'aluno_id' => Yii::t('translation', 'Aluno ID'),
             'grupo_id' => Yii::t('translation', 'Grupo ID'),
-            'atividade_id' => Yii::t('translation', 'Atividade ID'),
-            'data_insercao' => Yii::t('translation', 'Data Insercao'),
+            'aluno_id' => Yii::t('translation', 'Aluno ID'),
+            'educador_id' => Yii::t('translation', 'Educador ID'),
+            'data_acesso' => Yii::t('translation', 'Data Acesso'),
         ];
     }
 }

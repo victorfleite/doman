@@ -7,30 +7,36 @@
         .controller('AtividadeItemController', atividadeItemController);
 
     atividadeItemController.$inject = [
+        '$rootScope',
         '$scope',
         'authService',
         '$uibModal',
         '$document',
         'selecionadosService',
         '$log',
+        '$q',
         'ngYoutubeEmbedService',
         'ngAudio',
         '$state',
         'hotkeys',
+        'atividadeService',
         'CONSTANTES',
     ];
 
     function atividadeItemController(
+        $rootScope,
         $scope,
         authService,
         $uibModal,
         $document,
         selecionadosService,
         $log,
+        $q,
         ngYoutubeEmbedService,
         ngAudio,
         $state,
         hotkeys,
+        atividadeService,
         CONSTANTES,
     ) {
         //$log.log(hotkeys);
@@ -41,6 +47,7 @@
         vm.aluno = selecionadosService.getAluno();
         vm.grupo = selecionadosService.getGrupo();
         vm.atividade = selecionadosService.getAtividade();
+        vm.historico = [];
         
 
         vm.getAutoPlay = function () {
@@ -64,6 +71,16 @@
             }
 
         }
+
+        // Historico de Cartoes aplicados
+        $rootScope.loading = true;
+        $q.all([
+            atividadeService.getHistoricoAtividadeAluno(vm.educador.id, vm.aluno.aluno_id, vm.grupo.grupo_id, vm.atividade.atividade_id)
+            ])
+            .then(function (result) {
+              vm.historico = result[0].data.retorno;
+              $rootScope.loading = false;
+          });
 
 
         // GRAFICO PIZZA
@@ -127,6 +144,15 @@
                 //appendTo: parentElem,
                 resolve: {
                     log: $log,
+                    educador: function(){
+                        return vm.educador;
+                    },
+                    aluno: function(){
+                        return vm.aluno;
+                    },
+                    grupo: function(){
+                        return vm.grupo;
+                    },
                     atividade: function () {
                         return vm.atividade;
                     },
@@ -135,6 +161,9 @@
                     },
                     hotkeys: function () {
                         return hotkeys;
+                    },
+                    atividadeService: function(){
+                        return atividadeService;
                     }
                 }
             });

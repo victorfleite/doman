@@ -33,7 +33,7 @@
                             Último Grupo Acessado
                         </div>
                         <div class="panel-body">
-                            <div>10.12.2017 10:20 - <a style="text-decoration: underline" href=""> Semana 1</a></div>
+                            <div ng-repeat="acesso in vm.acessos">{{acesso.data_acesso}} - <a style="text-decoration: underline" ng-click="vm.setGrupoJaAcessado(acesso.grupo_id)"> {{acesso.grupo_titulo}}</a></div>
                         </div>
                     </div>
         </div>

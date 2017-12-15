@@ -53,6 +53,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             [
+                'label' => 'Tags',
+                'value' => function($data) {
+                    $tags = [];
+                    $list = $data->getTags()->all();
+                    foreach ($list as $item) {
+                        $tags[] = $item['name'];
+                    }
+                    return implode($tags, ', ');
+                }
+            ],
+            [
                 'attribute' => 'status',
                 'value' => function($data) {
                     return app\modules\doman\models\Aluno::getStatusLabel($data->status);
@@ -75,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </p>
 <h3>Educador Associados</h3>
 <?php
-$educadores = $model->getEducadores()->where(['deletado'=>false])->all();
+$educadores = $model->getEducadores()->where(['deletado' => false])->all();
 $dataProvider = new ArrayDataProvider([
     'allModels' => $educadores,
     'sort' => [
@@ -86,7 +97,7 @@ $dataProvider = new ArrayDataProvider([
     ],
         ]);
 
- echo GridView::widget([
+echo GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [
         ['class' => 'yii\grid\SerialColumn'],

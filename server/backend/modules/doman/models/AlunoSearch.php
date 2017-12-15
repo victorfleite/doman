@@ -42,6 +42,7 @@ class AlunoSearch extends Aluno
      */
     public function search($params)
     {
+        
         $query = Aluno::find()->where(['deletado'=>false]);
         
 

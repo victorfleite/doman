@@ -93,7 +93,7 @@
                 <div class="panel-footer"><small>% de aprendizado</small></div>
             </div>
             <div class="line line-lg b-b b-light"></div>
-            <div>
+            <div ng-if="vm.historico.length > 0">
                 <div class="panel panel-default">
                     <div class="panel-heading font-bold">
                         Minha linha do tempo
@@ -104,33 +104,15 @@
                                 <li class="tl-header">
                                     <div class="btn btn-success">Agora</div>
                                 </li>
-                                <li class="tl-item">
+                                <li class="tl-item" ng-repeat="h in vm.historico">
                                     <div class="tl-wrap b-success">
-                                        <span class="tl-date">29/10/2017<br>16:00</span>
+                                        <span class="tl-date">{{h.data_insercao}}</span>
                                         <!--div class="tl-content panel padder b-a">
                                             <span class="arrow left pull-up"></span>
                                             <div>Identificou 4</div>
                                         </div-->
                                     </div>
-                                </li>
-                                <li class="tl-item tl-left">
-                                    <div class="tl-wrap b-success">
-                                        <span class="tl-date">29/10/2017<br>12:00</span>
-                                        <!--div class="tl-content panel padder b-a">
-                                            <span class="arrow left pull-up"></span>
-                                            <div>Identificou 2</div>
-                                        </div-->
-                                    </div>
-                                </li>
-                                <li class="tl-item tl-left">
-                                    <div class="tl-wrap b-success">
-                                        <span class="tl-date">29/10/2017<br>09:00</span>
-                                        <!--div class="tl-content panel padder b-a">
-                                    <span class="arrow left pull-up"></span>
-                                    <div>Identificou 2</div>
-                            </div-->
-                                    </div>
-                                </li>
+                                </li>                               
                                 <li class="tl-header">
                                     <div class="btn btn-sm btn-success btn-rounded">Início</div>
                                 </li>

@@ -14,7 +14,9 @@
     '$state',
     '$stateParams',
     '$log',
+    '$q',
     'alunoService',
+    'grupoService',
     'CONSTANTES'
   ];
 
@@ -26,7 +28,9 @@
     $state,
     $stateParams,
     $log,
+    $q,
     alunoService,
+    grupoService,
     CONSTANTES
   ) {
 
@@ -36,6 +40,7 @@
     vm.aluno = selecionadosService.getAluno();
     vm.educador = selecionadosService.getEducador();
     vm.grupos = [];
+    vm.acessos = [];
     $rootScope.loading = false;
     vm.educadorId = $stateParams.educador;
     vm.alunoId = $stateParams.aluno;
@@ -50,16 +55,32 @@
       }
     }
 
-    $rootScope.loading = true;
-    alunoService.getGrupos(vm.educadorId, vm.alunoId).then(function (resultado) {
-      vm.grupos = resultado.data.retorno;
+    vm.setGrupoJaAcessado = function(grupo_id){
       for (var i = 0; i < vm.grupos.length; i++) {
         var grupo = vm.grupos[i];
-        vm.checkboxes.push((grupo.status));
+        if(grupo.grupo_id == grupo_id){
+            vm.setSelecionado(grupo);
+        }
       }
-      $log.log(vm.checkboxes);
-      $rootScope.loading = false;
+    }
+
+    $rootScope.loading = true;
+
+    $q.all([
+      alunoService.getGrupos(vm.educadorId, vm.alunoId),
+      grupoService.getHistoricoEducadorAlunoGrupo(vm.educadorId, vm.alunoId)])
+      .then(function (result) {
+
+        vm.grupos = result[0].data.retorno;
+        for (var i = 0; i < vm.grupos.length; i++) {
+          var grupo = vm.grupos[i];
+          vm.checkboxes.push((grupo.status));
+        }
+        vm.acessos = [result[1].data.retorno];
+        //$log.log(vm.acessos);
+        $rootScope.loading = false;
     });
+
 
     vm.verificaTipoEducador = function () {
       switch (vm.educador.tipo) {

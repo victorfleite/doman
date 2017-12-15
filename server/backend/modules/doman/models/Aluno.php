@@ -36,6 +36,7 @@ class Aluno extends BaseAluno implements \common\components\traits\SimpleStatusI
             [['data_nascimento', 'data_criacao'], 'safe'],
             [['tipo', 'user_id', 'status'], 'integer'],
             [['deletado'], 'boolean'],
+            [['tagNames'], 'safe'],
             [['sexo'], 'string', 'max' => 1],
             [['nome'], 'string', 'max' => 255],
             [['imagem', 'image'], 'safe'],
@@ -106,8 +107,11 @@ class Aluno extends BaseAluno implements \common\components\traits\SimpleStatusI
                 ],
                 'replaceRegularDelete' => true
             ],
+            'taggable' => [
+                'class' => \dosamigos\taggable\Taggable::className(),
+            ],
             'normalizador' => [
-                'class' => \common\components\behaviors\NormalizadorBehavior::className(),            
+                'class' => \common\components\behaviors\NormalizadorBehavior::className(),
             ],
         ];
     }

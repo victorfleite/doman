@@ -5,12 +5,14 @@
     angular.module('app')
         .controller('AtividadeItemModalController', atividadeItemModalController);
 
-    function atividadeItemModalController($scope, $uibModalInstance, log, atividade, items, ngAudio, hotkeys) {
+    function atividadeItemModalController($scope, $uibModalInstance, log, educador, aluno, grupo, atividade, items, ngAudio, hotkeys, atividadeService) {
 
         var slides = $scope.slides = [];
         $scope.items = items;
         $scope.atividade = atividade;
         $scope.audio_play = true;
+           
+        atividadeService.setHistoricoAtividadeAluno(educador.id, aluno.aluno_id, grupo.grupo_id, atividade.atividade_id);
 
         $scope.addSlide = function (image, id) {
             slides.push({

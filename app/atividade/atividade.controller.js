@@ -52,7 +52,7 @@
     $rootScope.loading = true;
 
     $q.all([
-      grupoService.getGrupo(vm.alunoId, vm.grupoId),
+      grupoService.getGrupo(vm.educador.id, vm.alunoId, vm.grupoId),
       grupoService.getAtividades(vm.alunoId, vm.grupoId)])
       .then(function (result) {
         vm.grupo = result[0].data.retorno;

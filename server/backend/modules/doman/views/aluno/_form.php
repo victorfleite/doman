@@ -32,9 +32,22 @@ use common\models\Util;
                     ]
                 ],
             ]);
-            ?>
+            ?>          
             <?= $form->field($model, 'tipo')->hiddenInput()->label(false); ?>
             <?= $form->field($model, 'sexo')->dropDownList(\app\modules\doman\models\Aluno::getSexoCombo()); ?>
+              <?=
+            $form->field($model, 'tagNames')->widget(dosamigos\selectize\SelectizeTextInput::className(), [
+                'loadUrl' => ['tag/list'],
+                'options' => ['class' => 'form-control'],
+                'clientOptions' => [
+                    'plugins' => ['remove_button'],
+                    'valueField' => 'name',
+                    'labelField' => 'name',
+                    'searchField' => ['name'],
+                    'create' => true,
+                ],
+            ]);
+            ?>
             <?= $form->field($model, 'status')->dropDownList(\app\modules\doman\models\Aluno::getStatusCombo()); ?>
         </div>
         <div class="col-lg-6">

@@ -8,6 +8,8 @@ namespace api\versions\v1\controllers;
 use api\versions\v1\models\Educador;
 use api\versions\v1\models\Atividade;
 use api\versions\v1\models\GrupoAluno;
+use api\versions\v1\models\HistoricoGrupoAluno;
+use api\versions\v1\models\HistoricoAtividadeAluno;
 
 class ServiceController extends \api\components\Controller {
 
@@ -23,7 +25,10 @@ class ServiceController extends \api\components\Controller {
                     'get-grupo',
                     'get-atividades',
                     'get-atividade',
-                    'set-status-grupos-aluno'
+                    'set-status-grupos-aluno',
+                    'set-historico-atividade-aluno',
+                    'get-last-access-grupo-aluno',
+                    'get-historico-atividade-aluno'
                 ],
                 'verbs' => ['POST'],
                 'roles' => ['?'],
@@ -94,12 +99,20 @@ class ServiceController extends \api\components\Controller {
     public function actionGetGrupo() {
 
         $post = \Yii::$app->request->post();
+        $educadorId = $post["educador_id"];
         $alunoId = $post["aluno_id"];
         $grupoId = $post["grupo_id"];
 
-        if (!isset($grupoId) || !isset($alunoId)) {
+
+        if (!isset($educadorId) || !isset($grupoId) || !isset($alunoId)) {
             throw new \Exception('Ops algo errado nos parâmetros');
         }
+
+        $historicoGrupoAluno = new HistoricoGrupoAluno();
+        $historicoGrupoAluno->educador_id = $educadorId;
+        $historicoGrupoAluno->aluno_id = $alunoId;
+        $historicoGrupoAluno->grupo_id = $grupoId;
+        $historicoGrupoAluno->save();
 
         return ['retorno' => Educador::getGrupoDoAluno($alunoId, $grupoId)[0]];
     }
@@ -179,6 +192,59 @@ class ServiceController extends \api\components\Controller {
             }
         }
         return ['retorno' => 'atualizado!'];
+    }
+
+    public function actionSetHistoricoAtividadeAluno() {
+
+        $post = \Yii::$app->request->post();
+        $educadorId = $post["educador_id"];
+        $alunoId = $post["aluno_id"];
+        $grupoId = $post["grupo_id"];
+        $atividadeId = $post["atividade_id"];
+
+        if (!isset($educadorId) || !isset($alunoId) || !isset($grupoId) || !isset($atividadeId)) {
+            throw new \Exception('Ops algo errado nos parâmetros');
+        }
+        $historico = new HistoricoAtividadeAluno();
+        $historico->educador_id = $educadorId;
+        $historico->aluno_id = $alunoId;
+        $historico->grupo_id = $grupoId;
+        $historico->atividade_id = $atividadeId;      
+        $historico->save();        
+
+        return ['retorno' => 'atualizado!'];
+    }
+
+    public function actionGetLastAccessGrupoAluno() {
+
+        $post = \Yii::$app->request->post();
+        $educadorId = $post["educador_id"];
+        $alunoId = $post["aluno_id"];
+
+        if (!isset($educadorId) || !isset($alunoId)) {
+            throw new \Exception('Ops algo errado nos parâmetros');
+        }
+
+        $lastAccess = HistoricoGrupoAluno::getHistoricoGrupoAluno($educadorId, $alunoId);
+
+        return ['retorno' => $lastAccess];
+    }
+
+    public function actionGetHistoricoAtividadeAluno() {
+
+        $post = \Yii::$app->request->post();
+        $educadorId = $post["educador_id"];
+        $alunoId = $post["aluno_id"];
+        $grupoId = $post["grupo_id"];
+        $atividadeId = $post["atividade_id"];
+
+        if (!isset($educadorId) || !isset($alunoId) || !isset($grupoId) || !isset($atividadeId)) {
+            throw new \Exception('Ops algo errado nos parâmetros');
+        }
+
+        $lastAccess = HistoricoAtividadeAluno::getHistoricoAtividadeAluno($educadorId, $alunoId, $grupoId, $atividadeId);
+
+        return ['retorno' => $lastAccess];
     }
 
 }
