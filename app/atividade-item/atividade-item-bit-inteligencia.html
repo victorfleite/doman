@@ -1,60 +1,69 @@
 <div class="wrapper-md">
     <div class="row">
         <div class="col-sm-7">
-            <div class="blog-post">
-                <div class="panel">
-                    <a href="#" ng-click="open('lg')">
-                        <div class="video-thumbnail">
-                            <img ng-src="{{vm.path + vm.atividade.atividade_imagem}}" class="img-full">
-                        </div>
-                    </a>
-                    <div class="slides-thumbnail" style="height: 100px">
-                        <ui-carousel slides="slides" slides-to-show="4" slides-to-scroll="1" initial-slide="1" autoplay="true" autoplay-speed="2000"
-                            dots="false">
-                            <carousel-item>
-                                <div class="slides-thumbnail-slide">
-                                    <div class="image-center">
-                                        <img ng-src="{{ item.imagem_caminho}}" height="113px" width="150x" class="img-responsive">
-                                    </div>
-                                </div>
-                            </carousel-item>
-                            <!-- For customize carousel next, previous button -->
-                            <carousel-prev>
-                                <!-- placed your previous button here -->
-                                <!--button>Prev</button-->
-                                <!-- end -->
-                            </carousel-prev>
 
-                            <carousel-next>
-                                <!-- placed your next button here -->
-                                <!--button>next</button-->
-                                <!-- end -->
-                            </carousel-next>
-                        </ui-carousel>
-                    </div>
-                    <div class="wrapper-lg" ng-if="vm.atividade.atividade_descricao">
-                        <h3 class="m-t-none"><a href>Descrição</a></h3>
-                        <div class="line line-lg b-b b-light"></div>
-                        <div>
-                            <p class="text-justify" ng-bind="vm.atividade.atividade_descricao">
-                            </p>
-                        </div>
-                    </div>
-                    <div class="wrapper-lg" ng-if="vm.atividade.atividade_instrucao">
-                        <h3 class="m-t-none"><a href>Instrução</a></h3>
-                        <div class="line line-lg b-b b-light"></div>
-                        <div>
-                            <p class="text-justify" ng-bind="vm.atividade.atividade_instrucao">
-                            </p>
-                        </div>
-                    </div>
+            <div class="col-sm-12">
+                <div class="text-left" style="margin: 0 0 15 0;">
+                    <a ui-sref="atividades({aluno: vm.aluno.aluno_id, grupo: vm.grupo.grupo_id})" class="btn btn-success btn-addon"><i class="fa fa-arrow-circle-left"></i>Voltar</a>
                 </div>
+            </div>
+            <div class="col-sm-12">
 
+                <div class="blog-post">
+                    <div class="panel">
+                        <a href="#" ng-click="open('lg')">
+                            <div class="video-thumbnail">
+                                <img ng-src="{{vm.path + vm.atividade.atividade_imagem}}" class="img-full">
+                            </div>
+                        </a>
+                        <div class="slides-thumbnail" style="height: 100px">
+                            <ui-carousel slides="slides" slides-to-show="4" slides-to-scroll="1" initial-slide="1" autoplay="true" autoplay-speed="2000"
+                                dots="false">
+                                <carousel-item>
+                                    <div class="slides-thumbnail-slide">
+                                        <div class="image-center">
+                                            <img ng-src="{{ item.imagem_caminho}}" height="113px" width="150x" class="img-responsive">
+                                        </div>
+                                    </div>
+                                </carousel-item>
+                                <!-- For customize carousel next, previous button -->
+                                <carousel-prev>
+                                    <!-- placed your previous button here -->
+                                    <!--button>Prev</button-->
+                                    <!-- end -->
+                                </carousel-prev>
+
+                                <carousel-next>
+                                    <!-- placed your next button here -->
+                                    <!--button>next</button-->
+                                    <!-- end -->
+                                </carousel-next>
+                            </ui-carousel>
+                        </div>
+                        <div class="wrapper-lg" ng-if="vm.atividade.atividade_descricao">
+                            <h3 class="m-t-none"><a href>Descrição</a></h3>
+                            <div class="line line-lg b-b b-light"></div>
+                            <div>
+                                <p class="text-justify" ng-bind="vm.atividade.atividade_descricao">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="wrapper-lg" ng-if="vm.atividade.atividade_instrucao">
+                            <h3 class="m-t-none"><a href>Instrução</a></h3>
+                            <div class="line line-lg b-b b-light"></div>
+                            <div>
+                                <p class="text-justify" ng-bind="vm.atividade.atividade_instrucao">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </div>
         <div class="col-sm-5">
-            <div class="row">               
+            <div class="row">
                 <div class="col-sm-12">
 
                     <div class="text-right" style="margin: 0 0 15 0;">

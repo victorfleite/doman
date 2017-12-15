@@ -1,42 +1,51 @@
 <div class="wrapper-md">
     <div class="row">
         <div class="col-sm-7">
-            <div class="blog-post">
-                <div class="panel">
-                    <div>
-                        <img ng-src="{{vm.path + vm.atividade.atividade_imagem}}" class="img-full">
-                    </div>
-                    <div class="slides-thumbnail" style="text-align:center; padding:5px">
-                        <audio id="player" controls autoplay>
-                            <source src="{{vm.path + vm.atividade.som_caminho}}" type="audio/mpeg"> Your browser does not support the audio element.
-                        </audio>
-                    </div>
-                    <div class="wrapper-lg" ng-if="vm.atividade.atividade_descricao">
-                        <h3 class="m-t-none"><a href>Descrição</a></h3>
-                        <div class="line line-lg b-b b-light"></div>
+
+            <div class="col-sm-12">
+                <div class="text-left" style="margin: 0 0 15 0;">
+                    <a ui-sref="atividades({aluno: vm.aluno.aluno_id, grupo: vm.grupo.grupo_id})" class="btn btn-success btn-addon"><i class="fa fa-arrow-circle-left"></i>Voltar</a>
+                </div>
+            </div>
+            <div class="col-sm-12">
+
+                <div class="blog-post">
+                    <div class="panel">
                         <div>
-                            <p class="text-justify" ng-bind="vm.atividade.atividade_descricao">
-                            </p>
+                            <img ng-src="{{vm.path + vm.atividade.atividade_imagem}}" class="img-full">
+                        </div>
+                        <div class="slides-thumbnail" style="text-align:center; padding:5px">
+                            <audio id="player" controls autoplay>
+                                <source src="{{vm.path + vm.atividade.som_caminho}}" type="audio/mpeg"> Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="wrapper-lg" ng-if="vm.atividade.atividade_descricao">
+                            <h3 class="m-t-none"><a href>Descrição</a></h3>
+                            <div class="line line-lg b-b b-light"></div>
+                            <div>
+                                <p class="text-justify" ng-bind="vm.atividade.atividade_descricao">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="wrapper-lg" ng-if="vm.atividade.atividade_instrucao">
+                            <h3 class="m-t-none"><a href>Instrução</a></h3>
+                            <div class="line line-lg b-b b-light"></div>
+                            <div>
+                                <p class="text-justify" ng-bind="vm.atividade.atividade_instrucao">
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="wrapper-lg" ng-if="vm.atividade.atividade_instrucao">
-                        <h3 class="m-t-none"><a href>Instrução</a></h3>
-                        <div class="line line-lg b-b b-light"></div>
-                        <div>
-                            <p class="text-justify" ng-bind="vm.atividade.atividade_instrucao">
-                            </p>
-                        </div>
-                    </div>
+
                 </div>
 
             </div>
-
         </div>
         <div class="col-sm-5">
             <div class="row">
                 <div class="col-sm-6">
 
-                 
+
                 </div>
                 <div class="col-sm-6">
                     <div class="text-right" style="margin: 0 0 15 0;">
@@ -45,7 +54,7 @@
                 </div>
             </div>
             <div>
-                
+
             </div>
 
 
