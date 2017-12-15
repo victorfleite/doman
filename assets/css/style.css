@@ -129,3 +129,12 @@ a {
   top:0%;
 }
 
+.fullscreen-btn{
+  position: absolute;
+  top: 10px;
+  z-index: 10;
+  left: 50%;
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+

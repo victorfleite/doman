@@ -10,18 +10,32 @@
 </div>
 
 <div class="wrapper-md">
-    <div class="panel panel-default">
-        <div class="panel-heading font-bold">
-            Pesquisa
-        </div>
-        <div class="panel-body">
-            <form class="form-inline" role="form">
-                <div class="form-group">
-                    <label class="sr-only" for="filtro">Nome</label>
-                    <input type="text" ng-model="filtro" class="form-control" id="filtro" placeholder="Digite o nome">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">
+                    Pesquisa
                 </div>
-                <button type="submit" class="btn btn-success">Procurar</button>
-            </form>
+                <div class="panel-body">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="filtro">Nome</label>
+                            <input type="text" ng-model="filtro" class="form-control" id="filtro" placeholder="Digite o nome">
+                        </div>
+                        <button type="submit" class="btn btn-success">Procurar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+                <div class="panel panel-default" style="min-height: 120px">
+                        <div class="panel-heading font-bold">
+                            Último Grupo Acessado
+                        </div>
+                        <div class="panel-body">
+                            <div>10.12.2017 10:20 - <a style="text-decoration: underline" href=""> Semana 1</a></div>
+                        </div>
+                    </div>
         </div>
     </div>
     <h1 class="m-n font-thin h3">Selecione um grupo:</h1><br>
@@ -40,23 +54,24 @@
                         </div-->
                         <img ng-src="{{vm.path + grupo.grupo_imagem}}" class="img-full line-bottom" " style="{{(grupo.status)? '':
                             'filter: grayscale(100%);'}} ">
-                        <img class="medal-honor-icon" ng-if="vm.checkboxes[$index]==2" src="assets/img/honour-medal-icon.png ">    
+                        <img class="medal-honor-icon " ng-if="vm.checkboxes[$index]==2 " src="assets/img/honour-medal-icon.png ">    
                     </div>                    
                 </a>
                 <div ng-if="vm.verificaTipoEducador() " class="form-group " style="text-align:center; padding:5px ">
-                        <div class="btn-group btn-group-sm">
-                            <label ng-class="[ vm.checkboxes[$index]==0 ? 'btn btn-mini btn-primary' : 'btn btn-mini btn-default']
-                            " ng-model="vm.checkboxes[$index] " uib-btn-radio="0">Dasabilitado</label>
-                            <label ng-class="[ vm.checkboxes[$index]==1 ? 'btn btn-mini btn-primary' : 'btn btn-mini btn-default']
-                            " ng-model="vm.checkboxes[$index] " uib-btn-radio="1">Aberto</label>
-                            <label ng-class="[ vm.checkboxes[$index]==2 ? 'btn btn-mini btn-primary' : 'btn btn-mini btn-default']
-                            " ng-model="vm.checkboxes[$index] " uib-btn-radio="2">Finalizado</label>
+                        <div class="btn-group btn-group-sm ">
+                            <label ng-class="[ vm.checkboxes[$index]==0 ? 'btn btn-mini btn-primary' :
+                            'btn btn-mini btn-default'] " ng-model="vm.checkboxes[$index] " uib-btn-radio="0 ">Dasabilitado</label>
+                            <label ng-class="[ vm.checkboxes[$index]==1 ? 'btn btn-mini btn-primary' :
+                            'btn btn-mini btn-default'] " ng-model="vm.checkboxes[$index] " uib-btn-radio="1 ">Aberto</label>
+                            <label ng-class="[ vm.checkboxes[$index]==2 ? 'btn btn-mini btn-primary' :
+                            'btn btn-mini btn-default'] " ng-model="vm.checkboxes[$index] " uib-btn-radio="2 ">Finalizado</label>
                         </div>
                 </div>
-                <div class="hbox text-center b-b b-light text-sm">
+                <div class="hbox text-center b-b b-light text-sm ">
                     
                     <a ng-click="vm.setSelecionado(grupo) " class="col padder-v text-muted ">
-                        <i ng-if="grupo.status == 1"  class="fa {{(grupo.status)? 'fa-play-circle-o': ''}} " block m-b-xs fa-2x" style="{{(grupo.status)?'color:green':''}}"></i>
+                        <i ng-if="grupo.status==1 "  class="fa {{(grupo.status)? 'fa-play-circle-o': ''}}
+                            " block m-b-xs fa-2x" style="{{(grupo.status)?'color:green':''}}"></i>
                         <span style="{{(grupo.status)?'color:green':''}}">{{vm.getLabelStatus(grupo.status)}}</span>
                 </a>
                 </div>

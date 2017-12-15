@@ -16,6 +16,7 @@
         <div class="modal-body">
 
             <div ngsf-fullscreen="fullscreenCtrl">
+                <div ng-if="fullscreenCtrl.isFullscreen()" ngsf-toggle-fullscreen class="fullscreen-btn"><i class="icon-size-actual fa-2x"></i></div>
                 <div id="carousel-main" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" on-carousel-next="fuck()">
                     <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
                         <img ng-src="{{slide.image}}" ng-swipe-left="swipeFn('swipe-left')" ng-swipe-right="swipeFn('swipe-right')" class="img-responsive"
@@ -23,6 +24,7 @@
                         <div class="carousel-caption">
                             <h4>{{slide.id}}</h4>
                             <p>{{slide.text}}</p>
+
                         </div>
                     </div>
                 </div>
@@ -31,23 +33,20 @@
 
             <!-- footer -->
             <div class="modal-footer">
-                <button class="btn btn-success" ng-click="fullscreenCtrl.toggleFullscreen()">
+
+                <button class="btn btn-warning" ng-click="fullscreenCtrl.toggleFullscreen()">
                                 Fullscreen
                               </button>
                 <button class="btn btn-primary" ng-click="randomize();">
                                 Aleatório
                               </button>
-
-
-                <!--button class="btn btn-secondary" data-dismiss="modal">
-                    close
-                </button>
-                <button class="btn btn-default">
-                    Default
-                </button-->
-                <button class="btn btn-warning" ng-click="ok()">
-                        Fechar
+                <button class="btn btn-success" ng-click="audio_play = !audio_play">
+                        Som
                     </button>
+                <button class="btn btn-warning" ng-click="ok()">
+                            Fechar
+                        </button>
+
             </div>
             <!-- footer -->
 

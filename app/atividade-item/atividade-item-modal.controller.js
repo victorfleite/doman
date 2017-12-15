@@ -10,7 +10,6 @@
         var slides = $scope.slides = [];
         $scope.items = items;
         $scope.atividade = atividade;
-        log.log($scope.atividade);
         $scope.audio_play = true;
 
         $scope.addSlide = function (image, id) {
