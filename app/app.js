@@ -4,6 +4,7 @@
 
   angular
     .module('app', [
+      'ngSanitize',
       'auth0.auth0',
       'ui.router',
       'easypiechart',

@@ -163,7 +163,8 @@ class ServiceController extends \api\components\Controller {
         }
         return ['retorno' => $atividade];
     }
-
+    
+ 
     /**
      * 
      */

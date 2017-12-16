@@ -39,9 +39,9 @@ class Atividade extends \yii\db\ActiveRecord {
     }
 
     static function getAtividade($alunoId, $grupoId, $atividadeId) {
-        
 
-         $sql = ' SELECT id, aluno_id, nome, grupo_id,' .
+
+        $sql = ' SELECT id, aluno_id, nome, grupo_id,' .
                 ' grupo_titulo, atividade_id, atividade_titulo,' .
                 ' atividade_tipo, video_url, autoplay, som_id, som_titulo,' .
                 ' som_caminho, atividade_descricao, atividade_instrucao, atividade_imagem, ' .
@@ -50,9 +50,9 @@ class Atividade extends \yii\db\ActiveRecord {
                 ' TO_CHAR(data_finalizacao, \'DD/MM/YYYY HH24:MI\') as data_finalizacao ,pdf, ordem ' .
                 ' FROM vw_atividade_aluno ' .
                 ' where aluno_id=:alunoId and ' .
-                ' grupo_id=:grupoId and '.
+                ' grupo_id=:grupoId and ' .
                 ' atividade_id=:atividadeId ';
-         
+
         $command = \Yii::$app->db->createCommand($sql);
         $command->bindValue(':alunoId', $alunoId);
         $command->bindValue(':grupoId', $grupoId);
@@ -62,12 +62,19 @@ class Atividade extends \yii\db\ActiveRecord {
 
     static function getCartoesAluno($alunoId, $grupoId, $atividadeId) {
 
-        $sql = ' SELECT cartao_aluno_id, cartao_id, cartao_nome, ' .
-                ' cartao_ordem, TO_CHAR(cartao_datacriacao, \'DD/MM/YYYY HH24:MI\') as cartao_datacriacao, ' .
-                ' imagem_caminho, status_convocacao, conhecido, data_conhecimento, ' .
-                ' som_id, som_titulo, som_caminho ' .
-                ' FROM vw_cartao_aluno' .
-                ' where aluno_id=:alunoId and grupo_id=:grupoId and atividade_id=:atividadeId';
+        $sql = ' SELECT ' .
+                ' aluno_id, nome, grupo_id, grupo_titulo, atividade_id,' .
+                ' atividade_titulo, cartao_aluno_id, cartao_id, cartao_nome, ' .
+                ' cartao_ordem,  imagem_caminho, status_convocacao, ' .
+                ' TO_CHAR(cartao_datacriacao, \'DD/MM/YYYY HH24:MI\') as cartao_datacriacao, ' .
+                ' conhecido, som_id, som_titulo, som_caminho, ' .
+                ' TO_CHAR(data_conhecimento, \'DD/MM/YYYY\') as data_conhecimento, ' .
+                ' TO_CHAR(data_entrada, \'DD/MM/YYYY\') as data_entrada, ' .
+                ' TO_CHAR(data_saida, \'DD/MM/YYYY\') as data_saida ' .
+                ' FROM vw_cartao_aluno ' .
+                ' where aluno_id=:alunoId and ' .
+                ' grupo_id=:grupoId and ' .
+                ' atividade_id=:atividadeId order by cartao_ordem asc ';
 
         $command = \Yii::$app->db->createCommand($sql);
         $command->bindValue(':alunoId', $alunoId);
