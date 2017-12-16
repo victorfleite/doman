@@ -48,7 +48,7 @@
         vm.grupo = selecionadosService.getGrupo();
         vm.atividade = selecionadosService.getAtividade();
         vm.historico = [];
-        
+
 
         vm.getAutoPlay = function () {
             return 'autoplay';
@@ -76,11 +76,11 @@
         $rootScope.loading = true;
         $q.all([
             atividadeService.getHistoricoAtividadeAluno(vm.educador.id, vm.aluno.aluno_id, vm.grupo.grupo_id, vm.atividade.atividade_id)
-            ])
+        ])
             .then(function (result) {
-              vm.historico = result[0].data.retorno;
-              $rootScope.loading = false;
-          });
+                vm.historico = result[0].data.retorno;
+                $rootScope.loading = false;
+            });
 
 
         // GRAFICO PIZZA
@@ -144,13 +144,13 @@
                 //appendTo: parentElem,
                 resolve: {
                     log: $log,
-                    educador: function(){
+                    educador: function () {
                         return vm.educador;
                     },
-                    aluno: function(){
+                    aluno: function () {
                         return vm.aluno;
                     },
-                    grupo: function(){
+                    grupo: function () {
                         return vm.grupo;
                     },
                     atividade: function () {
@@ -162,7 +162,7 @@
                     hotkeys: function () {
                         return hotkeys;
                     },
-                    atividadeService: function(){
+                    atividadeService: function () {
                         return atividadeService;
                     }
                 }
@@ -170,10 +170,55 @@
 
             modalInstance.result.then(function (selectedItem) {
             }, function () {
-                var params = { aluno: vm.aluno.aluno_id, grupo: vm.grupo.grupo_id, atividade: vm.atividade.atividade_id  };
+                var params = { aluno: vm.aluno.aluno_id, grupo: vm.grupo.grupo_id, atividade: vm.atividade.atividade_id };
                 $state.go('atividade-item', params);
             });
         };
+
+
+        $scope.openCartoes = function (size, parentSelector) {
+          
+            /*var parentElem = parentSelector ?
+                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+            */
+            
+           var modalInstance = $uibModal.open({
+               animation: false,
+               ariaLabelledBy: 'modal-title',
+               ariaDescribedBy: 'modal-body',
+               templateUrl: 'app/atividade-item/atividade-item-cartoes-modal.html',
+               controller: 'AtividadeItemCartoesModalController',
+               //controllerAs: '$scope',
+               size: size,
+               //appendTo: parentElem,
+               resolve: {
+                   log: $log,
+                   educador: function(){
+                       return vm.educador;
+                   },
+                   aluno: function(){
+                       return vm.aluno;
+                   },
+                   grupo: function(){
+                       return vm.grupo;
+                   },
+                   atividade: function () {
+                       return vm.atividade;
+                   },
+                   items: function () {
+                       return $scope.slides;
+                   }
+               }
+           });
+ 
+           modalInstance.result.then(function (selectedItem) {
+           }, function () {
+               var params = { aluno: vm.aluno.aluno_id, grupo: vm.grupo.grupo_id, atividade: vm.atividade.atividade_id  };
+               $state.go('atividade-item', params);
+           });
+           
+        };
+
 
     }
 
