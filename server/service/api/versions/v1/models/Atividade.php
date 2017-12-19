@@ -65,9 +65,9 @@ class Atividade extends \yii\db\ActiveRecord {
         $sql = ' SELECT ' .
                 ' aluno_id, nome, grupo_id, grupo_titulo, atividade_id,' .
                 ' atividade_titulo, cartao_aluno_id, cartao_id, cartao_nome, ' .
-                ' cartao_ordem,  imagem_caminho, status_convocacao, ' .
+                ' cartao_ordem,  imagem_caminho, status_convocacao::boolean, ' .
                 ' TO_CHAR(cartao_datacriacao, \'DD/MM/YYYY HH24:MI\') as cartao_datacriacao, ' .
-                ' conhecido, som_id, som_titulo, som_caminho, ' .
+                ' conhecido::boolean, som_id, som_titulo, som_caminho, ' .
                 ' TO_CHAR(data_conhecimento, \'DD/MM/YYYY\') as data_conhecimento, ' .
                 ' TO_CHAR(data_entrada, \'DD/MM/YYYY\') as data_entrada, ' .
                 ' TO_CHAR(data_saida, \'DD/MM/YYYY\') as data_saida ' .

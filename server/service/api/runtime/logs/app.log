@@ -5380,3 +5380,237 @@ Stack trace:
     'REQUEST_TIME_FLOAT' => 1513461550.718
     'REQUEST_TIME' => 1513461550
 ]
+2017-12-19 16:01:53 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:262
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusCartaoAluno()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-cart...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-19 16:01:53 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '23'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '5133af6e-ef04-ea43-a25a-60ea98ceb2cd'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '37056'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-cartao-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-cartao-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-cartao-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-cartao-aluno'
+    'REQUEST_TIME_FLOAT' => 1513706513.911
+    'REQUEST_TIME' => 1513706513
+]
+2017-12-19 16:02:48 [::1][-][-][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Invalid JSON data in request body: Syntax error. in /var/www/html/doman/server/vendor/yiisoft/yii2/web/JsonParser.php:55
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Request.php(542): yii\web\JsonParser->parse('{"cartao_aluno_...', 'application/jso...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Request.php(598): yii\web\Request->getBodyParams()
+#2 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(257): yii\web\Request->post()
+#3 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusCartaoAluno()
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-cart...', Array)
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#10 {main}
+2017-12-19 16:02:48 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '49'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'a33aed4c-48b8-de92-3c6f-79d8f96a4ccf'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '37516'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-cartao-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-cartao-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-cartao-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-cartao-aluno'
+    'REQUEST_TIME_FLOAT' => 1513706568.432
+    'REQUEST_TIME' => 1513706568
+]
+2017-12-19 16:02:58 [::1][-][-][error][Exception] Exception: Ops algo errado nos parâmetros in /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php:262
+Stack trace:
+#0 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusCartaoAluno()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-cart...', Array)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#5 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#7 {main}
+2017-12-19 16:02:58 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '49'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => 'd51dcaab-8464-6b03-5809-702b04f60369'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '37598'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-cartao-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-cartao-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-cartao-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-cartao-aluno'
+    'REQUEST_TIME_FLOAT' => 1513706578.296
+    'REQUEST_TIME' => 1513706578
+]
+2017-12-19 17:17:45 [::1][-][-][error][yii\db\IntegrityException] PDOException: SQLSTATE[23502]: Not null violation: 7 ERRO:  valor nulo na coluna "status_convocacao" viola a restrição não-nula
+DETAIL:  Registro que falhou contém (321, 3, null, 0, null, 5, 4, 9, 2017-12-16 19:09:23.106815-02, 2017-12-19 17:17:45-02). in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php:994
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(994): PDOStatement->execute()
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(243): yii\db\Command->execute()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(778): yii\db\ActiveRecord::updateAll(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(587): yii\db\BaseActiveRecord->updateInternal(NULL)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(649): yii\db\ActiveRecord->update(true, NULL)
+#5 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(286): yii\db\BaseActiveRecord->save()
+#6 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusCartaoAluno()
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-cart...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23502]: Not null violation: 7 ERRO:  valor nulo na coluna "status_convocacao" viola a restrição não-nula
+DETAIL:  Registro que falhou contém (321, 3, null, 0, null, 5, 4, 9, 2017-12-16 19:09:23.106815-02, 2017-12-19 17:17:45-02).
+The SQL being executed was: UPDATE "cartao_aluno" SET "status_convocacao"=NULL, "data_saida"='2017-12-19 17:17:45' WHERE "id"=321 in /var/www/html/doman/server/vendor/yiisoft/yii2/db/Schema.php:594
+Stack trace:
+#0 /var/www/html/doman/server/vendor/yiisoft/yii2/db/Command.php(1004): yii\db\Schema->convertException(Object(PDOException), 'UPDATE "cartao_...')
+#1 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(243): yii\db\Command->execute()
+#2 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(778): yii\db\ActiveRecord::updateAll(Array, Array)
+#3 /var/www/html/doman/server/vendor/yiisoft/yii2/db/ActiveRecord.php(587): yii\db\BaseActiveRecord->updateInternal(NULL)
+#4 /var/www/html/doman/server/vendor/yiisoft/yii2/db/BaseActiveRecord.php(649): yii\db\ActiveRecord->update(true, NULL)
+#5 /var/www/html/doman/server/service/api/versions/v1/controllers/ServiceController.php(286): yii\db\BaseActiveRecord->save()
+#6 [internal function]: api\versions\v1\controllers\ServiceController->actionSetStatusCartaoAluno()
+#7 /var/www/html/doman/server/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('set-status-cart...', Array)
+#10 /var/www/html/doman/server/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/service/set-...', Array)
+#11 /var/www/html/doman/server/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/doman/server/service/api/www/index.php(14): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 23502
+    [1] => 7
+    [2] => ERRO:  valor nulo na coluna "status_convocacao" viola a restrição não-nula
+DETAIL:  Registro que falhou contém (321, 3, null, 0, null, 5, 4, 9, 2017-12-16 19:09:23.106815-02, 2017-12-19 17:17:45-02).
+)
+
+2017-12-19 17:17:45 [::1][-][-][info][application] $_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '49'
+    'HTTP_ACCEPT' => 'application/json'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36'
+    'HTTP_POSTMAN_TOKEN' => '2e9fc03a-c65b-dc57-461e-33876620469d'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8,pt-BR;q=0.6,pt;q=0.4,es;q=0.2'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.25 (Debian) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.25 (Debian)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/doman/server/service/api/www/index.php'
+    'REMOTE_PORT' => '35688'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/doman/server/service/api/www/index.php/v1/service/set-status-cartao-aluno'
+    'SCRIPT_NAME' => '/doman/server/service/api/www/index.php'
+    'PATH_INFO' => '/v1/service/set-status-cartao-aluno'
+    'PATH_TRANSLATED' => '/var/www/html/v1/service/set-status-cartao-aluno'
+    'PHP_SELF' => '/doman/server/service/api/www/index.php/v1/service/set-status-cartao-aluno'
+    'REQUEST_TIME_FLOAT' => 1513711065.05
+    'REQUEST_TIME' => 1513711065
+]

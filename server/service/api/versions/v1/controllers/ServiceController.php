@@ -10,8 +10,12 @@ use api\versions\v1\models\Atividade;
 use api\versions\v1\models\GrupoAluno;
 use api\versions\v1\models\HistoricoGrupoAluno;
 use api\versions\v1\models\HistoricoAtividadeAluno;
+use api\versions\v1\models\CartaoAluno;
 
 class ServiceController extends \api\components\Controller {
+
+    const ACTIVITY_CONVOCACAO = 'convocacao';
+    const ACTIVITY_CONHECIMENTO = 'conhecimento';
 
     public function accessRules() {
 
@@ -28,7 +32,8 @@ class ServiceController extends \api\components\Controller {
                     'set-status-grupos-aluno',
                     'set-historico-atividade-aluno',
                     'get-last-access-grupo-aluno',
-                    'get-historico-atividade-aluno'
+                    'get-historico-atividade-aluno',
+                    'set-status-cartao-aluno'
                 ],
                 'verbs' => ['POST'],
                 'roles' => ['?'],
@@ -163,8 +168,7 @@ class ServiceController extends \api\components\Controller {
         }
         return ['retorno' => $atividade];
     }
-    
- 
+
     /**
      * 
      */
@@ -210,8 +214,8 @@ class ServiceController extends \api\components\Controller {
         $historico->educador_id = $educadorId;
         $historico->aluno_id = $alunoId;
         $historico->grupo_id = $grupoId;
-        $historico->atividade_id = $atividadeId;      
-        $historico->save();        
+        $historico->atividade_id = $atividadeId;
+        $historico->save();
 
         return ['retorno' => 'atualizado!'];
     }
@@ -246,6 +250,54 @@ class ServiceController extends \api\components\Controller {
         $lastAccess = HistoricoAtividadeAluno::getHistoricoAtividadeAluno($educadorId, $alunoId, $grupoId, $atividadeId);
 
         return ['retorno' => $lastAccess];
+    }
+
+    /**
+     * 
+     */
+    public function actionSetStatusCartaoAluno() {
+
+        $post = \Yii::$app->request->post();
+
+        $cartaoAlunoId = $post["cartao_aluno_id"];
+        $activity = $post["activity"];
+        $statusConvocacao = $post["status_convocacao"];
+        $conhecido = $post["conhecido"];
+
+
+        if (!isset($cartaoAlunoId) || !isset($activity)) {
+            throw new \Exception('Ops algo errado nos parâmetros');
+        }
+        $cartaoAluno = CartaoAluno::findOne($cartaoAlunoId);
+
+        if (!isset($cartaoAluno)) {
+            throw new \Exception('Cartao not founded.');
+        }
+
+        if ($activity == self::ACTIVITY_CONVOCACAO) {
+
+            if (!isset($cartaoAluno->data_entrada) && $statusConvocacao) {
+                $cartaoAluno->data_entrada = date("Y-m-d H:i:s");
+            }
+            if (!$statusConvocacao) {
+                $cartaoAluno->data_saida = date("Y-m-d H:i:s");
+            }
+            $cartaoAluno->status_convocacao = $statusConvocacao;
+            $cartaoAluno->save();
+        }
+
+        if ($activity == self::ACTIVITY_CONHECIMENTO) {
+
+            if (!$conhecido) {
+                $cartaoAluno->data_conhecimento = null;
+            } else {
+                $cartaoAluno->data_conhecimento = date("Y-m-d H:i:s");
+            }
+            $cartaoAluno->conhecido = $conhecido;
+            $cartaoAluno->save();
+        }
+
+        return ['retorno' => $cartaoAluno];
     }
 
 }

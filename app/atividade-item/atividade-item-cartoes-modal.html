@@ -30,8 +30,9 @@
                                         <th>Título</th>
                                         <th>Data Entrada</th>
                                         <th>Data Saída</th>
-                                        <th>Convocação</th>
+                                        <th>Convocação</th>                                        
                                         <th>Aluno(a) conhece?</th>
+                                        <th>Data Conhecimento</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,17 +43,18 @@
                                         <td>
                                             <div class="checkbox">
                                                 <label class="i-checks">
-                                              <input type="checkbox" ng-model="cartao.status_convocacao"><i></i> {{getLabelConvocacao(cartao.status_convocacao)}}
+                                              <input type="checkbox" ng-model="cartao.status_convocacao" ng-click="atualizaConvocacao(cartao)"><i></i> {{getLabelConvocacao(cartao.status_convocacao)}}
                                             </label>
                                             </div>
-                                        </td>
+                                        </td>                                        
                                         <td>
                                             <div class="checkbox">
                                                 <label class="i-checks">
-                                                      <input type="checkbox" ng-model="cartao.conhecido"><i></i> {{getLabelConhecido(cartao.conhecido)}}
+                                                      <input type="checkbox" ng-model="cartao.conhecido" ng-click="atualizaConhecido(cartao)"><i></i> {{getLabelConhecido(cartao.conhecido)}}
                                                 </label>
                                             </div>
                                         </td>
+                                        <td>{{cartao.data_conhecimento}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -64,10 +66,6 @@
 
             <!-- footer -->
             <div class="modal-footer">
-
-                <button class="btn btn-success" ng-click="ok()">
-                            Salvar 
-                </button>
 
                 <button class="btn btn-warning" ng-click="ok()">
                             Fechar 

@@ -28,10 +28,18 @@
       return $http.post(url, params);
     }
 
+    var  setStatusCartaoAluno= function (cartao, activity) {
+      cartao.activity = activity;
+      var params = cartao;
+      var url = CONSTANTES.API + '/service/set-status-cartao-aluno';
+      return $http.post(url, params);
+    }
+
     return {
       getAtividade: getAtividade,
       setHistoricoAtividadeAluno: setHistoricoAtividadeAluno,
-      getHistoricoAtividadeAluno: getHistoricoAtividadeAluno
+      getHistoricoAtividadeAluno: getHistoricoAtividadeAluno,
+      setStatusCartaoAluno: setStatusCartaoAluno
     }
   }
 })();

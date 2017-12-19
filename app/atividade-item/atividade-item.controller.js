@@ -49,7 +49,6 @@
         vm.atividade = selecionadosService.getAtividade();
         vm.historico = [];
 
-
         vm.getAutoPlay = function () {
             return 'autoplay';
         }
@@ -75,26 +74,18 @@
         // Historico de Cartoes aplicados
         $rootScope.loading = true;
         $q.all([
+            atividadeService.getAtividade(vm.aluno.aluno_id, vm.grupo.grupo_id, vm.atividade.atividade_id),
             atividadeService.getHistoricoAtividadeAluno(vm.educador.id, vm.aluno.aluno_id, vm.grupo.grupo_id, vm.atividade.atividade_id)
         ])
             .then(function (result) {
-                vm.historico = result[0].data.retorno;
+
+                var atividade = result[0].data.retorno;
+                selecionadosService.setAtividade(atividade);
+                vm.historico = result[1].data.retorno;
                 $rootScope.loading = false;
             });
 
 
-        // GRAFICO PIZZA
-        $scope.percent = 65;
-        $scope.options = {
-            /*percent: 65,*/
-            lineWidth: 10,
-            trackColor: '#e8eff0',
-            barColor: '#27c24c',
-            scaleColor: '#e8eff0',
-            size: 188,
-            lineCap: 'butt',
-            animate: 1000
-        };
 
 
         // RATING
@@ -126,13 +117,44 @@
             return out;
         }
 
+        $scope.getPercentage = function () {
+            var count = 0;
+            var total = $scope.slides.length;
+            
+            for (var i = 0; i < $scope.slides.length; i++) {
+                var e = $scope.slides[i];
+                if (e.conhecido == 1) { // Conhecido
+                    count++;
+                    continue;
+                }
+            }
+            return (count * 100) / total;
+        }
+
 
         $scope.slides = filtrarAtividadesConvocadas(vm.atividade.cartoes);
+
+
+        // GRAFICO PIZZA
+        $scope.percent = $scope.getPercentage();
+        $scope.options = {
+            /*percent: 65,*/
+            lineWidth: 10,
+            trackColor: '#e8eff0',
+            barColor: '#27c24c',
+            scaleColor: '#e8eff0',
+            size: 188,
+            lineCap: 'butt',
+            animate: 1000
+        };
+
+
         $scope.open = function (size, parentSelector) {
 
             /*var parentElem = parentSelector ?
                 angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
             */
+
             var modalInstance = $uibModal.open({
                 animation: false,
                 ariaLabelledBy: 'modal-title',
@@ -143,14 +165,30 @@
                 size: size,
                 //appendTo: parentElem,
                 resolve: {
-                    log: $log,
-                    educador: vm.educador,
-                    aluno: vm.aluno,
-                    grupo: vm.grupo,
-                    atividade: vm.atividade,
-                    items: $scope.slides,
-                    hotkeys: hotkeys,
-                    atividadeService: atividadeService
+                    log: function () {
+                        return $log;
+                    },
+                    educador: function () {
+                        return vm.educador;
+                    },
+                    aluno: function () {
+                        return vm.aluno;
+                    },
+                    grupo: function () {
+                        return vm.grupo;
+                    },
+                    atividade: function () {
+                        return vm.atividade;
+                    },
+                    items: function () {
+                        return $scope.slides;
+                    },
+                    hotkeys: function () {
+                        return hotkeys;
+                    },
+                    atividadeService: function () {
+                        return atividadeService;
+                    },
                 }
             });
 
@@ -180,10 +218,10 @@
                 resolve: {
                     rootScope: $rootScope,
                     log: $log,
-                    queue: function(){
+                    queue: function () {
                         return $q;
                     },
-                    atividadeService: function(){
+                    atividadeService: function () {
                         return atividadeService;
                     },
                     educador: vm.educador,
@@ -194,9 +232,9 @@
             });
 
             modalInstance.result.then(function (selectedItem) {
+                $state.go($state.current, {}, { reload: true });
             }, function () {
-                var params = { aluno: vm.aluno.aluno_id, grupo: vm.grupo.grupo_id, atividade: vm.atividade.atividade_id };
-                $state.go('atividade-item', params);
+                $state.go($state.current, {}, { reload: true });
             });
 
         };

@@ -13,15 +13,17 @@
         $scope.grupo = grupo;
         $scope.atividade = atividade;
         
-        rootScope.loading = true;
-        queue.all([
-             atividadeService.getAtividade(aluno.aluno_id, grupo.grupo_id, atividade.atividade_id),
-        ]).then(function (result) {
-              var atividade = result[0].data.retorno;
-              log.log(atividade);
-              $scope.cartoes = atividade.cartoes;         
-              rootScope.loading = false;
-        });
+        function loadCardTable(){
+            rootScope.loading = true;
+            queue.all([
+                atividadeService.getAtividade(aluno.aluno_id, grupo.grupo_id, atividade.atividade_id),
+           ]).then(function (result) {
+                 var atividade = result[0].data.retorno;
+                 $scope.cartoes = atividade.cartoes;         
+                 rootScope.loading = false;
+           });
+        }
+        loadCardTable();
 
         $scope.getLabelConvocacao = function(status){
             if(status){
@@ -38,8 +40,23 @@
         }
                 
         $scope.ok = function () {
-            $uibModalInstance.dismiss('cancel');
+            $uibModalInstance.dismiss('cancel');      
         };
+
+        $scope.atualizaConvocacao = function (cartao){
+            rootScope.loading = true;
+            atividadeService.setStatusCartaoAluno(cartao, 'convocacao').then(function(){
+                loadCardTable();
+                rootScope.loading = false;
+            });
+        }
+        $scope.atualizaConhecido = function (cartao){
+            rootScope.loading = true;
+            atividadeService.setStatusCartaoAluno(cartao, 'conhecimento').then(function(){
+                loadCardTable();
+                rootScope.loading = false;
+            });
+        }
 
     }
 })();   

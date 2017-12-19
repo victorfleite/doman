@@ -1,14 +1,19 @@
 <nav aria-label="breadcrumb" role="navigation">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a ui-sref="alunos">Alunos</a></li>
-            <li class="breadcrumb-item" aria-current="page">{{vm.aluno.aluno_nome}}</li>
-            <li class="breadcrumb-item"><a ui-sref="grupos({educador: vm.educador.id, aluno: vm.aluno.aluno_id})">Grupos</a></li>
-            <li class="breadcrumb-item" aria-current="page">{{vm.grupo.grupo_titulo}}</li>
-            <li class="breadcrumb-item active" aria-current="page">Atividades</li>
-        </ol>
-    </nav> 
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a ui-sref="alunos">Alunos</a></li>
+        <li class="breadcrumb-item" aria-current="page">{{vm.aluno.aluno_nome}}</li>
+        <li class="breadcrumb-item"><a ui-sref="grupos({educador: vm.educador.id, aluno: vm.aluno.aluno_id})">Grupos</a></li>
+        <li class="breadcrumb-item" aria-current="page">{{vm.grupo.grupo_titulo}}</li>
+        <li class="breadcrumb-item active" aria-current="page">Atividades</li>
+    </ol>
+</nav>
 <div class="bg-light lter b-b wrapper-md">
     <h1 class="m-n font-thin h3">Atividades</h1>
+</div>
+<div class="col-sm-12">
+    <div class="text-left" style="margin: 15 0 15 0;">
+        <a ui-sref="grupos({educador: vm.educador.id, aluno: vm.aluno.aluno_id})" class="btn btn-success btn-addon"><i class="fa fa-arrow-circle-left"></i>Voltar</a>
+    </div>
 </div>
 <div class="wrapper-md" ng-if="vm.grupo.status">
     <h1 class="m-n font-thin h3">Selecione uma atividade:</h1><br>
@@ -25,17 +30,19 @@
                             <div>Aplicado</div>
                             <div>06/10/2017 19:20</div>
                         </div-->
-                        <img ng-src="{{vm.path + atividade.atividade_imagem}}" class="img-full line-bottom""  style="{{(atividade.atividade_status)?'':'filter: grayscale(100%);'}}">
+                        <img ng-src="{{vm.path + atividade.atividade_imagem}}" class="img-full line-bottom" "  style="{{(atividade.atividade_status)?
+                            '': 'filter: grayscale(100%);'}} ">
                     </div>
                 </a>
-                <div class="hbox text-center b-b b-light text-sm">
-                    <!--a ui-sref="atividade-item" class="col padder-v text-muted b-r b-light">
-                  <i class="fa fa-check-square-o block m-b-xs fa-2x"  style="color:green"></i>
-                  <span style="color:green">Aplicado</span>
+                <div class="hbox text-center b-b b-light text-sm ">
+                    <!--a ui-sref="atividade-item " class="col padder-v text-muted b-r b-light ">
+                  <i class="fa fa-check-square-o block m-b-xs fa-2x "  style="color:green "></i>
+                  <span style="color:green ">Aplicado</span>
                 </a-->
-                    <a ng-click="vm.setSelecionado(atividade)" class="col padder-v text-muted">
-                  <i class="fa {{(atividade.atividade_status)?'fa-play-circle-o':'fa-stop-circle'}}" block m-b-xs fa-2x" style="{{(atividdade.atividade_status)?'color:green':''}}"></i>
-                  <span style="{{(atividade.atividade_status)?'color:green':''}}">{{(atividade.atividade_status)?'Play':'Desabilitado'}}</span>
+                    <a ng-click="vm.setSelecionado(atividade) " class="col padder-v text-muted ">
+                  <i class="fa {{(atividade.atividade_status)? 'fa-play-circle-o': 'fa-stop-circle'}}
+                            " block m-b-xs fa-2x" style="{{(atividdade.atividade_status)?'color:green':''}}"></i>
+                        <span style="{{(atividade.atividade_status)?'color:green':''}}">{{(atividade.atividade_status)?'Play':'Desabilitado'}}</span>
                 </a>
                 </div>
             </div>
@@ -44,6 +51,6 @@
 </div>
 <div style="margin:15px" ng-if="!vm.grupo.status">
     <div class="alert alert-danger alert-dismissable" role="alert" type="warning">
-      <span class="ng-binding ng-scope">O grupo destas atividades está desabilitado.</span>
+        <span class="ng-binding ng-scope">O grupo destas atividades está desabilitado.</span>
     </div>
-  </div>
+</div>
