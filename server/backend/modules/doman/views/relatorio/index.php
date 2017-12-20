@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = '';
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo Url::to(['/doman/atividade/index']); ?>">
+                    <a href="<?php echo Url::to(['/doman/relatorio/index']); ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Relatório de Acesso às Atividades</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

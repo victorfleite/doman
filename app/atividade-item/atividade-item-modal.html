@@ -34,19 +34,14 @@
             <!-- footer -->
             <div class="modal-footer">
 
-                <button class="btn btn-warning" ng-click="fullscreenCtrl.toggleFullscreen()">
-                                Fullscreen
-                              </button>
-                <button class="btn btn-primary" ng-click="randomize();">
-                                Aleatório
-                              </button>
-                <button class="btn btn-success" ng-click="audio_play = !audio_play">
-                        Som
-                    </button>
-                <button class="btn btn-warning" ng-click="ok()">
-                            Fechar
-                        </button>
 
+                <a ng-click="fullscreenCtrl.toggleFullscreen()" class="btn btn-primary btn-addon"><i class="icon-size-fullscreen"></i>Tela Cheia</a>              
+                <a ng-click="randomize();" class="btn btn-primary btn-addon"><i class="icon-shuffle"></i>Aleatório</a>
+                <a ng-click="audio_play = !audio_play" class="btn btn-primary btn-addon"><i ng-class="{'icon-volume-2': audio_play, 'icon-volume-off': !audio_play}"></i>{{(audio_play)?'Som':'Mudo'}}</a>
+                
+                
+                <a ng-click="ok()" class="btn btn-danger btn-addon"><i class="icon-close"></i>Fechar</a>
+                
             </div>
             <!-- footer -->
 
