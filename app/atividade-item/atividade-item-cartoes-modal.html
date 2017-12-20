@@ -43,14 +43,14 @@
                                         <td>
                                             <div class="checkbox">
                                                 <label class="i-checks">
-                                              <input type="checkbox" ng-model="cartao.status_convocacao" ng-click="atualizaConvocacao(cartao)"><i></i> {{getLabelConvocacao(cartao.status_convocacao)}}
+                                              <input ng-if="enableInput()" type="checkbox" ng-model="cartao.status_convocacao" ng-click="atualizaConvocacao(cartao)"><i></i> {{getLabelConvocacao(cartao.status_convocacao)}}
                                             </label>
                                             </div>
                                         </td>                                        
                                         <td>
                                             <div class="checkbox">
                                                 <label class="i-checks">
-                                                      <input type="checkbox" ng-model="cartao.conhecido" ng-click="atualizaConhecido(cartao)"><i></i> {{getLabelConhecido(cartao.conhecido)}}
+                                                      <input ng-if="enableInput()" type="checkbox" ng-model="cartao.conhecido" ng-click="atualizaConhecido(cartao)"><i></i> {{getLabelConhecido(cartao.conhecido)}}
                                                 </label>
                                             </div>
                                         </td>

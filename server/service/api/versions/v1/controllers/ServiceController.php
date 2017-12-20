@@ -215,6 +215,7 @@ class ServiceController extends \api\components\Controller {
         $historico->aluno_id = $alunoId;
         $historico->grupo_id = $grupoId;
         $historico->atividade_id = $atividadeId;
+        $historico->browser = $_SERVER["HTTP_USER_AGENT"];
         $historico->save();
 
         return ['retorno' => 'atualizado!'];
@@ -263,8 +264,7 @@ class ServiceController extends \api\components\Controller {
         $activity = $post["activity"];
         $statusConvocacao = $post["status_convocacao"];
         $conhecido = $post["conhecido"];
-
-
+        
         if (!isset($cartaoAlunoId) || !isset($activity)) {
             throw new \Exception('Ops algo errado nos parâmetros');
         }
@@ -272,6 +272,15 @@ class ServiceController extends \api\components\Controller {
 
         if (!isset($cartaoAluno)) {
             throw new \Exception('Cartao not founded.');
+        }
+
+
+        if ($cartaoAluno->status_convocacao != $statusConvocacao) {
+
+            $cartaoTransacao = new \api\versions\v1\models\CartaoTransacaoLog();
+            $cartaoTransacao->cartao_aluno_id = $cartaoAluno->id;
+            $cartaoTransacao->transacao_status = $statusConvocacao;
+            $cartaoTransacao->save();
         }
 
         if ($activity == self::ACTIVITY_CONVOCACAO) {

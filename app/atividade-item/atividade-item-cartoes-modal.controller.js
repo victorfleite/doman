@@ -58,5 +58,12 @@
             });
         }
 
+        $scope.enableInput = function(){
+            if($scope.educador.tipo == 1){
+                return false;
+            }
+            return true;
+        }
+
     }
 })();   

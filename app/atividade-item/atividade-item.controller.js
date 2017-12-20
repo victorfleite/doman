@@ -69,7 +69,7 @@
                     break;
             }
 
-        }
+        }       
 
         // Historico de Cartoes aplicados
         $rootScope.loading = true;
@@ -128,7 +128,7 @@
                     continue;
                 }
             }
-            return (count * 100) / total;
+            return Math.round((count * 100) / total);
         }
 
 
@@ -237,7 +237,22 @@
                 $state.go($state.current, {}, { reload: true });
             });
 
+           
         };
+
+        vm.setLog = function (tipo) {
+            switch (tipo) {
+                case 1:
+                    break;
+                default:
+                    atividadeService.setHistoricoAtividadeAluno(vm.educador.id, vm.aluno.aluno_id, vm.grupo.grupo_id, vm.atividade.atividade_id);
+                    break;
+            }
+        }
+
+        // CALL FUNCTIONS
+        vm.setLog(vm.atividade.atividade_tipo);
+
 
 
     }
