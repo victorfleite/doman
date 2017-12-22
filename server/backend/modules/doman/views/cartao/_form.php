@@ -4,11 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\widgets\FileInput;
 use common\models\Util;
+use \common\components\widgets\drawerJs\DrawerJs;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\doman\models\Cartao */
 /* @var $form yii\widgets\ActiveForm */
 ?>
+
 
 <div class="cartao-form">
 
@@ -42,7 +44,7 @@ use common\models\Util;
         </div>         
     </div>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-10">
             <?php
             $label = 'Arquivo - largura:1024px, altura: 768px (.jpg ou .png)';
             $label .= (!$model->isNewRecord) ? '  [ ' . Html::a(Util::fileRemovePath($model->imagem_caminho), $model->imagem_caminho, $options = ['target' => '_blank']) . ' ]' : '';
@@ -51,6 +53,15 @@ use common\models\Util;
                 'pluginOptions' => ['allowedFileExtensions' => ['jpg', 'png'], 'showUpload' => false],
             ]);
             ?>
+        </div>
+        <div class="col-lg-1">
+
+            <div class="form-group">
+                <label class="control-label">&nbsp;</label>
+                <?= Html::a("Editor de Cartão", './js/fabric-js-editor/build/index.html', ['target'=>'_blank', 'class' => 'btn btn-warning']) ?>
+            </div>
+            
+
         </div>
     </div>
 
