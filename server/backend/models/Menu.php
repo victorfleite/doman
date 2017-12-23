@@ -34,6 +34,9 @@ class Menu {
                     ['label' => "Sons", 'url' => ['/doman/som/index']],
                     ['label' => "Planos", 'url' => ['/doman/plano/index']],
                     ['label' => "Licenças", 'url' => ['/doman/licenca/index']],
+                    '<li class="divider"></li>',
+                    ['label' => "Editor de Cartão", 'url' => "./js/fabric-js-editor/build/index.html", 'linkOptions' => ['target' => '_blank']],
+                    ['label' => "Gravador de Som", 'url' => './js/audiorecorder/index.html', 'linkOptions' => ['target' => '_blank']],
             ]];
             $menuItems[] = $aplicacaoMenu;
 
