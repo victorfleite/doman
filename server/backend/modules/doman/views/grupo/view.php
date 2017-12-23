@@ -120,6 +120,7 @@ echo GridView::widget([
                 $titulo = $data->atividade->titulo;
                 if ($data->atividade->tipo == Atividade::TIPO_MIDIA_SOM) {
                     $audio = '<br><audio controls>';
+                    $audio .= '     <source src="'. $data->atividade->som->caminho .'" type="audio/ogg">';
                     $audio .= '     <source src="' . $data->atividade->som->caminho . '" type="audio/mpeg">';
                     $audio .= '     Your browser does not support the audio element.';
                     $audio .= '</audio>';

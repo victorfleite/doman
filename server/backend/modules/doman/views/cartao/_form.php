@@ -68,7 +68,5 @@ use \common\components\widgets\drawerJs\DrawerJs;
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Salvar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
-
+    
     <?php ActiveForm::end(); ?>
-
-</div>

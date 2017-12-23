@@ -20,15 +20,25 @@ use common\models\Util;
         <div class="col-lg-6">
             <?= $form->field($model, 'titulo')->textInput() ?>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <?php
             $label = 'Arquivo';
             $label .= (!$model->isNewRecord) ? '  [ ' . Html::a(Util::fileRemovePath($model->caminho), $model->caminho, $options = ['target' => '_blank']) . ' ]' : '';
             echo $form->field($model, 'mp3')->label($label)->widget(FileInput::classname(), [
                 'options' => ['accept' => 'audio/*'],
-                'pluginOptions' => ['allowedFileExtensions' => ['mp3'], 'showUpload' => false],
+                'pluginOptions' => ['allowedFileExtensions' => ['mp3', 'wav'], 'showUpload' => false],
             ]);
             ?>
+        </div>
+        
+        <div class="col-lg-1">
+
+            <div class="form-group">
+                <label class="control-label">&nbsp;</label>
+                <?= Html::a("Gravar Som", './js/audiorecorder/index.html', ['target'=>'_blank', 'class' => 'btn btn-warning']) ?>
+            </div>
+            
+
         </div>
 
     </div><!-- /.row -->

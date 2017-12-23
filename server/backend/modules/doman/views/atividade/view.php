@@ -78,6 +78,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     if (empty($data->som_id))
                         return '';
                     $audio = '<audio controls>';
+                    $audio .= '     <source src="'. $data->som->caminho .'" type="audio/ogg">';
                     $audio .= '     <source src="' . $data->som->caminho . '" type="audio/mpeg">';
                     $audio .= '     Your browser does not support the audio element.';
                     $audio .= '</audio>';

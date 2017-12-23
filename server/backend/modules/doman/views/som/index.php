@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     $titulo = $data->titulo;
                                    
                         $audio =  '<br><audio controls>';
+                        $audio .= '     <source src="'. $data->caminho .'" type="audio/ogg">';
                         $audio .= '     <source src="'. $data->caminho .'" type="audio/mpeg">';
                         $audio .= '     Your browser does not support the audio element.';
                         $audio .= '</audio>';
