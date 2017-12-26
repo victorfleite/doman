@@ -14,6 +14,7 @@
         '$document',
         'selecionadosService',
         '$log',
+        '$filter',
         '$q',
         'ngYoutubeEmbedService',
         'ngAudio',
@@ -31,6 +32,7 @@
         $document,
         selecionadosService,
         $log,
+        $filter,
         $q,
         ngYoutubeEmbedService,
         ngAudio,
@@ -106,11 +108,9 @@
 
             for (var i = 0; i < cartoes.length; i++) {
                 var e = cartoes[i];
-                if (e.status_convocacao == 1) { // Ativo
+                if (e.status_convocacao == 1) { // Ativo 
                     e.imagem_caminho = vm.path + e.imagem_caminho;
-                    if (e.som_caminho) {
-                        e.sound_player = ngAudio.load(vm.path + e.som_caminho);
-                    }
+                    e.som_caminho = vm.path + e.som_caminho;
                     out.push(e);
                 }
             }
@@ -168,6 +168,9 @@
                     log: function () {
                         return $log;
                     },
+                    filter: function(){
+                        return $filter;
+                    },
                     educador: function () {
                         return vm.educador;
                     },
@@ -182,6 +185,9 @@
                     },
                     items: function () {
                         return $scope.slides;
+                    },
+                    ngAudio: function(){
+                        return ngAudio;
                     },
                     hotkeys: function () {
                         return hotkeys;

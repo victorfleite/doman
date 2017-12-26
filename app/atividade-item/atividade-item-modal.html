@@ -18,7 +18,7 @@
             <div ngsf-fullscreen="fullscreenCtrl">
                 <div ng-if="fullscreenCtrl.isFullscreen()" ngsf-toggle-fullscreen class="fullscreen-btn"><i class="icon-size-actual fa-2x"></i></div>
                 <div id="carousel-main" uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" on-carousel-next="fuck()">
-                    <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
+                    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                         <img ng-src="{{slide.image}}" ng-swipe-left="swipeFn('swipe-left')" ng-swipe-right="swipeFn('swipe-right')" class="img-responsive"
                             style="margin:auto;">
                         <div class="carousel-caption">

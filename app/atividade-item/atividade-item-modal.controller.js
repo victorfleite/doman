@@ -5,55 +5,35 @@
     angular.module('app')
         .controller('AtividadeItemModalController', atividadeItemModalController);
 
-    function atividadeItemModalController($scope, $uibModalInstance, log, educador, aluno, grupo, atividade, items, ngAudio, hotkeys, atividadeService) {
+    function atividadeItemModalController($scope, $uibModalInstance, log, filter, educador, aluno, grupo, atividade, items, ngAudio, hotkeys, atividadeService) {
 
         var slides = $scope.slides = [];
         $scope.items = items;
         $scope.atividade = atividade;
         $scope.audio_play = true;
-           
+        var currIndex = 0;
+
         atividadeService.setHistoricoAtividadeAluno(educador.id, aluno.aluno_id, grupo.grupo_id, atividade.atividade_id);
 
-        $scope.addSlide = function (image, id) {
+        $scope.addSlide = function (image, sound, id) {
             slides.push({
                 image: image,
+                sound: sound,
                 text: ['', '', '', ''][slides.length],
                 id: id
             });
         };
 
-        for (var i = 0; i < $scope.items.length; i++) {            
-            $scope.addSlide(items[i].imagem_caminho, i);
+        for (var i = 0; i < $scope.items.length; i++) {
+            $scope.addSlide(items[i].imagem_caminho, items[i].som_caminho, i);
+            currIndex++;
         }
 
 
         $scope.myInterval = 0;
         $scope.noWrapSlides = false;
         $scope.active = 0;
-        $scope.indexCarousel = 0;
-
-        var currIndex = 0;
-
-        $scope.randomize = function () {
-            var indexes = generateIndexesArray();
-            assignNewIndexesToSlides(indexes);
-        };
-
-        // Randomize logic below
-
-        function assignNewIndexesToSlides(indexes) {
-            for (var i = 0, l = slides.length; i < l; i++) {
-                slides[i].id = indexes.pop();
-            }
-        }
-
-        function generateIndexesArray() {
-            var indexes = [];
-            for (var i = 0; i < currIndex; ++i) {
-                indexes[i] = i;
-            }
-            return shuffle(indexes);
-        }
+        $scope.indexCarousel = 0;      
 
         function shuffle(array) {
             var tmp, current, top = array.length;
@@ -69,10 +49,43 @@
 
             return array;
         }
+
+        function generateIndexesArray() {
+            var indexes = [];
+            for (var i = 0; i < currIndex; ++i) {
+                indexes[i] = i;
+            }
+            return shuffle(indexes);
+        }
+        function assignNewIndexesToSlides(indexes) {
+            for (var i = 0, l = slides.length; i < l; i++) {
+                slides[i].id = indexes.pop();
+            }
+            //
+            //log.log(slides);
+        }
+        // Randomize logic below
+        $scope.randomize = function () {
+            var indexes = generateIndexesArray();
+            assignNewIndexesToSlides(indexes);
+            slides = filter('orderBy')(slides, 'id');
+            log.log(slides);
+        };
+
+        function findId(id){
+            for (var i = 0, l = slides.length; i < l; i++) {
+                if(id == slides[i].id){
+                    return slides[i];
+                }
+            }
+        }
+        
         $scope.$watch("active", function (newValue) {
+            var slide = findId(newValue);
             // Play no audio
-            if (items[newValue] && items[newValue].sound_player && $scope.audio_play) {
-                items[newValue].sound_player.play();
+            if (slide && slide.sound && $scope.audio_play) {
+                var play = ngAudio.load(slide.sound);                
+                play.play();
             }
         });
 
