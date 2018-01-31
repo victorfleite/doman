@@ -1,12 +1,12 @@
-# Auth0 AngularJS Token Renewal
+# Doman application
 
-This sample demonstrates how to silently renew `access_token`s in an AngularJS application with Auth0.
+This application is an application to
 
-## Getting Started
+## About the Metodology
 
-Create a new API in the [APIs section](https://manage.auth0.com/#/apis) and provide an identifier for it.
+[Glenn Doman](http://www.iahp.org/about-us/about-glenn-doman) is the founder [The Institutes for the Achievement of Human Potential (IAHP)](http://www.iahp.org)
 
-Clone the repo or download it from the AngularJS quickstart page in Auth0's documentation.
+[The Gentle Revolution](http://www.gentlerevolution.com/mm5/merchant.mvc?Screen=SFNT&Store_Code=G)
 
 ```bash
 cd 05-Token-Renewal
