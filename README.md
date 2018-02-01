@@ -1,4 +1,4 @@
-# Doman application
+# Doman Application
 
 This application is a platform to create cards ([Bits of inteligence] (http://www.gentlerevolution.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=BOT)) and teach the kids.
 
