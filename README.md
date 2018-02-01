@@ -10,6 +10,7 @@ This application is a platform to create cards - [Bits of inteligence](http://ww
 
 ## Install
 
+Under Construction
 
 
 
