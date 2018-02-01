@@ -8,15 +8,20 @@ This application is a platform to create cards - [Bits of inteligence](http://ww
 
 [The Gentle Revolution](http://www.gentlerevolution.com/mm5/merchant.mvc?Screen=SFNT&Store_Code=G) started with the book How To Teach Your Baby To Read. When it first appeared it not only created quite a sensation but it helped to unleash the creativity of parents. The first thing every parent learns is that when you start to teach your baby, the baby wants more and he wants more right now. Meeting that demand has not been easy, but it has been the right problem to have because it means we are doing something right. [READ MORE](http://www.gentlerevolution.com/mm5/merchant.mvc?Screen=ABOUT&Store_Code=G)
 
+## Install
 
 
 
 
 ## Run the Application
 
+Client Application : http://localhost/doman/
 
+Server Application : http://localhost/server/
 
-## What is Auth0?
+Api EndPoint: http://localhost/doman/server/service/api/www/index.php/v1
+
+## The Client application uses Auth0. What is Auth0?
 
 Auth0 helps you to:
 
@@ -31,10 +36,6 @@ Auth0 helps you to:
 
 1. Go to [Auth0](https://auth0.com/signup) and click Sign Up.
 2. Use Google, GitHub or Microsoft Account to login.
-
-## Issue Reporting
-
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
 
 ## Author
 
