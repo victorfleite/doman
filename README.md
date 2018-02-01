@@ -8,6 +8,11 @@ This application is a platform to create cards - [Bits of inteligence](http://ww
 
 [The Gentle Revolution](http://www.gentlerevolution.com/mm5/merchant.mvc?Screen=SFNT&Store_Code=G) started with the book How To Teach Your Baby To Read. When it first appeared it not only created quite a sensation but it helped to unleash the creativity of parents. The first thing every parent learns is that when you start to teach your baby, the baby wants more and he wants more right now. Meeting that demand has not been easy, but it has been the right problem to have because it means we are doing something right. [READ MORE](http://www.gentlerevolution.com/mm5/merchant.mvc?Screen=ABOUT&Store_Code=G)
 
+## Database Script
+
+(doman.sql)[https://github.com/victorfleite/doman/tree/master/server/backend/config/script-database/doman.sql]
+
+
 ## Install
 
 Under Construction
