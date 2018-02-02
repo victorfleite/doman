@@ -20,6 +20,7 @@ Under Construction
 ## Views
 
 Client Side (Angularjs v1.6.6, Bootstrap v3.3.7, [Auth0](https://auth0.com))
+
 [Login](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-login-auth0.png) |
 [Kids](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-kids-choose.png) |
 [Activities Dashboard](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-activities.png) |
@@ -28,6 +29,7 @@ Client Side (Angularjs v1.6.6, Bootstrap v3.3.7, [Auth0](https://auth0.com))
 [Activity 1 Execution](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-activity-execution.png)
 
 Server Side (PHP, Yii2 and Api Rest)
+
 [Dashboard](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-dashboard.png)
 [Activities Admin](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-activities-admin.png)
 [Activity 1 Management](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-activity-managment.png)
