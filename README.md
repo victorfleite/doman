@@ -30,8 +30,8 @@ Client Side (Angularjs v1.6.6, Bootstrap v3.3.7, [Auth0](https://auth0.com))
 
 Server Side (PHP, Yii2 and Api Rest)
 
-[Dashboard](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-dashboard.png)
-[Activities Admin](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-activities-admin.png)
+[Dashboard](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-dashboard.png) |
+[Activities Admin](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-activities-admin.png) |
 [Activity 1 Management](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-activity-managment.png)
 
 ## Run the Application
