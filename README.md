@@ -10,7 +10,7 @@ This application is a platform to create cards - [Bits of inteligence](http://ww
 
 ## Database Script
 
-(doman.sql)[https://github.com/victorfleite/doman/tree/master/server/backend/config/script-database/doman.sql]
+[doman.sq](https://github.com/victorfleite/doman/tree/master/server/backend/config/script-database/doman.sql)
 
 
 ## Install
