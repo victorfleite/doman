@@ -1,43 +1,33 @@
-# Auth0 AngularJS Token Renewal
+# Doman Application
 
-This sample demonstrates how to silently renew `access_token`s in an AngularJS application with Auth0.
+This application is a platform to create cards - [Bits of inteligence](http://www.gentlerevolution.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=BOT) - and teach the kids.
 
-## Getting Started
+## About the Metodology
 
-Create a new API in the [APIs section](https://manage.auth0.com/#/apis) and provide an identifier for it.
+[Glenn Doman](http://www.iahp.org/about-us/about-glenn-doman) is the founder of [The Institutes for the Achievement of Human Potential (IAHP)](http://www.iahp.org)
 
-Clone the repo or download it from the AngularJS quickstart page in Auth0's documentation.
+[The Gentle Revolution](http://www.gentlerevolution.com/mm5/merchant.mvc?Screen=SFNT&Store_Code=G) started with the book How To Teach Your Baby To Read. When it first appeared it not only created quite a sensation but it helped to unleash the creativity of parents. The first thing every parent learns is that when you start to teach your baby, the baby wants more and he wants more right now. Meeting that demand has not been easy, but it has been the right problem to have because it means we are doing something right. [READ MORE](http://www.gentlerevolution.com/mm5/merchant.mvc?Screen=ABOUT&Store_Code=G)
 
-```bash
-cd 05-Token-Renewal
-npm install
-```
+## Database Script
 
-## Set the Client ID, Domain, and API URL
+(doman.sql)[https://github.com/victorfleite/doman/tree/master/server/backend/config/script-database/doman.sql]
 
-If you download the sample from the quickstart page, it will come pre-populated with the **client ID** and **domain** for your application. If you clone the repo directly from Github, rename the `auth0-variables.js.example` file to `auth0-variables.js` and provide the **client ID** and **domain** there.
 
-You should also provide the identifier for the API you create in the Auth0 dashboard as your `AUTH0_AUDIENCE`.
+## Install
 
-## Set Up the `silent.html` File
+Under Construction
 
-If you download the sample from the quickstart page, it will come pre-populated with the **client ID** and **domain** for your application. If you clone the repo directly from Github, edit `silent.html` and add your **client ID** and **domain**.
+
 
 ## Run the Application
 
-The development server that comes with the Angular CLI can be used to serve the application.
+Client Application : http://localhost/doman/
 
-```bash
-npm start
-```
+Server Application : http://localhost/server/
 
-The application will be served at `http://localhost:3000`.
+Api EndPoint: http://localhost/doman/server/service/api/www/index.php/v1
 
-## Troubleshooting
-
-If you see an error on renewal saying `login_required`, that means you may be using the Auth0 dev keys for whichever social login you're testing. You'll need to add your own keys for this to work.
-
-## What is Auth0?
+## The Client application uses Auth0. What is Auth0?
 
 Auth0 helps you to:
 
@@ -53,13 +43,9 @@ Auth0 helps you to:
 1. Go to [Auth0](https://auth0.com/signup) and click Sign Up.
 2. Use Google, GitHub or Microsoft Account to login.
 
-## Issue Reporting
-
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
-
 ## Author
 
-[Auth0](auth0.com)
+[Victor Leite](https://www.linkedin.com/in/victor-leite-software-engineer/)
 
 ## License
 
