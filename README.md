@@ -17,7 +17,20 @@ This application is a platform to create cards - [Bits of inteligence](http://ww
 
 Under Construction
 
+## Views
 
+Client Side (Angularjs v1.6.6, Bootstrap v3.3.7, [Auth0](https://auth0.com))
+[Login](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-login-auth0.png) |
+[Kids](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-kids-choose.png) |
+[Activities Dashboard](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-activities.png) |
+[Activity 1 Detail](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-activity-datail.png) |
+[Activity 2 Detail](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-activity2-datail.png) |
+[Activity 1 Execution](https://github.com/victorfleite/doman/tree/master/assets/screenshots/client-activity-execution.png)
+
+Server Side (PHP, Yii2 and Api Rest)
+[Dashboard](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-dashboard.png)
+[Activities Admin](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-activities-admin.png)
+[Activity 1 Management](https://github.com/victorfleite/doman/tree/master/assets/screenshots/server-activity-managment.png)
 
 ## Run the Application
 
@@ -29,7 +42,7 @@ Api EndPoint: http://localhost/doman/server/service/api/www/index.php/v1
 
 ## The Client application uses Auth0. What is Auth0?
 
-Auth0 helps you to:
+[Auth0](https://auth0.com) helps you to:
 
 * Add authentication with [multiple authentication sources](https://docs.auth0.com/identityproviders), either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, amont others**, or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
 * Add authentication through more traditional **[username/password databases](https://docs.auth0.com/mysql-connection-tutorial)**.
