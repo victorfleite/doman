@@ -38,7 +38,7 @@ Server Side (PHP, Yii2 and Api Rest)
 
 Client Application : http://localhost/doman/
 
-Server Application : http://localhost/server/
+Server Application : http://localhost/doman/server/
 
 Api EndPoint: http://localhost/doman/server/service/api/www/index.php/v1
 
